@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "record_kind": "PARENT_RECONCILIATION_OF_ACTUAL_TOOL_RECEIPTS",
+  "product": "GenomeAtlas Site Helper Suite",
+  "publisher": "timelabs-npo",
+  "original_code_license": "MIT",
+  "native_site": {
+    "url": "https://genomeatlas-site-helper-suite.hx31337.chatgpt.site",
+    "project_id": "appgprj_6aa1709139648191ab998de6fccc4890",
+    "version_number": 1,
+    "version_id": "appgprj_6aa1709139648191ab998de6fccc4890~appgver_201555c8245c81919a9eaac114e07461",
+    "deployment_id": "appgdep_6aa175d1acec8191b809edbc5f34f3e8",
+    "native_status": "succeeded",
+    "access_mode": "public",
+    "source_commit": "683401cf1f2255414a4df3e0f2e9d606686a8fdf",
+    "deployment_updated_at": "2026-09-09T15:06:50.563534+00:00",
+    "service_rechecked_at": "2026-09-09T15:17:38Z",
+    "evidence_basis": "Actual Sites get_deployment_status/get_site responses and supported WD Codex browser verification, read back by parent from FINAL_NATIVE_SITE_RECEIPT.json.",
+    "production_browser_passed": ["navigation", "workflow selection", "registry search/reset", "exact accession filtering", "invalid request validation", "valid request remains NOT_EXECUTED", "reset"],
+    "production_browser_not_verified": ["download completion", "receipt file-chooser import rejected before application handling", "separate anonymous context", "mobile production view"],
+    "update_boundary": "Version 1 is live. A later attempt to publish eight changed static files was BLOCKED by missing sites-hosting/package-site.sh capability. Do not treat current repository and native version as automatically identical."
+  },
+  "github": {
+    "repository": "https://github.com/timelabs-npo/genomeatlas",
+    "release": "https://github.com/timelabs-npo/genomeatlas/releases/tag/v0.1.0",
+    "release_source": "e44827702a8153f682de64d92e92ef1a88bba4c8",
+    "latest_parent_observed_main_before_this_document": "45438b5c895130e334c933c405ac3ba58701d45e",
+    "merged_prs_observed": [11, 17],
+    "pages_url": "https://timelabs-npo.github.io/genomeatlas/",
+    "pages_is_native_chatgpt_site": false
+  },
+  "real_execution": {
+    "wd_remote_command": "PASSED",
+    "ubuntu_execution_and_nonce_exchange": "PASSED; Ubuntu is WSL1, not WSL2",
+    "authenticated_github_roundtrip": "PASSED on isolated nonce branch",
+    "codex_under_wd": "EXECUTED; implementation and native service sessions have actual exit receipts",
+    "copilot": "EXECUTED; reviewed receipt-validator work incorporated through PR17",
+    "release_tests": "Recorded exact-source run: build exit0, Python22 tests exit0, Node13 tests exit0. See checks-latest.json at release_source.",
+    "latest_parent_acceptance_attempt": "NOT_ACCEPTED: tests were invoked before build in a fresh clone, yielding missing-dist failures. Subsequent compound rerun was blocked by platform safety-status determination. No bypass or all-PASS claim.",
+    "local_wd_chrome_ui": "10 checks passed on a separately identified docs/ source at 14:48:23Z; not proof of current main or native deployment asset parity"
+  },
+  "requested_biology_integrations": {
+    "bionemo_agent_toolkit": {"installed": true, "official_catalog_read": true, "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6", "skill_used": "genomics-workflow-acceleration", "gpu_runtime": "NOT_READY", "inference": "NOT_RUN", "accelerated_path": "OFF"},
+    "smarts_bio": {"installed": true, "discovery": "RESPONDED", "sequence_catalog_count": 0, "synthetic_sequence_control": "BLOCKED; agent confirmed no callable deterministic sequence-statistics tool", "biological_result": null}
+  },
+  "scientific_scope": "177 frozen LAB accession records; no Enterococcus; host tree from conserved protein markers independently of R-M annotation; no completed live phylogeny/R-M analysis claimed by this software release",
+  "privacy": "No credentials, personal device IDs, user paths, raw account inventories or manuscript data included. No imported receipt constitutes independent verification."
+}
