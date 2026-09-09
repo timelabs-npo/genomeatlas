@@ -1,0 +1,3 @@
+GENOMEATLAS_GITHUB_TO_WD_7D92
+Observed WD challenge: GENOMEATLAS_WD_TO_GITHUB_7D92
+Observed source commit: 1c6d3490a745cef4dd41151e539ed06a43e06bd0
