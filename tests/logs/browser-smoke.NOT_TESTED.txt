@@ -1,0 +1,3 @@
+Synthetic/software-only repository validation did not run a browser automation smoke test.
+Reason: no deployment target or browser receipt was authorized for this static-source task.
+Follow-up: parent reviewer may open docs/index.html locally or on a reviewed static host.

@@ -1,0 +1,154 @@
+{
+  "version": "1.0.0",
+  "redacted": true,
+  "receipts": [
+    {
+      "id": "receipt-windows-wsl-roundtrip",
+      "toolId": "windows-wsl",
+      "state": "EXECUTED",
+      "classification": "DETECTED",
+      "timestamp": null,
+      "exitCode": null,
+      "summary": "Windows to Ubuntu to Windows roundtrip matched the authorized parent probe digests.",
+      "evidenceLocation": "docs/data/receipts.json#receipt-windows-wsl-roundtrip",
+      "historicalStatus": "UNVERIFIED",
+      "sourceProvenance": "sanitized parent receipt",
+      "hashStatus": "measured",
+      "hashSha256": "fe5608db0f8722d22f41f897936171871d7a737a3111346bff2ea40ee0ae7288",
+      "receiptLinks": {
+        "requestSha256": "9a709a74da6b06622c6d0d27c805ded1172546f7002b5435e5978faff3368aac",
+        "responseSha256": "fe5608db0f8722d22f41f897936171871d7a737a3111346bff2ea40ee0ae7288"
+      },
+      "notes": "Sanitized cross-device receipt only; no private endpoint identifiers, local paths, or raw command history are included."
+    },
+    {
+      "id": "receipt-github-auth-write",
+      "toolId": "github-cli",
+      "state": "EXECUTED",
+      "classification": "DETECTED",
+      "timestamp": null,
+      "exitCode": null,
+      "summary": "Authenticated WD to GitHub exchange preserved a write commit, a connector reply commit, and a WD reply SHA-256 digest.",
+      "evidenceLocation": "docs/data/receipts.json#receipt-github-auth-write",
+      "historicalStatus": "UNVERIFIED",
+      "sourceProvenance": "sanitized parent receipt",
+      "hashStatus": "measured",
+      "hashSha256": "bafb44d0665c623fe8335b2be9b7fa0c18a3ec5107b326adcc241cd493f1cddd",
+      "receiptLinks": {
+        "writeCommit": "1c6d3490a745cef4dd41151e539ed06a43e06bd0",
+        "connectorReplyCommit": "e7fb6936daac2648a613ad39b600ba5c04134b6f",
+        "wdReplySha256": "bafb44d0665c623fe8335b2be9b7fa0c18a3ec5107b326adcc241cd493f1cddd"
+      },
+      "notes": "The suite records only sanitized identifiers needed for independent reviewer confirmation."
+    },
+    {
+      "id": "receipt-github-transport-branch",
+      "toolId": "github-connector",
+      "state": "PROBED",
+      "classification": "DETECTED",
+      "timestamp": null,
+      "exitCode": null,
+      "summary": "Public source branch transport probe observed branch probe/transport-7d92.",
+      "evidenceLocation": "docs/data/receipts.json#receipt-github-transport-branch",
+      "historicalStatus": "UNVERIFIED",
+      "sourceProvenance": "sanitized parent receipt",
+      "hashStatus": "not_measured",
+      "hashSha256": null,
+      "receiptLinks": {
+        "branch": "probe/transport-7d92"
+      },
+      "notes": "This is a transport observation only; it is not a merge, deployment, or release proof."
+    },
+    {
+      "id": "receipt-copilot-pr",
+      "toolId": "github-copilot",
+      "state": "EXECUTED",
+      "classification": "DETECTED",
+      "timestamp": "2026-09-09T14:53:49Z",
+      "exitCode": null,
+      "summary": "GitHub Copilot is actively implementing this branch and still requires reviewer approval before merge or release.",
+      "evidenceLocation": "docs/data/receipts.json#receipt-copilot-pr",
+      "historicalStatus": "UNVERIFIED",
+      "sourceProvenance": "GitHub Actions run metadata",
+      "hashStatus": "not_measured",
+      "hashSha256": null,
+      "receiptLinks": {
+        "workflowRun": "34366641708"
+      },
+      "notes": "Run metadata is bounded evidence only; it does not claim production deployment."
+    },
+    {
+      "id": "receipt-codex-cli-policy-block",
+      "toolId": "codex-cli",
+      "state": "BLOCKED_EXECUTION",
+      "classification": "UNKNOWN",
+      "timestamp": null,
+      "exitCode": null,
+      "summary": "Codex CLI 0.153.4 authenticated on WD and started a new model session, but the command tool rejected repository access by policy.",
+      "evidenceLocation": "docs/data/receipts.json#receipt-codex-cli-policy-block",
+      "historicalStatus": "UNVERIFIED",
+      "sourceProvenance": "sanitized parent receipt",
+      "hashStatus": "not_measured",
+      "hashSha256": null,
+      "receiptLinks": {
+        "version": "0.153.4",
+        "policy": "repository access denied"
+      },
+      "notes": "Zero repository files were read and zero tests were executed from that session."
+    },
+    {
+      "id": "receipt-smarts-bio-login",
+      "toolId": "smarts-bio",
+      "state": "AUTH_REQUIRED",
+      "classification": "UNKNOWN",
+      "timestamp": null,
+      "exitCode": null,
+      "summary": "smarts_list_tools required a user login before any further probe or execution could continue.",
+      "evidenceLocation": "docs/data/receipts.json#receipt-smarts-bio-login",
+      "historicalStatus": "UNVERIFIED",
+      "sourceProvenance": "sanitized parent receipt",
+      "hashStatus": "not_measured",
+      "hashSha256": null,
+      "receiptLinks": {
+        "nextStep": "user login required"
+      },
+      "notes": "The suite records the gate honestly and does not fabricate a successful tool run."
+    },
+    {
+      "id": "receipt-bionemo-docs-inspection",
+      "toolId": "bionemo-agent-toolkit",
+      "state": "DISCOVERED",
+      "classification": "UNKNOWN",
+      "timestamp": null,
+      "exitCode": null,
+      "summary": "BioNeMo official toolkit documentation was inspected, but no NIM endpoint, model inference, or GPU execution receipt exists.",
+      "evidenceLocation": "docs/data/receipts.json#receipt-bionemo-docs-inspection",
+      "historicalStatus": "UNVERIFIED",
+      "sourceProvenance": "sanitized parent receipt",
+      "hashStatus": "not_measured",
+      "hashSha256": null,
+      "receiptLinks": {
+        "evidenceType": "documentation inspection"
+      },
+      "notes": "Manifest lookup failure and no live execution are preserved as explicit limitations."
+    },
+    {
+      "id": "receipt-native-sites-manifest",
+      "toolId": "native-chatgpt-sites",
+      "state": "NOT_DEPLOYED",
+      "classification": "UNKNOWN",
+      "timestamp": null,
+      "exitCode": null,
+      "summary": "Native ChatGPT Sites are not deployed here; manifest resolution failed and no native deployment receipt exists.",
+      "evidenceLocation": "docs/data/receipts.json#receipt-native-sites-manifest",
+      "historicalStatus": "UNVERIFIED",
+      "sourceProvenance": "sanitized parent receipt",
+      "hashStatus": "not_measured",
+      "hashSha256": null,
+      "receiptLinks": {
+        "manifest": "not resolved"
+      },
+      "notes": "GitHub Pages source remains portable static source only and is never relabeled as a native ChatGPT Site."
+    }
+  ]
+}

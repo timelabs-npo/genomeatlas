@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; frame-ancestors 'none'; manifest-src 'self'">
+    <title>GenomeAtlas Site Helper Suite</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <main class="shell" data-app data-ready="false">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Portable static source · zero external JS dependencies</p>
+          <h1>GenomeAtlas Site Helper Suite</h1>
+          <p class="lede">Accessible local-first source for LAB R-M Figure 2 planning, honest probe receipts, request-only delegation packets, and release gates.</p>
+        </div>
+        <dl class="summary-grid" aria-label="Current suite summary">
+          <div>
+            <dt>Registry tools</dt>
+            <dd data-summary-tools>0</dd>
+          </div>
+          <div>
+            <dt>Receipts & probes</dt>
+            <dd data-summary-probes>0</dd>
+          </div>
+          <div>
+            <dt>Local requests</dt>
+            <dd data-summary-requests>0</dd>
+          </div>
+          <div>
+            <dt>Blocked gates</dt>
+            <dd data-summary-gates>0</dd>
+          </div>
+        </dl>
+      </header>
+
+      <p class="message" role="status" aria-live="polite" data-message></p>
+
+      <section class="panel" data-overview>
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">View 1</p>
+            <h2>Scope overview</h2>
+          </div>
+          <p class="muted">This helper records authorized scope and evidence boundaries only. It does not invent assemblies, tree outputs, R-M states, citations, or deployment receipts.</p>
+        </div>
+        <div class="overview-grid">
+          <article class="info-card">
+            <h3>Authorized scope</h3>
+            <dl class="scope-grid">
+              <div>
+                <dt>Genome panel</dt>
+                <dd data-scope-panel>—</dd>
+              </div>
+              <div>
+                <dt>Groups</dt>
+                <dd data-scope-groups>—</dd>
+              </div>
+              <div>
+                <dt>Excluded taxon</dt>
+                <dd data-scope-excluded>—</dd>
+              </div>
+            </dl>
+          </article>
+          <article class="info-card">
+            <h3>Evidence caveats</h3>
+            <ul class="bullet-list" data-scope-caveats></ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" data-flow>
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">View 2</p>
+            <h2>Proposed data-flow diagram</h2>
+          </div>
+          <p class="muted">Conserved-marker host-tree planning and ordered per-replicon R-M review stay independent until the manual review stage reconnects them.</p>
+        </div>
+        <ol class="stage-grid" data-flow-list></ol>
+        <div class="rings-card">
+          <h3>Four evidence-bound rings</h3>
+          <ul class="bullet-list" data-rings-list></ul>
+        </div>
+      </section>
+
+      <section class="panel" data-registry>
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">View 3</p>
+            <h2>Searchable tool registry</h2>
+          </div>
+          <p class="muted">Registry states stay honest: declared, discovered, probed, executed, auth required, blocked execution, or not deployed.</p>
+        </div>
+        <div class="controls three-up">
+          <label>
+            <span>Search</span>
+            <input id="registry-search" name="search" type="search" placeholder="Search tool, contract, or evidence">
+          </label>
+          <label>
+            <span>State</span>
+            <select id="registry-state" name="state"></select>
+          </label>
+          <label>
+            <span>Flow stage</span>
+            <select id="registry-stage" name="stage"></select>
+          </label>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Tool</th>
+                <th>State</th>
+                <th>Flow stage</th>
+                <th>Probe timestamp</th>
+                <th>Evidence location</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel" data-probes>
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">View 4</p>
+            <h2>Actual probe receipts</h2>
+          </div>
+          <p class="muted">Sanitized parent receipts and local probe records remain unverified until an external reviewer confirms them. Imported self-asserted PASS stays tagged as UNVERIFIED_IMPORT.</p>
+        </div>
+
+        <div class="button-row">
+          <button type="button" data-export-probe-json>Export probes JSON</button>
+          <button type="button" data-export-probe-csv>Export probes CSV</button>
+        </div>
+
+        <div class="controls two-up">
+          <label>
+            <span>Import receipt JSON</span>
+            <input id="receipt-import" type="file" accept="application/json,.json">
+          </label>
+          <div class="align-end">
+            <button id="import-button" type="button">Validate and import receipt</button>
+          </div>
+        </div>
+
+        <form id="probe-form" class="form-card">
+          <h3>Record local probe receipt</h3>
+          <div class="controls two-up">
+            <label>
+              <span>Tool</span>
+              <select id="probe-tool" name="toolId"></select>
+            </label>
+            <label>
+              <span>Registry state</span>
+              <select id="probe-state" name="state"></select>
+            </label>
+            <label>
+              <span>Result classification</span>
+              <select id="probe-classification" name="classification"></select>
+            </label>
+            <label>
+              <span>Exit code</span>
+              <input name="exitCode" type="number" step="1" value="0" required>
+            </label>
+            <label class="wide">
+              <span>Evidence location</span>
+              <input name="evidenceLocation" type="text" placeholder="docs/data/receipts.json#... or reviewer note" required>
+            </label>
+            <label>
+              <span>Hash status</span>
+              <select id="probe-hash-status" name="hashStatus"></select>
+            </label>
+            <label class="wide">
+              <span>Artifact hash</span>
+              <input name="hashSha256" type="text" placeholder="64 hexadecimal digits when measured">
+            </label>
+            <label class="wide">
+              <span>Summary</span>
+              <textarea name="summary" rows="3" placeholder="Describe the bounded probe outcome without claiming verification." required></textarea>
+            </label>
+          </div>
+          <button type="submit">Record local probe</button>
+        </form>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Tool</th>
+                <th>State</th>
+                <th>Classification</th>
+                <th>Exit</th>
+                <th>Probe timestamp</th>
+                <th>Payload hash</th>
+                <th>Evidence</th>
+                <th>Verification</th>
+                <th>Summary</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel" data-requests>
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">View 5</p>
+            <h2>Delegation / approval-request editor</h2>
+          </div>
+          <p class="muted">Requests never execute anything. Each packet exports with <code>approved:false</code> and <code>executed:false</code> until a separate human workflow says otherwise.</p>
+        </div>
+
+        <form id="request-form" class="form-card">
+          <div class="controls two-up">
+            <label>
+              <span>Tool</span>
+              <select id="request-tool" name="toolId"></select>
+            </label>
+            <label>
+              <span>Flow stage</span>
+              <select id="request-stage" name="stageId"></select>
+            </label>
+            <label class="wide">
+              <span>Request summary</span>
+              <input name="summary" type="text" placeholder="Example: verify assembly scope note against reviewer packet" required>
+            </label>
+            <label class="wide">
+              <span>Justification</span>
+              <textarea name="justification" rows="3" placeholder="Explain why a reviewer should inspect this step out of band." required></textarea>
+            </label>
+            <label class="checkbox wide">
+              <input name="confirmed" type="checkbox">
+              <span>I confirm this should create only a local request packet.</span>
+            </label>
+          </div>
+          <div class="button-row">
+            <button type="submit">Create local request</button>
+            <button type="button" data-export-request-json>Export requests JSON</button>
+            <button type="button" data-export-request-csv>Export requests CSV</button>
+          </div>
+        </form>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Tool</th>
+                <th>Stage</th>
+                <th>Status</th>
+                <th>Approved</th>
+                <th>Executed</th>
+                <th>Requested at</th>
+                <th>Summary</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel" data-gates>
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">View 6</p>
+            <h2>Release gates</h2>
+          </div>
+          <p class="muted">A gate can stay ready for review, blocked upstream, or not applicable. This suite does not infer approvals from clicks or from missing evidence.</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Gate</th>
+                <th>Status</th>
+                <th>Depends on</th>
+                <th>Reason</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
