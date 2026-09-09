@@ -1,0 +1,9 @@
+{
+  "probe": "WD-GitHub-ChatGPTConnector-WD",
+  "request_commit": "03a1d940791c2d55bc74399fc3b4bb18ffa2c812",
+  "request_blob_sha1": "8c45324ae638db64d1e153ac98221e8113020ead",
+  "nonce": "c81c67979a5dc8ea90884a985c5576ca",
+  "connector_read_confirmed": true,
+  "data_class": "transport-test-only",
+  "biological_result": false
+}
