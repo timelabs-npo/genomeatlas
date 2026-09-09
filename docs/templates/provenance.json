@@ -1,0 +1,26 @@
+{
+  "kind": "PROVENANCE_TEMPLATE",
+  "schema_version": 1,
+  "state": "DRAFT",
+  "assembly_accession": null,
+  "strain": null,
+  "group": null,
+  "taxonomy_source": null,
+  "assembly_report": null,
+  "downloaded_at": null,
+  "files": [],
+  "sequence_id_map": [],
+  "required_file_roles": [
+    "genome",
+    "protein",
+    "gff3",
+    "assembly_report",
+    "catalog"
+  ],
+  "required_file_fields": [
+    "public_label",
+    "sha256",
+    "source_url"
+  ],
+  "note": "Preserve versioned IDs and original sequence-to-assembly/contig coordinates. No download has run."
+}

@@ -1,0 +1,82 @@
+{
+  "kind": "ATTRIBUTED_PARENT_RECEIPTS",
+  "scope": "Six local parent receipts and current user report; not replayed locally",
+  "probes": [
+    {
+      "id": "fresh-runtime",
+      "name": "Fresh shell and source access",
+      "state": "PASSED",
+      "origin": "PARENT_REPORT",
+      "checked_at": null,
+      "detail": "Parent receipt records completed shell, source-access and subsystem execution; scope excludes biological processing.",
+      "evidence_reference": "evidence/parent-report.json",
+      "receipt_sha256": "4900c4e1947e1ccc5fbfe484cfae60b12bf08c1bfe49abed95bd020a54948eee"
+    },
+    {
+      "id": "source-roundtrip",
+      "name": "GitHub content roundtrip",
+      "state": "PASSED",
+      "origin": "PARENT_REPORT",
+      "checked_at": null,
+      "detail": "Parent receipt records a successful content roundtrip; no publication or biological execution is inferred.",
+      "evidence_reference": "evidence/parent-report.json",
+      "receipt_sha256": "2f8154608d0266ce73018fd9dfd53b8e564e65281e0c0c3bf515f984d9b52baa"
+    },
+    {
+      "id": "ubuntu-runtime",
+      "name": "Subsystem runtime and exchange",
+      "state": "PASSED",
+      "origin": "PARENT_REPORT",
+      "checked_at": null,
+      "detail": "Parent receipt records temporary-file access and exchange; executable discovery is availability only.",
+      "evidence_reference": "evidence/parent-report.json",
+      "receipt_sha256": "a59bc7eb13edd93cb4ffaddc8b41bdd4b01dc05d8afb493803c72d8bf1443507"
+    },
+    {
+      "id": "toolkit",
+      "name": "BioNeMo source catalog",
+      "state": "PASSED",
+      "origin": "PARENT_REPORT",
+      "checked_at": null,
+      "detail": "Parent receipt records source catalog access. GPU/NIM inference remains NOT_RUN.",
+      "evidence_reference": "evidence/parent-report.json",
+      "receipt_sha256": "aae5d59e18682743c033ce9995a9958a09ba02ae3af57ca89d0fc4bb765a969b",
+      "skill_count": 62,
+      "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6"
+    },
+    {
+      "id": "bionemo-readiness",
+      "name": "BioNeMo runtime readiness",
+      "state": "BLOCKED",
+      "origin": "PARENT_REPORT",
+      "checked_at": null,
+      "detail": "Readiness assessment does not establish execution. Model inference NOT_RUN; accelerated path OFF.",
+      "evidence_reference": "evidence/parent-report.json",
+      "receipt_sha256": "22c85b804a71c63d2192ce1738d148f4903df0cf0b631b5764ea8b7d9203fec2",
+      "executables_found_count": 0
+    },
+    {
+      "id": "parent-browser",
+      "name": "Parent Chrome UI assertions",
+      "state": "PASSED",
+      "origin": "PARENT_REPORT",
+      "checked_at": null,
+      "detail": "Parent local HTTP browser receipt; distinct from current local checks and native deployment.",
+      "evidence_reference": "evidence/parent-report.json",
+      "receipt_sha256": "dd2950bde492c30fa6a90bd78bcf100768e36d02e817076647f5bdc4ddbf7d9f",
+      "assertion_count": 10,
+      "error_count": 0
+    },
+    {
+      "id": "service-auth",
+      "name": "smarts.bio deterministic sequence statistics",
+      "state": "BLOCKED",
+      "origin": "PARENT_REPORT",
+      "checked_at": null,
+      "detail": "Current user report: no callable deterministic sequence-statistics function. Advertised tools are not executed tools.",
+      "evidence_reference": "evidence/parent-report.json"
+    }
+  ],
+  "biology_status": "NOT_RUN",
+  "model_inference": "NOT_RUN"
+}
