@@ -1,0 +1,37 @@
+{
+  "status": "PASSED",
+  "recordedAt": "2026-09-09T15:25:53.389Z",
+  "note": "Parent-executed software checks on WD and Ubuntu. Separate synthetic/connectivity scopes; not scientific acceptance.",
+  "checks": [
+    {
+      "name": "Node unit/server tests",
+      "exitCode": 0,
+      "summary": "37 assertions passed"
+    },
+    {
+      "name": "Edge browser checks",
+      "exitCode": 0,
+      "summary": "23 interaction/layout checks passed"
+    },
+    {
+      "name": "Copilot receipt validator, Ubuntu parent rerun",
+      "exitCode": 0,
+      "summary": "13 tests passed after LF fixture repair"
+    }
+  ],
+  "notTested": [
+    "full177-genome pipeline",
+    "experimental R-M validation",
+    "native Site deployment at this snapshot"
+  ],
+  "screenshots": [
+    {
+      "label": "Actual desktop screenshot",
+      "path": "evidence/overview-desktop.png"
+    },
+    {
+      "label": "Actual mobile screenshot",
+      "path": "evidence/overview-mobile.png"
+    }
+  ]
+}

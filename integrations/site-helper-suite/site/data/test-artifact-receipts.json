@@ -1,0 +1,29 @@
+{
+  "scope": "parent-executed bounded tests",
+  "receipts": [
+    {
+      "id": "node-tests",
+      "scope": "software-validation",
+      "artifact": "evidence/node-tests.txt",
+      "sha256": "7f596b0b5df10c04a87ce30ae53d833268f655d9590ce715f5baf35e2aaf5d06"
+    },
+    {
+      "id": "static-check",
+      "scope": "software-validation",
+      "artifact": "evidence/static-check.txt",
+      "sha256": "89f2187df8a9cd4f5153c92977113cadb4964218e70ffb6c5cd85bf1c87bc8fa"
+    },
+    {
+      "id": "browser-tests",
+      "scope": "software-validation",
+      "artifact": "evidence/browser-tests.txt",
+      "sha256": "6479f105513943122c0a6ddf965d4eeed93748426ffeac54a3d68bc97d1828d9"
+    },
+    {
+      "id": "copilot-tests",
+      "scope": "software-validation",
+      "artifact": "evidence/copilot-tests.txt",
+      "sha256": "24e3cb40e83b19f6174027b1d425c4a1cc5ec3cb7a7ee185d776c03ef2a49d3b"
+    }
+  ]
+}

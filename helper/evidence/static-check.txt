@@ -1,0 +1,5 @@
+﻿
+> genomeatlas-site-helper-suite@1.0.0 check
+> node scripts/check.mjs
+
+PASS: 10 public text files checked; JSON, linked assets, and bounded privacy patterns passed. This is not exhaustive data-loss prevention.
