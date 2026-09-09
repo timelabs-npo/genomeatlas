@@ -1,0 +1,81 @@
+{
+  "schema": "genomeatlas.snapshot-regeneration-validation/1",
+  "timestamp": "2026-09-09T15:42:40.223469+00:00",
+  "base_commit": "89cad6fe35039a84efbb19064bf334f8572a1958",
+  "before_regeneration_exit": 1,
+  "checks": [
+    {
+      "id": "before-regeneration",
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_committed_snapshot.py",
+        "-v"
+      ],
+      "exit_code": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "acd0992ff355ffe97a4f95c2ba88ce91978026a8425772df5e973f369baf7024"
+    },
+    {
+      "id": "build",
+      "command": [
+        "python",
+        "scripts/build.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "ed09866a168621011376f132640bf18b3705462e2eb97cdc91e357aaceaad410",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "python",
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "dda1300085b321d34b7eb0513f4ecef45d832a5280ad608c4e4b3289a1a75d90"
+    },
+    {
+      "id": "node",
+      "command": [
+        "node",
+        "--test"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "9c602b77079e5fc81d5e1b16fe48324db20874604bd29e0c74308cbf3abe31fd",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "copilot-probes",
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "probes/tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "07f877209fc211b0cef222b567299ccb2596172719ed1e2b77a0f83a72611b74"
+    }
+  ],
+  "input_type": "public_repo_source",
+  "scope": "Generated-bundle consistency and software tests, not biological inference or browser acceptance",
+  "status": "PASS"
+}
