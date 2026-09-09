@@ -1,0 +1,11 @@
+{
+  "scope": "ACTUAL_WD_PYTHON_SYNTHETIC_CONTRACTS",
+  "source_base": "388cc5e60bb16f1f4a6fb7e4b47239a1120b2999",
+  "utc": "2026-09-09T15:14:00.482928+00:00",
+  "command": "python -m unittest discover -s probes/tests -v",
+  "python": "3.14.6",
+  "exit_code": 0,
+  "baseline_windows_failure": "Original positive fixture hash failed after CRLF conversion; preserved canonical blob bytes and marked fixture -text. Hash validation not weakened.",
+  "execution_authenticated": false,
+  "scientific_acceptance": "not-assessed"
+}
