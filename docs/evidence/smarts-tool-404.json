@@ -1,0 +1,13 @@
+{
+  "schema": "genomeatlas-normalized-probe-v1",
+  "id": "smarts-tool-404",
+  "toolId": "smarts-bio",
+  "observedAt": "2026-09-09T15:09:36.834581+00:00",
+  "state": "BLOCKED",
+  "classification": "FAILED",
+  "exitCode": null,
+  "summary": "Authenticated workspace listing succeeded, but advertised GC tool returned 404.",
+  "details": "bioinformatics.gcContent on synthetic ACGTACGT could not execute. smarts_query independently reported BLOCKED. No tool output exists.",
+  "scope": "capability/control probe, not biological analysis",
+  "attestation": "parent-recorded; external review still required"
+}

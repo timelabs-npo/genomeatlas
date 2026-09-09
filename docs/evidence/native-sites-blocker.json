@@ -1,0 +1,13 @@
+{
+  "schema": "genomeatlas-normalized-probe-v1",
+  "id": "native-sites-blocker",
+  "toolId": "native-chatgpt-sites",
+  "observedAt": "2026-09-09T14:52:52.802Z",
+  "state": "BLOCKED",
+  "classification": "UNKNOWN",
+  "exitCode": null,
+  "summary": "Native owner site exists at version 0; no deployment.",
+  "details": "Sites save-version requires a pushed source-repository HEAD. Codex shell execution is prohibited and no native source-edit/push action was exposed. No policy bypass attempted.",
+  "scope": "capability/control probe, not biological analysis",
+  "attestation": "parent-recorded; external review still required"
+}

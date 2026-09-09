@@ -69,7 +69,7 @@ test('registry filtering supports search, state, and stage', function () {
   const stateMatch = app.filterRegistry(entries, { search: '', state: 'BLOCKED', stage: 'ALL' });
   assert.ok(stateMatch.some(function (entry) { return entry.id === 'native-chatgpt-sites'; }));
 
-  const queryMatch = app.filterRegistry(entries, { search: '87 tools', state: 'ALL', stage: 'ALL' });
+  const queryMatch = app.filterRegistry(entries, { search: 'smarts.bio', state: 'ALL', stage: 'ALL' });
   assert.equal(queryMatch.length, 1);
   assert.equal(queryMatch[0].id, 'smarts-bio');
 
@@ -103,7 +103,7 @@ test('local probe creation reuses registry contracts and stays unverified', func
     summary: 'Synthetic software-only receipt describing a catalogue mismatch.',
     evidenceLocation: 'tests/fixtures/software-only-note.txt',
     exitCode: 404,
-    hashSha256: 'sha256:synthetic-probe-receipt'
+    hashSha256: 'sha256:a2f041564eb6bd091717d7c04417da77cbe7c4931c580cd580c94988195399d9'
   }, registryMap);
 
   assert.equal(receipt.review.verified, false);

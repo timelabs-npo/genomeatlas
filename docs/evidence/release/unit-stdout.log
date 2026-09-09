@@ -1,0 +1,31 @@
+✔ valid receipts validate and import as unverified (3.9058ms)
+✔ malicious HTML, unknown state, missing exit code, and missing hash are rejected (2.4102ms)
+✔ FAILED and UNKNOWN classifications are never remapped to NOT_DETECTED (0.7486ms)
+✔ request confirmation creates REQUESTED artifacts without execution or verification (1.3134ms)
+✔ registry filtering supports search, state, and stage (1.0087ms)
+✔ CSV export escapes spreadsheet formulas safely (0.7042ms)
+✔ local probe creation reuses registry contracts and stays unverified (0.6497ms)
+✔ required static assets exist and HTML references resolve locally (1.9454ms)
+✔ parent: valid 64-hex digest accepted (1.7742ms)
+✔ parent: fake hash token rejected (0.2733ms)
+✔ parent: whitespace CSV formula is neutralized (0.2668ms)
+✔ parent: imported verified claim cannot promote trust (0.7689ms)
+✔ parent: unknown tool receipt rejected (0.8131ms)
+✔ parent: missing process exit status rejected (0.1648ms)
+✔ parent: explicit null for RPC is not a fake process exit (0.2888ms)
+✔ parent: receipt size bound enforced (0.2177ms)
+✔ parent: too many receipts rejected (1.4134ms)
+✔ parent: confirm creates REQUESTED only (0.543ms)
+✔ parent: registry IDs unique and no biology execution claimed (0.274ms)
+✔ parent: fallback JSON is identical to served payloads (2.6694ms)
+✔ parent: normalized evidence hashes match actual payloads (2.7214ms)
+✔ parent: frozen public accession input is 177 unique versioned IDs (1.6281ms)
+✔ parent: four ring meanings are the four R-M types (0.2763ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 178.8882

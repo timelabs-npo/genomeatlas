@@ -1,0 +1,37 @@
+{
+  "schema": "genomeatlas-release-test-receipt-v1",
+  "utc": "2026-09-09T15:32:24.635837+00:00",
+  "environment": "authorized Windows endpoint",
+  "base_commit": "dda1b7f7e0f447245b7e02f90c6a85b1618b7b8e",
+  "tests": [
+    {
+      "name": "unit",
+      "command": [
+        "node",
+        "--test"
+      ],
+      "exit_code": 0,
+      "utc": "2026-09-09T15:32:19.130256+00:00"
+    },
+    {
+      "name": "browser",
+      "command": [
+        "node",
+        "scripts/browser_check.cjs"
+      ],
+      "exit_code": 0,
+      "utc": "2026-09-09T15:32:24.635119+00:00"
+    }
+  ],
+  "unit_tests": 23,
+  "browser_assertions": 19,
+  "native_sites": {
+    "owner_site_exists": true,
+    "saved_version": 0,
+    "deployment": null,
+    "blocker": "Site source sync requires a writable authorized Sites workspace; no policy bypass"
+  },
+  "biological_run": "NOT_RUN",
+  "private_details": "raw agent logs and endpoint identifiers excluded",
+  "line_endings": "LF enforced via .gitattributes; public payload hashes rechecked"
+}

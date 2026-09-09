@@ -9,7 +9,7 @@
   "outputContract": "Command success/failure plus repository-readable output.",
   "evidence": {
     "location": "docs/evidence/parent-observations.json#obs-gh-auth",
-    "sha256": "sha256:fixture-malicious-receipt"
+    "sha256": "sha256:6d498047990100942d42fa2bc2a3753076b8177823fdab8ab9003398e0df0802"
   },
   "result": {
     "classification": "DETECTED",

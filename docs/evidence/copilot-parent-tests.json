@@ -1,0 +1,13 @@
+{
+  "schema": "genomeatlas-normalized-probe-v1",
+  "id": "copilot-parent-tests",
+  "toolId": "copilot",
+  "observedAt": "2026-09-09T14:56:18.140Z",
+  "state": "EXECUTED",
+  "classification": "DETECTED",
+  "exitCode": 0,
+  "summary": "Parent independently ran node --test on Copilot PR2 exact head: 8 passed. Two extra challenges failed before this repair.",
+  "details": "Source 2e5d87afcaadaab2bfe9c2199f363c2afee42df1; failed challenges: non-hex hash token and whitespace-prefixed CSV formula. Final repaired tests are separate evidence.",
+  "scope": "capability/control probe, not biological analysis",
+  "attestation": "parent-recorded; external review still required"
+}

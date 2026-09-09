@@ -31,7 +31,13 @@
     },
     "state": {
       "type": "string",
-      "enum": ["DECLARED", "DISCOVERED", "PROBED", "EXECUTED", "BLOCKED"]
+      "enum": [
+        "DECLARED",
+        "DISCOVERED",
+        "PROBED",
+        "EXECUTED",
+        "BLOCKED"
+      ]
     },
     "probeTimestamp": {
       "type": "string",
@@ -55,7 +61,10 @@
     "evidence": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["location", "sha256"],
+      "required": [
+        "location",
+        "sha256"
+      ],
       "properties": {
         "location": {
           "type": "string",
@@ -64,37 +73,63 @@
         },
         "sha256": {
           "type": "string",
-          "pattern": "^sha256:[A-Za-z0-9._-]+$"
+          "pattern": "^sha256:[a-fA-F0-9]{64}$"
         }
       }
     },
     "result": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["classification", "exitCode"],
+      "required": [
+        "classification",
+        "exitCode"
+      ],
       "properties": {
         "classification": {
           "type": "string",
-          "enum": ["DETECTED", "NOT_DETECTED", "FAILED", "UNKNOWN"]
+          "enum": [
+            "DETECTED",
+            "NOT_DETECTED",
+            "FAILED",
+            "UNKNOWN"
+          ]
         },
         "exitCode": {
-          "type": "integer"
+          "type": [
+            "integer",
+            "null"
+          ]
         }
       }
     },
     "review": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["verified"],
+      "required": [
+        "verified"
+      ],
       "properties": {
         "verified": {
           "type": "boolean"
         },
         "reviewer": {
-          "type": ["string", "null"],
+          "type": [
+            "string",
+            "null"
+          ],
           "maxLength": 200
         }
       }
+    },
+    "source": {
+      "type": "string"
+    },
+    "importStatus": {
+      "const": "UNVERIFIED_IMPORTED"
+    },
+    "importedAt": {
+      "type": "string",
+      "format": "date-time"
     }
   }
 }

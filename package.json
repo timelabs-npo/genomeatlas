@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "playwright": "^1.63.0"
+  },
+  "name": "genomeatlas-site-helper-suite",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test",
+    "test:browser": "node scripts/browser_check.cjs"
+  }
+}

@@ -1,0 +1,3 @@
+# Third-party boundaries
+
+Original GenomeAtlas code is MIT. BioNeMo guidance: NVIDIA-BioNeMo/bionemo-agent-toolkit, genomics-workflow-acceleration v1.1.0, CC BY 4.0 documentation / Apache-2.0 source. We reference its off-by-default acceleration and compare-before-production practices; no BioNeMo code, model, weight or runtime is bundled. AlphaGenome: google-deepmind/alphagenome, Apache-2.0 software / CC BY 4.0 documentation; we use original implementations of typed input, versioned output and bounded retry patterns. Human regulatory predictions do not replace LAB marker phylogeny or R-M detection. API/model/data terms remain separate.

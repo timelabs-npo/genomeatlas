@@ -8,36 +8,38 @@
   const FALLBACK_DATA = {
   "registry": {
     "version": "1.0.0",
-    "generatedAt": "2026-09-09T00:00:00Z",
+    "generatedAt": "2026-09-09T15:09:36.845478+00:00",
     "entries": [
       {
         "id": "rdc",
         "name": "Remote Desktop Commander",
         "category": "endpoint-access",
-        "state": "EXECUTED",
+        "state": "PROBED",
         "stageIds": [
           "review"
         ],
-        "probeTimestamp": "2026-09-08T09:14:00Z",
-        "evidenceLocation": "docs/evidence/parent-observations.json#obs-rdc-nonce",
+        "probeTimestamp": "2026-09-09T14:34:03.065Z",
+        "evidenceLocation": "evidence/rdc-pong.json",
         "inputContract": "Authorized endpoint command request with nonce payload.",
         "outputContract": "Completion record proving nonce execution on the authorized Windows endpoint.",
-        "notes": "Historical observation only; no live session is implied."
+        "notes": "Authorized WD endpoint returned pong.",
+        "layer": "connector-or-skill"
       },
       {
         "id": "github-connector",
         "name": "GitHub connector",
         "category": "repository-access",
-        "state": "PROBED",
+        "state": "DECLARED",
         "stageIds": [
           "assemblies",
           "review"
         ],
-        "probeTimestamp": "2026-09-08T09:20:00Z",
-        "evidenceLocation": "docs/evidence/parent-observations.json#obs-github-connector",
+        "probeTimestamp": null,
+        "evidenceLocation": "data/registry.json#github-connector",
         "inputContract": "Read-only repository metadata request.",
         "outputContract": "Repository listing or file metadata for the current repository.",
-        "notes": "Current evidence is read-only access to this repository."
+        "notes": "Catalogued route only; no successful runtime probe is claimed.",
+        "layer": "connector-or-skill"
       },
       {
         "id": "github-cli",
@@ -47,11 +49,12 @@
         "stageIds": [
           "review"
         ],
-        "probeTimestamp": "2026-09-08T09:21:00Z",
-        "evidenceLocation": "docs/evidence/parent-observations.json#obs-gh-auth",
+        "probeTimestamp": "2026-09-09T15:09:36.817579+00:00",
+        "evidenceLocation": "evidence/github-read.json",
         "inputContract": "Authenticated GitHub read command.",
         "outputContract": "Command success/failure plus repository-readable output.",
-        "notes": "A historical repo-absence result is retained only as superseded evidence and not treated as current."
+        "notes": "Authenticated repository-permission read through GitHub CLI.",
+        "layer": "connector-or-skill"
       },
       {
         "id": "copilot",
@@ -61,25 +64,27 @@
         "stageIds": [
           "review"
         ],
-        "probeTimestamp": "2026-09-09T14:26:52Z",
-        "evidenceLocation": "docs/evidence/parent-observations.json#obs-copilot-pr",
+        "probeTimestamp": "2026-09-09T14:56:18.140Z",
+        "evidenceLocation": "evidence/copilot-parent-tests.json",
         "inputContract": "Issue or pull request implementation request.",
         "outputContract": "Repository changes and test artifacts on the active PR branch.",
-        "notes": "This suite is being implemented by Copilot in this PR, not by a WD-local Codex session."
+        "notes": "Parent independently ran node --test on Copilot PR2 exact head: 8 passed. Two extra challenges failed before this repair.",
+        "layer": "connector-or-skill"
       },
       {
         "id": "codex-cli-session",
         "name": "Codex CLI/session",
         "category": "implementation",
-        "state": "BLOCKED",
+        "state": "EXECUTED",
         "stageIds": [
           "review"
         ],
-        "probeTimestamp": "2026-09-08T09:30:00Z",
-        "evidenceLocation": "docs/evidence/parent-observations.json#obs-codex-missing",
+        "probeTimestamp": "2026-09-09T14:44:57.101Z",
+        "evidenceLocation": "evidence/codex-sites-probe.json",
         "inputContract": "Local Codex session bootstrap request.",
         "outputContract": "Established local coding session metadata.",
-        "notes": "No local Codex session was established in the parent observations."
+        "notes": "A real new WD Codex session ran native Sites read-only discovery and listing.",
+        "layer": "connector-or-skill"
       },
       {
         "id": "wsl-ubuntu",
@@ -89,11 +94,12 @@
         "stageIds": [
           "review"
         ],
-        "probeTimestamp": "2026-09-08T09:16:00Z",
-        "evidenceLocation": "docs/evidence/parent-observations.json#obs-wsl-uname",
+        "probeTimestamp": "2026-09-09T15:09:35.685903+00:00",
+        "evidenceLocation": "evidence/wsl-roundtrip.json",
         "inputContract": "Remote uname or shell command against Ubuntu in WSL.",
         "outputContract": "Kernel and distribution details.",
-        "notes": "Ubuntu reported a WSL1 kernel, not WSL2."
+        "notes": "Actual Windows payload read in Ubuntu; Ubuntu /tmp response read back by Windows.",
+        "layer": "connector-or-skill"
       },
       {
         "id": "ncbi-datasets",
@@ -104,10 +110,11 @@
           "assemblies"
         ],
         "probeTimestamp": null,
-        "evidenceLocation": "docs/data/registry.json#ncbi-datasets",
+        "evidenceLocation": "data/registry.json#ncbi-datasets",
         "inputContract": "Selected versioned assembly accession panel with hash verification.",
         "outputContract": "Downloaded versioned assemblies and metadata manifests.",
-        "notes": "Prior selected-input panels remain inputs until verified; no assemblies are fabricated here."
+        "notes": "Catalogued route only; no successful runtime probe is claimed.",
+        "layer": "external-tool"
       },
       {
         "id": "gtotree",
@@ -118,10 +125,11 @@
           "markers"
         ],
         "probeTimestamp": null,
-        "evidenceLocation": "docs/data/registry.json#gtotree",
+        "evidenceLocation": "data/registry.json#gtotree",
         "inputContract": "Annotated proteomes or genome inputs plus marker set selection.",
         "outputContract": "Conserved marker family sets and alignment-ready bundles.",
-        "notes": "No completed analysis is claimed."
+        "notes": "Catalogued route only; no successful runtime probe is claimed.",
+        "layer": "external-tool"
       },
       {
         "id": "hmmer",
@@ -132,10 +140,11 @@
           "markers"
         ],
         "probeTimestamp": null,
-        "evidenceLocation": "docs/data/registry.json#hmmer",
+        "evidenceLocation": "data/registry.json#hmmer",
         "inputContract": "Protein sequences and marker HMM profiles.",
         "outputContract": "Profile hits with thresholds and family assignments.",
-        "notes": "Evidence-bound declaration only."
+        "notes": "Catalogued route only; no successful runtime probe is claimed.",
+        "layer": "external-tool"
       },
       {
         "id": "alignment-trimming",
@@ -146,10 +155,11 @@
           "alignments"
         ],
         "probeTimestamp": null,
-        "evidenceLocation": "docs/data/registry.json#alignment-trimming",
+        "evidenceLocation": "data/registry.json#alignment-trimming",
         "inputContract": "Per-family protein or nucleotide sequence sets.",
         "outputContract": "Separate alignments and trimmed outputs per family.",
-        "notes": "Stage intentionally remains separate per marker family."
+        "notes": "Catalogued route only; no successful runtime probe is claimed.",
+        "layer": "external-tool"
       },
       {
         "id": "iqtree",
@@ -160,10 +170,11 @@
           "host-tree"
         ],
         "probeTimestamp": null,
-        "evidenceLocation": "docs/data/registry.json#iqtree",
+        "evidenceLocation": "data/registry.json#iqtree",
         "inputContract": "Prepared alignment sets and model-selection parameters.",
         "outputContract": "Host tree inference artifacts and model summaries.",
-        "notes": "No host tree is fabricated in this repository."
+        "notes": "Catalogued route only; no successful runtime probe is claimed.",
+        "layer": "external-tool"
       },
       {
         "id": "defensefinder",
@@ -174,10 +185,11 @@
           "rm-detection"
         ],
         "probeTimestamp": null,
-        "evidenceLocation": "docs/data/registry.json#defensefinder",
+        "evidenceLocation": "data/registry.json#defensefinder",
         "inputContract": "Genomic loci or proteomes for defense-system detection.",
         "outputContract": "Candidate defense and R-M locus calls.",
-        "notes": "Independent R-M detection remains unexecuted here."
+        "notes": "Catalogued route only; no successful runtime probe is claimed.",
+        "layer": "external-tool"
       },
       {
         "id": "rebase",
@@ -188,10 +200,11 @@
           "rm-detection"
         ],
         "probeTimestamp": null,
-        "evidenceLocation": "docs/data/registry.json#rebase",
+        "evidenceLocation": "data/registry.json#rebase",
         "inputContract": "Restriction-modification enzyme reference lookup.",
         "outputContract": "Reference annotations for R-M review.",
-        "notes": "Reference-only until externally verified."
+        "notes": "Catalogued route only; no successful runtime probe is claimed.",
+        "layer": "connector-or-skill"
       },
       {
         "id": "pubmed-entrez",
@@ -202,10 +215,11 @@
           "review"
         ],
         "probeTimestamp": null,
-        "evidenceLocation": "docs/data/registry.json#pubmed-entrez",
+        "evidenceLocation": "data/registry.json#pubmed-entrez",
         "inputContract": "Literature or accession queries.",
         "outputContract": "Linked records or citations for locus review.",
-        "notes": "No manuscript or private data retrieval is performed here."
+        "notes": "Catalogued route only; no successful runtime probe is claimed.",
+        "layer": "connector-or-skill"
       },
       {
         "id": "geneious",
@@ -216,10 +230,11 @@
           "review"
         ],
         "probeTimestamp": null,
-        "evidenceLocation": "docs/data/registry.json#geneious",
+        "evidenceLocation": "data/registry.json#geneious",
         "inputContract": "Local sequence review project inputs.",
         "outputContract": "Human review workspace artifacts.",
-        "notes": "Optional unprobed integration."
+        "notes": "Catalogued route only; no successful runtime probe is claimed.",
+        "layer": "connector-or-skill"
       },
       {
         "id": "itol",
@@ -230,10 +245,11 @@
           "rings"
         ],
         "probeTimestamp": null,
-        "evidenceLocation": "docs/data/registry.json#itol",
+        "evidenceLocation": "data/registry.json#itol",
         "inputContract": "Host tree plus verified ring annotation tables.",
         "outputContract": "Four-ring visualization assets.",
-        "notes": "No ring outputs are fabricated."
+        "notes": "Catalogued route only; no successful runtime probe is claimed.",
+        "layer": "connector-or-skill"
       },
       {
         "id": "bionemo-nim",
@@ -243,25 +259,27 @@
         "stageIds": [
           "review"
         ],
-        "probeTimestamp": "2026-09-08T09:45:00Z",
-        "evidenceLocation": "docs/evidence/parent-observations.json#obs-bionemo-skills",
+        "probeTimestamp": "2026-09-09T15:09:36.838188+00:00",
+        "evidenceLocation": "evidence/bionemo-skill-source.json",
         "inputContract": "Installed-skill listing or NIM skill resource lookup.",
         "outputContract": "Skill catalogue entries or skill-read result.",
-        "notes": "Listed installed skills, but actual skill read returned resource-not-found; no NIM API or GPU job executed."
+        "notes": "NVIDIA BioNeMo official genomics-workflow-acceleration skill was read; runtime not executed.",
+        "layer": "connector-or-skill"
       },
       {
         "id": "smarts-bio",
         "name": "smarts.bio",
         "category": "bioinformatics-service",
-        "state": "PROBED",
+        "state": "BLOCKED",
         "stageIds": [
           "review"
         ],
-        "probeTimestamp": "2026-09-08T09:50:00Z",
-        "evidenceLocation": "docs/evidence/parent-observations.json#obs-smarts-bio",
+        "probeTimestamp": "2026-09-09T15:09:36.834581+00:00",
+        "evidenceLocation": "evidence/smarts-tool-404.json",
         "inputContract": "Catalogue browse or named tool execution request.",
         "outputContract": "Catalogue entries, tool execution receipt, or explicit no-execution reply.",
-        "notes": "Catalogue/execution mismatch: 87 tools listed, 404 on bio_gc_content, and smarts_query answered manually for synthetic ACGTACGT with no tool executed."
+        "notes": "Authenticated workspace listing succeeded, but advertised GC tool returned 404.",
+        "layer": "connector-or-skill"
       },
       {
         "id": "genomic-intelligence",
@@ -272,10 +290,11 @@
           "review"
         ],
         "probeTimestamp": null,
-        "evidenceLocation": "docs/data/registry.json#genomic-intelligence",
+        "evidenceLocation": "data/registry.json#genomic-intelligence",
         "inputContract": "External genomics-analysis task request.",
         "outputContract": "External result receipt requiring reviewer verification.",
-        "notes": "Optional and unprobed; never silently authenticated."
+        "notes": "Catalogued route only; no successful runtime probe is claimed.",
+        "layer": "connector-or-skill"
       },
       {
         "id": "alphagenome",
@@ -286,10 +305,11 @@
           "review"
         ],
         "probeTimestamp": null,
-        "evidenceLocation": "docs/data/registry.json#alphagenome",
+        "evidenceLocation": "data/registry.json#alphagenome",
         "inputContract": "Explicit coordinate system, input alphabet, and bounded retry policy for transient failures.",
         "outputContract": "Versioned engineering-reference outputs only.",
-        "notes": "Engineering-reference only; not a LAB classifier and no non-MIT assets are copied or relabeled."
+        "notes": "Catalogued route only; no successful runtime probe is claimed.",
+        "layer": "connector-or-skill"
       },
       {
         "id": "native-chatgpt-sites",
@@ -299,22 +319,324 @@
         "stageIds": [
           "review"
         ],
-        "probeTimestamp": "2026-09-08T09:55:00Z",
-        "evidenceLocation": "docs/evidence/parent-observations.json#obs-native-sites",
+        "probeTimestamp": "2026-09-09T14:52:52.802Z",
+        "evidenceLocation": "evidence/native-sites-blocker.json",
         "inputContract": "Native Site deployment or receipt lookup.",
         "outputContract": "Deployment receipt.",
-        "notes": "Native ChatGPT Sites were not exposed to the parent observer, so no native deployment receipt exists."
+        "notes": "Native owner site exists at version 0; no deployment.",
+        "layer": "connector-or-skill"
+      },
+      {
+        "id": "biorender",
+        "name": "BioRender",
+        "category": "optional-catalog",
+        "layer": "catalog-only",
+        "state": "DECLARED",
+        "stageIds": [
+          "review"
+        ],
+        "probeTimestamp": null,
+        "evidenceLocation": "data/registry.json#biorender",
+        "inputContract": "Explicitly selected public or owner-authorized project data only.",
+        "outputContract": "Tool-specific result with real source and receipt; discover schema before execution.",
+        "notes": "Catalogued optional route, not proof of installation, authentication or execution on this device."
+      },
+      {
+        "id": "consensus",
+        "name": "Consensus",
+        "category": "optional-catalog",
+        "layer": "catalog-only",
+        "state": "DECLARED",
+        "stageIds": [
+          "review"
+        ],
+        "probeTimestamp": null,
+        "evidenceLocation": "data/registry.json#consensus",
+        "inputContract": "Explicitly selected public or owner-authorized project data only.",
+        "outputContract": "Tool-specific result with real source and receipt; discover schema before execution.",
+        "notes": "Catalogued optional route, not proof of installation, authentication or execution on this device."
+      },
+      {
+        "id": "elicit",
+        "name": "Elicit",
+        "category": "optional-catalog",
+        "layer": "catalog-only",
+        "state": "DECLARED",
+        "stageIds": [
+          "review"
+        ],
+        "probeTimestamp": null,
+        "evidenceLocation": "data/registry.json#elicit",
+        "inputContract": "Explicitly selected public or owner-authorized project data only.",
+        "outputContract": "Tool-specific result with real source and receipt; discover schema before execution.",
+        "notes": "Catalogued optional route, not proof of installation, authentication or execution on this device."
+      },
+      {
+        "id": "undermind",
+        "name": "Undermind",
+        "category": "optional-catalog",
+        "layer": "catalog-only",
+        "state": "DECLARED",
+        "stageIds": [
+          "review"
+        ],
+        "probeTimestamp": null,
+        "evidenceLocation": "data/registry.json#undermind",
+        "inputContract": "Explicitly selected public or owner-authorized project data only.",
+        "outputContract": "Tool-specific result with real source and receipt; discover schema before execution.",
+        "notes": "Catalogued optional route, not proof of installation, authentication or execution on this device."
+      },
+      {
+        "id": "hugging-face",
+        "name": "Hugging Face",
+        "category": "optional-catalog",
+        "layer": "catalog-only",
+        "state": "DECLARED",
+        "stageIds": [
+          "review"
+        ],
+        "probeTimestamp": null,
+        "evidenceLocation": "data/registry.json#hugging-face",
+        "inputContract": "Explicitly selected public or owner-authorized project data only.",
+        "outputContract": "Tool-specific result with real source and receipt; discover schema before execution.",
+        "notes": "Catalogued optional route, not proof of installation, authentication or execution on this device."
+      },
+      {
+        "id": "proto",
+        "name": "Proto",
+        "category": "optional-catalog",
+        "layer": "catalog-only",
+        "state": "DECLARED",
+        "stageIds": [
+          "review"
+        ],
+        "probeTimestamp": null,
+        "evidenceLocation": "data/registry.json#proto",
+        "inputContract": "Explicitly selected public or owner-authorized project data only.",
+        "outputContract": "Tool-specific result with real source and receipt; discover schema before execution.",
+        "notes": "Catalogued optional route, not proof of installation, authentication or execution on this device."
+      },
+      {
+        "id": "rowan",
+        "name": "Rowan",
+        "category": "optional-catalog",
+        "layer": "catalog-only",
+        "state": "DECLARED",
+        "stageIds": [
+          "review"
+        ],
+        "probeTimestamp": null,
+        "evidenceLocation": "data/registry.json#rowan",
+        "inputContract": "Explicitly selected public or owner-authorized project data only.",
+        "outputContract": "Tool-specific result with real source and receipt; discover schema before execution.",
+        "notes": "Catalogued optional route, not proof of installation, authentication or execution on this device."
+      },
+      {
+        "id": "tamarind-bio",
+        "name": "Tamarind Bio",
+        "category": "optional-catalog",
+        "layer": "catalog-only",
+        "state": "DECLARED",
+        "stageIds": [
+          "review"
+        ],
+        "probeTimestamp": null,
+        "evidenceLocation": "data/registry.json#tamarind-bio",
+        "inputContract": "Explicitly selected public or owner-authorized project data only.",
+        "outputContract": "Tool-specific result with real source and receipt; discover schema before execution.",
+        "notes": "Catalogued optional route, not proof of installation, authentication or execution on this device."
+      },
+      {
+        "id": "uniprot",
+        "name": "UniProt",
+        "category": "optional-catalog",
+        "layer": "catalog-only",
+        "state": "DECLARED",
+        "stageIds": [
+          "review"
+        ],
+        "probeTimestamp": null,
+        "evidenceLocation": "data/registry.json#uniprot",
+        "inputContract": "Explicitly selected public or owner-authorized project data only.",
+        "outputContract": "Tool-specific result with real source and receipt; discover schema before execution.",
+        "notes": "Catalogued optional route, not proof of installation, authentication or execution on this device."
+      },
+      {
+        "id": "rcsb-pdb",
+        "name": "RCSB PDB",
+        "category": "optional-catalog",
+        "layer": "catalog-only",
+        "state": "DECLARED",
+        "stageIds": [
+          "review"
+        ],
+        "probeTimestamp": null,
+        "evidenceLocation": "data/registry.json#rcsb-pdb",
+        "inputContract": "Explicitly selected public or owner-authorized project data only.",
+        "outputContract": "Tool-specific result with real source and receipt; discover schema before execution.",
+        "notes": "Catalogued optional route, not proof of installation, authentication or execution on this device."
+      },
+      {
+        "id": "alphafold-db",
+        "name": "AlphaFold DB",
+        "category": "optional-catalog",
+        "layer": "catalog-only",
+        "state": "DECLARED",
+        "stageIds": [
+          "review"
+        ],
+        "probeTimestamp": null,
+        "evidenceLocation": "data/registry.json#alphafold-db",
+        "inputContract": "Explicitly selected public or owner-authorized project data only.",
+        "outputContract": "Tool-specific result with real source and receipt; discover schema before execution.",
+        "notes": "Catalogued optional route, not proof of installation, authentication or execution on this device."
+      },
+      {
+        "id": "ncbi-entrez",
+        "name": "NCBI Entrez",
+        "category": "optional-catalog",
+        "layer": "catalog-only",
+        "state": "DECLARED",
+        "stageIds": [
+          "review"
+        ],
+        "probeTimestamp": null,
+        "evidenceLocation": "data/registry.json#ncbi-entrez",
+        "inputContract": "Explicitly selected public or owner-authorized project data only.",
+        "outputContract": "Tool-specific result with real source and receipt; discover schema before execution.",
+        "notes": "Catalogued optional route, not proof of installation, authentication or execution on this device."
+      },
+      {
+        "id": "academic-writing-toolkit",
+        "name": "Academic Writing Toolkit",
+        "category": "optional-catalog",
+        "layer": "catalog-only",
+        "state": "DECLARED",
+        "stageIds": [
+          "review"
+        ],
+        "probeTimestamp": null,
+        "evidenceLocation": "data/registry.json#academic-writing-toolkit",
+        "inputContract": "Explicitly selected public or owner-authorized project data only.",
+        "outputContract": "Tool-specific result with real source and receipt; discover schema before execution.",
+        "notes": "Catalogued optional route, not proof of installation, authentication or execution on this device."
+      },
+      {
+        "id": "adobe",
+        "name": "Adobe",
+        "category": "optional-catalog",
+        "layer": "catalog-only",
+        "state": "DECLARED",
+        "stageIds": [
+          "review"
+        ],
+        "probeTimestamp": null,
+        "evidenceLocation": "data/registry.json#adobe",
+        "inputContract": "Explicitly selected public or owner-authorized project data only.",
+        "outputContract": "Tool-specific result with real source and receipt; discover schema before execution.",
+        "notes": "Catalogued optional route, not proof of installation, authentication or execution on this device."
+      },
+      {
+        "id": "canva",
+        "name": "Canva",
+        "category": "optional-catalog",
+        "layer": "catalog-only",
+        "state": "DECLARED",
+        "stageIds": [
+          "review"
+        ],
+        "probeTimestamp": null,
+        "evidenceLocation": "data/registry.json#canva",
+        "inputContract": "Explicitly selected public or owner-authorized project data only.",
+        "outputContract": "Tool-specific result with real source and receipt; discover schema before execution.",
+        "notes": "Catalogued optional route, not proof of installation, authentication or execution on this device."
+      },
+      {
+        "id": "figma",
+        "name": "Figma",
+        "category": "optional-catalog",
+        "layer": "catalog-only",
+        "state": "DECLARED",
+        "stageIds": [
+          "review"
+        ],
+        "probeTimestamp": null,
+        "evidenceLocation": "data/registry.json#figma",
+        "inputContract": "Explicitly selected public or owner-authorized project data only.",
+        "outputContract": "Tool-specific result with real source and receipt; discover schema before execution.",
+        "notes": "Catalogued optional route, not proof of installation, authentication or execution on this device."
+      },
+      {
+        "id": "google-drive",
+        "name": "Google Drive",
+        "category": "optional-catalog",
+        "layer": "catalog-only",
+        "state": "DECLARED",
+        "stageIds": [
+          "review"
+        ],
+        "probeTimestamp": null,
+        "evidenceLocation": "data/registry.json#google-drive",
+        "inputContract": "Explicitly selected public or owner-authorized project data only.",
+        "outputContract": "Tool-specific result with real source and receipt; discover schema before execution.",
+        "notes": "Catalogued optional route, not proof of installation, authentication or execution on this device."
+      },
+      {
+        "id": "files",
+        "name": "Files",
+        "category": "optional-catalog",
+        "layer": "catalog-only",
+        "state": "DECLARED",
+        "stageIds": [
+          "review"
+        ],
+        "probeTimestamp": null,
+        "evidenceLocation": "data/registry.json#files",
+        "inputContract": "Explicitly selected public or owner-authorized project data only.",
+        "outputContract": "Tool-specific result with real source and receipt; discover schema before execution.",
+        "notes": "Catalogued optional route, not proof of installation, authentication or execution on this device."
+      },
+      {
+        "id": "trae",
+        "name": "Trae",
+        "category": "optional-catalog",
+        "layer": "catalog-only",
+        "state": "DECLARED",
+        "stageIds": [
+          "review"
+        ],
+        "probeTimestamp": null,
+        "evidenceLocation": "data/registry.json#trae",
+        "inputContract": "Explicitly selected public or owner-authorized project data only.",
+        "outputContract": "Tool-specific result with real source and receipt; discover schema before execution.",
+        "notes": "Catalogued optional route, not proof of installation, authentication or execution on this device."
+      },
+      {
+        "id": "antigravity",
+        "name": "Antigravity",
+        "category": "optional-catalog",
+        "layer": "catalog-only",
+        "state": "DECLARED",
+        "stageIds": [
+          "review"
+        ],
+        "probeTimestamp": null,
+        "evidenceLocation": "data/registry.json#antigravity",
+        "inputContract": "Explicitly selected public or owner-authorized project data only.",
+        "outputContract": "Tool-specific result with real source and receipt; discover schema before execution.",
+        "notes": "Catalogued optional route, not proof of installation, authentication or execution on this device."
       }
-    ]
+    ],
+    "disclaimer": "Catalogued is not connected; connected is not executed; execution is not scientific validation."
   },
   "chains": {
     "version": "1.0.0",
     "title": "Scoped LAB phylogenomics flow",
     "rings": [
-      "Host tree context",
-      "Restriction-modification evidence",
-      "Locus review annotations",
-      "Verification and publication status"
+      "Type I",
+      "Type II (including Type IIG)",
+      "Type III",
+      "Type IV"
     ],
     "stages": [
       {
@@ -335,17 +657,17 @@
       {
         "id": "alignments",
         "title": "Separate alignments",
-        "description": "Maintain separate alignments per marker family; do not collapse them into a fabricated single result."
+        "description": "Align homologues of each marker separately, trim unreliable positions, then concatenate in fixed order with recorded partitions. Preserve every source protein accession."
       },
       {
         "id": "host-tree",
         "title": "IQ-TREE host tree",
-        "description": "Infer the host tree from alignment outputs only after upstream evidence is verified."
+        "description": "Infer a maximum-likelihood host tree from the concatenated conserved-marker protein alignment with model, seed, support and rooting evidence. R-M genes do not define this topology."
       },
       {
         "id": "rm-detection",
         "title": "Independent R-M detection",
-        "description": "Run independent restriction-modification detection separate from host tree inference."
+        "description": "Independently inspect ordered per-replicon proteins plus GFF/GenBank coordinates with locked DefenseFinder models. Failure/missing is not absence. Raw hits stay unreviewed."
       },
       {
         "id": "review",
@@ -355,134 +677,102 @@
       {
         "id": "rings",
         "title": "Four rings",
-        "description": "Publish four evidence-bound visualization rings only from verified upstream artifacts."
+        "description": "Join tree tips by exact assembly ID to four independent R-M type columns: I, II/IIG, III, IV. C is computational; U unreviewed; P requires manual curation. Experimental evidence is separate."
       }
     ]
   },
   "evidence": {
-    "version": "1.0.0",
+    "version": "1.0.1",
     "historical": true,
     "redacted": true,
     "observations": [
       {
-        "id": "obs-rdc-nonce",
-        "timestamp": "2026-09-08T09:14:00Z",
+        "id": "rdc-pong",
         "toolId": "rdc",
-        "state": "EXECUTED",
-        "summary": "Remote Desktop Commander nonce command completed on an authorized Windows endpoint.",
+        "state": "PROBED",
+        "timestamp": "2026-09-09T14:34:03.065Z",
+        "evidenceLocation": "evidence/rdc-pong.json",
+        "hashSha256": "sha256:31483bbef987e9a3fa96a398e00ac0f98d831848ba9ce8ea07ea47d36871bcce",
         "classification": "DETECTED",
-        "exitCode": 0,
-        "hashSha256": "sha256:rdc-nonce-observation",
-        "evidenceLocation": "parent observation ledger",
-        "notes": "Redacted to exclude endpoint identifiers and private device metadata."
+        "exitCode": null,
+        "summary": "Authorized WD endpoint returned pong."
       },
       {
-        "id": "obs-wsl-uname",
-        "timestamp": "2026-09-08T09:16:00Z",
+        "id": "wsl-roundtrip",
         "toolId": "wsl-ubuntu",
         "state": "EXECUTED",
-        "summary": "Git and Ubuntu uname returned successfully; Ubuntu reported a WSL1 kernel, not WSL2.",
+        "timestamp": "2026-09-09T15:09:35.685903+00:00",
+        "evidenceLocation": "evidence/wsl-roundtrip.json",
+        "hashSha256": "sha256:c34747bc6911ddeb217786b9608d015912906c5d9e9da65ddf46891c1ff5b9e5",
         "classification": "DETECTED",
         "exitCode": 0,
-        "hashSha256": "sha256:wsl-uname-observation",
-        "evidenceLocation": "parent observation ledger",
-        "notes": "Historical observation only; not a live connection test."
+        "summary": "Actual Windows payload read in Ubuntu; Ubuntu /tmp response read back by Windows."
       },
       {
-        "id": "obs-script-write-blocked",
-        "timestamp": "2026-09-08T09:18:00Z",
-        "toolId": "rdc",
-        "state": "BLOCKED",
-        "summary": "A separate remote script-write attempt was blocked by platform safety and must not be bypassed.",
-        "classification": "FAILED",
-        "exitCode": 1,
-        "hashSha256": "sha256:blocked-script-write",
-        "evidenceLocation": "parent observation ledger",
-        "notes": "This suite records the block and does not attempt any bypass."
-      },
-      {
-        "id": "obs-github-connector",
-        "timestamp": "2026-09-08T09:20:00Z",
-        "toolId": "github-connector",
-        "state": "PROBED",
-        "summary": "GitHub connector could read this repository and saw the existing MIT license with only README and LICENSE during initial inspection.",
-        "classification": "DETECTED",
-        "exitCode": 0,
-        "hashSha256": "sha256:github-connector-read",
-        "evidenceLocation": "parent observation ledger",
-        "notes": "Repository contents have since changed in this PR."
-      },
-      {
-        "id": "obs-gh-auth",
-        "timestamp": "2026-09-08T09:21:00Z",
+        "id": "github-read",
         "toolId": "github-cli",
         "state": "EXECUTED",
-        "summary": "WD gh authenticated read returned success.",
+        "timestamp": "2026-09-09T15:09:36.817579+00:00",
+        "evidenceLocation": "evidence/github-read.json",
+        "hashSha256": "sha256:453854d7b50935df9575b161d91c051d2dd29a64036a26da431d3d18542f3928",
         "classification": "DETECTED",
         "exitCode": 0,
-        "hashSha256": "sha256:gh-auth-read",
-        "evidenceLocation": "parent observation ledger",
-        "notes": "A repo-absence result happened earlier before repository creation and is retained only as superseded historical context, never as current state."
+        "summary": "Authenticated repository-permission read through GitHub CLI."
       },
       {
-        "id": "obs-smarts-bio",
-        "timestamp": "2026-09-08T09:50:00Z",
-        "toolId": "smarts-bio",
-        "state": "PROBED",
-        "summary": "smarts.bio catalogue returned 87 tools, bio_gc_content execution returned 404, and smarts_query manually answered 50% GC for synthetic ACGTACGT with no tool executed.",
-        "classification": "UNKNOWN",
-        "exitCode": 404,
-        "hashSha256": "sha256:smarts-bio-mismatch",
-        "evidenceLocation": "parent observation ledger",
-        "notes": "Catalogue/execution mismatch; explicit NO TOOL EXECUTED."
-      },
-      {
-        "id": "obs-bionemo-skills",
-        "timestamp": "2026-09-08T09:45:00Z",
-        "toolId": "bionemo-nim",
-        "state": "DISCOVERED",
-        "summary": "BioNeMo Agent Toolkit listed installed skills including NIM navigator and molecular geometry, but a skill-read returned resource-not-found.",
-        "classification": "UNKNOWN",
-        "exitCode": 404,
-        "hashSha256": "sha256:bionemo-skill-read",
-        "evidenceLocation": "parent observation ledger",
-        "notes": "No NIM API or GPU job executed."
-      },
-      {
-        "id": "obs-native-sites",
-        "timestamp": "2026-09-08T09:55:00Z",
-        "toolId": "native-chatgpt-sites",
-        "state": "BLOCKED",
-        "summary": "Native ChatGPT Sites were not exposed to the parent observer, so no native deployment receipt exists.",
-        "classification": "FAILED",
-        "exitCode": 1,
-        "hashSha256": "sha256:native-sites-missing",
-        "evidenceLocation": "parent observation ledger",
-        "notes": "No native deployment receipt is available."
-      },
-      {
-        "id": "obs-codex-missing",
-        "timestamp": "2026-09-08T09:30:00Z",
-        "toolId": "codex-cli-session",
-        "state": "BLOCKED",
-        "summary": "Local Codex session was not established.",
-        "classification": "FAILED",
-        "exitCode": 1,
-        "hashSha256": "sha256:codex-session-missing",
-        "evidenceLocation": "parent observation ledger",
-        "notes": "Copilot is the active implementation agent for this PR."
-      },
-      {
-        "id": "obs-copilot-pr",
-        "timestamp": "2026-09-09T14:26:52Z",
+        "id": "copilot-parent-tests",
         "toolId": "copilot",
         "state": "EXECUTED",
-        "summary": "Copilot is actively implementing this pull request.",
+        "timestamp": "2026-09-09T14:56:18.140Z",
+        "evidenceLocation": "evidence/copilot-parent-tests.json",
+        "hashSha256": "sha256:93dc82e9a4bfb9a8de35db64fe28661ced7f56c563421403307db2bc5b9a1626",
         "classification": "DETECTED",
         "exitCode": 0,
-        "hashSha256": "sha256:copilot-pr-activity",
-        "evidenceLocation": "GitHub Actions run metadata",
-        "notes": "This is not a WD-local Codex session."
+        "summary": "Parent independently ran node --test on Copilot PR2 exact head: 8 passed. Two extra challenges failed before this repair."
+      },
+      {
+        "id": "codex-sites-probe",
+        "toolId": "codex-cli-session",
+        "state": "EXECUTED",
+        "timestamp": "2026-09-09T14:44:57.101Z",
+        "evidenceLocation": "evidence/codex-sites-probe.json",
+        "hashSha256": "sha256:021045c155e0ce8c4a03dc20b20c17df808c0e2408f441d5dfafeef3af1e2afb",
+        "classification": "DETECTED",
+        "exitCode": 0,
+        "summary": "A real new WD Codex session ran native Sites read-only discovery and listing."
+      },
+      {
+        "id": "native-sites-blocker",
+        "toolId": "native-chatgpt-sites",
+        "state": "BLOCKED",
+        "timestamp": "2026-09-09T14:52:52.802Z",
+        "evidenceLocation": "evidence/native-sites-blocker.json",
+        "hashSha256": "sha256:ad16e4c2d1d8a06e53ae214c178e9b668656b1bd3bdbe8c223083fa4a4ecd318",
+        "classification": "UNKNOWN",
+        "exitCode": null,
+        "summary": "Native owner site exists at version 0; no deployment."
+      },
+      {
+        "id": "smarts-tool-404",
+        "toolId": "smarts-bio",
+        "state": "BLOCKED",
+        "timestamp": "2026-09-09T15:09:36.834581+00:00",
+        "evidenceLocation": "evidence/smarts-tool-404.json",
+        "hashSha256": "sha256:3a409fc35b7921294fe0745040d3968f6981f91c17c35b063dc5610fa8de0789",
+        "classification": "FAILED",
+        "exitCode": null,
+        "summary": "Authenticated workspace listing succeeded, but advertised GC tool returned 404."
+      },
+      {
+        "id": "bionemo-skill-source",
+        "toolId": "bionemo-nim",
+        "state": "DISCOVERED",
+        "timestamp": "2026-09-09T15:09:36.838188+00:00",
+        "evidenceLocation": "evidence/bionemo-skill-source.json",
+        "hashSha256": "sha256:895ca55b44656025592e07b44ffdb36e5000cc9aff3568c161936116077070fc",
+        "classification": "UNKNOWN",
+        "exitCode": null,
+        "summary": "NVIDIA BioNeMo official genomics-workflow-acceleration skill was read; runtime not executed."
       }
     ]
   }
@@ -553,8 +843,8 @@
       if (hasUnsafeHtml(receipt.evidence.location)) {
         errors.push("evidence.location contains unsafe HTML-like content.");
       }
-      if (!/^sha256:[A-Za-z0-9._-]+$/.test(String(receipt.evidence.sha256 || ""))) {
-        errors.push("evidence.sha256 must be present as a sha256: token.");
+      if (!/^sha256:[a-fA-F0-9]{64}$/.test(String(receipt.evidence.sha256 || ""))) {
+        errors.push("evidence.sha256 must be sha256: followed by exactly 64 hexadecimal characters; this checks format, not truth.");
       }
     }
 
@@ -564,8 +854,8 @@
       if (!RESULT_CLASSES.includes(receipt.result.classification)) {
         errors.push("result.classification must be one of DETECTED, NOT_DETECTED, FAILED, UNKNOWN.");
       }
-      if (!Number.isInteger(receipt.result.exitCode)) {
-        errors.push("result.exitCode must be an integer.");
+      if (!Object.hasOwn(receipt.result, "exitCode") || (receipt.result.exitCode !== null && !Number.isInteger(receipt.result.exitCode))) {
+        errors.push("result.exitCode must be an integer or explicit null for non-process probes.");
       }
     }
 
@@ -597,14 +887,18 @@
   }
 
   function importReceiptText(text) {
+    if (typeof text !== "string" || text.length > 1000000) throw new Error("Receipt input too large or not text.");
     const parsed = JSON.parse(text);
     const items = Array.isArray(parsed) ? parsed : [parsed];
+    if (items.length > 200) throw new Error("Too many receipts.");
+    const knownTools = new Set(FALLBACK_DATA.registry.entries.map(x => x.id));
     const normalized = [];
     items.forEach(function (item, index) {
       const verdict = validateReceipt(item);
       if (!verdict.valid) {
         throw new Error("Receipt " + (index + 1) + " failed validation: " + verdict.errors.join(" "));
       }
+      if (!knownTools.has(item.toolId)) throw new Error("Unknown registry tool.");
       normalized.push(normalizeImportedReceipt(item));
     });
     return normalized;
@@ -612,7 +906,7 @@
 
   function escapeCsvCell(value) {
     let text = value == null ? "" : String(value);
-    if (/^[=+\-@]/.test(text)) {
+    if (/^[\s]*[=+\-@]/.test(text)) {
       text = "'" + text;
     }
     if (/[",\n]/.test(text)) {
@@ -938,8 +1232,10 @@
       map[entry.id] = entry;
       return map;
     }, {});
-    let localProbes = safeStorageGet(STORAGE_KEYS.probes);
-    let requests = safeStorageGet(STORAGE_KEYS.requests);
+    const storedProbes = safeStorageGet(STORAGE_KEYS.probes);
+    let localProbes = (Array.isArray(storedProbes) ? storedProbes : []).filter(p => p && registryMap[p.toolId] && validateReceipt(p).valid).slice(0,200).map(normalizeImportedReceipt);
+    const storedRequests = safeStorageGet(STORAGE_KEYS.requests);
+    let requests = (Array.isArray(storedRequests) ? storedRequests : []).filter(r => r && registryMap[r.toolId]).slice(0,200).map(r => ({...r,status:"REQUESTED",verified:false,execution:null}));
 
     populateSelect(registryState, TOOL_STATES.map(function (state) {
       return { value: state, label: state };

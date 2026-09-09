@@ -1,0 +1,13 @@
+{
+  "schema": "genomeatlas-normalized-probe-v1",
+  "id": "rdc-pong",
+  "toolId": "rdc",
+  "observedAt": "2026-09-09T14:34:03.065Z",
+  "state": "PROBED",
+  "classification": "DETECTED",
+  "exitCode": null,
+  "summary": "Authorized WD endpoint returned pong.",
+  "details": "Remote Desktop Commander ping response; no personal endpoint identifiers published.",
+  "scope": "capability/control probe, not biological analysis",
+  "attestation": "parent-recorded; external review still required"
+}

@@ -1,57 +1,18 @@
-# genomeatlas
+# GenomeAtlas — Site Helper Suite
 
-GenomeAtlas Site Helper Suite: evidence-backed LAB phylogenomics, tool registry, cross-device probes, and human approval gates.
+An original MIT product by timelabs-npo for evidence-aware LAB R-M phylogenomics delegation and review. Static, zero-build HTML/CSS/JavaScript; no privileged job executor or background tracking.
 
-## What this repository contains
-
-This repository now ships a **zero-build static app** under `docs/` for:
-
-- GitHub Pages publication
-- portable source import into environments that accept plain HTML/CSS/JS
-- local review from a filesystem copy or a simple static server
-
-The app is not a native ChatGPT Site deployment. Native ChatGPT Sites were **not exposed** in the parent observations, so this repository should distinguish between:
-
-- **Portable/GitHub Pages source**: the HTML/CSS/JS and JSON files in `docs/`
-- **Native ChatGPT Site**: not available here, with no native deployment receipt to import or claim
-
-## Local use
-
-Open `docs/index.html` directly, or serve `docs/` with a static server. The app falls back to built-in seed data when local `file://` fetches are unavailable.
-
-Key views:
-
-1. scoped LAB phylogenomics flow
-2. searchable/filterable evidence-bound tool registry
-3. actual probes and receipt import/export
-4. delegation and confirmation planner that writes only local `REQUESTED` artifacts
-
-## Safety and evidence model
-
-- strict Content Security Policy with external local `app.js` and `style.css`
-- no inline event handlers
-- no remote execution controls
-- imported or manually recorded receipts remain **unverified** until external review
-- all user-supplied text is rendered with `textContent`
-- CSV export escapes spreadsheet formula prefixes
-
-## Data files
-
-- `docs/data/registry.json` — registry entries and contracts
-- `docs/data/chains.json` — LAB flow stages and ring descriptions
-- `docs/evidence/parent-observations.json` — redacted historical observations only
-- `schemas/probe.schema.json` — receipt schema documented for import/export validation
+## Use
+Open `docs/index.html`, or serve `docs/` with a local static server. Search 41 tool routes, inspect input/output contracts and actual dated probes, export JSON/CSV, and create local REQUESTED-only delegation packets. Imports remain unverified and stay on your browser. `docs/CHEATBOOK.md` explains the chain.
 
 ## Tests
+`node --test` runs unit and negative regressions without dependencies. `npm ci --ignore-scripts` installs pinned browser-test dependencies; `npm run test:browser` uses installed Microsoft Edge and a loopback-only temporary server. Browser contexts do not use your signed-in profile. Evidence is under `qa-local/` and `docs/evidence/`.
 
-Run the Node built-in test runner from the repository root:
+## Scientific scope
+177 versioned assembly IDs are supplied as public input metadata, not genomes/results. No Enterococcus. The host tree uses many conserved protein marker families, separate alignments and concatenation; R-M annotation is independent. Four ring meanings are Type I, Type II/IIG, Type III, Type IV. Raw components are U (unreviewed), P requires locus curation, and missing/failed never means absent. No live host tree or R-M calls are included.
 
-```bash
-node --test
-```
+## Native ChatGPT Site status
+Real new Codex sessions on the authorized Windows endpoint discovered and read the owner GenomeAtlas native Site. It remains version 0 with no deployment. Save-version requires a push to the configured Site source repository; that Codex session cannot execute shell under its policy and has no native source-edit/push tool. This static distribution and any GitHub Pages publication are NOT a native ChatGPT deployment. No sandbox bypass was attempted.
 
-Focused tests cover schema validation, malicious receipt rejection, CSV escaping, registry filtering, confirmation planning, and static asset integrity.
-
-## AlphaGenome best-practice note
-
-AlphaGenome is tracked here as an **engineering-reference only** integration. Any future use should keep coordinate systems explicit, input alphabets explicit, outputs versioned, and retries bounded to transient failures only. This repository does not copy Apache- or CC-licensed AlphaGenome assets into the MIT-licensed app, and it does not relabel AlphaGenome as a LAB classifier.
+## Integration boundaries
+smarts.bio workspace access succeeded but its advertised GC-content tool returned 404. BioNeMo guidance was consulted; model/NIM execution is untested. Original MIT code only; third-party references retain their own licenses in THIRD_PARTY_NOTICES.md. No manuscript, credentials, private endpoint IDs or raw agent logs are published.

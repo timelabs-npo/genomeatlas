@@ -1,0 +1,13 @@
+{
+  "schema": "genomeatlas-normalized-probe-v1",
+  "id": "bionemo-skill-source",
+  "toolId": "bionemo-nim",
+  "observedAt": "2026-09-09T15:09:36.838188+00:00",
+  "state": "DISCOVERED",
+  "classification": "UNKNOWN",
+  "exitCode": null,
+  "summary": "NVIDIA BioNeMo official genomics-workflow-acceleration skill was read; runtime not executed.",
+  "details": "Skill v1.1.0, Git blob 9efa9a24a44d0d84ba0b7fd20b550ae293174f5e. Preserve CPU paths; GPU alternatives default off; no mapping invented for GToTree/IQ-TREE/DefenseFinder. Canonical plugin dependency lookup failed plugin_not_found.",
+  "scope": "capability/control probe, not biological analysis",
+  "attestation": "parent-recorded; external review still required"
+}

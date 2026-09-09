@@ -1,0 +1,13 @@
+{
+  "schema": "genomeatlas-normalized-probe-v1",
+  "id": "codex-sites-probe",
+  "toolId": "codex-cli-session",
+  "observedAt": "2026-09-09T14:44:57.101Z",
+  "state": "EXECUTED",
+  "classification": "DETECTED",
+  "exitCode": 0,
+  "summary": "A real new WD Codex session ran native Sites read-only discovery and listing.",
+  "details": "Native Sites listed an owner site; listing succeeded. A later build session was blocked before source save. No genomic run. Private thread receipts retained by owner.",
+  "scope": "capability/control probe, not biological analysis",
+  "attestation": "parent-recorded; external review still required"
+}

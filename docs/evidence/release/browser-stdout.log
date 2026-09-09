@@ -1,0 +1,29 @@
+{
+  "utc": "2026-09-09T15:32:19.597Z",
+  "scope": "actual browser UI tests; no genome or model job",
+  "assertions": [
+    "desktop: title",
+    "desktop: all tools rendered",
+    "desktop: four rings",
+    "desktop: search filters",
+    "desktop: blocked tools remain visible",
+    "desktop: request not executed",
+    "desktop: export downloadable",
+    "desktop: exported status remains requested",
+    "desktop: body does not overflow",
+    "mobile: title",
+    "mobile: all tools rendered",
+    "mobile: four rings",
+    "mobile: search filters",
+    "mobile: blocked tools remain visible",
+    "mobile: request not executed",
+    "mobile: export downloadable",
+    "mobile: exported status remains requested",
+    "mobile: body does not overflow",
+    "no page errors"
+  ],
+  "errors": [],
+  "navigation": "loopback HTTP",
+  "passed": true,
+  "url_scope": "ephemeral loopback only"
+}

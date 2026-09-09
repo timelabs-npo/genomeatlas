@@ -1,0 +1,23 @@
+{
+  "schema": "genomeatlas-normalized-probe-v1",
+  "id": "github-read",
+  "toolId": "github-cli",
+  "observedAt": "2026-09-09T15:09:36.817579+00:00",
+  "state": "EXECUTED",
+  "classification": "DETECTED",
+  "exitCode": 0,
+  "summary": "Authenticated repository-permission read through GitHub CLI.",
+  "details": {
+    "repository": "timelabs-npo/genomeatlas",
+    "permissions": {
+      "admin": true,
+      "maintain": true,
+      "pull": true,
+      "push": true,
+      "triage": true
+    },
+    "error": null
+  },
+  "scope": "capability/control probe, not biological analysis",
+  "attestation": "parent-recorded; external review still required"
+}

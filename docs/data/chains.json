@@ -2,10 +2,10 @@
   "version": "1.0.0",
   "title": "Scoped LAB phylogenomics flow",
   "rings": [
-    "Host tree context",
-    "Restriction-modification evidence",
-    "Locus review annotations",
-    "Verification and publication status"
+    "Type I",
+    "Type II (including Type IIG)",
+    "Type III",
+    "Type IV"
   ],
   "stages": [
     {
@@ -26,17 +26,17 @@
     {
       "id": "alignments",
       "title": "Separate alignments",
-      "description": "Maintain separate alignments per marker family; do not collapse them into a fabricated single result."
+      "description": "Align homologues of each marker separately, trim unreliable positions, then concatenate in fixed order with recorded partitions. Preserve every source protein accession."
     },
     {
       "id": "host-tree",
       "title": "IQ-TREE host tree",
-      "description": "Infer the host tree from alignment outputs only after upstream evidence is verified."
+      "description": "Infer a maximum-likelihood host tree from the concatenated conserved-marker protein alignment with model, seed, support and rooting evidence. R-M genes do not define this topology."
     },
     {
       "id": "rm-detection",
       "title": "Independent R-M detection",
-      "description": "Run independent restriction-modification detection separate from host tree inference."
+      "description": "Independently inspect ordered per-replicon proteins plus GFF/GenBank coordinates with locked DefenseFinder models. Failure/missing is not absence. Raw hits stay unreviewed."
     },
     {
       "id": "review",
@@ -46,7 +46,7 @@
     {
       "id": "rings",
       "title": "Four rings",
-      "description": "Publish four evidence-bound visualization rings only from verified upstream artifacts."
+      "description": "Join tree tips by exact assembly ID to four independent R-M type columns: I, II/IIG, III, IV. C is computational; U unreviewed; P requires manual curation. Experimental evidence is separate."
     }
   ]
 }

@@ -1,0 +1,8 @@
+{
+  "schema": "genomeatlas-input-receipt-v1",
+  "source": "https://raw.githubusercontent.com/serg-alexv/genomeops-atlas/0f139f96494e09ff0387d2b4979318288c6cf54e/analyses/lab-rm-phylogenomics/config/selected_accessions_stage1.txt",
+  "sha256": "56209c6042213da0ea96160d2a2d4e785d7574246b4b8d0371a290333c9e264a",
+  "count": 177,
+  "unique": 177,
+  "scope": "versioned source accessions only; no genome sequence or tree inferred"
+}

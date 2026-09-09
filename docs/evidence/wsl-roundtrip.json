@@ -1,0 +1,19 @@
+{
+  "schema": "genomeatlas-normalized-probe-v1",
+  "id": "wsl-roundtrip",
+  "toolId": "wsl-ubuntu",
+  "observedAt": "2026-09-09T15:09:35.685903+00:00",
+  "state": "EXECUTED",
+  "classification": "DETECTED",
+  "exitCode": 0,
+  "summary": "Actual Windows payload read in Ubuntu; Ubuntu /tmp response read back by Windows.",
+  "details": {
+    "nonce_matches": true,
+    "sha256_matches": true,
+    "kernel": "4.4.0-26100-Microsoft",
+    "windows_payload_sha256": "6c2160b4439af068be733d283bb872040ec2a63659718678259aa52128916dc2",
+    "test_kind": "real cross-runtime file-exchange control"
+  },
+  "scope": "capability/control probe, not biological analysis",
+  "attestation": "parent-recorded; external review still required"
+}
