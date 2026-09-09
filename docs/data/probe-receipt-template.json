@@ -1,0 +1,32 @@
+{
+  "templateKind": "source-probe-receipt-template",
+  "instructions": [
+    "Copy the example into a new JSON file before importing.",
+    "Replace each field with public-safe evidence from a real retained payload or a clearly labeled synthetic/software-only payload.",
+    "If hashStatus is measured, compute sha256 from the exact payload bytes at evidence.location.",
+    "Keep review.verified false; external verification is out of band."
+  ],
+  "payloadExample": {
+    "kind": "probe-receipt",
+    "version": "1.0.0",
+    "toolId": "github-cli",
+    "state": "EXECUTED",
+    "probeTimestamp": "YYYY-MM-DDTHH:MM:SSZ",
+    "summary": "Template only: replace with a public-safe synthetic/software-only or retained source-backed receipt summary.",
+    "inputContract": "Authenticated GitHub read command.",
+    "outputContract": "Command success/failure plus repository-readable output.",
+    "evidence": {
+      "location": "docs/data/probe-receipt-template.payload.txt",
+      "hashStatus": "measured",
+      "sha256": "8f0c13189163eec95482521b4328e10da5461cc456db36376b113b6823128ef4"
+    },
+    "result": {
+      "classification": "DETECTED",
+      "exitCode": 0
+    },
+    "review": {
+      "verified": false,
+      "reviewer": null
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "version": "1.0.0",
+  "title": "Scoped LAB phylogenomics flow",
+  "rings": [
+    "Type I",
+    "Type II (including IIG)",
+    "Type III",
+    "Type IV"
+  ],
+  "stages": [
+    {
+      "id": "assemblies",
+      "title": "Selected versioned assemblies",
+      "description": "Use a prior selected input panel only after hash verification. No fabricated assemblies, species panels, or added Enterococcus records."
+    },
+    {
+      "id": "proteomes",
+      "title": "Annotated proteomes",
+      "description": "Carry forward only annotated proteomes derived from the selected assemblies."
+    },
+    {
+      "id": "markers",
+      "title": "Conserved marker families",
+      "description": "Identify conserved marker families before downstream tree building."
+    },
+    {
+      "id": "alignments",
+      "title": "Separate alignments",
+      "description": "Maintain separate alignments per marker family; do not collapse them into a fabricated single result."
+    },
+    {
+      "id": "host-tree",
+      "title": "IQ-TREE host tree",
+      "description": "Infer the host tree from verified alignment outputs only after upstream evidence is verified."
+    },
+    {
+      "id": "rm-detection",
+      "title": "Independent R-M detection",
+      "description": "Run DefenseFinder and related R-M review from original ordered per-replicon proteomes plus genomic coordinates, independent of host-marker alignments."
+    },
+    {
+      "id": "review",
+      "title": "Locus review",
+      "description": "Review loci manually with explicit evidence links and human approval gates after R-M detection; host tree context may be added later but is not required."
+    },
+    {
+      "id": "rings",
+      "title": "Four rings",
+      "description": "Publish the Type I, Type II (including IIG), Type III, and Type IV rings from reviewed R-M evidence, with host-tree context optionally layered directly into the rings."
+    }
+  ],
+  "edges": [
+    {
+      "from": "assemblies",
+      "to": "proteomes"
+    },
+    {
+      "from": "proteomes",
+      "to": "markers"
+    },
+    {
+      "from": "markers",
+      "to": "alignments"
+    },
+    {
+      "from": "alignments",
+      "to": "host-tree"
+    },
+    {
+      "from": "proteomes",
+      "to": "rm-detection"
+    },
+    {
+      "from": "rm-detection",
+      "to": "review"
+    },
+    {
+      "from": "review",
+      "to": "rings"
+    },
+    {
+      "from": "host-tree",
+      "to": "rings"
+    }
+  ]
+}

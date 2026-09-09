@@ -1,0 +1,3 @@
+Synthetic public-safe template payload for a probe receipt example.
+source: docs/data/probe-receipt-template.json
+scope: software-only

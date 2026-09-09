@@ -1,0 +1,23 @@
+{
+  "kind": "probe-receipt",
+  "version": "1.0.0",
+  "toolId": "github-cli",
+  "state": "EXECUTED",
+  "probeTimestamp": "2026-09-09T10:00:00Z",
+  "summary": "Not measured probes cannot carry a digest.",
+  "inputContract": "Authenticated GitHub read command.",
+  "outputContract": "Command success/failure plus repository-readable output.",
+  "evidence": {
+    "location": "docs/evidence/parent-observations.json#obs-gh-auth",
+    "hashStatus": "not_measured",
+    "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+  },
+  "result": {
+    "classification": "DETECTED",
+    "exitCode": 0
+  },
+  "review": {
+    "verified": false,
+    "reviewer": null
+  }
+}

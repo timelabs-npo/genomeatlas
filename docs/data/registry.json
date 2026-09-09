@@ -1,0 +1,316 @@
+{
+  "version": "1.0.0",
+  "generatedAt": null,
+  "entries": [
+    {
+      "id": "rdc",
+      "name": "Remote Desktop Commander",
+      "category": "endpoint-access",
+      "state": "EXECUTED",
+      "stageIds": [
+        "review"
+      ],
+      "probeTimestamp": null,
+      "evidenceLocation": "docs/evidence/parent-observations.json#obs-rdc-challenge-nonce",
+      "inputContract": "Authorized endpoint challenge or command request.",
+      "outputContract": "Challenge file read/write confirmation or command outcome from the authorized endpoint boundary.",
+      "notes": "Challenge file write/read on Windows and WSL readback succeeded; a fuller WSL tmp acknowledgment script-write remained safety-blocked. Historical assertions remain unverified unless a retained receipt exists."
+    },
+    {
+      "id": "github-connector",
+      "name": "GitHub connector",
+      "category": "repository-access",
+      "state": "PROBED",
+      "stageIds": [
+        "assemblies",
+        "review"
+      ],
+      "probeTimestamp": null,
+      "evidenceLocation": "docs/evidence/parent-observations.json#obs-github-connector-read",
+      "inputContract": "Read-only repository metadata request.",
+      "outputContract": "Repository listing, file metadata, or public source snapshots.",
+      "notes": "Historical source browsing is separate from receipt-backed execution proof; the earlier repo-absence result is superseded by repository creation and must not be shown as current."
+    },
+    {
+      "id": "github-cli",
+      "name": "GitHub CLI",
+      "category": "repository-access",
+      "state": "EXECUTED",
+      "stageIds": [
+        "review"
+      ],
+      "probeTimestamp": "2026-09-09T14:21:19.3399192Z",
+      "evidenceLocation": "docs/evidence/parent-observations.json#obs-gh-auth",
+      "inputContract": "Authenticated GitHub read command.",
+      "outputContract": "Authenticated repository-readable output with exit status.",
+      "notes": "The authenticated Windows GitHub probe predates repository creation at 14:21:35Z, so any earlier repo-absence result is superseded historical context only."
+    },
+    {
+      "id": "github-actions",
+      "name": "GitHub Actions",
+      "category": "ci-verification",
+      "state": "EXECUTED",
+      "stageIds": [
+        "review"
+      ],
+      "probeTimestamp": "2026-09-09T14:47:55Z",
+      "evidenceLocation": "docs/evidence/parent-observations.json#obs-ci-verify-2e5d87a",
+      "inputContract": "Bounded workflow-dispatch verification request against an exact source commit.",
+      "outputContract": "Workflow logs, archive receipts, and synthetic software-only test outputs.",
+      "notes": "Run 34365988867 verified source retrieval and blob hashing for commit 2e5d87a without approving unrelated observation or hash-model defects."
+    },
+    {
+      "id": "copilot",
+      "name": "Copilot",
+      "category": "implementation",
+      "state": "EXECUTED",
+      "stageIds": [
+        "review"
+      ],
+      "probeTimestamp": "2026-09-09T14:26:52Z",
+      "evidenceLocation": "docs/evidence/parent-observations.json#obs-copilot-pr",
+      "inputContract": "Issue or pull request implementation request.",
+      "outputContract": "Repository changes and test artifacts on the active PR branch.",
+      "notes": "Source provenance is GitHub Actions run metadata; this is Copilot PR work, not a WD-local Codex review completion."
+    },
+    {
+      "id": "codex-cli-session",
+      "name": "Codex CLI/session",
+      "category": "implementation",
+      "state": "EXECUTED",
+      "stageIds": [
+        "review"
+      ],
+      "probeTimestamp": null,
+      "evidenceLocation": "docs/evidence/parent-observations.json#obs-codex-review-complete",
+      "inputContract": "Local Codex CLI probe, login status read, and read-only thread bootstrap request.",
+      "outputContract": "CLI version/login output plus read-only thread/session status.",
+      "notes": "Authorized WD observations showed CLI version 0.153.4 and ChatGPT login success; a separate private WD thread performed native read calls, a separate Codex review completed with the wrong test path so zero tests run by Codex, and native publication/write attempts remained blocked. Private thread and device identifiers are intentionally omitted."
+    },
+    {
+      "id": "wsl-ubuntu",
+      "name": "WSL Ubuntu",
+      "category": "runtime",
+      "state": "EXECUTED",
+      "stageIds": [
+        "review"
+      ],
+      "probeTimestamp": null,
+      "evidenceLocation": "docs/evidence/parent-observations.json#obs-wsl-inventory-tests",
+      "inputContract": "WSL Ubuntu command execution or legacy repository software-only test request.",
+      "outputContract": "Command output, kernel details, or software-only test results.",
+      "notes": "Ubuntu reported WSL1 rather than WSL2, and a separate synthetic inventory regression run passed 10 tests on legacy commit 7c27865b7113b0fe8b22a57a751ed82fdaae9c8a."
+    },
+    {
+      "id": "ncbi-datasets",
+      "name": "NCBI Datasets",
+      "category": "assemblies",
+      "state": "DECLARED",
+      "stageIds": [
+        "assemblies"
+      ],
+      "probeTimestamp": null,
+      "evidenceLocation": "docs/data/registry.json#ncbi-datasets",
+      "inputContract": "Selected versioned assembly accession panel with hash verification.",
+      "outputContract": "Downloaded versioned assemblies and metadata manifests.",
+      "notes": "Prior selected-input panels remain inputs until verified; no assemblies are fabricated here."
+    },
+    {
+      "id": "gtotree",
+      "name": "GToTree",
+      "category": "marker-families",
+      "state": "DECLARED",
+      "stageIds": [
+        "markers"
+      ],
+      "probeTimestamp": null,
+      "evidenceLocation": "docs/data/registry.json#gtotree",
+      "inputContract": "Annotated proteomes or genome inputs plus marker set selection.",
+      "outputContract": "Conserved marker family sets and alignment-ready bundles.",
+      "notes": "No completed analysis is claimed."
+    },
+    {
+      "id": "hmmer",
+      "name": "HMMER",
+      "category": "marker-families",
+      "state": "DECLARED",
+      "stageIds": [
+        "markers"
+      ],
+      "probeTimestamp": null,
+      "evidenceLocation": "docs/data/registry.json#hmmer",
+      "inputContract": "Protein sequences and marker HMM profiles.",
+      "outputContract": "Profile hits with thresholds and family assignments.",
+      "notes": "Evidence-bound declaration only."
+    },
+    {
+      "id": "alignment-trimming",
+      "name": "Alignment and trimming tools",
+      "category": "alignment",
+      "state": "DECLARED",
+      "stageIds": [
+        "alignments"
+      ],
+      "probeTimestamp": null,
+      "evidenceLocation": "docs/data/registry.json#alignment-trimming",
+      "inputContract": "Per-family protein or nucleotide sequence sets.",
+      "outputContract": "Separate alignments and trimmed outputs per family.",
+      "notes": "Stage intentionally remains separate per marker family."
+    },
+    {
+      "id": "iqtree",
+      "name": "IQ-TREE",
+      "category": "phylogeny",
+      "state": "DECLARED",
+      "stageIds": [
+        "host-tree"
+      ],
+      "probeTimestamp": null,
+      "evidenceLocation": "docs/data/registry.json#iqtree",
+      "inputContract": "Prepared alignment sets and model-selection parameters.",
+      "outputContract": "Host tree inference artifacts and model summaries.",
+      "notes": "No host tree is fabricated in this repository."
+    },
+    {
+      "id": "defensefinder",
+      "name": "DefenseFinder",
+      "category": "rm-detection",
+      "state": "DECLARED",
+      "stageIds": [
+        "rm-detection"
+      ],
+      "probeTimestamp": null,
+      "evidenceLocation": "docs/data/registry.json#defensefinder",
+      "inputContract": "Genomic loci or proteomes for defense-system detection.",
+      "outputContract": "Candidate defense and R-M locus calls.",
+      "notes": "Independent R-M detection remains unexecuted here."
+    },
+    {
+      "id": "rebase",
+      "name": "REBASE",
+      "category": "rm-detection",
+      "state": "DECLARED",
+      "stageIds": [
+        "rm-detection"
+      ],
+      "probeTimestamp": null,
+      "evidenceLocation": "docs/data/registry.json#rebase",
+      "inputContract": "Restriction-modification enzyme reference lookup.",
+      "outputContract": "Reference annotations for R-M review.",
+      "notes": "Reference-only until externally verified."
+    },
+    {
+      "id": "pubmed-entrez",
+      "name": "PubMed/Entrez",
+      "category": "review",
+      "state": "DECLARED",
+      "stageIds": [
+        "review"
+      ],
+      "probeTimestamp": null,
+      "evidenceLocation": "docs/data/registry.json#pubmed-entrez",
+      "inputContract": "Literature or accession queries.",
+      "outputContract": "Linked records or citations for locus review.",
+      "notes": "No manuscript or private data retrieval is performed here."
+    },
+    {
+      "id": "geneious",
+      "name": "Geneious",
+      "category": "review",
+      "state": "DECLARED",
+      "stageIds": [
+        "review"
+      ],
+      "probeTimestamp": null,
+      "evidenceLocation": "docs/data/registry.json#geneious",
+      "inputContract": "Local sequence review project inputs.",
+      "outputContract": "Human review workspace artifacts.",
+      "notes": "Optional unprobed integration."
+    },
+    {
+      "id": "itol",
+      "name": "iTOL",
+      "category": "visualization",
+      "state": "DECLARED",
+      "stageIds": [
+        "rings"
+      ],
+      "probeTimestamp": null,
+      "evidenceLocation": "docs/data/registry.json#itol",
+      "inputContract": "Host tree plus verified ring annotation tables.",
+      "outputContract": "Four-ring visualization assets.",
+      "notes": "No ring outputs are fabricated."
+    },
+    {
+      "id": "bionemo-nim",
+      "name": "BioNeMo/NIM",
+      "category": "ai-assistant",
+      "state": "PROBED",
+      "stageIds": [
+        "review"
+      ],
+      "probeTimestamp": null,
+      "evidenceLocation": "docs/evidence/parent-observations.json#obs-bionemo-source",
+      "inputContract": "Toolkit source retrieval, installed-skill lookup, or NIM skill resource request.",
+      "outputContract": "Source snapshots, skill catalogue entries, or NIM route status.",
+      "notes": "Official catalog inspection read NVIDIA-BioNeMo/bionemo-agent-toolkit at commit 0e67a612e4045f007e38fa77adc8f3ebfc5616b6 with 62 SKILL.md files. NIM/GPU inference did not run, no suitable Parabricks replacement for marker phylogeny was established, and the CPU path remains preserved."
+    },
+    {
+      "id": "smarts-bio",
+      "name": "smarts.bio",
+      "category": "bioinformatics-service",
+      "state": "BLOCKED",
+      "stageIds": [
+        "review"
+      ],
+      "probeTimestamp": null,
+      "evidenceLocation": "docs/evidence/parent-observations.json#obs-smarts-query-blocked",
+      "inputContract": "Catalogue browse or named tool execution request.",
+      "outputContract": "Catalogue entries, tool execution receipt, or explicit no-execution reply.",
+      "notes": "Workspace listing succeeded on 2026-09-09, but advertised bioinformatics.gcContent returned 404 Tool not found and smarts_query explicitly confirmed execution BLOCKED. Catalog access is discovery only, not executed analysis."
+    },
+    {
+      "id": "genomic-intelligence",
+      "name": "Genomic Intelligence",
+      "category": "analysis",
+      "state": "DECLARED",
+      "stageIds": [
+        "review"
+      ],
+      "probeTimestamp": null,
+      "evidenceLocation": "docs/data/registry.json#genomic-intelligence",
+      "inputContract": "External genomics-analysis task request.",
+      "outputContract": "External result receipt requiring reviewer verification.",
+      "notes": "Optional and unprobed; never silently authenticated."
+    },
+    {
+      "id": "alphagenome",
+      "name": "AlphaGenome",
+      "category": "engineering-reference",
+      "state": "DECLARED",
+      "stageIds": [
+        "review"
+      ],
+      "probeTimestamp": null,
+      "evidenceLocation": "docs/data/registry.json#alphagenome",
+      "inputContract": "Explicit coordinate system, input alphabet, and bounded retry policy for transient failures.",
+      "outputContract": "Versioned engineering-reference outputs only.",
+      "notes": "Engineering-reference only; not a LAB classifier and no non-MIT assets are copied or relabeled."
+    },
+    {
+      "id": "native-chatgpt-sites",
+      "name": "native ChatGPT Sites",
+      "category": "deployment",
+      "state": "BLOCKED",
+      "stageIds": [
+        "review"
+      ],
+      "probeTimestamp": null,
+      "evidenceLocation": "docs/evidence/parent-observations.json#obs-native-sites-list",
+      "inputContract": "Native Site deployment or receipt lookup.",
+      "outputContract": "Deployment receipt.",
+      "notes": "A WD Codex session successfully listed native ChatGPT Sites after correcting the limit parameter from 100 to the service maximum of 50, but no saved versions or deployment receipts exist and local source writes were denied by session policy. Keep native publication blocked and public-safe only.",
+      "deploymentStatus": "BLOCKED"
+    }
+  ]
+}

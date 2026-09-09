@@ -1,0 +1,23 @@
+{
+  "kind": "probe-receipt",
+  "version": "1.0.0",
+  "toolId": "github-cli",
+  "state": "EXECUTED",
+  "probeTimestamp": "2026-09-09T10:00:00Z",
+  "summary": "Pseudo hashes must be rejected.",
+  "inputContract": "Authenticated GitHub read command.",
+  "outputContract": "Command success/failure plus repository-readable output.",
+  "evidence": {
+    "location": "docs/evidence/parent-observations.json#obs-gh-auth",
+    "hashStatus": "measured",
+    "sha256": "sha256:fixture-valid-receipt"
+  },
+  "result": {
+    "classification": "DETECTED",
+    "exitCode": 0
+  },
+  "review": {
+    "verified": false,
+    "reviewer": null
+  }
+}

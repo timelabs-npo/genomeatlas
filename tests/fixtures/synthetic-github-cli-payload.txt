@@ -1,0 +1,4 @@
+Synthetic software-only GitHub CLI receipt payload.
+command: gh auth status
+outcome: authenticated repository read succeeded
+public-safe: true
