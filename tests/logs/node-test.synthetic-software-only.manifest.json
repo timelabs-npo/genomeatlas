@@ -20,18 +20,6 @@
       "sha256": "cac686ee473de6757f9c257bb6a34f8bf7e3ffb007d5fc1eefd47313b06d09c6"
     },
     {
-      "path": "tests/logs/node-test.synthetic-software-only.stdout.log",
-      "sha256": "30c44f433287ee65ecde6b5f2cabb0a57539fbd5bf71f3e5293748ebf3845f52"
-    },
-    {
-      "path": "tests/logs/node-test.synthetic-software-only.stderr.log",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    },
-    {
-      "path": "tests/logs/node-test.synthetic-software-only.exit.txt",
-      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
-    },
-    {
       "path": "tests/logs/node-test.synthetic-software-only.node-version.txt",
       "sha256": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41"
     },

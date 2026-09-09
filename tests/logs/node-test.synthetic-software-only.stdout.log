@@ -1,17 +1,17 @@
-✔ workspace data includes honest states and validates receipt links (2.078297ms)
-✔ exact four ring labels are preserved (0.764126ms)
-✔ flow lineage keeps host tree and R-M detection as independent branches (0.295836ms)
-✔ valid measured and not_measured receipts validate and import as unverified (1.021861ms)
-✔ malformed import, missing fields, unknown state, and script injection are rejected (2.021821ms)
-✔ missing receipt-to-tool links are rejected (0.621037ms)
-✔ FAILED and UNKNOWN classifications are never remapped to NOT_DETECTED (0.374314ms)
-✔ request confirmation creates REQUESTED artifacts without inferred approvals or execution (0.412636ms)
-✔ registry filtering supports search, state, and stage (0.489621ms)
-✔ CSV export escapes spreadsheet formulas safely (0.476536ms)
-✔ local probe creation reuses registry contracts and supports explicit not_measured hashes (0.279255ms)
-✔ historical receipts preserve null timestamps and measured-vs-unmeasured hashes honestly (0.375136ms)
-✔ required static assets exist and HTML references resolve locally without innerHTML usage (0.417074ms)
-✔ synthetic log manifest uses relative paths with checksums (0.995532ms)
+✔ workspace data includes honest states and validates receipt links (2.026055ms)
+✔ exact four ring labels are preserved (0.732346ms)
+✔ flow lineage keeps host tree and R-M detection as independent branches (0.329539ms)
+✔ valid measured and not_measured receipts validate and import as unverified (0.978989ms)
+✔ malformed import, missing fields, unknown state, and script injection are rejected (1.891483ms)
+✔ missing receipt-to-tool links are rejected (0.597072ms)
+✔ FAILED and UNKNOWN classifications are never remapped to NOT_DETECTED (0.363653ms)
+✔ request confirmation creates REQUESTED artifacts without inferred approvals or execution (0.38345ms)
+✔ registry filtering supports search, state, and stage (0.485271ms)
+✔ CSV export escapes spreadsheet formulas safely (0.55399ms)
+✔ local probe creation reuses registry contracts and supports explicit not_measured hashes (0.241714ms)
+✔ historical receipts preserve null timestamps and measured-vs-unmeasured hashes honestly (0.347683ms)
+✔ required static assets exist and HTML references resolve locally without innerHTML usage (0.487095ms)
+✔ synthetic log manifest uses relative paths with checksums (1.114213ms)
 ℹ tests 14
 ℹ suites 0
 ℹ pass 14
@@ -19,4 +19,4 @@
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 87.82453
+ℹ duration_ms 84.687822

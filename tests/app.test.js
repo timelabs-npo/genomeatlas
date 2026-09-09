@@ -241,6 +241,10 @@ test('synthetic log manifest uses relative paths with checksums', function () {
   assert.equal(fs.existsSync(manifestPath), true);
   const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
   assert.equal(manifest.command, 'node --test tests/*.test.js');
+  [manifest.stdoutPath, manifest.stderrPath, manifest.exitStatusPath].forEach(function (relPath) {
+    assert.equal(path.isAbsolute(relPath), false);
+    assert.equal(fs.existsSync(path.join(root, relPath)), true);
+  });
   manifest.checksums.forEach(function (entry) {
     assert.equal(path.isAbsolute(entry.path), false);
     const fileBuffer = fs.readFileSync(path.join(root, entry.path));
