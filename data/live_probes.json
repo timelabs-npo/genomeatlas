@@ -1,54 +1,71 @@
 {
   "schema": "genomeatlas.parent-observations/1",
-  "utc": "2026-09-09T15:07:50.385825+00:00",
+  "utc": "2026-09-09T15:34:20.190671+00:00",
   "scope": "SOFTWARE_AND_CONNECTIVITY_NOT_BIOLOGICAL_ACCEPTANCE",
   "results": [
     {
-      "tool": "smarts.bio:_AI_for_biology",
-      "status": "DISCOVERY_OK_EXECUTION_404",
-      "scope": "Catalog and workspaces reachable; advertised bioinformatics.sequence_stats returned Tool not found (404) for ACGTACGT. No analysis accepted."
+      "tool": "Remote Desktop Commander",
+      "status": "PROBED_OK",
+      "scope": "WD returned a real Windows shell. Private host identity omitted."
     },
     {
-      "tool": "NCBI_Datasets",
-      "status": "METADATA_PROBED",
-      "scope": "One public versioned assembly metadata request returned HTTP 200; no genome package downloaded."
+      "tool": "WSL Ubuntu",
+      "status": "PROBED_OK",
+      "scope": "Ubuntu 26.04 LTS; WSL1; Python 3.14.4; Git 2.53.0; /tmp writable. WSL2/CUDA not tested."
     },
     {
-      "tool": "Codex_WD",
-      "status": "IMPLEMENTATION_RETURNED",
-      "scope": "Actual local Codex task returned source and 22 Python/13 Node passing tests; browser/WSL checks inside its sandbox were blocked. Parent review is separate."
+      "tool": "Windows / WSL exchange",
+      "status": "TEST_PASSED",
+      "scope": "40-byte nonce Windows to WSL and response back verified."
     },
     {
-      "tool": "WSL_Ubuntu",
-      "status": "PROBED",
-      "scope": "Parent remote-shell test: Ubuntu WSL1, Python3.14.4; Windows/Ubuntu nonce exchange matched. Not a full scientific pipeline."
+      "tool": "GitHub CLI",
+      "status": "TEST_PASSED",
+      "scope": "Authenticated org access; nonce committed on isolated branch and fetched back. Ubuntu independently fetched same committed bytes with matching hash."
     },
     {
-      "tool": "ChatGPT_Sites",
-      "status": "METADATA_PROBED_DEPLOY_BLOCKED",
-      "scope": "Native metadata actions succeeded on the owner-only GenomeAtlas project; version0 and no deployment. Slug action required approval unavailable to the noninteractive session."
+      "tool": "Codex WD",
+      "status": "PROBED_OK",
+      "scope": "New persisted WD Codex session executed commands and wrote the seven-view suite; exit 0. Parent independently reran 61 Node tests. Browser navigation permission was declined; no browser assertions or screenshots."
+    },
+    {
+      "tool": "Codex launcher",
+      "status": "FAILED",
+      "scope": "PowerShell terminated on optional Cloudflare MCP OAuth stderr. Python subprocess launcher now captures stderr separately; no auth bypass."
+    },
+    {
+      "tool": "NVIDIA BioNeMo Agent Toolkit",
+      "status": "INSTALLED_SKILL_READ",
+      "scope": "Actual plugin manifest and genomics-workflow-acceleration / msa-search-nim skills read on WD. No NIM or GPU execution; no NVIDIA credential in process environment."
+    },
+    {
+      "tool": "smarts.bio: AI for biology",
+      "status": "AUTH_BLOCKED",
+      "scope": "Direct smarts_list_tools call: user has not logged into the tool. No scientific job run."
+    },
+    {
+      "tool": "ChatGPT Sites",
+      "status": "PROVIDER_ACTIVE_HTTP_200",
+      "scope": "Native provider confirms public active Site. Readback receipt and saved source supplied separately; no live-version binding claimed."
     }
   ],
   "tests": {
-    "github_copilot_pr27": {
+    "parent_feature_node": {
+      "count": 61,
+      "exit_code": 0,
+      "scope": "Synthetic/code tests on source d64eeddd3730cb3a705163abcf45a12f59b64b84"
+    },
+    "copilot_pr27_ubuntu": {
       "head": "7c27865b7113b0fe8b22a57a751ed82fdaae9c8a",
-      "count": 11,
-      "exit_code": 0
+      "count": 10,
+      "exit_code": 0,
+      "scope": "synthetic inventory regressions only; not live genomes"
     },
-    "parent_windows_python": {
-      "count": 22,
-      "exit_code": 0
-    },
-    "parent_windows_node": {
-      "count": 13,
-      "exit_code": 0
-    },
-    "parent_browser": {
-      "checks_passed": 9,
-      "overall": "INCOMPLETE",
-      "notes": "Actual Edge/localhost render captured; MIME defect repaired. Harness then incorrectly checked hidden collapsed request text. No full browser PASS claim; further browser checks stopped after receiving a delegated browser-permission denial."
+    "browser_this_session": {
+      "count": 0,
+      "status": "PERMISSION_BLOCKED"
     }
   },
-  "native_deployment_url": null,
+  "native_deployment_url": "https://genomeatlas-site-helper-suite.hx31337.chatgpt.site",
   "scientific_results": "NOT_EXECUTED"
 }

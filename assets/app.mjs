@@ -119,11 +119,11 @@ function overview() {
       el('section', {}, sectionHead('What the snapshot establishes'),
         el('ul', {class:'compact-list'},
           el('li', {}, el('strong', {}, 'Frozen identifiers, no refreshed taxonomy'), el('small', {}, '177 versioned accessions. Species and strain labels have not been inferred.')),
-          el('li', {}, el('strong', {}, 'BioNeMo skill read by parent'), el('small', {}, 'genomics-workflow-acceleration v1.1.0 · no inference executed.')),
-          el('li', {}, el('strong', {}, 'smarts.bio catalog reachable; execution rejected'), el('small', {}, 'Execution 404 on the advertised tool ID. No analysis job accepted.')))),
+          el('li', {}, el('strong', {}, 'BioNeMo skill read by parent'), el('small', {}, 'Package0.1.0 manifest and relevant skills read · no inference executed.')),
+          el('li', {}, el('strong', {}, 'smarts.bio authentication is required in the parent chat'), el('small', {}, 'Latest parent call required login. Earlier scoped discovery/404 records are retained; no analysis accepted.')))),
       el('section', {}, sectionHead('Evidence boundaries'),
         facts([['Catalogued','Listed capability only'],['Probed / authenticated','Scoped observations; supplied receipts are not reverified here'],['Executed','No biological execution receipts supplied'],['Accepted','No scientific acceptance receipts supplied']]))),
-    callout('Native Sites tools are exposed in this session. Parent metadata calls now succeeded; version0 remains undeployed and approval is required for the blocked write. See Probe receipts for dated rechecks.'),
+    callout('Native Sites provider confirms an active public GenomeAtlas URL (HTTP200). Saved version1 is documented; the read API did not expose explicit live-version binding. See Probe receipts.'),
     el('div', {class:'actions'}, link('Open delegation workbench →','#workbench'), link('Review source receipts →','#receipts')));
 }
 
@@ -278,8 +278,8 @@ function receipts() {
     facts([['Scope',receipt.scope],['Verification','UNVERIFIED_PARENT_RECEIPT'],['Biological execution','Not established'],['Scientific acceptance','Not established']]),
     el('details',{},el('summary',{},'Inspect original supplied receipt'),jsonView(receipt))));
   main.append(sectionHead('Native Sites discovery · this session'),el('div',{class:'panel'},badge(data.native.status,'teal'),
-    facts([['Observation UTC',data.native.observed_at_utc],['Method',data.native.discovery_method],['Authentication',data.native.authentication],['Execution',data.native.execution],['Deployment',data.native.deployment],['Site / version / session IDs','Not exposed as receipts; none invented']]),
-    para('Tool schemas were inspected. No Sites action was invoked. The user requested source preparation only; parent handles integration and publication.'),
+    facts([['Observation UTC',data.native.observed_at_utc],['Method',data.native.discovery_method],['Authentication',data.native.authentication],['Execution',data.native.execution],['Deployment',data.native.deployment],['Site ID',data.native.site_id || 'Not returned'],['Saved version ID',data.native.version_id || 'Not returned'],['Session ID',data.native.session_id || 'Not returned']]),
+    para('Native Site read actions returned an active public URL and saved version. The original write attempt hit an existing slug; no duplicate was created. Source acceptance and live-version binding remain separate.'),
     el('details',{},el('summary',{},`Inspect ${data.native.native_tools.length} exposed native tool names`),el('ul',{class:'compact-list'},data.native.native_tools.map(name => el('li',{class:'mono'},name)))),
     callout('If native tools are absent in a future session, native action must remain BLOCKED_NATIVE_SITE_ACTION. GitHub Pages is not a native ChatGPT Site.')),
     el('div',{class:'actions'},link('Prepare or inspect a receipt template →','#exchange')));
@@ -288,8 +288,9 @@ function receipts() {
 function exchange() {
   main.append(pageHeader('08','Import & export','Download the original data or a clearly labelled template. Imported JSON is quarantined for local inspection; it cannot change registry truth, create a PASS state, execute work or publish a site.'));
   const exports = [
-    ['Registry','63 supplied entries','data/registry.json','genomeatlas-registry.json'],['Frozen panel','177 IDs · metadata not refreshed','data/panel.json','genomeatlas-panel.json'],
+    ['Registry',`${data.registry.entries.length} supplied entries`,'data/registry.json','genomeatlas-registry.json'],['Frozen panel','177 IDs · metadata not refreshed','data/panel.json','genomeatlas-panel.json'],
     ['Data chains','Eight proposed contracts','data/chains.json','genomeatlas-chains.json'],['Source probe receipts','Legacy parent-reported claims','data/probes.json','genomeatlas-source-probes.json'],
+    ['Plugin cache','71 observed manifests / 344 skills; not runtime readiness','data/plugin-cache.json','genomeatlas-plugin-cache.json'],['Current probe records','Actual endpoint-scoped observations','data/current-probes.json','genomeatlas-current-probes.json'],['Native Site provider readback','Real read actions; explicit deployment-ID limitation','data/native-site-readback.json','genomeatlas-native-site-readback.json'],['Copilot re-execution','10 inventory tests independently rerun on Ubuntu','data/copilot-reexecution.json','genomeatlas-copilot-reexecution.json'],
     ['Task request template','Intent only · example timestamp','templates/task-request.json','genomeatlas-task-template.json'],['Synthetic probe template','Placeholder hashes · NOT_TESTED','templates/probe-result.synthetic.json','genomeatlas-probe-template.synthetic.json'],
     ['Task-request schema','JSON Schema 2020-12','schemas/task-request.schema.json','genomeatlas-task-request.schema.json'],['Probe-result schema','JSON Schema 2020-12','schemas/probe-result.schema.json','genomeatlas-probe-result.schema.json'],
     ['Reproducible configuration','Concept template · no execution','templates/reproducible-config.json','genomeatlas-reproducible-config.json']];

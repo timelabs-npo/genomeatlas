@@ -1,0 +1,79 @@
+test_cache_is_not_execution (test_reconciliation.ReconciliationTests.test_cache_is_not_execution) ... ok
+test_cache_skill_count (test_reconciliation.ReconciliationTests.test_cache_skill_count) ... ok
+test_codex_session_not_invented_as_biology (test_reconciliation.ReconciliationTests.test_codex_session_not_invented_as_biology) ... ok
+test_copilot_exact_commit (test_reconciliation.ReconciliationTests.test_copilot_exact_commit) ... ok
+test_current_native_observation_not_old_discovery (test_reconciliation.ReconciliationTests.test_current_native_observation_not_old_discovery) ... ok
+test_native_provider_actual_reads_and_scope (test_reconciliation.ReconciliationTests.test_native_provider_actual_reads_and_scope) ... ok
+test_registry_identity_and_count (test_reconciliation.ReconciliationTests.test_registry_identity_and_count) ... ok
+test_smarts_auth_failure_not_erased (test_reconciliation.ReconciliationTests.test_smarts_auth_failure_not_erased) ... ok
+test_actual_full_registry_is_retained (test_suite.SourceIntegrity.test_actual_full_registry_is_retained) ... ok
+test_actual_panel_is_exact_frozen_selection (test_suite.SourceIntegrity.test_actual_panel_is_exact_frozen_selection) ... ok
+test_all_actual_chains_are_proposed (test_suite.SourceIntegrity.test_all_actual_chains_are_proposed) ... ok
+test_build_does_not_publish_evidence_or_private_roots (test_suite.SourceIntegrity.test_build_does_not_publish_evidence_or_private_roots) ... ok
+test_build_manifest_is_complete_and_correct (test_suite.SourceIntegrity.test_build_manifest_is_complete_and_correct) ... ok
+test_built_inputs_are_byte_identical (test_suite.SourceIntegrity.test_built_inputs_are_byte_identical) ... ok
+test_legacy_receipts_do_not_meet_new_verified_contract (test_suite.SourceIntegrity.test_legacy_receipts_do_not_meet_new_verified_contract) ... ok
+test_native_observation_is_discovery_only (test_suite.SourceIntegrity.test_native_observation_is_discovery_only) ... ok
+test_html_security_and_local_dependencies (test_suite.StaticBoundaryTests.test_html_security_and_local_dependencies) ... ok
+test_no_html_injection_or_execution_sinks (test_suite.StaticBoundaryTests.test_no_html_injection_or_execution_sinks) ... ok
+test_upstream_license_preserved (test_suite.StaticBoundaryTests.test_upstream_license_preserved) ... ok
+test_synthetic_probe_requires_every_receipt_field (test_suite.SyntheticSchemaTests.test_synthetic_probe_requires_every_receipt_field) ... ok
+test_synthetic_rejects_bad_utc_and_types (test_suite.SyntheticSchemaTests.test_synthetic_rejects_bad_utc_and_types) ... ok
+test_synthetic_rejects_duplicate_or_unversioned_ids (test_suite.SyntheticSchemaTests.test_synthetic_rejects_duplicate_or_unversioned_ids) ... ok
+test_synthetic_rejects_execution_and_pass_escalation (test_suite.SyntheticSchemaTests.test_synthetic_rejects_execution_and_pass_escalation) ... ok
+test_synthetic_rejects_forged_verification_and_unredacted_results (test_suite.SyntheticSchemaTests.test_synthetic_rejects_forged_verification_and_unredacted_results) ... ok
+test_synthetic_rejects_gpu_and_rm_host_tree (test_suite.SyntheticSchemaTests.test_synthetic_rejects_gpu_and_rm_host_tree) ... ok
+test_synthetic_rejects_pass_with_nonzero_exit (test_suite.SyntheticSchemaTests.test_synthetic_rejects_pass_with_nonzero_exit) ... ok
+test_synthetic_rejects_secrets_paths_shell_and_html_as_alias (test_suite.SyntheticSchemaTests.test_synthetic_rejects_secrets_paths_shell_and_html_as_alias) ... ok
+test_synthetic_rejects_trailing_newlines_and_huge_integer (test_suite.SyntheticSchemaTests.test_synthetic_rejects_trailing_newlines_and_huge_integer) ... ok
+test_synthetic_requires_artifact_hashes (test_suite.SyntheticSchemaTests.test_synthetic_requires_artifact_hashes) ... ok
+test_synthetic_templates_are_structurally_valid_only (test_suite.SyntheticSchemaTests.test_synthetic_templates_are_structurally_valid_only) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 0.034s
+
+OK
+
+✖ actual registry: full search plus intersecting layer/status/probed filters (1.5731ms)
+✔ actual source snapshots round-trip without changing frozen truth (3.1932ms)
+✔ synthetic positive probe is quarantined even when it claims PASS (1.3625ms)
+✔ synthetic task creation produces intent only for actual panel accessions (3.5217ms)
+✔ synthetic imports reject every omitted probe requirement (1.1694ms)
+✔ synthetic imports reject malformed JSON, oversized and deeply nested structures (0.7151ms)
+✔ synthetic imports reject prototype pollution and HTML / shell payloads (0.3013ms)
+✔ synthetic imports reject privilege escalation and modified source receipts (0.5914ms)
+✔ synthetic imports reject bad timestamps, hashes and non-integer codes (0.5173ms)
+✔ synthetic tasks reject invented IDs, GPU and incorrect host-tree method (0.5817ms)
+✔ synthetic coordinates: one-based single base and zero-based boundaries (0.8663ms)
+✔ export filenames are fixed and cannot escape a download name (0.1311ms)
+✔ synthetic boolean and integer types remain distinct in schema checks (0.1319ms)
+✔ independent Python contracts and build under the CI/WSL platform (384.486ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 13
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 481.4299
+
+✖ failing tests:
+
+test at tests\core.test.mjs:10:1
+✖ actual registry: full search plus intersecting layer/status/probed filters (1.5731ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== 1
+
+      at TestContext.<anonymous> (file:///[workspace]/integration/tests/core.test.mjs:12:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

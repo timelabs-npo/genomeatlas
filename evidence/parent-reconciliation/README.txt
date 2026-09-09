@@ -1,0 +1,1 @@
+Exported logs have private paths replaced and trailing whitespace normalized. Original captured stdout/stderr hashes remain in the receipt; exported file hashes are calculated separately.
