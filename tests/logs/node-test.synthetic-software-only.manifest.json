@@ -1,0 +1,35 @@
+{
+  "syntheticOnly": true,
+  "command": "node --test tests/*.test.js",
+  "stdoutPath": "tests/logs/node-test.synthetic-software-only.stdout.log",
+  "stderrPath": "tests/logs/node-test.synthetic-software-only.stderr.log",
+  "exitStatusPath": "tests/logs/node-test.synthetic-software-only.exit.txt",
+  "versions": {
+    "node": "v24.19.0",
+    "python": "Python 3.12.3"
+  },
+  "notTested": [
+    {
+      "path": "tests/logs/browser-smoke.NOT_TESTED.txt",
+      "reason": "No browser or deployment target was part of this repository-only validation."
+    }
+  ],
+  "checksums": [
+    {
+      "path": "tests/logs/node-test.synthetic-software-only.command.txt",
+      "sha256": "cac686ee473de6757f9c257bb6a34f8bf7e3ffb007d5fc1eefd47313b06d09c6"
+    },
+    {
+      "path": "tests/logs/node-test.synthetic-software-only.node-version.txt",
+      "sha256": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41"
+    },
+    {
+      "path": "tests/logs/node-test.synthetic-software-only.python-version.txt",
+      "sha256": "5b3e43dc38ca01e3f5a7854ba50d4330864b0c1e0f646650b2c78cf072acc366"
+    },
+    {
+      "path": "tests/logs/browser-smoke.NOT_TESTED.txt",
+      "sha256": "214c6f1ef72afae7c14b2a680826ad09505d9f3f80ee113b30b4d79d52d1d076"
+    }
+  ]
+}

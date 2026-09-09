@@ -1,0 +1,23 @@
+{
+  "kind": "probe-receipt",
+  "version": "1.0.0",
+  "toolId": "github-cli",
+  "state": "UNKNOWN_STATE",
+  "probeTimestamp": "2026-09-09T10:00:00Z",
+  "summary": "Unknown state should be rejected.",
+  "inputContract": "Authenticated GitHub read command.",
+  "outputContract": "Command success/failure plus repository-readable output.",
+  "evidence": {
+    "location": "docs/data/receipts.json#receipt-github-auth-write",
+    "hashStatus": "not_measured",
+    "sha256": null
+  },
+  "result": {
+    "classification": "UNKNOWN",
+    "exitCode": 0
+  },
+  "review": {
+    "verified": false,
+    "reviewer": null
+  }
+}

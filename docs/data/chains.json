@@ -1,0 +1,99 @@
+{
+  "version": "1.0.0",
+  "title": "LAB R-M Figure 2 helper flow",
+  "scope": {
+    "panelLabel": "recorded177 genome panel",
+    "panelCount": 177,
+    "groupCount": 10,
+    "excludedTaxa": ["Enterococcus"],
+    "caveats": [
+      "No full host tree exists in this repository.",
+      "No full R-M result exists in this repository.",
+      "Missing or failed evidence is never promoted to biological absence.",
+      "Raw components remain unreviewed until a human checks them; they are not auto-partial.",
+      "Predicted systems are not experimental restriction activity."
+    ]
+  },
+  "rings": [
+    "Type I",
+    "Type II (including IIG)",
+    "Type III",
+    "Type IV"
+  ],
+  "stages": [
+    {
+      "id": "assemblies",
+      "title": "Recorded input panel",
+      "description": "Track the intended recorded177 genome panel in 10 groups with no Enterococcus additions or substitutions."
+    },
+    {
+      "id": "proteomes",
+      "title": "Annotated proteomes",
+      "description": "Carry forward only annotated proteomes derived from the selected assemblies."
+    },
+    {
+      "id": "markers",
+      "title": "Conserved single-copy markers",
+      "description": "Derive host-tree inputs from conserved single-copy marker proteins independently of R-M annotations."
+    },
+    {
+      "id": "alignments",
+      "title": "Per-family alignments",
+      "description": "Create separate alignments for each conserved marker family and keep them isolated through review."
+    },
+    {
+      "id": "trimming",
+      "title": "Per-family trimming",
+      "description": "Trim each alignment separately so that no fabricated combined result appears before validation."
+    },
+    {
+      "id": "concatenation",
+      "title": "Concatenation packet",
+      "description": "Concatenate only verified per-family outputs for the host-tree branch."
+    },
+    {
+      "id": "host-tree",
+      "title": "IQ-TREE host tree",
+      "description": "Infer the host tree from concatenated conserved-marker alignments, not from R-M calls."
+    },
+    {
+      "id": "replicons",
+      "title": "Ordered per-replicon packet",
+      "description": "Prepare ordered per-replicon protein and coordinate input separately for the R-M branch."
+    },
+    {
+      "id": "rm-detection",
+      "title": "DefenseFinder R-M candidates",
+      "description": "Run DefenseFinder on the ordered per-replicon packet and keep predictions separate from host-tree inference."
+    },
+    {
+      "id": "review",
+      "title": "Locus / REBASE / primary-paper review",
+      "description": "Review candidate loci with REBASE and primary-paper checks; missing or failed components are not equivalent to absence."
+    },
+    {
+      "id": "release-gates",
+      "title": "Release gates",
+      "description": "Check that scope, receipts, and reviewer approvals are explicit before any public release step is described."
+    },
+    {
+      "id": "rings",
+      "title": "Four R-M rings",
+      "description": "Export Type I, Type II (including IIG), Type III, and Type IV rings only after verified upstream review."
+    }
+  ],
+  "edges": [
+    { "from": "assemblies", "to": "proteomes" },
+    { "from": "proteomes", "to": "markers" },
+    { "from": "proteomes", "to": "replicons" },
+    { "from": "markers", "to": "alignments" },
+    { "from": "alignments", "to": "trimming" },
+    { "from": "trimming", "to": "concatenation" },
+    { "from": "concatenation", "to": "host-tree" },
+    { "from": "replicons", "to": "rm-detection" },
+    { "from": "host-tree", "to": "review" },
+    { "from": "rm-detection", "to": "review" },
+    { "from": "review", "to": "release-gates" },
+    { "from": "release-gates", "to": "rings" }
+  ]
+}

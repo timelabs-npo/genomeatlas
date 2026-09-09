@@ -1,0 +1,40 @@
+{
+  "version": "1.0.0",
+  "gates": [
+    {
+      "id": "scope-lock",
+      "title": "Scope lock: recorded177 panel, 10 groups, no Enterococcus",
+      "status": "READY_FOR_REVIEW",
+      "dependsOn": ["assemblies"],
+      "reason": "The helper records scope and exclusions, but it does not bundle assembly payloads or fabricate counts beyond the authorized scope statement."
+    },
+    {
+      "id": "receipt-linkage",
+      "title": "Receipts linked to declared tools",
+      "status": "READY_FOR_REVIEW",
+      "dependsOn": ["review"],
+      "reason": "Sanitized parent receipts are linked to registry tool IDs and stay UNVERIFIED until an external reviewer checks them."
+    },
+    {
+      "id": "host-tree-artifacts",
+      "title": "Attach conserved-marker concatenation and host-tree artifacts",
+      "status": "BLOCKED_UPSTREAM",
+      "dependsOn": ["concatenation", "host-tree"],
+      "reason": "No host tree or concatenated marker artifact exists in this static repository, so the gate remains blocked."
+    },
+    {
+      "id": "rm-review-packet",
+      "title": "Attach per-replicon DefenseFinder / REBASE / primary-paper review packet",
+      "status": "BLOCKED_UPSTREAM",
+      "dependsOn": ["rm-detection", "review"],
+      "reason": "No reviewed loci or experimental restriction-activity packet exists here; predictions alone cannot clear the gate."
+    },
+    {
+      "id": "native-site-proof",
+      "title": "Provide a native ChatGPT Site deployment receipt",
+      "status": "NOT_APPLICABLE",
+      "dependsOn": ["release-gates"],
+      "reason": "No native deployment receipt exists, and the portable static source must not be presented as a native ChatGPT Site."
+    }
+  ]
+}
