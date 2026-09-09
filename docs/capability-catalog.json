@@ -1,0 +1,271 @@
+{
+  "schema": "genomeatlas.public-capability-catalog/1",
+  "utc": "2026-09-09T15:28:40.232969+00:00",
+  "note": "Advertised namespace catalog, not a claim all actions or accounts were tested. Focused stage contracts remain in the main suite. No private account inventory included.",
+  "entries": [
+    {
+      "id": "AI_Wisebase",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Academic_Writing_Toolkit",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Ace_Knowledge_Graph",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Adobe",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Adobe_Acrobat",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "AhaMotion",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Airtable",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Apple_Music",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "BioRender",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Canva",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Chessy",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Consensus",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Coursera",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Elicit",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Figma",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Finances",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Firecrawl",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Genomic_Intelligence",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "GitHub",
+      "layer": "connector",
+      "status": "EXECUTED",
+      "scope": "Authenticated repository read/write transport and Copilot jobs; merge acceptance separate"
+    },
+    {
+      "id": "Gmail",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Google_Calendar",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Google_Contacts",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Google_Drive",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Higgsfield",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Hugging_Face",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Inductive_Bio",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Network_Solutions",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "OpenAI_Platform",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Plugin_Management",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Private_MD_Labs",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Proto",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Remote_Desktop_Commander",
+      "layer": "connector",
+      "status": "EXECUTED",
+      "scope": "WD commands and Windows-Ubuntu nonce roundtrip; no unrestricted filesystem claim"
+    },
+    {
+      "id": "Rowan",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Shazam",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Spotify",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Tamarind_Bio",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Target",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Undermind",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Vercel",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "Wolfram",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "eSIM_Copilot",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "files",
+      "layer": "connector",
+      "status": "DECLARED_NOT_PROBED",
+      "scope": "Not probed in this publication pass; listed by the session catalog"
+    },
+    {
+      "id": "smarts.bio:_AI_for_biology",
+      "layer": "connector",
+      "status": "EXECUTION_BLOCKED",
+      "scope": "Catalog reachable; advertised deterministic GC tool returned 404. No computation accepted"
+    },
+    {
+      "id": "NVIDIA BioNeMo Agent Toolkit",
+      "layer": "installed_skill",
+      "status": "GUIDANCE_REVIEWED_RUNTIME_NOT_READY",
+      "scope": "Official genomics-workflow-acceleration guidance read. nvidia-smi and pbrun not found in Ubuntu PATH; no GPU or NIM inference."
+    }
+  ]
+}

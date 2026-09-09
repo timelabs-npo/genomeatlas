@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-09-09 15:17:38 UTC",
+  "project_id": "appgprj_6aa1709139648191ab998de6fccc4890",
+  "version_number": 1,
+  "version_id": "appgprj_6aa1709139648191ab998de6fccc4890~appgver_201555c8245c81919a9eaac114e07461",
+  "deployment_id": "appgdep_6aa175d1acec8191b809edbc5f34f3e8",
+  "terminal_state": "succeeded",
+  "url": "https://genomeatlas-site-helper-suite.hx31337.chatgpt.site",
+  "audience": "public",
+  "source_commit": "683401cf1f2255414a4df3e0f2e9d606686a8fdf",
+  "browser": {
+    "surface": "Supported CUA browser controls and documented browser Playwright API",
+    "browser": "Edge",
+    "view": "Normal visitor-facing production URL; no administration route, credentials or warning bypass",
+    "opened_url": "https://genomeatlas-site-helper-suite.hx31337.chatgpt.site",
+    "observed_title": "GenomeAtlas \u2014 by timelabs-npo",
+    "results": [
+      {
+        "test": "production navigation",
+        "state": "PASSED",
+        "evidence": "Production page rendered with GenomeAtlas title, workflow, registry, ledger and request form; no login or security warning shown."
+      },
+      {
+        "test": "workflow selection",
+        "state": "PASSED",
+        "evidence": "Selected 06 Review R-M evidence; selected state became true and inspector displayed R-M inputs, outputs, acceptance gate and NOT_TESTED."
+      },
+      {
+        "test": "registry search and reset",
+        "state": "PASSED",
+        "evidence": "Search smarts.bio returned 1 of 20 tools with BLOCKED; Clear filters restored 20 of 20."
+      },
+      {
+        "test": "accession inspection and filtering",
+        "state": "PASSED",
+        "evidence": "Expanded manifest showed 177 of 177, original SHA-256, and public versioned IDs. Search GCF_023499275.1 returned exactly 1 of 177."
+      },
+      {
+        "test": "invalid request validation",
+        "state": "PASSED",
+        "evidence": "Prepare with empty endpoint/reviewer produced both validation errors; DRAFT and disabled download retained."
+      },
+      {
+        "test": "valid request preparation and execution boundary",
+        "state": "PASSED",
+        "evidence": "Public test aliases and zero USD budget prepared REQUIRES_CONFIRMATION JSON; execution remained NOT_EXECUTED and run_receipt null; download enabled."
+      },
+      {
+        "test": "request export completion",
+        "state": "NOT_TESTED",
+        "action_attempted": true,
+        "evidence": "Clicked Download review JSON. No download-completion event was observed. Prepared request remained unchanged.",
+        "exact_error": "Timed out after 10000ms waiting for download.",
+        "limitation": "Export click was performed; actual saved file and its bytes are unverified. This is not evidence that a job executed."
+      },
+      {
+        "test": "untrusted receipt rejection",
+        "state": "NOT_TESTED",
+        "action_attempted": true,
+        "evidence": "Opened receipt chooser and attempted to select the existing public REVIEW_REQUEST template as a wrong-kind receipt. Browser automation denied file selection before application validation.",
+        "exact_error": "Error: {\"code\":-32000,\"message\":\"Not allowed\"}\nfileChooser.setFiles failed",
+        "limitation": "No receipt-rejection assertion executed in production. Restriction was not bypassed."
+      },
+      {
+        "test": "reset and handoff",
+        "state": "PASSED",
+        "evidence": "Reset draft restored blank aliases, DRAFT and disabled download; registry reset; production home left open."
+      }
+    ]
+  },
+  "limitations": [
+    "Site contains a labeled pre-publication evidence snapshot; historical NOT_DEPLOYED badges do not override the current native service deployment receipt.",
+    "Public audience confirmed by native service; a separately anonymous browser context was not tested.",
+    "No fresh push, upload, credential request, audience change, save or deployment restart was performed in this final verification continuation."
+  ],
+  "NOT_TESTED": [
+    "production export download completion and downloaded bytes",
+    "production untrusted receipt rejection because browser file selection was denied",
+    "separate anonymous browser context",
+    "production mobile/responsive matrix",
+    "biological runs and model inference"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "genomeatlas.config-concept/1",
+  "state": "TEMPLATE_NOT_EXECUTED",
+  "compute": "cpu",
+  "use_gpu": false,
+  "reference_accession": null,
+  "reference_sha256": null,
+  "coordinate_system": "0-based-half-open",
+  "interval": null,
+  "tool_versions": {},
+  "model_version": null,
+  "parameters": {},
+  "seed": null,
+  "note": "Populate actual reference, tool versions, parameters and hashes during a separately authorized run. AlphaGenome concepts only; never a LAB host-phylogeny method."
+}

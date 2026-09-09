@@ -64,3 +64,10 @@ were independently observed in this session's metadata, with no invocation or
 publication. Parent review must reconcile report provenance before publication.
 The one-time `scripts/finish_suite.py` is retained from the concurrent work for
 traceability; do not rerun it as part of ordinary maintenance or validation.
+
+
+## Native Site and current source
+
+Native version 1: https://genomeatlas-site-helper-suite.hx31337.chatgpt.site
+
+Native-service source commit and visitor-test limits are recorded in docs/evidence/current-native-deployment.json. The native saved version and this GitHub source may differ; do not infer automatic synchronization. Source tests are not genomic results. Complete advertised catalog: docs/catalog.html and docs/capability-catalog.json (44 entries; unprobed remains explicit).

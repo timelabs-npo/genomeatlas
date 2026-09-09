@@ -1,0 +1,54 @@
+{
+  "schema": "genomeatlas.parent-observations/1",
+  "utc": "2026-09-09T15:07:50.385825+00:00",
+  "scope": "SOFTWARE_AND_CONNECTIVITY_NOT_BIOLOGICAL_ACCEPTANCE",
+  "results": [
+    {
+      "tool": "smarts.bio:_AI_for_biology",
+      "status": "DISCOVERY_OK_EXECUTION_404",
+      "scope": "Catalog and workspaces reachable; advertised bioinformatics.sequence_stats returned Tool not found (404) for ACGTACGT. No analysis accepted."
+    },
+    {
+      "tool": "NCBI_Datasets",
+      "status": "METADATA_PROBED",
+      "scope": "One public versioned assembly metadata request returned HTTP 200; no genome package downloaded."
+    },
+    {
+      "tool": "Codex_WD",
+      "status": "IMPLEMENTATION_RETURNED",
+      "scope": "Actual local Codex task returned source and 22 Python/13 Node passing tests; browser/WSL checks inside its sandbox were blocked. Parent review is separate."
+    },
+    {
+      "tool": "WSL_Ubuntu",
+      "status": "PROBED",
+      "scope": "Parent remote-shell test: Ubuntu WSL1, Python3.14.4; Windows/Ubuntu nonce exchange matched. Not a full scientific pipeline."
+    },
+    {
+      "tool": "ChatGPT_Sites",
+      "status": "METADATA_PROBED_DEPLOY_BLOCKED",
+      "scope": "Native metadata actions succeeded on the owner-only GenomeAtlas project; version0 and no deployment. Slug action required approval unavailable to the noninteractive session."
+    }
+  ],
+  "tests": {
+    "github_copilot_pr27": {
+      "head": "7c27865b7113b0fe8b22a57a751ed82fdaae9c8a",
+      "count": 11,
+      "exit_code": 0
+    },
+    "parent_windows_python": {
+      "count": 22,
+      "exit_code": 0
+    },
+    "parent_windows_node": {
+      "count": 13,
+      "exit_code": 0
+    },
+    "parent_browser": {
+      "checks_passed": 9,
+      "overall": "INCOMPLETE",
+      "notes": "Actual Edge/localhost render captured; MIME defect repaired. Harness then incorrectly checked hidden collapsed request text. No full browser PASS claim; further browser checks stopped after receiving a delegated browser-permission denial."
+    }
+  },
+  "native_deployment_url": null,
+  "scientific_results": "NOT_EXECUTED"
+}
