@@ -28,12 +28,12 @@ class SourceIntegrity(unittest.TestCase):
 
     def test_actual_full_registry_is_retained(self):
         rows = read('data/registry.json')['entries']
-        self.assertEqual(len(rows), 63)
+        self.assertEqual(len(rows), 134)
         self.assertEqual(len({row['id'] for row in rows}), len(rows))
-        self.assertEqual(next(row for row in rows if row['id'].startswith('smarts.bio'))['status'], 'DISCOVERY_OK_EXECUTION_404')
+        self.assertEqual(next(row for row in rows if row['id'].startswith('smarts.bio'))['status'], 'AUTH_REQUIRED')
         bio = next(row for row in rows if row['id'] == 'bionemo-agent-toolkit')
         self.assertEqual(bio['status'], 'SKILL_READ')
-        self.assertIn('v1.1.0', bio['scope'])
+        self.assertIn('Package0.1.0', bio['scope'])
 
     def test_all_actual_chains_are_proposed(self):
         chains = read('data/chains.json')
