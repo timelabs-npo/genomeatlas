@@ -1,0 +1,66 @@
+{
+  "schema": "genomeatlas.independent-parent-recheck/1",
+  "scope": "Helper software and connection tests; not a biological phylogeny or R-M analysis",
+  "tested_main_source": "7af8750f01f9ba2d8112d1384f078648bc8e8e8f",
+  "clean_checkout_tests": {
+    "endpoint": "authorized Windows workstation",
+    "receipt_time_utc": "2026-09-09T15:38:55.994947+00:00",
+    "build": {"command": "python scripts/build.py", "exit_code": 0, "static_files": 19, "additional_manifest": true},
+    "panel": {"versioned_accessions": 177, "taxonomy_refreshed": false},
+    "registry_entries": 63,
+    "proposed_chains": 8,
+    "python": {"command": "python -m unittest discover -s tests -v", "tests": 22, "exit_code": 0},
+    "node": {"command": "node --test", "tests": 27, "exit_code": 0},
+    "receipt_validator": {"command": "python -m unittest discover -s probes/tests -v", "tests": 13, "exit_code": 0}
+  },
+  "browser_checks": {
+    "custom_cdp_smoke": {"time_utc": "2026-09-09T15:42:05.052Z", "status": "FAILED", "completed_checks": 1, "reason": "Timed out waiting for dialog.open after synthesized Enter; no JavaScript page error was observed."},
+    "independent_playwright_edge": {
+      "time_utc": "2026-09-09T15:45:54.890Z",
+      "status": "PASSED",
+      "exit_code": 0,
+      "checks": 17,
+      "viewports": ["1440x1000", "390x844"],
+      "navigation": "Actual loopback HTTP serving clean-built main dist/",
+      "verified": ["177/63/8/0 overview counts", "keyboard Enter opens inspector", "Escape closes inspector", "63 tool rows", "smarts.bio filtering", "eight chains", "clickable chain inspection", "no page overflow", "no JavaScript page errors"],
+      "limitation": "This does not make the failed custom CDP suite pass and does not test the production origin or all download/import paths."
+    }
+  },
+  "native_sites": {
+    "verified_by": "New WD Codex read-only session using actual native Sites APIs",
+    "verification_finished_utc": "2026-09-09T15:38:31.526Z",
+    "functions": ["sites_get_site", "sites_get_deployment_status", "sites_get_site_version"],
+    "site_id": "appgprj_6aa1709139648191ab998de6fccc4890",
+    "site_status": "active",
+    "publication_version_verified": 1,
+    "version_id": "appgprj_6aa1709139648191ab998de6fccc4890~appgver_201555c8245c81919a9eaac114e07461",
+    "deployment_id": "appgdep_6aa175d1acec8191b809edbc5f34f3e8",
+    "deployment_status": "succeeded",
+    "deployment_type": "publish",
+    "public_url": "https://genomeatlas-site-helper-suite.hx31337.chatgpt.site",
+    "access_mode": "public",
+    "source_commit": "683401cf1f2255414a4df3e0f2e9d606686a8fdf",
+    "latest_saved_version_observed": 4,
+    "limitation": "Verified version1 publication does not establish which later version currently serves, or byte parity with tested GitHub main. Parent web navigation was rejected by its URL policy; no anonymous-production browser PASS is claimed."
+  },
+  "connections": {
+    "remote_desktop_commander": "Actual WD ping and terminal execution succeeded; private device ID omitted",
+    "windows_ubuntu_roundtrip": {"nonce_matches": true, "sha256_matches": true, "exit_code": 0, "kernel": "4.4.0-26100-Microsoft", "wsl_generation": 1},
+    "github": "Authenticated WD CLI read; connector-created commits fetched on WD; WD commit pushed and read back with connector",
+    "codex": "Actual new local sessions executed; capability and publication verification used native tool calls. Not every requested shell action was permitted.",
+    "copilot": "Actual implementation and review branches exist. Root-level product and reviewed receipt validator were incorporated through PR11 and PR17."
+  },
+  "other_source_lineage": {
+    "pr": 22,
+    "head": "df03c1b15e0d1487845091d80f21cfae7e9e5ba7",
+    "scope": "Separate docs/ 41-entry app; not the primary deployed root app",
+    "tests": {"unit": 23, "edge_browser": 19, "clean_payload_hashes": 48},
+    "merge": "NOT_MERGED; do not overwrite the primary app or inherit native deployment claims"
+  },
+  "requested_biology_tools": {
+    "bionemo_agent_toolkit": {"installed_declaration": true, "official_skill_read": "genomics-workflow-acceleration v1.1.0", "skill_blob": "9efa9a24a44d0d84ba0b7fd20b550ae293174f5e", "practices_applied": ["CPU path retained", "GPU defaults off", "no invented tool mapping", "no parity claims without A/B execution"], "nim_or_gpu_inference": "NOT_RUN", "plugin_dependency_resolver": "plugin_not_found; does not negate the installed declaration"},
+    "smarts_bio": {"workspace_listing": "SUCCEEDED", "advertised_gc_tool": "bioinformatics.gcContent", "execution": "404 Tool not found", "agent_recheck": "BLOCKED; no actual sequence-statistics result", "biological_result": null}
+  },
+  "privacy": "Sanitized receipt only; no credentials, local user paths, device IDs or raw agent logs.",
+  "scientific_acceptance": "NOT_RUN"
+}
