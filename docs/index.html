@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; frame-ancestors 'none'; manifest-src 'self'">
+    <title>GenomeAtlas Site Helper Suite</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <main class="shell" data-app data-ready="false">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Portable static app · evidence-bound tool registry</p>
+          <h1>GenomeAtlas Site Helper Suite</h1>
+          <p class="lede">A zero-build, local-first helper for LAB phylogenomics planning, historical probe review, and unverified request artifact export.</p>
+        </div>
+        <dl class="summary-grid" aria-label="Current view summary">
+          <div>
+            <dt>Visible tools</dt>
+            <dd data-summary-tools>0</dd>
+          </div>
+          <div>
+            <dt>Probe receipts</dt>
+            <dd data-summary-probes>0</dd>
+          </div>
+          <div>
+            <dt>Local requests</dt>
+            <dd data-summary-requests>0</dd>
+          </div>
+        </dl>
+      </header>
+
+      <p class="message" role="status" aria-live="polite" data-message></p>
+
+      <section class="panel" data-flow>
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">View 1</p>
+            <h2>Scoped LAB phylogenomics flow</h2>
+          </div>
+          <p class="muted">Selected versioned assemblies flow to annotated proteomes, conserved marker families, separate alignments, IQ-TREE host tree, independent R-M detection, locus review, and four rings.</p>
+        </div>
+        <ol class="stage-grid" data-flow-list></ol>
+        <div class="rings-card">
+          <h3>Four evidence-bound rings</h3>
+          <ul data-rings-list></ul>
+        </div>
+      </section>
+
+      <section class="panel" data-registry>
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">View 2</p>
+            <h2>Searchable tool registry</h2>
+          </div>
+          <p class="muted">Registry state is limited to declared, discovered, probed, executed, and blocked. Timestamps remain historical observations unless you add local receipts.</p>
+        </div>
+        <div class="controls three-up">
+          <label>
+            <span>Search</span>
+            <input id="registry-search" name="search" type="search" placeholder="Search tool, contract, or evidence">
+          </label>
+          <label>
+            <span>State</span>
+            <select id="registry-state" name="state"></select>
+          </label>
+          <label>
+            <span>Flow stage</span>
+            <select id="registry-stage" name="stage"></select>
+          </label>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Tool</th>
+                <th>State</th>
+                <th>Flow stage</th>
+                <th>Probe timestamp</th>
+                <th>Evidence location</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel" data-probes>
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">View 3</p>
+            <h2>Actual probes and receipts</h2>
+          </div>
+          <p class="muted">Imports and manual entries stay unverified until an external reviewer confirms them. The app never maps FAILED or UNKNOWN to not-detected.</p>
+        </div>
+
+        <div class="button-row">
+          <button type="button" data-export-probe-json>Export probes JSON</button>
+          <button type="button" data-export-probe-csv>Export probes CSV</button>
+        </div>
+
+        <div class="controls two-up">
+          <label>
+            <span>Import receipt JSON</span>
+            <input id="receipt-import" type="file" accept="application/json,.json">
+          </label>
+          <div class="align-end">
+            <button id="import-button" type="button">Validate and import receipt</button>
+          </div>
+        </div>
+
+        <form id="probe-form" class="form-card">
+          <h3>Record local probe receipt</h3>
+          <div class="controls two-up">
+            <label>
+              <span>Tool</span>
+              <select id="probe-tool" name="toolId"></select>
+            </label>
+            <label>
+              <span>Registry state</span>
+              <select id="probe-state" name="state"></select>
+            </label>
+            <label>
+              <span>Result classification</span>
+              <select id="probe-classification" name="classification"></select>
+            </label>
+            <label>
+              <span>Exit code</span>
+              <input name="exitCode" type="number" step="1" value="0" required>
+            </label>
+            <label class="wide">
+              <span>Evidence location</span>
+              <input name="evidenceLocation" type="text" placeholder="docs/evidence/... or reviewer note" required>
+            </label>
+            <label class="wide">
+              <span>Artifact hash</span>
+              <input name="hashSha256" type="text" placeholder="sha256:example-proof-hash" required>
+            </label>
+            <label class="wide">
+              <span>Summary</span>
+              <textarea name="summary" rows="3" placeholder="Describe the historical or external probe outcome." required></textarea>
+            </label>
+          </div>
+          <button type="submit">Record local probe</button>
+        </form>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Tool</th>
+                <th>State</th>
+                <th>Classification</th>
+                <th>Exit</th>
+                <th>Evidence</th>
+                <th>Verification</th>
+                <th>Summary</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel" data-requests>
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">View 4</p>
+            <h2>Delegation and confirmation planner</h2>
+          </div>
+          <p class="muted">Creating a request writes only a local REQUESTED artifact. It never executes work, authenticates a tool, or promotes evidence to verified.</p>
+        </div>
+
+        <form id="request-form" class="form-card">
+          <div class="controls two-up">
+            <label>
+              <span>Tool</span>
+              <select id="request-tool" name="toolId"></select>
+            </label>
+            <label>
+              <span>Flow stage</span>
+              <select id="request-stage" name="stageId"></select>
+            </label>
+            <label class="wide">
+              <span>Request summary</span>
+              <input name="summary" type="text" placeholder="Example: verify selected assembly hash manifest" required>
+            </label>
+            <label class="wide">
+              <span>Justification</span>
+              <textarea name="justification" rows="3" placeholder="Explain why a human or external system should review this step." required></textarea>
+            </label>
+            <label class="checkbox wide">
+              <input name="confirmed" type="checkbox">
+              <span>I confirm this should create only a local REQUESTED artifact.</span>
+            </label>
+          </div>
+          <div class="button-row">
+            <button type="submit">Create local request</button>
+            <button type="button" data-export-request-json>Export requests JSON</button>
+            <button type="button" data-export-request-csv>Export requests CSV</button>
+          </div>
+        </form>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Tool</th>
+                <th>Stage</th>
+                <th>Status</th>
+                <th>Requested at</th>
+                <th>Summary</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>

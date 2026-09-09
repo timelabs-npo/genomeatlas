@@ -1,0 +1,127 @@
+{
+  "version": "1.0.0",
+  "historical": true,
+  "redacted": true,
+  "observations": [
+    {
+      "id": "obs-rdc-nonce",
+      "timestamp": "2026-09-08T09:14:00Z",
+      "toolId": "rdc",
+      "state": "EXECUTED",
+      "summary": "Remote Desktop Commander nonce command completed on an authorized Windows endpoint.",
+      "classification": "DETECTED",
+      "exitCode": 0,
+      "hashSha256": "sha256:rdc-nonce-observation",
+      "evidenceLocation": "parent observation ledger",
+      "notes": "Redacted to exclude endpoint identifiers and private device metadata."
+    },
+    {
+      "id": "obs-wsl-uname",
+      "timestamp": "2026-09-08T09:16:00Z",
+      "toolId": "wsl-ubuntu",
+      "state": "EXECUTED",
+      "summary": "Git and Ubuntu uname returned successfully; Ubuntu reported a WSL1 kernel, not WSL2.",
+      "classification": "DETECTED",
+      "exitCode": 0,
+      "hashSha256": "sha256:wsl-uname-observation",
+      "evidenceLocation": "parent observation ledger",
+      "notes": "Historical observation only; not a live connection test."
+    },
+    {
+      "id": "obs-script-write-blocked",
+      "timestamp": "2026-09-08T09:18:00Z",
+      "toolId": "rdc",
+      "state": "BLOCKED",
+      "summary": "A separate remote script-write attempt was blocked by platform safety and must not be bypassed.",
+      "classification": "FAILED",
+      "exitCode": 1,
+      "hashSha256": "sha256:blocked-script-write",
+      "evidenceLocation": "parent observation ledger",
+      "notes": "This suite records the block and does not attempt any bypass."
+    },
+    {
+      "id": "obs-github-connector",
+      "timestamp": "2026-09-08T09:20:00Z",
+      "toolId": "github-connector",
+      "state": "PROBED",
+      "summary": "GitHub connector could read this repository and saw the existing MIT license with only README and LICENSE during initial inspection.",
+      "classification": "DETECTED",
+      "exitCode": 0,
+      "hashSha256": "sha256:github-connector-read",
+      "evidenceLocation": "parent observation ledger",
+      "notes": "Repository contents have since changed in this PR."
+    },
+    {
+      "id": "obs-gh-auth",
+      "timestamp": "2026-09-08T09:21:00Z",
+      "toolId": "github-cli",
+      "state": "EXECUTED",
+      "summary": "WD gh authenticated read returned success.",
+      "classification": "DETECTED",
+      "exitCode": 0,
+      "hashSha256": "sha256:gh-auth-read",
+      "evidenceLocation": "parent observation ledger",
+      "notes": "A repo-absence result happened earlier before repository creation and is retained only as superseded historical context, never as current state."
+    },
+    {
+      "id": "obs-smarts-bio",
+      "timestamp": "2026-09-08T09:50:00Z",
+      "toolId": "smarts-bio",
+      "state": "PROBED",
+      "summary": "smarts.bio catalogue returned 87 tools, bio_gc_content execution returned 404, and smarts_query manually answered 50% GC for synthetic ACGTACGT with no tool executed.",
+      "classification": "UNKNOWN",
+      "exitCode": 404,
+      "hashSha256": "sha256:smarts-bio-mismatch",
+      "evidenceLocation": "parent observation ledger",
+      "notes": "Catalogue/execution mismatch; explicit NO TOOL EXECUTED."
+    },
+    {
+      "id": "obs-bionemo-skills",
+      "timestamp": "2026-09-08T09:45:00Z",
+      "toolId": "bionemo-nim",
+      "state": "DISCOVERED",
+      "summary": "BioNeMo Agent Toolkit listed installed skills including NIM navigator and molecular geometry, but a skill-read returned resource-not-found.",
+      "classification": "UNKNOWN",
+      "exitCode": 404,
+      "hashSha256": "sha256:bionemo-skill-read",
+      "evidenceLocation": "parent observation ledger",
+      "notes": "No NIM API or GPU job executed."
+    },
+    {
+      "id": "obs-native-sites",
+      "timestamp": "2026-09-08T09:55:00Z",
+      "toolId": "native-chatgpt-sites",
+      "state": "BLOCKED",
+      "summary": "Native ChatGPT Sites were not exposed to the parent observer, so no native deployment receipt exists.",
+      "classification": "FAILED",
+      "exitCode": 1,
+      "hashSha256": "sha256:native-sites-missing",
+      "evidenceLocation": "parent observation ledger",
+      "notes": "No native deployment receipt is available."
+    },
+    {
+      "id": "obs-codex-missing",
+      "timestamp": "2026-09-08T09:30:00Z",
+      "toolId": "codex-cli-session",
+      "state": "BLOCKED",
+      "summary": "Local Codex session was not established.",
+      "classification": "FAILED",
+      "exitCode": 1,
+      "hashSha256": "sha256:codex-session-missing",
+      "evidenceLocation": "parent observation ledger",
+      "notes": "Copilot is the active implementation agent for this PR."
+    },
+    {
+      "id": "obs-copilot-pr",
+      "timestamp": "2026-09-09T14:26:52Z",
+      "toolId": "copilot",
+      "state": "EXECUTED",
+      "summary": "Copilot is actively implementing this pull request.",
+      "classification": "DETECTED",
+      "exitCode": 0,
+      "hashSha256": "sha256:copilot-pr-activity",
+      "evidenceLocation": "GitHub Actions run metadata",
+      "notes": "This is not a WD-local Codex session."
+    }
+  ]
+}

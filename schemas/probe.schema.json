@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://timelabs-npo.github.io/genomeatlas/schemas/probe.schema.json",
+  "title": "GenomeAtlas probe receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "version",
+    "toolId",
+    "state",
+    "probeTimestamp",
+    "summary",
+    "inputContract",
+    "outputContract",
+    "evidence",
+    "result",
+    "review"
+  ],
+  "properties": {
+    "kind": {
+      "const": "probe-receipt"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^1\\.0\\.0$"
+    },
+    "toolId": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "state": {
+      "type": "string",
+      "enum": ["DECLARED", "DISCOVERED", "PROBED", "EXECUTED", "BLOCKED"]
+    },
+    "probeTimestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "inputContract": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "outputContract": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["location", "sha256"],
+      "properties": {
+        "location": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^sha256:[A-Za-z0-9._-]+$"
+        }
+      }
+    },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classification", "exitCode"],
+      "properties": {
+        "classification": {
+          "type": "string",
+          "enum": ["DETECTED", "NOT_DETECTED", "FAILED", "UNKNOWN"]
+        },
+        "exitCode": {
+          "type": "integer"
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["verified"],
+      "properties": {
+        "verified": {
+          "type": "boolean"
+        },
+        "reviewer": {
+          "type": ["string", "null"],
+          "maxLength": 200
+        }
+      }
+    }
+  }
+}

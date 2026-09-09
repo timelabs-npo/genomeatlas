@@ -1,0 +1,22 @@
+{
+  "kind": "probe-receipt",
+  "version": "1.0.0",
+  "toolId": "github-cli",
+  "state": "EXECUTED",
+  "probeTimestamp": "2026-09-09T10:00:00Z",
+  "summary": "<img src=x onerror=alert(1)>",
+  "inputContract": "Authenticated GitHub read command.",
+  "outputContract": "Command success/failure plus repository-readable output.",
+  "evidence": {
+    "location": "docs/evidence/parent-observations.json#obs-gh-auth",
+    "sha256": "sha256:fixture-malicious-receipt"
+  },
+  "result": {
+    "classification": "DETECTED",
+    "exitCode": 0
+  },
+  "review": {
+    "verified": false,
+    "reviewer": null
+  }
+}
