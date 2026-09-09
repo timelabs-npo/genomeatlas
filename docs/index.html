@@ -39,7 +39,7 @@
             <p class="eyebrow">View 1</p>
             <h2>Scoped LAB phylogenomics flow</h2>
           </div>
-          <p class="muted">Selected versioned assemblies flow to annotated proteomes, conserved marker families, separate alignments, IQ-TREE host tree, independent R-M detection, locus review, and four rings.</p>
+          <p class="muted">Selected versioned assemblies feed annotated proteomes, conserved marker families, and separate alignments before branching independently to the IQ-TREE host tree and DefenseFinder/R-M review paths, then reconverging at locus review and the four ring outputs.</p>
         </div>
         <ol class="stage-grid" data-flow-list></ol>
         <div class="rings-card">
@@ -92,7 +92,7 @@
             <p class="eyebrow">View 3</p>
             <h2>Actual probes and receipts</h2>
           </div>
-          <p class="muted">Imports and manual entries stay unverified until an external reviewer confirms them. The app never maps FAILED or UNKNOWN to not-detected.</p>
+          <p class="muted">Imports and manual entries stay unverified until an external reviewer confirms them. Measured hashes must be 64 hexadecimal digits, and the app never maps FAILED or UNKNOWN to not-detected.</p>
         </div>
 
         <div class="button-row">
@@ -133,9 +133,13 @@
               <span>Evidence location</span>
               <input name="evidenceLocation" type="text" placeholder="docs/evidence/... or reviewer note" required>
             </label>
+            <label>
+              <span>Hash status</span>
+              <select id="probe-hash-status" name="hashStatus"></select>
+            </label>
             <label class="wide">
               <span>Artifact hash</span>
-              <input name="hashSha256" type="text" placeholder="sha256:example-proof-hash" required>
+              <input name="hashSha256" type="text" placeholder="64 hexadecimal digits when measured">
             </label>
             <label class="wide">
               <span>Summary</span>
@@ -153,6 +157,8 @@
                 <th>State</th>
                 <th>Classification</th>
                 <th>Exit</th>
+                <th>Probe timestamp</th>
+                <th>Payload hash</th>
                 <th>Evidence</th>
                 <th>Verification</th>
                 <th>Summary</th>

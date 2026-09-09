@@ -4,13 +4,13 @@
   "toolId": "github-cli",
   "state": "EXECUTED",
   "probeTimestamp": "2026-09-09T10:00:00Z",
-  "summary": "Historical authenticated repository read succeeded.",
+  "summary": "Not measured probes cannot carry a digest.",
   "inputContract": "Authenticated GitHub read command.",
   "outputContract": "Command success/failure plus repository-readable output.",
   "evidence": {
     "location": "docs/evidence/parent-observations.json#obs-gh-auth",
-    "hashStatus": "measured",
-    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    "hashStatus": "not_measured",
+    "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
   },
   "result": {
     "classification": "DETECTED",

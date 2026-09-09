@@ -2,10 +2,10 @@
   "version": "1.0.0",
   "title": "Scoped LAB phylogenomics flow",
   "rings": [
-    "Host tree context",
-    "Restriction-modification evidence",
-    "Locus review annotations",
-    "Verification and publication status"
+    "Type I",
+    "Type II (including IIG)",
+    "Type III",
+    "Type IV"
   ],
   "stages": [
     {
@@ -31,22 +31,56 @@
     {
       "id": "host-tree",
       "title": "IQ-TREE host tree",
-      "description": "Infer the host tree from alignment outputs only after upstream evidence is verified."
+      "description": "Infer the host tree from verified alignment outputs only after upstream evidence is verified."
     },
     {
       "id": "rm-detection",
       "title": "Independent R-M detection",
-      "description": "Run independent restriction-modification detection separate from host tree inference."
+      "description": "Run DefenseFinder and related R-M review independently from host tree inference using the same upstream alignment context only where appropriate."
     },
     {
       "id": "review",
       "title": "Locus review",
-      "description": "Review loci manually with explicit evidence links and human approval gates."
+      "description": "Review loci manually with explicit evidence links and human approval gates after both tree and R-M branches are available."
     },
     {
       "id": "rings",
       "title": "Four rings",
-      "description": "Publish four evidence-bound visualization rings only from verified upstream artifacts."
+      "description": "Publish the Type I, Type II (including IIG), Type III, and Type IV rings only from verified upstream artifacts."
+    }
+  ],
+  "edges": [
+    {
+      "from": "assemblies",
+      "to": "proteomes"
+    },
+    {
+      "from": "proteomes",
+      "to": "markers"
+    },
+    {
+      "from": "markers",
+      "to": "alignments"
+    },
+    {
+      "from": "alignments",
+      "to": "host-tree"
+    },
+    {
+      "from": "alignments",
+      "to": "rm-detection"
+    },
+    {
+      "from": "host-tree",
+      "to": "review"
+    },
+    {
+      "from": "rm-detection",
+      "to": "review"
+    },
+    {
+      "from": "review",
+      "to": "rings"
     }
   ]
 }

@@ -9,7 +9,8 @@
   "outputContract": "Command success/failure plus repository-readable output.",
   "evidence": {
     "location": "docs/evidence/parent-observations.json#obs-gh-auth",
-    "sha256": "sha256:fixture-missing-exit"
+    "hashStatus": "measured",
+    "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
   },
   "result": {
     "classification": "FAILED"

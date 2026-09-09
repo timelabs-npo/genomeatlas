@@ -8,7 +8,8 @@
   "inputContract": "Authenticated GitHub read command.",
   "outputContract": "Command success/failure plus repository-readable output.",
   "evidence": {
-    "location": "docs/evidence/parent-observations.json#obs-gh-auth"
+    "location": "docs/evidence/parent-observations.json#obs-gh-auth",
+    "hashStatus": "measured"
   },
   "result": {
     "classification": "FAILED",

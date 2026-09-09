@@ -31,7 +31,13 @@
     },
     "state": {
       "type": "string",
-      "enum": ["DECLARED", "DISCOVERED", "PROBED", "EXECUTED", "BLOCKED"]
+      "enum": [
+        "DECLARED",
+        "DISCOVERED",
+        "PROBED",
+        "EXECUTED",
+        "BLOCKED"
+      ]
     },
     "probeTimestamp": {
       "type": "string",
@@ -55,27 +61,89 @@
     "evidence": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["location", "sha256"],
+      "required": [
+        "location",
+        "hashStatus",
+        "sha256"
+      ],
       "properties": {
         "location": {
           "type": "string",
           "minLength": 1,
           "maxLength": 500
         },
-        "sha256": {
+        "hashStatus": {
           "type": "string",
-          "pattern": "^sha256:[A-Za-z0-9._-]+$"
+          "enum": [
+            "measured",
+            "not_measured"
+          ]
+        },
+        "sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
         }
-      }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "hashStatus": {
+                "const": "measured"
+              }
+            },
+            "required": [
+              "hashStatus"
+            ]
+          },
+          "then": {
+            "properties": {
+              "sha256": {
+                "type": "string",
+                "pattern": "^[A-Fa-f0-9]{64}$"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "hashStatus": {
+                "const": "not_measured"
+              }
+            },
+            "required": [
+              "hashStatus"
+            ]
+          },
+          "then": {
+            "properties": {
+              "sha256": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
     },
     "result": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["classification", "exitCode"],
+      "required": [
+        "classification",
+        "exitCode"
+      ],
       "properties": {
         "classification": {
           "type": "string",
-          "enum": ["DETECTED", "NOT_DETECTED", "FAILED", "UNKNOWN"]
+          "enum": [
+            "DETECTED",
+            "NOT_DETECTED",
+            "FAILED",
+            "UNKNOWN"
+          ]
         },
         "exitCode": {
           "type": "integer"
@@ -85,13 +153,18 @@
     "review": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["verified"],
+      "required": [
+        "verified"
+      ],
       "properties": {
         "verified": {
           "type": "boolean"
         },
         "reviewer": {
-          "type": ["string", "null"],
+          "type": [
+            "string",
+            "null"
+          ],
           "maxLength": 200
         }
       }

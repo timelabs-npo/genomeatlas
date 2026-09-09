@@ -11,20 +11,44 @@ function readJson(fileName) {
   return JSON.parse(fs.readFileSync(path.join(fixturesDir, fileName), 'utf8'));
 }
 
-test('valid receipts validate and import as unverified', function () {
-  const receipt = readJson('valid-receipt.json');
-  const verdict = app.validateReceipt(receipt);
-  assert.equal(verdict.valid, true);
-  assert.deepEqual(verdict.errors, []);
-
-  const imported = app.importReceiptText(JSON.stringify(receipt));
-  assert.equal(imported.length, 1);
-  assert.equal(imported[0].review.verified, false);
-  assert.equal(imported[0].importStatus, 'UNVERIFIED_IMPORTED');
+test('exact four ring labels are preserved', function () {
+  const rings = app.FALLBACK_DATA.chains.rings;
+  assert.deepEqual(rings, ['Type I', 'Type II (including IIG)', 'Type III', 'Type IV']);
 });
 
-test('malicious HTML, unknown state, missing exit code, and missing hash are rejected', function () {
-  ['malicious-html-receipt.json', 'unknown-state-receipt.json', 'missing-exitcode-receipt.json', 'missing-hash-receipt.json'].forEach(function (name) {
+test('flow lineage keeps host tree and R-M detection as independent branches', function () {
+  const lineage = app.buildStageLineage(app.FALLBACK_DATA.chains);
+  assert.deepEqual(lineage['host-tree'].incoming, ['alignments']);
+  assert.deepEqual(lineage['rm-detection'].incoming, ['alignments']);
+  assert.deepEqual(lineage.review.incoming.sort(), ['host-tree', 'rm-detection']);
+  assert.equal(lineage['host-tree'].outgoing.includes('rm-detection'), false);
+  assert.equal(lineage['rm-detection'].outgoing.includes('host-tree'), false);
+});
+
+test('valid measured and not_measured receipts validate and import as unverified', function () {
+  ['valid-receipt.json', 'valid-not-measured-receipt.json'].forEach(function (fixtureName) {
+    const receipt = readJson(fixtureName);
+    const verdict = app.validateReceipt(receipt);
+    assert.equal(verdict.valid, true, fixtureName + ' should be valid');
+    assert.deepEqual(verdict.errors, []);
+
+    const imported = app.importReceiptText(JSON.stringify(receipt));
+    assert.equal(imported.length, 1);
+    assert.equal(imported[0].review.verified, false);
+    assert.equal(imported[0].importStatus, 'UNVERIFIED_IMPORTED');
+  });
+});
+
+test('malicious HTML, unknown state, missing exit code, and strict hash failures are rejected', function () {
+  [
+    'malicious-html-receipt.json',
+    'unknown-state-receipt.json',
+    'missing-exitcode-receipt.json',
+    'missing-hash-receipt.json',
+    'invalid-sha-format-receipt.json',
+    'not-measured-with-hash-receipt.json',
+    'missing-hash-status-receipt.json'
+  ].forEach(function (name) {
     const verdict = app.validateReceipt(readJson(name));
     assert.equal(verdict.valid, false, name + ' should be invalid');
   });
@@ -36,7 +60,7 @@ test('FAILED and UNKNOWN classifications are never remapped to NOT_DETECTED', fu
     result: { classification: 'FAILED', exitCode: 1 }
   });
   const unknown = app.normalizeImportedReceipt({
-    ...readJson('valid-receipt.json'),
+    ...readJson('valid-not-measured-receipt.json'),
     result: { classification: 'UNKNOWN', exitCode: 404 }
   });
 
@@ -92,7 +116,7 @@ test('CSV export escapes spreadsheet formulas safely', function () {
   assert.match(csv, /'@malicious/);
 });
 
-test('local probe creation reuses registry contracts and stays unverified', function () {
+test('local probe creation reuses registry contracts and supports explicit not_measured hashes', function () {
   const registryMap = Object.fromEntries(app.FALLBACK_DATA.registry.entries.map(function (entry) {
     return [entry.id, entry];
   }));
@@ -103,12 +127,38 @@ test('local probe creation reuses registry contracts and stays unverified', func
     summary: 'Synthetic software-only receipt describing a catalogue mismatch.',
     evidenceLocation: 'tests/fixtures/software-only-note.txt',
     exitCode: 404,
-    hashSha256: 'sha256:synthetic-probe-receipt'
+    hashStatus: 'not_measured',
+    hashSha256: ''
   }, registryMap);
 
   assert.equal(receipt.review.verified, false);
   assert.equal(receipt.inputContract, registryMap['smarts-bio'].inputContract);
   assert.equal(receipt.outputContract, registryMap['smarts-bio'].outputContract);
+  assert.equal(receipt.evidence.hashStatus, 'not_measured');
+  assert.equal(receipt.evidence.sha256, null);
+});
+
+test('historical observations preserve null timestamps and null hashes unless real source metadata exists', function () {
+  const observations = app.FALLBACK_DATA.evidence.observations;
+  const parentLedger = observations.filter(function (observation) {
+    return observation.sourceProvenance === 'parent observation ledger';
+  });
+  assert.ok(parentLedger.length > 0);
+  parentLedger.forEach(function (observation) {
+    assert.equal(observation.timestamp, null);
+    assert.equal(observation.hashStatus, 'not_measured');
+    assert.equal(observation.hashSha256, null);
+    assert.equal(observation.historicalStatus, 'UNVERIFIED');
+  });
+
+  const codex = observations.find(function (observation) {
+    return observation.id === 'obs-codex-session-started';
+  });
+  assert.ok(codex);
+  assert.equal(codex.timestamp, '2026-09-09T14:33:00Z');
+  assert.equal(codex.state, 'PROBED');
+  assert.match(codex.summary, /implementation was pending/i);
+  assert.equal(codex.hashSha256, null);
 });
 
 test('required static assets exist and HTML references resolve locally', function () {
@@ -116,7 +166,14 @@ test('required static assets exist and HTML references resolve locally', functio
   const cssPath = path.join(root, 'docs', 'style.css');
   const jsPath = path.join(root, 'docs', 'app.js');
   const html = fs.readFileSync(htmlPath, 'utf8');
-  const assets = [cssPath, jsPath, path.join(root, 'docs', 'data', 'registry.json'), path.join(root, 'docs', 'data', 'chains.json'), path.join(root, 'docs', 'evidence', 'parent-observations.json'), path.join(root, 'schemas', 'probe.schema.json')];
+  const assets = [
+    cssPath,
+    jsPath,
+    path.join(root, 'docs', 'data', 'registry.json'),
+    path.join(root, 'docs', 'data', 'chains.json'),
+    path.join(root, 'docs', 'evidence', 'parent-observations.json'),
+    path.join(root, 'schemas', 'probe.schema.json')
+  ];
 
   assets.forEach(function (assetPath) {
     assert.equal(fs.existsSync(assetPath), true, assetPath + ' should exist');

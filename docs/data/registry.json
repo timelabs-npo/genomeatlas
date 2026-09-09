@@ -7,79 +7,94 @@
       "name": "Remote Desktop Commander",
       "category": "endpoint-access",
       "state": "EXECUTED",
-      "stageIds": ["review"],
-      "probeTimestamp": "2026-09-08T09:14:00Z",
+      "stageIds": [
+        "review"
+      ],
+      "probeTimestamp": null,
       "evidenceLocation": "docs/evidence/parent-observations.json#obs-rdc-nonce",
       "inputContract": "Authorized endpoint command request with nonce payload.",
       "outputContract": "Completion record proving nonce execution on the authorized Windows endpoint.",
-      "notes": "Historical observation only; no live session is implied."
+      "notes": "Historical observation only; no live session is implied; source receipt timestamp or payload hash was not attached."
     },
     {
       "id": "github-connector",
       "name": "GitHub connector",
       "category": "repository-access",
       "state": "PROBED",
-      "stageIds": ["assemblies", "review"],
-      "probeTimestamp": "2026-09-08T09:20:00Z",
+      "stageIds": [
+        "assemblies",
+        "review"
+      ],
+      "probeTimestamp": null,
       "evidenceLocation": "docs/evidence/parent-observations.json#obs-github-connector",
       "inputContract": "Read-only repository metadata request.",
       "outputContract": "Repository listing or file metadata for the current repository.",
-      "notes": "Current evidence is read-only access to this repository."
+      "notes": "Current evidence is read-only access to this repository; source receipt timestamp or payload hash was not attached."
     },
     {
       "id": "github-cli",
       "name": "GitHub CLI",
       "category": "repository-access",
       "state": "EXECUTED",
-      "stageIds": ["review"],
-      "probeTimestamp": "2026-09-08T09:21:00Z",
+      "stageIds": [
+        "review"
+      ],
+      "probeTimestamp": null,
       "evidenceLocation": "docs/evidence/parent-observations.json#obs-gh-auth",
       "inputContract": "Authenticated GitHub read command.",
       "outputContract": "Command success/failure plus repository-readable output.",
-      "notes": "A historical repo-absence result is retained only as superseded evidence and not treated as current."
+      "notes": "A historical repo-absence result is retained only as superseded evidence and not treated as current; source receipt timestamp or payload hash was not attached."
     },
     {
       "id": "copilot",
       "name": "Copilot",
       "category": "implementation",
       "state": "EXECUTED",
-      "stageIds": ["review"],
+      "stageIds": [
+        "review"
+      ],
       "probeTimestamp": "2026-09-09T14:26:52Z",
       "evidenceLocation": "docs/evidence/parent-observations.json#obs-copilot-pr",
       "inputContract": "Issue or pull request implementation request.",
       "outputContract": "Repository changes and test artifacts on the active PR branch.",
-      "notes": "This suite is being implemented by Copilot in this PR, not by a WD-local Codex session."
+      "notes": "Source provenance is GitHub Actions run metadata; implementation remains in progress in this PR."
     },
     {
       "id": "codex-cli-session",
       "name": "Codex CLI/session",
       "category": "implementation",
-      "state": "BLOCKED",
-      "stageIds": ["review"],
-      "probeTimestamp": "2026-09-08T09:30:00Z",
-      "evidenceLocation": "docs/evidence/parent-observations.json#obs-codex-missing",
+      "state": "PROBED",
+      "stageIds": [
+        "review"
+      ],
+      "probeTimestamp": "2026-09-09T14:33:00Z",
+      "evidenceLocation": "docs/evidence/parent-observations.json#obs-codex-session-started",
       "inputContract": "Local Codex session bootstrap request.",
       "outputContract": "Established local coding session metadata.",
-      "notes": "No local Codex session was established in the parent observations."
+      "notes": "WD Codex task session start was observed from task metadata; implementation was still pending and no completion receipt is claimed."
     },
     {
       "id": "wsl-ubuntu",
       "name": "WSL Ubuntu",
       "category": "runtime",
       "state": "EXECUTED",
-      "stageIds": ["review"],
-      "probeTimestamp": "2026-09-08T09:16:00Z",
+      "stageIds": [
+        "review"
+      ],
+      "probeTimestamp": null,
       "evidenceLocation": "docs/evidence/parent-observations.json#obs-wsl-uname",
       "inputContract": "Remote uname or shell command against Ubuntu in WSL.",
       "outputContract": "Kernel and distribution details.",
-      "notes": "Ubuntu reported a WSL1 kernel, not WSL2."
+      "notes": "Ubuntu reported a WSL1 kernel, not WSL2; source receipt timestamp or payload hash was not attached."
     },
     {
       "id": "ncbi-datasets",
       "name": "NCBI Datasets",
       "category": "assemblies",
       "state": "DECLARED",
-      "stageIds": ["assemblies"],
+      "stageIds": [
+        "assemblies"
+      ],
       "probeTimestamp": null,
       "evidenceLocation": "docs/data/registry.json#ncbi-datasets",
       "inputContract": "Selected versioned assembly accession panel with hash verification.",
@@ -91,7 +106,9 @@
       "name": "GToTree",
       "category": "marker-families",
       "state": "DECLARED",
-      "stageIds": ["markers"],
+      "stageIds": [
+        "markers"
+      ],
       "probeTimestamp": null,
       "evidenceLocation": "docs/data/registry.json#gtotree",
       "inputContract": "Annotated proteomes or genome inputs plus marker set selection.",
@@ -103,7 +120,9 @@
       "name": "HMMER",
       "category": "marker-families",
       "state": "DECLARED",
-      "stageIds": ["markers"],
+      "stageIds": [
+        "markers"
+      ],
       "probeTimestamp": null,
       "evidenceLocation": "docs/data/registry.json#hmmer",
       "inputContract": "Protein sequences and marker HMM profiles.",
@@ -115,7 +134,9 @@
       "name": "Alignment and trimming tools",
       "category": "alignment",
       "state": "DECLARED",
-      "stageIds": ["alignments"],
+      "stageIds": [
+        "alignments"
+      ],
       "probeTimestamp": null,
       "evidenceLocation": "docs/data/registry.json#alignment-trimming",
       "inputContract": "Per-family protein or nucleotide sequence sets.",
@@ -127,7 +148,9 @@
       "name": "IQ-TREE",
       "category": "phylogeny",
       "state": "DECLARED",
-      "stageIds": ["host-tree"],
+      "stageIds": [
+        "host-tree"
+      ],
       "probeTimestamp": null,
       "evidenceLocation": "docs/data/registry.json#iqtree",
       "inputContract": "Prepared alignment sets and model-selection parameters.",
@@ -139,7 +162,9 @@
       "name": "DefenseFinder",
       "category": "rm-detection",
       "state": "DECLARED",
-      "stageIds": ["rm-detection"],
+      "stageIds": [
+        "rm-detection"
+      ],
       "probeTimestamp": null,
       "evidenceLocation": "docs/data/registry.json#defensefinder",
       "inputContract": "Genomic loci or proteomes for defense-system detection.",
@@ -151,7 +176,9 @@
       "name": "REBASE",
       "category": "rm-detection",
       "state": "DECLARED",
-      "stageIds": ["rm-detection"],
+      "stageIds": [
+        "rm-detection"
+      ],
       "probeTimestamp": null,
       "evidenceLocation": "docs/data/registry.json#rebase",
       "inputContract": "Restriction-modification enzyme reference lookup.",
@@ -163,7 +190,9 @@
       "name": "PubMed/Entrez",
       "category": "review",
       "state": "DECLARED",
-      "stageIds": ["review"],
+      "stageIds": [
+        "review"
+      ],
       "probeTimestamp": null,
       "evidenceLocation": "docs/data/registry.json#pubmed-entrez",
       "inputContract": "Literature or accession queries.",
@@ -175,7 +204,9 @@
       "name": "Geneious",
       "category": "review",
       "state": "DECLARED",
-      "stageIds": ["review"],
+      "stageIds": [
+        "review"
+      ],
       "probeTimestamp": null,
       "evidenceLocation": "docs/data/registry.json#geneious",
       "inputContract": "Local sequence review project inputs.",
@@ -187,7 +218,9 @@
       "name": "iTOL",
       "category": "visualization",
       "state": "DECLARED",
-      "stageIds": ["rings"],
+      "stageIds": [
+        "rings"
+      ],
       "probeTimestamp": null,
       "evidenceLocation": "docs/data/registry.json#itol",
       "inputContract": "Host tree plus verified ring annotation tables.",
@@ -199,31 +232,37 @@
       "name": "BioNeMo/NIM",
       "category": "ai-assistant",
       "state": "DISCOVERED",
-      "stageIds": ["review"],
-      "probeTimestamp": "2026-09-08T09:45:00Z",
+      "stageIds": [
+        "review"
+      ],
+      "probeTimestamp": null,
       "evidenceLocation": "docs/evidence/parent-observations.json#obs-bionemo-skills",
       "inputContract": "Installed-skill listing or NIM skill resource lookup.",
       "outputContract": "Skill catalogue entries or skill-read result.",
-      "notes": "Listed installed skills, but actual skill read returned resource-not-found; no NIM API or GPU job executed."
+      "notes": "Listed installed skills, but actual skill read returned resource-not-found; no NIM API or GPU job executed; source receipt timestamp or payload hash was not attached."
     },
     {
       "id": "smarts-bio",
       "name": "smarts.bio",
       "category": "bioinformatics-service",
       "state": "PROBED",
-      "stageIds": ["review"],
-      "probeTimestamp": "2026-09-08T09:50:00Z",
+      "stageIds": [
+        "review"
+      ],
+      "probeTimestamp": null,
       "evidenceLocation": "docs/evidence/parent-observations.json#obs-smarts-bio",
       "inputContract": "Catalogue browse or named tool execution request.",
       "outputContract": "Catalogue entries, tool execution receipt, or explicit no-execution reply.",
-      "notes": "Catalogue/execution mismatch: 87 tools listed, 404 on bio_gc_content, and smarts_query answered manually for synthetic ACGTACGT with no tool executed."
+      "notes": "Catalogue/execution mismatch: 87 tools listed, 404 on bio_gc_content, and smarts_query answered manually for synthetic ACGTACGT with no tool executed; source receipt timestamp or payload hash was not attached."
     },
     {
       "id": "genomic-intelligence",
       "name": "Genomic Intelligence",
       "category": "analysis",
       "state": "DECLARED",
-      "stageIds": ["review"],
+      "stageIds": [
+        "review"
+      ],
       "probeTimestamp": null,
       "evidenceLocation": "docs/data/registry.json#genomic-intelligence",
       "inputContract": "External genomics-analysis task request.",
@@ -235,7 +274,9 @@
       "name": "AlphaGenome",
       "category": "engineering-reference",
       "state": "DECLARED",
-      "stageIds": ["review"],
+      "stageIds": [
+        "review"
+      ],
       "probeTimestamp": null,
       "evidenceLocation": "docs/data/registry.json#alphagenome",
       "inputContract": "Explicit coordinate system, input alphabet, and bounded retry policy for transient failures.",
@@ -247,12 +288,14 @@
       "name": "native ChatGPT Sites",
       "category": "deployment",
       "state": "BLOCKED",
-      "stageIds": ["review"],
-      "probeTimestamp": "2026-09-08T09:55:00Z",
+      "stageIds": [
+        "review"
+      ],
+      "probeTimestamp": null,
       "evidenceLocation": "docs/evidence/parent-observations.json#obs-native-sites",
       "inputContract": "Native Site deployment or receipt lookup.",
       "outputContract": "Deployment receipt.",
-      "notes": "Native ChatGPT Sites were not exposed to the parent observer, so no native deployment receipt exists."
+      "notes": "Native ChatGPT Sites were not exposed to the parent observer, so no native deployment receipt exists; source receipt timestamp or payload hash was not attached."
     }
   ]
 }

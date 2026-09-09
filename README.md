@@ -32,6 +32,8 @@ Key views:
 - no inline event handlers
 - no remote execution controls
 - imported or manually recorded receipts remain **unverified** until external review
+- parent historical assertions without source receipts retain null timestamps and `not_measured` hashes
+- measured receipt hashes must be exactly 64 hexadecimal digits; otherwise use `null` with `not_measured`
 - all user-supplied text is rendered with `textContent`
 - CSV export escapes spreadsheet formula prefixes
 
@@ -50,7 +52,7 @@ Run the Node built-in test runner from the repository root:
 node --test
 ```
 
-Focused tests cover schema validation, malicious receipt rejection, CSV escaping, registry filtering, confirmation planning, and static asset integrity.
+Focused tests cover exact ring labels, branched lineage validation, schema validation, malicious receipt rejection, strict hash rules, CSV escaping, registry filtering, confirmation planning, and static asset integrity.
 
 ## AlphaGenome best-practice note
 

@@ -1,16 +1,19 @@
-✔ valid receipts validate and import as unverified (2.325976ms)
-✔ malicious HTML, unknown state, missing exit code, and missing hash are rejected (0.455527ms)
-✔ FAILED and UNKNOWN classifications are never remapped to NOT_DETECTED (1.046646ms)
-✔ request confirmation creates REQUESTED artifacts without execution or verification (0.562987ms)
-✔ registry filtering supports search, state, and stage (0.544082ms)
-✔ CSV export escapes spreadsheet formulas safely (0.394143ms)
-✔ local probe creation reuses registry contracts and stays unverified (0.334412ms)
-✔ required static assets exist and HTML references resolve locally (0.528162ms)
-ℹ tests 8
+✔ exact four ring labels are preserved (1.629782ms)
+✔ flow lineage keeps host tree and R-M detection as independent branches (0.297444ms)
+✔ valid measured and not_measured receipts validate and import as unverified (1.947373ms)
+✔ malicious HTML, unknown state, missing exit code, and strict hash failures are rejected (0.609204ms)
+✔ FAILED and UNKNOWN classifications are never remapped to NOT_DETECTED (0.309816ms)
+✔ request confirmation creates REQUESTED artifacts without execution or verification (0.605677ms)
+✔ registry filtering supports search, state, and stage (0.406536ms)
+✔ CSV export escapes spreadsheet formulas safely (0.421745ms)
+✔ local probe creation reuses registry contracts and supports explicit not_measured hashes (0.452592ms)
+✔ historical observations preserve null timestamps and null hashes unless real source metadata exists (0.448534ms)
+✔ required static assets exist and HTML references resolve locally (0.545264ms)
+ℹ tests 11
 ℹ suites 0
-ℹ pass 8
+ℹ pass 11
 ℹ fail 0
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 82.59869
+ℹ duration_ms 88.412239

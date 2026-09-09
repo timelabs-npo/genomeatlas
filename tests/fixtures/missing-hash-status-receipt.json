@@ -4,13 +4,12 @@
   "toolId": "github-cli",
   "state": "EXECUTED",
   "probeTimestamp": "2026-09-09T10:00:00Z",
-  "summary": "Historical authenticated repository read succeeded.",
+  "summary": "Hash status is required.",
   "inputContract": "Authenticated GitHub read command.",
   "outputContract": "Command success/failure plus repository-readable output.",
   "evidence": {
     "location": "docs/evidence/parent-observations.json#obs-gh-auth",
-    "hashStatus": "measured",
-    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    "sha256": null
   },
   "result": {
     "classification": "DETECTED",
