@@ -1,0 +1,11 @@
+{
+    "schema":  "genomeatlas.probe.response.v1",
+    "nonce":  "ga-20260909-e74f839b",
+    "response":  "ga-20260909-e74f839b:ubuntu-return",
+    "challenge_sha256":  "6462e7c6a872230d071e183681d0bcb463d3bb9d34e28ffdc992914766773ac8",
+    "windows_to_ubuntu":  "PASS",
+    "ubuntu_tmp_read_write":  "PASS",
+    "executed_at":  "2026-09-09T14:32:48.893592+00:00",
+    "scope":  "transport only; not a phylogeny run",
+    "ubuntu_to_windows":  "PASS"
+}
