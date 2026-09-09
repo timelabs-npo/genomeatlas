@@ -51,6 +51,8 @@ def _reject_duplicate_keys(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
 
 
 def load_receipt(path: Path) -> dict[str, Any]:
+    if path.stat().st_size > 65536:
+        raise ValueError("receipt exceeds 64 KiB")
     with path.open("r", encoding="utf-8") as handle:
         data = json.load(handle, object_pairs_hook=_reject_duplicate_keys)
     if not isinstance(data, dict):
@@ -147,11 +149,11 @@ def validate_receipt_structure(receipt: dict[str, Any]) -> list[str]:
         errors.append("exit_code must be an integer")
 
     scope = receipt.get("scope")
-    if scope not in SCOPES:
+    if not isinstance(scope, str) or scope not in SCOPES:
         errors.append(f"scope must be one of: {', '.join(sorted(SCOPES))}")
 
     outcome = receipt.get("outcome")
-    if outcome not in OUTCOMES:
+    if not isinstance(outcome, str) or outcome not in OUTCOMES:
         errors.append(f"outcome must be one of: {', '.join(sorted(OUTCOMES))}")
 
     if _is_int_but_not_bool(exit_code):
