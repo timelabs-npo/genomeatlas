@@ -1,0 +1,17 @@
+﻿{
+    "schema":  "genomeatlas.exchange.v1",
+    "id":  "b87ddfd0b0444356ab4d76e1750a2904",
+    "timestamp":  "2026-09-09T14:55:52.0019996Z",
+    "status":  "PASS",
+    "scope":  "connectivity",
+    "endpoint_aliases":  [
+                             "WD",
+                             "Ubuntu WSL1",
+                             "WSL tmp"
+                         ],
+    "input_sha256":  "816e3dbdc40d38a7a05d38d85f2a2ddc735b8bdbb53f585627590fb03c796874",
+    "linux_tmp_sha256":  "816e3dbdc40d38a7a05d38d85f2a2ddc735b8bdbb53f585627590fb03c796874",
+    "windows_return_sha256":  "816e3dbdc40d38a7a05d38d85f2a2ddc735b8bdbb53f585627590fb03c796874",
+    "bytes":  124,
+    "biological_validity":  "NOT_ASSESSED"
+}
