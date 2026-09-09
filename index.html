@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GenomeAtlas: an evidence-aware workspace for the frozen LAB genome panel, tools and proposed scientific workflows.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>GenomeAtlas · Site Helper Suite</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script type="module" src="assets/app.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to workspace</a>
+  <aside class="sidebar">
+    <a class="brand" href="#overview"><img src="assets/mark.svg" alt="" width="32" height="32"><span>GenomeAtlas<small>SITE HELPER SUITE</small></span></a>
+    <p class="nav-label">RESEARCH WORKSPACE</p>
+    <nav aria-label="Workspace">
+      <a href="#overview"><span aria-hidden="true">01</span> Overview</a>
+      <a href="#registry"><span aria-hidden="true">02</span> Tool registry <small id="nav-tools"></small></a>
+      <a href="#chains"><span aria-hidden="true">03</span> Data chains <small>8</small></a>
+      <a href="#genomes"><span aria-hidden="true">04</span> Frozen genomes <small id="nav-genomes"></small></a>
+      <a href="#cheatbook"><span aria-hidden="true">05</span> Workflow cheatbook</a>
+      <a href="#workbench"><span aria-hidden="true">06</span> Delegation workbench</a>
+      <a href="#receipts"><span aria-hidden="true">07</span> Probe receipts</a>
+      <a href="#exchange"><span aria-hidden="true">08</span> Import &amp; export</a>
+    </nav>
+    <div class="sidebar-foot"><span class="status-dot"></span> Local review workspace<p>CPU default · No execution service</p><a href="THIRD_PARTY_NOTICES.md">Sources &amp; licenses ↗</a></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><span>timelabs <span class="divider">/</span> LAB phylogenomics</span><span class="badge">FROZEN INPUTS</span></header>
+    <main id="main" tabindex="-1"><p id="loading" role="status">Loading the repository snapshot…</p><noscript>This workspace needs JavaScript for filtering and local previews. All original records are available in the data directory. No analysis runs here.</noscript></main>
+    <footer>GenomeAtlas · Evidence before interpretation <span>Source snapshot · No genomes downloaded</span></footer>
+  </div>
+  <dialog id="inspector" aria-labelledby="inspector-title"><div id="inspector-content"></div><form method="dialog"><button class="button secondary">Close inspector</button></form></dialog>
+  <div id="notice" class="notice" role="status" aria-live="polite"></div>
+</body>
+</html>

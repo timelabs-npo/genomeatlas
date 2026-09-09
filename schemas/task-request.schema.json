@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GenomeAtlas local task request",
+  "description": "Intent only. This schema cannot authorize execution, acceptance or publishing.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "request_id",
+    "created_at_utc",
+    "state",
+    "chain_id",
+    "role",
+    "endpoint_alias",
+    "compute",
+    "genome_accessions",
+    "acceptance_criteria",
+    "config"
+  ],
+  "properties": {
+    "schema": {
+      "const": "genomeatlas.task-request/1"
+    },
+    "request_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_-]{0,63}(?![\\s\\S])",
+      "maxLength": 64
+    },
+    "created_at_utc": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]{3})?Z(?![\\s\\S])"
+    },
+    "state": {
+      "const": "TASK_REQUEST_ONLY"
+    },
+    "chain_id": {
+      "enum": [
+        "panel",
+        "download",
+        "markers",
+        "tree",
+        "rm",
+        "evidence",
+        "figure",
+        "release"
+      ]
+    },
+    "role": {
+      "enum": [
+        "BUILD",
+        "VERIFY",
+        "DOC",
+        "CUT"
+      ]
+    },
+    "endpoint_alias": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_-]{0,63}(?![\\s\\S])",
+      "maxLength": 64
+    },
+    "compute": {
+      "const": "cpu"
+    },
+    "genome_accessions": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 177,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^GCF_[0-9]{9}\\.[1-9][0-9]*(?![\\s\\S])"
+      }
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "exact-input-set",
+          "versions-and-hashes",
+          "independent-review",
+          "raw-components-reviewed",
+          "exact-strain-evidence",
+          "real-deployment-receipt"
+        ]
+      }
+    },
+    "config": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "use_gpu",
+        "host_tree",
+        "rm_independent"
+      ],
+      "properties": {
+        "use_gpu": {
+          "const": false
+        },
+        "host_tree": {
+          "const": "conserved-single-copy-markers"
+        },
+        "rm_independent": {
+          "const": true
+        }
+      }
+    }
+  }
+}
