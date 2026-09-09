@@ -1,0 +1,31 @@
+{
+  "schema": "genomeatlas.static-package/1",
+  "state": "LOCAL_STATIC_PACKAGE_NOT_DEPLOYED",
+  "path": "evidence/genomeatlas-static.zip",
+  "sha256": "008ac76d702bc0dab38ccc71c8b907919c8765a0e19499d6d1c0fbfbe1fe072a",
+  "file_count": 20,
+  "files": [
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md",
+    "assets/app.mjs",
+    "assets/core.mjs",
+    "assets/data.mjs",
+    "assets/mark.svg",
+    "assets/styles.css",
+    "data/chains.json",
+    "data/live_probes.json",
+    "data/panel.json",
+    "data/probes.json",
+    "data/registry.json",
+    "data/selected_accessions.txt",
+    "index.html",
+    "manifest.json",
+    "schemas/probe-result.schema.json",
+    "schemas/task-request.schema.json",
+    "templates/probe-result.synthetic.json",
+    "templates/reproducible-config.json",
+    "templates/task-request.json"
+  ],
+  "native_site_version": null,
+  "native_compatibility": "NOT_TESTED"
+}

@@ -1,0 +1,148 @@
+{
+  "schema": "genomeatlas.local-check-run/1",
+  "run_id": "20260909T151047723043Z",
+  "status": "PASS",
+  "browser_status": "NOT_TESTED",
+  "records": [
+    {
+      "command": [
+        "python",
+        "--version"
+      ],
+      "cwd_alias": "REPO",
+      "started_at_utc": "2026-09-09T15:10:47.723127Z",
+      "finished_at_utc": "2026-09-09T15:10:47.854420Z",
+      "exit_code": 0,
+      "scope": "LOCAL_SITE_CHECK_SYNTHETIC_INPUTS_WHERE_LABELLED",
+      "stdout": "Python 3.14.6\n",
+      "stderr": "",
+      "stdout_path": "evidence/check-20260909T151047723043Z-01-python-version.stdout.txt",
+      "stderr_path": "evidence/check-20260909T151047723043Z-01-python-version.stderr.txt",
+      "redaction_applied": false,
+      "stdout_sha256": "917601090ffb73a030e3eaa8b7a01c41400cad4b61366b4218d7756a5733b66c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "node",
+        "--version"
+      ],
+      "cwd_alias": "REPO",
+      "started_at_utc": "2026-09-09T15:10:47.855005Z",
+      "finished_at_utc": "2026-09-09T15:10:48.081536Z",
+      "exit_code": 0,
+      "scope": "LOCAL_SITE_CHECK_SYNTHETIC_INPUTS_WHERE_LABELLED",
+      "stdout": "v24.19.0\n",
+      "stderr": "",
+      "stdout_path": "evidence/check-20260909T151047723043Z-02-node-version.stdout.txt",
+      "stderr_path": "evidence/check-20260909T151047723043Z-02-node-version.stderr.txt",
+      "redaction_applied": false,
+      "stdout_sha256": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/build.py"
+      ],
+      "cwd_alias": "REPO",
+      "started_at_utc": "2026-09-09T15:10:48.081639Z",
+      "finished_at_utc": "2026-09-09T15:10:48.532499Z",
+      "exit_code": 0,
+      "scope": "LOCAL_SITE_CHECK_SYNTHETIC_INPUTS_WHERE_LABELLED",
+      "stdout": "Built 19 static files + manifest.json into dist/\nSource data: 177 frozen genomes, 63 registry entries, 8 proposed chains\nNo execution, inference, metadata refresh or deployment performed.\n",
+      "stderr": "",
+      "stdout_path": "evidence/check-20260909T151047723043Z-03-build.stdout.txt",
+      "stderr_path": "evidence/check-20260909T151047723043Z-03-build.stderr.txt",
+      "redaction_applied": false,
+      "stdout_sha256": "ed09866a168621011376f132640bf18b3705462e2eb97cdc91e357aaceaad410",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd_alias": "REPO",
+      "started_at_utc": "2026-09-09T15:10:48.532911Z",
+      "finished_at_utc": "2026-09-09T15:10:49.037794Z",
+      "exit_code": 0,
+      "scope": "LOCAL_SITE_CHECK_SYNTHETIC_INPUTS_WHERE_LABELLED",
+      "stdout": "",
+      "stderr": "test_actual_full_registry_is_retained (test_suite.SourceIntegrity.test_actual_full_registry_is_retained) ... ok\ntest_actual_panel_is_exact_frozen_selection (test_suite.SourceIntegrity.test_actual_panel_is_exact_frozen_selection) ... ok\ntest_all_actual_chains_are_proposed (test_suite.SourceIntegrity.test_all_actual_chains_are_proposed) ... ok\ntest_build_does_not_publish_evidence_or_private_roots (test_suite.SourceIntegrity.test_build_does_not_publish_evidence_or_private_roots) ... ok\ntest_build_manifest_is_complete_and_correct (test_suite.SourceIntegrity.test_build_manifest_is_complete_and_correct) ... ok\ntest_built_inputs_are_byte_identical (test_suite.SourceIntegrity.test_built_inputs_are_byte_identical) ... ok\ntest_legacy_receipts_do_not_meet_new_verified_contract (test_suite.SourceIntegrity.test_legacy_receipts_do_not_meet_new_verified_contract) ... ok\ntest_native_observation_is_discovery_only (test_suite.SourceIntegrity.test_native_observation_is_discovery_only) ... ok\ntest_html_security_and_local_dependencies (test_suite.StaticBoundaryTests.test_html_security_and_local_dependencies) ... ok\ntest_no_html_injection_or_execution_sinks (test_suite.StaticBoundaryTests.test_no_html_injection_or_execution_sinks) ... ok\ntest_upstream_license_preserved (test_suite.StaticBoundaryTests.test_upstream_license_preserved) ... ok\ntest_synthetic_probe_requires_every_receipt_field (test_suite.SyntheticSchemaTests.test_synthetic_probe_requires_every_receipt_field) ... ok\ntest_synthetic_rejects_bad_utc_and_types (test_suite.SyntheticSchemaTests.test_synthetic_rejects_bad_utc_and_types) ... ok\ntest_synthetic_rejects_duplicate_or_unversioned_ids (test_suite.SyntheticSchemaTests.test_synthetic_rejects_duplicate_or_unversioned_ids) ... ok\ntest_synthetic_rejects_execution_and_pass_escalation (test_suite.SyntheticSchemaTests.test_synthetic_rejects_execution_and_pass_escalation) ... ok\ntest_synthetic_rejects_forged_verification_and_unredacted_results (test_suite.SyntheticSchemaTests.test_synthetic_rejects_forged_verification_and_unredacted_results) ... ok\ntest_synthetic_rejects_gpu_and_rm_host_tree (test_suite.SyntheticSchemaTests.test_synthetic_rejects_gpu_and_rm_host_tree) ... ok\ntest_synthetic_rejects_pass_with_nonzero_exit (test_suite.SyntheticSchemaTests.test_synthetic_rejects_pass_with_nonzero_exit) ... ok\ntest_synthetic_rejects_secrets_paths_shell_and_html_as_alias (test_suite.SyntheticSchemaTests.test_synthetic_rejects_secrets_paths_shell_and_html_as_alias) ... ok\ntest_synthetic_rejects_trailing_newlines_and_huge_integer (test_suite.SyntheticSchemaTests.test_synthetic_rejects_trailing_newlines_and_huge_integer) ... ok\ntest_synthetic_requires_artifact_hashes (test_suite.SyntheticSchemaTests.test_synthetic_requires_artifact_hashes) ... ok\ntest_synthetic_templates_are_structurally_valid_only (test_suite.SyntheticSchemaTests.test_synthetic_templates_are_structurally_valid_only) ... ok\n\n----------------------------------------------------------------------\nRan 22 tests in 0.096s\n\nOK\n",
+      "stdout_path": "evidence/check-20260909T151047723043Z-04-python-tests.stdout.txt",
+      "stderr_path": "evidence/check-20260909T151047723043Z-04-python-tests.stderr.txt",
+      "redaction_applied": false,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "80a0eef3199eeb4f13ac8d8d237921bc17ddf45b2c577887fbe52ab5ec5ea7ee"
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "assets/app.mjs"
+      ],
+      "cwd_alias": "REPO",
+      "started_at_utc": "2026-09-09T15:10:49.037936Z",
+      "finished_at_utc": "2026-09-09T15:10:49.348452Z",
+      "exit_code": 0,
+      "scope": "LOCAL_SITE_CHECK_SYNTHETIC_INPUTS_WHERE_LABELLED",
+      "stdout": "",
+      "stderr": "",
+      "stdout_path": "evidence/check-20260909T151047723043Z-05-js-syntax.stdout.txt",
+      "stderr_path": "evidence/check-20260909T151047723043Z-05-js-syntax.stderr.txt",
+      "redaction_applied": false,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/core.test.mjs"
+      ],
+      "cwd_alias": "REPO",
+      "started_at_utc": "2026-09-09T15:10:49.348869Z",
+      "finished_at_utc": "2026-09-09T15:10:50.048093Z",
+      "exit_code": 0,
+      "scope": "LOCAL_SITE_CHECK_SYNTHETIC_INPUTS_WHERE_LABELLED",
+      "stdout": "\u2714 actual registry: full search plus intersecting layer/status/probed filters (2.9665ms)\n\u2714 actual source snapshots round-trip without changing frozen truth (9.6224ms)\n\u2714 synthetic positive probe is quarantined even when it claims PASS (2.7058ms)\n\u2714 synthetic task creation produces intent only for actual panel accessions (11.0451ms)\n\u2714 synthetic imports reject every omitted probe requirement (3.8695ms)\n\u2714 synthetic imports reject malformed JSON, oversized and deeply nested structures (5.9266ms)\n\u2714 synthetic imports reject prototype pollution and HTML / shell payloads (6.2204ms)\n\u2714 synthetic imports reject privilege escalation and modified source receipts (1.9822ms)\n\u2714 synthetic imports reject bad timestamps, hashes and non-integer codes (2.8743ms)\n\u2714 synthetic tasks reject invented IDs, GPU and incorrect host-tree method (1.7488ms)\n\u2714 synthetic coordinates: one-based single base and zero-based boundaries (2.0576ms)\n\u2714 export filenames are fixed and cannot escape a download name (0.5152ms)\n\u2714 synthetic boolean and integer types remain distinct in schema checks (0.6148ms)\n\u2139 tests 13\n\u2139 suites 0\n\u2139 pass 13\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 394.5446\n",
+      "stderr": "",
+      "stdout_path": "evidence/check-20260909T151047723043Z-06-js-tests.stdout.txt",
+      "stderr_path": "evidence/check-20260909T151047723043Z-06-js-tests.stderr.txt",
+      "redaction_applied": false,
+      "stdout_sha256": "7b99742ca607cae8eb74f89fa4d2b6876b845563fafda483209cb683bd6543e6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/package.py"
+      ],
+      "cwd_alias": "REPO",
+      "started_at_utc": "2026-09-09T15:10:50.049403Z",
+      "finished_at_utc": "2026-09-09T15:10:50.380844Z",
+      "exit_code": 0,
+      "scope": "LOCAL_SITE_CHECK_SYNTHETIC_INPUTS_WHERE_LABELLED",
+      "stdout": "Packaged and CRC-verified 20 static files: evidence/genomeatlas-static.zip\nNative Sites compatibility / version / deployment: NOT_TESTED / none / NOT_DEPLOYED\n",
+      "stderr": "",
+      "stdout_path": "evidence/check-20260909T151047723043Z-07-static-package.stdout.txt",
+      "stderr_path": "evidence/check-20260909T151047723043Z-07-static-package.stderr.txt",
+      "redaction_applied": false,
+      "stdout_sha256": "6dab8b0cf36620034f801726ece48aaa3ee3c35dec9afd7c50c826c2d7bb9423",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "not_tested": [
+    "Biological workflows",
+    "GPU/CPU output parity",
+    "Paid APIs",
+    "Native Sites authentication/save/deploy",
+    "Browser checks explicitly skipped; see evidence/browser-access.json"
+  ]
+}
