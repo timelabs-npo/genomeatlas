@@ -40,6 +40,61 @@ jobs:
           cat qa-output/node.stdout.log
           cat qa-output/node.stderr.log
           exit "$status"
+      - name: Install isolated browser test dependency
+        run: |
+          python3 -m venv /tmp/genomeatlas-browser-env
+          /tmp/genomeatlas-browser-env/bin/pip install playwright==1.55.0
+          /tmp/genomeatlas-browser-env/bin/python -m playwright install chromium
+      - name: Actual browser interactions against local HTTP
+        shell: bash
+        run: |
+          cat > /tmp/genomeatlas-browser.py <<'PY'
+          import json, threading, functools
+          from pathlib import Path
+          from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
+          from playwright.sync_api import sync_playwright
+          out=Path('qa-output'); checks=[]; errors=[]
+          handler=functools.partial(SimpleHTTPRequestHandler,directory=str(Path('docs').resolve()))
+          server=ThreadingHTTPServer(('127.0.0.1',0),handler)
+          threading.Thread(target=server.serve_forever,daemon=True).start()
+          url=f'http://127.0.0.1:{server.server_port}/'
+          result={'url':url,'method':'actual Chromium HTTP navigation; Playwright 1.55.0','checks':checks,'page_errors':errors}
+          try:
+            with sync_playwright() as pw:
+              browser=pw.chromium.launch(headless=True)
+              page=browser.new_page(viewport={'width':1440,'height':1000})
+              page.on('pageerror',lambda e: errors.append(str(e)))
+              page.goto(url,wait_until='networkidle')
+              page.wait_for_selector('[data-ready="true"]')
+              assert 'GenomeAtlas' in page.title(); checks.append('page identity and nonempty render')
+              page.screenshot(path=str(out/'desktop.png'),full_page=True)
+              page.locator('#registry-search').fill('smarts')
+              assert page.locator('[data-registry] tbody tr').count()==1; checks.append('registry filter')
+              page.locator('#registry-search').fill('')
+              page.locator('#request-form [name="summary"]').fill('Synthetic UI-only review request')
+              page.locator('#request-form [name="justification"]').fill('Validate local confirmation without remote execution')
+              page.locator('#request-form [name="confirmed"]').check()
+              page.locator('#request-form button[type="submit"]').click()
+              assert 'REQUESTED' in page.locator('[data-requests] tbody').inner_text(); checks.append('request-only confirmation')
+              with page.expect_download() as event: page.locator('[data-export-request-json]').click()
+              event.value.save_as(str(out/'request-export.json'))
+              obj=json.loads((out/'request-export.json').read_text())
+              records=obj if isinstance(obj,list) else obj.get('requests',[])
+              assert records and all(x['status']=='REQUESTED' and not x['verified'] and x['execution'] is None for x in records)
+              checks.append('JSON export contains no fake execution')
+              page.set_viewport_size({'width':390,'height':844})
+              page.screenshot(path=str(out/'mobile.png'),full_page=True)
+              assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth'); checks.append('mobile page overflow')
+              assert not errors; checks.append('no JavaScript errors')
+              browser.close()
+            result['status']='PASS'
+          except Exception as exc:
+            result['status']='FAIL'; result['error']=str(exc)
+            raise
+          finally:
+            server.shutdown(); (out/'browser-result.json').write_text(json.dumps(result,indent=2))
+          PY
+          /tmp/genomeatlas-browser-env/bin/python /tmp/genomeatlas-browser.py
       - name: Publish source and test receipts even after test failure
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
