@@ -286,7 +286,7 @@ test('BioNeMo catalog observations preserve third-party provenance and keep infe
   });
 
   assert.match(bionemo.notes, /62 SKILL\.md/i);
-  assert.match(bionemo.notes, /preserve the CPU path/i);
+  assert.match(bionemo.notes, /CPU path remains preserved|preserve the CPU path/i);
   assert.match(observation.summary, /0e67a612e4045f007e38fa77adc8f3ebfc5616b6/i);
   assert.match(observation.notes, /NIM\/GPU inference did not run/i);
 });

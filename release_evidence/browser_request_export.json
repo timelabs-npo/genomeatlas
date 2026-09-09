@@ -1,0 +1,15 @@
+[
+  {
+    "kind": "request-artifact",
+    "version": "1.0.0",
+    "id": "request-github-cli-1788967808748",
+    "toolId": "github-cli",
+    "stageId": "review",
+    "summary": "Bounded independent regression review",
+    "justification": "Software-only validation. No biological execution or paid provisioning.",
+    "requestedAt": "2026-09-09T15:30:08.748Z",
+    "status": "REQUESTED",
+    "verified": false,
+    "execution": null
+  }
+]

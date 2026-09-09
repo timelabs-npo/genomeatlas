@@ -1,0 +1,11 @@
+{
+  "schema": "genomeatlas-check/v1",
+  "check": "windows_ubuntu_bidirectional_nonce",
+  "scope": "software-connectivity-not-biological",
+  "utc": "2026-09-09T15:27:37.742927+00:00",
+  "exit_code": 0,
+  "status": "PASS",
+  "request_sha256": "f7ddf2d8feb86dfbcc3cdb90d1c8e4d487113f1f08c9426a40277b0df635a931",
+  "ubuntu_kernel": "4.4.0-26100-Microsoft",
+  "response_sha256": "d1f4a88217eab4c202ffa7db5600567675da6ba71c400c88d0078e02161ae768"
+}

@@ -1,0 +1,80 @@
+{
+  "scope": "software-only",
+  "utc": "2026-09-09T15:34:23.707685+00:00",
+  "node_tests": {
+    "passed": 19,
+    "exit_code": 0
+  },
+  "browser": {
+    "scope": "real-WD-browser-software-only",
+    "utc": "2026-09-09T15:30:11.892Z",
+    "tested_url": "http://127.0.0.1:4393/",
+    "checks": [
+      {
+        "name": "localhost HTTP success",
+        "status": "PASS"
+      },
+      {
+        "name": "correct title",
+        "status": "PASS"
+      },
+      {
+        "name": "four exact RM ring labels",
+        "status": "PASS"
+      },
+      {
+        "name": "desktop no horizontal overflow",
+        "status": "PASS"
+      },
+      {
+        "name": "populated registry",
+        "status": "PASS"
+      },
+      {
+        "name": "registry search filters",
+        "status": "PASS"
+      },
+      {
+        "name": "smarts execution blocked",
+        "status": "PASS"
+      },
+      {
+        "name": "malformed receipt rejected",
+        "status": "PASS"
+      },
+      {
+        "name": "no injected script execution",
+        "status": "PASS"
+      },
+      {
+        "name": "rejected receipt not promoted",
+        "status": "PASS"
+      },
+      {
+        "name": "request recorded locally",
+        "status": "PASS"
+      },
+      {
+        "name": "export never asserts execution",
+        "status": "PASS"
+      },
+      {
+        "name": "mobile no page overflow",
+        "status": "PASS"
+      },
+      {
+        "name": "no JavaScript page errors",
+        "status": "PASS"
+      }
+    ],
+    "errors": [],
+    "status": "PASS"
+  },
+  "public_pattern_scan": {
+    "findings": [],
+    "coverage": "limited patterns; not exhaustive"
+  },
+  "native_site": "NOT_PUBLISHED",
+  "bionemo": "SOURCE_GUIDANCE_READ_NO_MODEL_RUN",
+  "smarts_bio": "CATALOG_OK_EXECUTION_404"
+}

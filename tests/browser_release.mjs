@@ -1,0 +1,47 @@
+import http from 'node:http';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {fileURLToPath} from 'node:url';
+const {chromium}=await import(process.env.PLAYWRIGHT_MODULE || 'playwright');
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const evidence=path.join(root,'release_evidence'); await fs.mkdir(evidence,{recursive:true});
+const checks=[],errors=[];
+const ok=(name,test)=>{assert.ok(test,name);checks.push({name,status:'PASS'});};
+const server=http.createServer(async(req,res)=>{try{const rel=decodeURIComponent(new URL(req.url,'http://localhost').pathname);const p=path.resolve(root,'docs','.'+(rel==='/'?'/index.html':rel));if(!p.startsWith(path.join(root,'docs')+path.sep))throw Error('path');const mime={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json'}[path.extname(p)]||'application/octet-stream';res.setHeader('Content-Type',mime);res.end(await fs.readFile(p));}catch{res.writeHead(404);res.end('Not found');}});
+await new Promise(r=>server.listen(0,'127.0.0.1',r));
+const url=`http://127.0.0.1:${server.address().port}/`;
+const browser=await chromium.launch({headless:true,channel:"msedge"});
+try{
+ const page=await browser.newPage({viewport:{width:1440,height:1000}});page.on('pageerror',e=>errors.push(e.message));
+ const response=await page.goto(url); await page.waitForFunction(()=>window.GenomeAtlasApp && document.querySelector('[data-app]').dataset.ready==='true');
+ ok('localhost HTTP success',response.status()===200);
+ ok('correct title',(await page.title()).includes('GenomeAtlas'));
+ ok('four exact RM ring labels',(await page.locator('[data-rings-list] li').count())===4);
+ ok('desktop no horizontal overflow',await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+ const before=await page.locator('[data-registry] tbody tr').count(); ok('populated registry',before>=20);
+ await page.locator('#registry-search').fill('smarts.bio');ok('registry search filters',await page.locator('[data-registry] tbody tr').count()===1);
+ ok('smarts execution blocked',(await page.locator('[data-registry] tbody').innerText()).includes('BLOCKED'));
+ await page.locator('#registry-search').fill('');
+ const hostile={name:'x.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({status:'PASS',review:{verified:true},summary:'<img src=x onerror="window.PWNED=1">'}))};
+ await page.locator('#receipt-import').setInputFiles(hostile);await page.locator('#import-button').click();
+ ok('malformed receipt rejected',(await page.locator('[data-message]').innerText()).length>0);
+ ok('no injected script execution',await page.evaluate(()=>window.PWNED===undefined));
+ ok('rejected receipt not promoted',await page.locator('[data-summary-receipts]').innerText()==='0');
+ await page.locator('#request-tool').selectOption('github-cli');await page.locator('#request-stage').selectOption('review');
+ await page.locator('#request-form input[name="summary"]').fill('Bounded independent regression review');
+ await page.locator('#request-form textarea[name="justification"]').fill('Software-only validation. No biological execution or paid provisioning.');
+ await page.locator('#request-form input[name="confirmed"]').check();await page.locator('#request-form button[type="submit"]').click();
+ ok('request recorded locally',(await page.locator('[data-requests] tbody').innerText()).includes('REQUESTED'));
+ const dl=page.waitForEvent('download');await page.locator('[data-export-request-json]').click();const download=await dl;
+ const dp=path.join(evidence,'browser_request_export.json');await download.saveAs(dp);const data=JSON.parse(await fs.readFile(dp,'utf8'));const item=Array.isArray(data)?data[0]:(data.requests||data.records||[])[0];
+ ok('export never asserts execution',item.status==='REQUESTED' && item.verified===false && item.execution===null);
+ await page.screenshot({path:path.join(evidence,'desktop.png'),fullPage:true});
+ await page.setViewportSize({width:390,height:844});await page.evaluate(()=>scrollTo(0,0));
+ ok('mobile no page overflow',await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+ await page.screenshot({path:path.join(evidence,'mobile.png'),fullPage:true});
+ ok('no JavaScript page errors',errors.length===0);
+ await fs.writeFile(path.join(evidence,'browser.json'),JSON.stringify({scope:'real-WD-browser-software-only',utc:new Date().toISOString(),tested_url:url,checks,errors,status:'PASS'},null,2));
+ console.log(JSON.stringify({checks:checks.length,errors,status:'PASS'}));
+}catch(e){await fs.writeFile(path.join(evidence,'browser.json'),JSON.stringify({checks,errors,status:'FAIL',error:String(e)},null,2));throw e;}
+finally{await browser.close();await new Promise(r=>server.close(r));}
