@@ -1,0 +1,64 @@
+{
+  "schema": "genomeatlas.independent-parent-recheck/1",
+  "recorded_at": "2026-09-09T15:39:31.771000+00:00",
+  "scope": "Software, public-source and connectivity checks only; NOT full biological analysis",
+  "source_commit_tested": "e44827702a8153f682de64d92e92ef1a88bba4c8",
+  "build_exit": 0,
+  "python_tests": {
+    "count": 22,
+    "exit_code": 0
+  },
+  "node_tests": {
+    "count": 27,
+    "exit_code": 0
+  },
+  "github_pages": {
+    "url": "https://timelabs-npo.github.io/genomeatlas/",
+    "files_checked": 19,
+    "hashes_matching": 18,
+    "status": "FAIL",
+    "mismatches": [
+      {
+        "path": "assets/data.mjs",
+        "http_status": 200,
+        "bytes": 35969,
+        "expected_sha256": "12684a03ce5669981f82141159b9dae0239db182c7cafbcb7e4d544d7daaee68",
+        "actual_sha256": "ca2928605d509a34ac5ffac90573ec8c5bbe352f71e351bfc5710c67f45bf6e5",
+        "matches": false
+      }
+    ]
+  },
+  "legacy_copilot_review": {
+    "source_commit": "7c27865b7113b0fe8b22a57a751ed82fdaae9c8a",
+    "windows_tests": 10,
+    "windows_exit": 0,
+    "ubuntu_tmp_tests": 10,
+    "ubuntu_exit": 0,
+    "scope": "Synthetic inventory regressions; later PR heads not covered"
+  },
+  "separate_local_codex_candidate": {
+    "tests": 122,
+    "passed": 122,
+    "scope": "Separate 60-entry helper candidate; NOT current main"
+  },
+  "native_site": {
+    "recorded_public_url": "https://genomeatlas-site-helper-suite.hx31337.chatgpt.site",
+    "publication_basis": "Separate native provider receipt recorded in evidence/publication-status-20260909T1535.json",
+    "latest_anonymous_wd_http": 403,
+    "latest_browser_visual": "NOT_TESTED_PERMISSION_DENIED",
+    "not_synchronized_with_github_main": true
+  },
+  "smarts_bio": {
+    "discovery": "AUTHENTICATED",
+    "advertised_gc_tool": "bioinformatics.gcContent",
+    "actual_execution": "404 Tool not found; no result"
+  },
+  "bionemo": {
+    "skill_guidance_read": true,
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "gpu_inference": "NOT_RUN",
+    "acceleration": "OFF"
+  },
+  "science": "NOT_RUN",
+  "release_acceptance": "PARTIAL: byte-identical deployment check failed for generated assets/data.mjs; native anonymous access returned403; do not report full acceptance"
+}
