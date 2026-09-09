@@ -1,6 +1,6 @@
 {
   "schema": "genomeatlas.parent-observations/1",
-  "utc": "2026-09-09T15:34:20.190671+00:00",
+  "utc": "2026-09-09T15:49:38.347308+00:00",
   "scope": "SOFTWARE_AND_CONNECTIVITY_NOT_BIOLOGICAL_ACCEPTANCE",
   "results": [
     {
@@ -40,13 +40,13 @@
     },
     {
       "tool": "smarts.bio: AI for biology",
-      "status": "AUTH_BLOCKED",
-      "scope": "Direct smarts_list_tools call: user has not logged into the tool. No scientific job run."
+      "status": "TOOL_NOT_FOUND",
+      "scope": "Later authenticated catalog/workspace discovery succeeded, but advertised bioinformatics.gcContent returned404. Agent confirmed no callable deterministic GC tool. No smarts biological job executed."
     },
     {
       "tool": "ChatGPT Sites",
-      "status": "PROVIDER_ACTIVE_HTTP_200",
-      "scope": "Native provider confirms public active Site. Readback receipt and saved source supplied separately; no live-version binding claimed."
+      "status": "DEPLOYED_OWNER_ONLY",
+      "scope": "Canonical native Site version3 deployment succeeded; owner-only access confirmed. Separate public-site metadata is historical and not proof of this version. Browser UI NOT_TESTED."
     }
   ],
   "tests": {
@@ -66,6 +66,17 @@
       "status": "PERMISSION_BLOCKED"
     }
   },
-  "native_deployment_url": "https://genomeatlas-site-helper-suite.hx31337.chatgpt.site",
-  "scientific_results": "NOT_EXECUTED"
+  "native_deployment_url": "https://genomeatlas-helper-suite.hx31337.chatgpt.site",
+  "scientific_results": "NOT_EXECUTED",
+  "other_site_url_without_version_binding": "https://genomeatlas-site-helper-suite.hx31337.chatgpt.site",
+  "native_publication": {
+    "site_id": "appgprj_6aa17103620c8191ab64b1e6332f3c52",
+    "version_number": 3,
+    "deployment_id": "appgdep_6aa17c519ac88191a08b4cb8936dfc35",
+    "status": "succeeded",
+    "source_commit": "61c2a31c52e099faf5a1337a23eb8472cf6bcd4a",
+    "access": "owner_only",
+    "browser_ui": "NOT_TESTED",
+    "receipt_scope": "native provider action receipts read back by parent"
+  }
 }
