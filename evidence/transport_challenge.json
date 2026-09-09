@@ -1,0 +1,7 @@
+{
+  "schema": "genomeatlas-transport-challenge-v1",
+  "nonce": "1f1310de7bcf75ddc236c4b57d460833ec3e32e61fd27ee2",
+  "origin": "chatgpt-controller",
+  "purpose": "non-biological two-way transport test",
+  "sha256": "de7ac55da7be345f399d87f2f8d6d53ed69c55ec8f36d9045aff633209437277"
+}
