@@ -1,0 +1,148 @@
+{
+  "schema": "genomeatlas.local-check-run/1",
+  "run_id": "20260909T155012959979Z",
+  "status": "PASS",
+  "browser_status": "NOT_TESTED",
+  "records": [
+    {
+      "command": [
+        "python",
+        "--version"
+      ],
+      "cwd_alias": "REPO",
+      "started_at_utc": "2026-09-09T15:50:12.960012Z",
+      "finished_at_utc": "2026-09-09T15:50:12.981325Z",
+      "exit_code": 0,
+      "scope": "LOCAL_SITE_CHECK_SYNTHETIC_INPUTS_WHERE_LABELLED",
+      "stdout": "Python 3.14.6\n",
+      "stderr": "",
+      "stdout_path": "evidence/check-20260909T155012959979Z-01-python-version.stdout.txt",
+      "stderr_path": "evidence/check-20260909T155012959979Z-01-python-version.stderr.txt",
+      "redaction_applied": false,
+      "stdout_sha256": "917601090ffb73a030e3eaa8b7a01c41400cad4b61366b4218d7756a5733b66c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "node",
+        "--version"
+      ],
+      "cwd_alias": "REPO",
+      "started_at_utc": "2026-09-09T15:50:12.981422Z",
+      "finished_at_utc": "2026-09-09T15:50:13.014710Z",
+      "exit_code": 0,
+      "scope": "LOCAL_SITE_CHECK_SYNTHETIC_INPUTS_WHERE_LABELLED",
+      "stdout": "v24.19.0\n",
+      "stderr": "",
+      "stdout_path": "evidence/check-20260909T155012959979Z-02-node-version.stdout.txt",
+      "stderr_path": "evidence/check-20260909T155012959979Z-02-node-version.stderr.txt",
+      "redaction_applied": false,
+      "stdout_sha256": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/build.py"
+      ],
+      "cwd_alias": "REPO",
+      "started_at_utc": "2026-09-09T15:50:13.014776Z",
+      "finished_at_utc": "2026-09-09T15:50:13.120448Z",
+      "exit_code": 0,
+      "scope": "LOCAL_SITE_CHECK_SYNTHETIC_INPUTS_WHERE_LABELLED",
+      "stdout": "Built 23 static files + manifest.json into dist/\nSource data: 177 frozen genomes, 134 registry entries, 8 proposed chains\nNo execution, inference, metadata refresh or deployment performed.\n",
+      "stderr": "",
+      "stdout_path": "evidence/check-20260909T155012959979Z-03-build.stdout.txt",
+      "stderr_path": "evidence/check-20260909T155012959979Z-03-build.stderr.txt",
+      "redaction_applied": false,
+      "stdout_sha256": "384604e8d95108e5dc471d9ada49b5f27966bd887e0ec9c81910f9548ba506e4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd_alias": "REPO",
+      "started_at_utc": "2026-09-09T15:50:13.120523Z",
+      "finished_at_utc": "2026-09-09T15:50:13.306366Z",
+      "exit_code": 0,
+      "scope": "LOCAL_SITE_CHECK_SYNTHETIC_INPUTS_WHERE_LABELLED",
+      "stdout": "",
+      "stderr": "test_cache_is_not_execution (test_reconciliation.ReconciliationTests.test_cache_is_not_execution) ... ok\ntest_cache_skill_count (test_reconciliation.ReconciliationTests.test_cache_skill_count) ... ok\ntest_codex_session_not_invented_as_biology (test_reconciliation.ReconciliationTests.test_codex_session_not_invented_as_biology) ... ok\ntest_copilot_exact_commit (test_reconciliation.ReconciliationTests.test_copilot_exact_commit) ... ok\ntest_current_native_observation_not_old_discovery (test_reconciliation.ReconciliationTests.test_current_native_observation_not_old_discovery) ... ok\ntest_native_provider_actual_reads_and_scope (test_reconciliation.ReconciliationTests.test_native_provider_actual_reads_and_scope) ... ok\ntest_registry_identity_and_count (test_reconciliation.ReconciliationTests.test_registry_identity_and_count) ... ok\ntest_smarts_auth_failure_not_erased (test_reconciliation.ReconciliationTests.test_smarts_auth_failure_not_erased) ... ok\ntest_actual_full_registry_is_retained (test_suite.SourceIntegrity.test_actual_full_registry_is_retained) ... ok\ntest_actual_panel_is_exact_frozen_selection (test_suite.SourceIntegrity.test_actual_panel_is_exact_frozen_selection) ... ok\ntest_all_actual_chains_are_proposed (test_suite.SourceIntegrity.test_all_actual_chains_are_proposed) ... ok\ntest_build_does_not_publish_evidence_or_private_roots (test_suite.SourceIntegrity.test_build_does_not_publish_evidence_or_private_roots) ... ok\ntest_build_manifest_is_complete_and_correct (test_suite.SourceIntegrity.test_build_manifest_is_complete_and_correct) ... ok\ntest_built_inputs_are_byte_identical (test_suite.SourceIntegrity.test_built_inputs_are_byte_identical) ... ok\ntest_legacy_receipts_do_not_meet_new_verified_contract (test_suite.SourceIntegrity.test_legacy_receipts_do_not_meet_new_verified_contract) ... ok\ntest_native_observation_is_discovery_only (test_suite.SourceIntegrity.test_native_observation_is_discovery_only) ... ok\ntest_html_security_and_local_dependencies (test_suite.StaticBoundaryTests.test_html_security_and_local_dependencies) ... ok\ntest_no_html_injection_or_execution_sinks (test_suite.StaticBoundaryTests.test_no_html_injection_or_execution_sinks) ... ok\ntest_upstream_license_preserved (test_suite.StaticBoundaryTests.test_upstream_license_preserved) ... ok\ntest_synthetic_probe_requires_every_receipt_field (test_suite.SyntheticSchemaTests.test_synthetic_probe_requires_every_receipt_field) ... ok\ntest_synthetic_rejects_bad_utc_and_types (test_suite.SyntheticSchemaTests.test_synthetic_rejects_bad_utc_and_types) ... ok\ntest_synthetic_rejects_duplicate_or_unversioned_ids (test_suite.SyntheticSchemaTests.test_synthetic_rejects_duplicate_or_unversioned_ids) ... ok\ntest_synthetic_rejects_execution_and_pass_escalation (test_suite.SyntheticSchemaTests.test_synthetic_rejects_execution_and_pass_escalation) ... ok\ntest_synthetic_rejects_forged_verification_and_unredacted_results (test_suite.SyntheticSchemaTests.test_synthetic_rejects_forged_verification_and_unredacted_results) ... ok\ntest_synthetic_rejects_gpu_and_rm_host_tree (test_suite.SyntheticSchemaTests.test_synthetic_rejects_gpu_and_rm_host_tree) ... ok\ntest_synthetic_rejects_pass_with_nonzero_exit (test_suite.SyntheticSchemaTests.test_synthetic_rejects_pass_with_nonzero_exit) ... ok\ntest_synthetic_rejects_secrets_paths_shell_and_html_as_alias (test_suite.SyntheticSchemaTests.test_synthetic_rejects_secrets_paths_shell_and_html_as_alias) ... ok\ntest_synthetic_rejects_trailing_newlines_and_huge_integer (test_suite.SyntheticSchemaTests.test_synthetic_rejects_trailing_newlines_and_huge_integer) ... ok\ntest_synthetic_requires_artifact_hashes (test_suite.SyntheticSchemaTests.test_synthetic_requires_artifact_hashes) ... ok\ntest_synthetic_templates_are_structurally_valid_only (test_suite.SyntheticSchemaTests.test_synthetic_templates_are_structurally_valid_only) ... ok\n\n----------------------------------------------------------------------\nRan 30 tests in 0.043s\n\nOK\n",
+      "stdout_path": "evidence/check-20260909T155012959979Z-04-python-tests.stdout.txt",
+      "stderr_path": "evidence/check-20260909T155012959979Z-04-python-tests.stderr.txt",
+      "redaction_applied": false,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "eeca87d1f32a5630d51832f8e3be9416412d3aec01c35bf21e1d0902592ff482"
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "assets/app.mjs"
+      ],
+      "cwd_alias": "REPO",
+      "started_at_utc": "2026-09-09T15:50:13.306455Z",
+      "finished_at_utc": "2026-09-09T15:50:13.367290Z",
+      "exit_code": 0,
+      "scope": "LOCAL_SITE_CHECK_SYNTHETIC_INPUTS_WHERE_LABELLED",
+      "stdout": "",
+      "stderr": "",
+      "stdout_path": "evidence/check-20260909T155012959979Z-05-js-syntax.stdout.txt",
+      "stderr_path": "evidence/check-20260909T155012959979Z-05-js-syntax.stderr.txt",
+      "redaction_applied": false,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/core.test.mjs"
+      ],
+      "cwd_alias": "REPO",
+      "started_at_utc": "2026-09-09T15:50:13.367355Z",
+      "finished_at_utc": "2026-09-09T15:50:13.556267Z",
+      "exit_code": 0,
+      "scope": "LOCAL_SITE_CHECK_SYNTHETIC_INPUTS_WHERE_LABELLED",
+      "stdout": "\u2714 actual registry: full search plus intersecting layer/status/probed filters (2.3482ms)\n\u2714 actual source snapshots round-trip without changing frozen truth (3.0624ms)\n\u2714 synthetic positive probe is quarantined even when it claims PASS (1.8209ms)\n\u2714 synthetic task creation produces intent only for actual panel accessions (4.8729ms)\n\u2714 synthetic imports reject every omitted probe requirement (1.4265ms)\n\u2714 synthetic imports reject malformed JSON, oversized and deeply nested structures (1.0232ms)\n\u2714 synthetic imports reject prototype pollution and HTML / shell payloads (0.4418ms)\n\u2714 synthetic imports reject privilege escalation and modified source receipts (0.611ms)\n\u2714 synthetic imports reject bad timestamps, hashes and non-integer codes (0.5617ms)\n\u2714 synthetic tasks reject invented IDs, GPU and incorrect host-tree method (0.6227ms)\n\u2714 synthetic coordinates: one-based single base and zero-based boundaries (1.1952ms)\n\u2714 export filenames are fixed and cannot escape a download name (0.1792ms)\n\u2714 synthetic boolean and integer types remain distinct in schema checks (0.1756ms)\n\u2139 tests 13\n\u2139 suites 0\n\u2139 pass 13\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 111.9791\n",
+      "stderr": "",
+      "stdout_path": "evidence/check-20260909T155012959979Z-06-js-tests.stdout.txt",
+      "stderr_path": "evidence/check-20260909T155012959979Z-06-js-tests.stderr.txt",
+      "redaction_applied": false,
+      "stdout_sha256": "33c7f54bb71d1b931b8f2200db70b91deb88b26226fabee6c5e1fa921fa3162c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/package.py"
+      ],
+      "cwd_alias": "REPO",
+      "started_at_utc": "2026-09-09T15:50:13.556340Z",
+      "finished_at_utc": "2026-09-09T15:50:13.641722Z",
+      "exit_code": 0,
+      "scope": "LOCAL_SITE_CHECK_SYNTHETIC_INPUTS_WHERE_LABELLED",
+      "stdout": "Packaged and CRC-verified 24 static files: evidence/genomeatlas-static.zip\nNative Sites compatibility / version / deployment: NOT_TESTED / none / NOT_DEPLOYED\n",
+      "stderr": "",
+      "stdout_path": "evidence/check-20260909T155012959979Z-07-static-package.stdout.txt",
+      "stderr_path": "evidence/check-20260909T155012959979Z-07-static-package.stderr.txt",
+      "redaction_applied": false,
+      "stdout_sha256": "b1533e70a48d51471cf11dfa48c065f5f168514943fd3a80bbc964496f2e464f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "not_tested": [
+    "Biological workflows",
+    "GPU/CPU output parity",
+    "Paid APIs",
+    "Native Sites authentication/save/deploy",
+    "Browser checks explicitly skipped; see evidence/browser-access.json"
+  ]
+}

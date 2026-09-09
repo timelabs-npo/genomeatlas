@@ -1,0 +1,64 @@
+{
+  "executor": "WD_UBUNTU_TMP",
+  "source_commit": "9a4aef2d2fc37fb68803fc7ad0f0490bcd9f5a33",
+  "utc": "2026-09-09T15:54:41.559714+00:00",
+  "records": [
+    {
+      "command": [
+        "tar",
+        "-xf",
+        "SOURCE_ARCHIVE",
+        "-C",
+        "UBUNTU_TMP"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Python 3.14.4\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/build.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Built 23 static files + manifest.json into dist/\nSource data: 177 frozen genomes, 134 registry entries, 8 proposed chains\nNo execution, inference, metadata refresh or deployment performed.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_cache_is_not_execution (test_reconciliation.ReconciliationTests.test_cache_is_not_execution) ... ok\ntest_cache_skill_count (test_reconciliation.ReconciliationTests.test_cache_skill_count) ... ok\ntest_codex_session_not_invented_as_biology (test_reconciliation.ReconciliationTests.test_codex_session_not_invented_as_biology) ... ok\ntest_copilot_exact_commit (test_reconciliation.ReconciliationTests.test_copilot_exact_commit) ... ok\ntest_current_native_observation_not_old_discovery (test_reconciliation.ReconciliationTests.test_current_native_observation_not_old_discovery) ... ok\ntest_native_provider_actual_reads_and_scope (test_reconciliation.ReconciliationTests.test_native_provider_actual_reads_and_scope) ... ok\ntest_registry_identity_and_count (test_reconciliation.ReconciliationTests.test_registry_identity_and_count) ... ok\ntest_smarts_auth_failure_not_erased (test_reconciliation.ReconciliationTests.test_smarts_auth_failure_not_erased) ... ok\ntest_actual_full_registry_is_retained (test_suite.SourceIntegrity.test_actual_full_registry_is_retained) ... ok\ntest_actual_panel_is_exact_frozen_selection (test_suite.SourceIntegrity.test_actual_panel_is_exact_frozen_selection) ... ok\ntest_all_actual_chains_are_proposed (test_suite.SourceIntegrity.test_all_actual_chains_are_proposed) ... ok\ntest_build_does_not_publish_evidence_or_private_roots (test_suite.SourceIntegrity.test_build_does_not_publish_evidence_or_private_roots) ... ok\ntest_build_manifest_is_complete_and_correct (test_suite.SourceIntegrity.test_build_manifest_is_complete_and_correct) ... ok\ntest_built_inputs_are_byte_identical (test_suite.SourceIntegrity.test_built_inputs_are_byte_identical) ... ok\ntest_legacy_receipts_do_not_meet_new_verified_contract (test_suite.SourceIntegrity.test_legacy_receipts_do_not_meet_new_verified_contract) ... ok\ntest_native_observation_is_discovery_only (test_suite.SourceIntegrity.test_native_observation_is_discovery_only) ... ok\ntest_html_security_and_local_dependencies (test_suite.StaticBoundaryTests.test_html_security_and_local_dependencies) ... ok\ntest_no_html_injection_or_execution_sinks (test_suite.StaticBoundaryTests.test_no_html_injection_or_execution_sinks) ... ok\ntest_upstream_license_preserved (test_suite.StaticBoundaryTests.test_upstream_license_preserved) ... ok\ntest_synthetic_probe_requires_every_receipt_field (test_suite.SyntheticSchemaTests.test_synthetic_probe_requires_every_receipt_field) ... ok\ntest_synthetic_rejects_bad_utc_and_types (test_suite.SyntheticSchemaTests.test_synthetic_rejects_bad_utc_and_types) ... ok\ntest_synthetic_rejects_duplicate_or_unversioned_ids (test_suite.SyntheticSchemaTests.test_synthetic_rejects_duplicate_or_unversioned_ids) ... ok\ntest_synthetic_rejects_execution_and_pass_escalation (test_suite.SyntheticSchemaTests.test_synthetic_rejects_execution_and_pass_escalation) ... ok\ntest_synthetic_rejects_forged_verification_and_unredacted_results (test_suite.SyntheticSchemaTests.test_synthetic_rejects_forged_verification_and_unredacted_results) ... ok\ntest_synthetic_rejects_gpu_and_rm_host_tree (test_suite.SyntheticSchemaTests.test_synthetic_rejects_gpu_and_rm_host_tree) ... ok\ntest_synthetic_rejects_pass_with_nonzero_exit (test_suite.SyntheticSchemaTests.test_synthetic_rejects_pass_with_nonzero_exit) ... ok\ntest_synthetic_rejects_secrets_paths_shell_and_html_as_alias (test_suite.SyntheticSchemaTests.test_synthetic_rejects_secrets_paths_shell_and_html_as_alias) ... ok\ntest_synthetic_rejects_trailing_newlines_and_huge_integer (test_suite.SyntheticSchemaTests.test_synthetic_rejects_trailing_newlines_and_huge_integer) ... ok\ntest_synthetic_requires_artifact_hashes (test_suite.SyntheticSchemaTests.test_synthetic_requires_artifact_hashes) ... ok\ntest_synthetic_templates_are_structurally_valid_only (test_suite.SyntheticSchemaTests.test_synthetic_templates_are_structurally_valid_only) ... ok\n\n----------------------------------------------------------------------\nRan 30 tests in 0.036s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/package.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Packaged and CRC-verified 24 static files: evidence/genomeatlas-static.zip\nNative Sites compatibility / version / deployment: NOT_TESTED / none / NOT_DEPLOYED\n",
+      "stderr": ""
+    }
+  ],
+  "python_checks_passed": true,
+  "node_check": "BLOCKED: PermissionError errno13 from previous direct subprocess execution; no permission change or alternate Node used",
+  "browser": "NOT_TESTED",
+  "biology": "NOT_RUN"
+}
