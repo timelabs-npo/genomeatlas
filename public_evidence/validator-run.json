@@ -1,0 +1,32 @@
+{
+  "endpoint_alias": "WD",
+  "node_version": "v24.19.0",
+  "started_utc": "2026-09-09T14:51:27.820Z",
+  "completed_utc": "2026-09-09T14:51:28.249Z",
+  "command": [
+    "node",
+    "--test",
+    "--test-reporter=tap",
+    "receipt_validator.test.mjs"
+  ],
+  "exit_code": 0,
+  "signal": null,
+  "launch_error_code": null,
+  "sources": [
+    {
+      "path": "receipt_validator.mjs",
+      "sha256": "f0dc9e9fd6e1a7b7ebbf16e25fe38cd61ad1331be8095af331f1b5fa3d4cdee8",
+      "size_bytes": 7840
+    },
+    {
+      "path": "receipt_validator.test.mjs",
+      "sha256": "7517ecd606c06860a8a7c99222f3b08422bc60a5409256722c1f4e60cac034d6",
+      "size_bytes": 9718
+    },
+    {
+      "path": "run_tests.mjs",
+      "sha256": "8673bcb560d2923cf257073b98b6dd5a076365f868bfdbb77772f521849a0bb2",
+      "size_bytes": 2071
+    }
+  ]
+}
