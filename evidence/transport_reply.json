@@ -1,0 +1,10 @@
+{
+  "schema": "genomeatlas-transport-reply-v1",
+  "nonce": "1f1310de7bcf75ddc236c4b57d460833ec3e32e61fd27ee2",
+  "received_sha256": "de7ac55da7be345f399d87f2f8d6d53ed69c55ec8f36d9045aff633209437277",
+  "challenge_blob": "ea71effeed94e4d35ebb9880948255a2bf5593de",
+  "responder": "WD authorized process",
+  "roundtrip_stage": "WD_TO_GITHUB",
+  "utc": "2026-09-09T14:46:20.956Z",
+  "scope": "Non-biological nonce only"
+}
