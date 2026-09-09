@@ -1,0 +1,50 @@
+name: Verify GenomeAtlas suite
+on:
+  workflow_dispatch:
+    inputs:
+      source_ref:
+        description: Exact reviewed commit SHA in this repository
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Validate source SHA
+        env:
+          SOURCE_REF: ${{ inputs.source_ref }}
+        run: |
+          [[ "$SOURCE_REF" =~ ^[0-9a-f]{40}$ ]] || { echo 'Expected a full lowercase commit SHA'; exit 2; }
+      - name: Checkout exact candidate without persistent credentials
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ inputs.source_ref }}
+          persist-credentials: false
+      - name: Test software and retain precise receipts
+        shell: bash
+        run: |
+          mkdir -p qa-output
+          git rev-parse HEAD > qa-output/source-commit.txt
+          node --version > qa-output/node-version.txt
+          printf '%s\n' 'Synthetic/software-only tests; not a live genomic result.' > qa-output/SCOPE.txt
+          git archive --format=zip --output=qa-output/genomeatlas-source.zip HEAD
+          set +e
+          node --test tests/*.test.js > qa-output/node.stdout.log 2> qa-output/node.stderr.log
+          status=$?
+          set -e
+          echo "$status" > qa-output/node.exit.txt
+          sha256sum qa-output/genomeatlas-source.zip > qa-output/source.SHA256
+          cat qa-output/node.stdout.log
+          cat qa-output/node.stderr.log
+          exit "$status"
+      - name: Publish source and test receipts even after test failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: genomeatlas-reviewed-source-and-tests
+          path: qa-output/
+          if-no-files-found: error
+          retention-days: 14
