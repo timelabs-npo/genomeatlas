@@ -1,0 +1,25 @@
+﻿{
+  "origin": "LOCAL_NATIVE_METADATA_EXECUTION",
+  "state": "PASSED",
+  "scope": "Metadata and version-list reads only",
+  "executed_operations": [
+    "get_site",
+    "list_site_versions"
+  ],
+  "latest_version_number": 1,
+  "access_status": "public",
+  "existing_live_url_present": true,
+  "versions": [
+    {
+      "version_number": 1,
+      "source_commit": "683401cf1f2255414a4df3e0f2e9d606686a8fdf",
+      "archive_hash": "sha256:253ae6539d07e7804c853d173bfee0d4a7b75ea2eed5e62c387d102cec2c034e",
+      "file_count": 18
+    }
+  ],
+  "updated_artifact_publication": "BLOCKED",
+  "configured_source_binding": "NOT_RETURNED",
+  "hosting_helper": "NOT_FOUND",
+  "private_deployment": "NOT_RUN_AUDIENCE_MISMATCH",
+  "save_version": "NOT_RUN_SOURCE_NOT_PUSHED"
+}

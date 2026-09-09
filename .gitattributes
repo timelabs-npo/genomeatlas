@@ -1,0 +1,5 @@
+* text=auto eol=lf
+inputs/selected_accessions.txt -text
+docs/data/selected_accessions.txt -text
+probes/tests/fixtures/synthetic_artifact.txt -text
+*.png binary

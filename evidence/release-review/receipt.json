@@ -1,0 +1,244 @@
+{
+  "scope": "actual-WD-local-software-tests",
+  "utc": "2026-09-09T15:26:27.098695+00:00",
+  "result": "PASS",
+  "python_suite": 11,
+  "node_suite": 34,
+  "receipt_validator_suite": 15,
+  "source_manifest": [
+    {
+      "path": "docs/app.js",
+      "sha256": "40905b3bc42a42e08f914663e5d35106adeb979c4c595e149593cf49b692ef15",
+      "bytes": 12887
+    },
+    {
+      "path": "docs/contracts.js",
+      "sha256": "63297b609b13e573db64bec5ce73ba474d3ab64bdb9de235bf8a131a69999060",
+      "bytes": 6373
+    },
+    {
+      "path": "docs/data/atlas.json",
+      "sha256": "25a9dc068a7228580c6c9c5155fafb637fa09e1a70cb2bc518e52c2b63820e73",
+      "bytes": 35505
+    },
+    {
+      "path": "docs/data/selected_accessions.txt",
+      "sha256": "56209c6042213da0ea96160d2a2d4e785d7574246b4b8d0371a290333c9e264a",
+      "bytes": 2832
+    },
+    {
+      "path": "docs/data.js",
+      "sha256": "233ef63254093bdc5485ab22f6e1793bace9cb3c3098ec2e5ead1383b9de879d",
+      "bytes": 34801
+    },
+    {
+      "path": "docs/evidence/local-verification.json",
+      "sha256": "1dd3f4a029b8d4e4ed4912dd86f85f764efa425b7d3228dcdd6731f8b7f259dd",
+      "bytes": 13376
+    },
+    {
+      "path": "docs/evidence/native-capability.json",
+      "sha256": "c6ad72dc270fbe873c37fac22f73c9d53c1bd9ad74f791e476d1be03e152f2e6",
+      "bytes": 767
+    },
+    {
+      "path": "docs/evidence/parent-report.json",
+      "sha256": "ffaba509955c1a84f669fee3c866558dfbb46cac87b1b853d8f507a8cae440f2",
+      "bytes": 3493
+    },
+    {
+      "path": "docs/favicon.svg",
+      "sha256": "cea53e2a8d96ba601e007ec790bf830187251c9599ac5bc5d6b4043460ed92a3",
+      "bytes": 262
+    },
+    {
+      "path": "docs/index.html",
+      "sha256": "352ee39bd73f1b87dd6be47b7f1847479fc92e1fdef5df2ec53b4cb4aff4cc07",
+      "bytes": 19760
+    },
+    {
+      "path": "docs/style.css",
+      "sha256": "25f6a7d01a440273b3544cf775432f1d40684ea81a6aaa990736fdfb9fa64d6e",
+      "bytes": 241
+    },
+    {
+      "path": "docs/styles.css",
+      "sha256": "f6d64f582072e73c210a3ca4a785e395cf217006f7b75114b188629c0ac73bc4",
+      "bytes": 22048
+    },
+    {
+      "path": "docs/templates/provenance.json",
+      "sha256": "9be5267930415fdacd7c22f5f7eadbd15fb800ba5ac1ab476be354c8dc31406e",
+      "bytes": 594
+    },
+    {
+      "path": "docs/templates/review-request.json",
+      "sha256": "5b4f30adb058717e0c3e2c007dbcacbb6ae25494a783a2e04920e8df83eddebf",
+      "bytes": 505
+    },
+    {
+      "path": "docs/templates/rm-evidence.json",
+      "sha256": "d21eeb025c18e88c47eab6794f6b1e7ad669aa394322fccbeadd77f210c860b8",
+      "bytes": 1011
+    },
+    {
+      "path": "inputs/selected_accessions.txt",
+      "sha256": "56209c6042213da0ea96160d2a2d4e785d7574246b4b8d0371a290333c9e264a",
+      "bytes": 2832
+    },
+    {
+      "path": "scripts/browser_smoke.mjs",
+      "sha256": "f52c5c2434547b5057ddae89adb0d16c6bf8df9b87e38a6099812eaed70e6ea5",
+      "bytes": 14024
+    },
+    {
+      "path": "scripts/browser_smoke.py",
+      "sha256": "31a77a216a0bca023a0c0a01032189b0f611e51593c8bb23a8630b01056d44e1",
+      "bytes": 1629
+    },
+    {
+      "path": "scripts/build_data.py",
+      "sha256": "7f87c23be921ebedfe4b648d746ffa13a65a1d633d98bd1528478cbab6d733bc",
+      "bytes": 1043
+    },
+    {
+      "path": "scripts/verify.py",
+      "sha256": "73f184a392e339fc3cba1822955dad3ed2b9ac0072f43121e4ac6221b6f16824",
+      "bytes": 5583
+    },
+    {
+      "path": "tests/contracts.test.cjs",
+      "sha256": "355a1a88417560e5cae5aea03e1c6fba27fe5b612b9d34c9765e500aeb6be519",
+      "bytes": 5061
+    },
+    {
+      "path": "tests/contracts.test.js",
+      "sha256": "615ba2ada685167084e685fcf609ab4d264094870e1efe2340aa5e290c10b34b",
+      "bytes": 3929
+    },
+    {
+      "path": "tests/scientific.test.cjs",
+      "sha256": "bba2d85c4eb379fe62cb4aaf0a97fb7f18ef9fc173a7e741bfbca2be955464de",
+      "bytes": 2512
+    },
+    {
+      "path": "tests/test_contracts.py",
+      "sha256": "77525d7e1274f19124d3b67f71ef98c1efeb2ef2b04f0cc0a42e1deb551efcaf",
+      "bytes": 993
+    },
+    {
+      "path": "tests/test_hardening.py",
+      "sha256": "f714ad548df1f54295467d090445b8bb8b3efbccc52b05e7bfaee8370dc92273",
+      "bytes": 2073
+    },
+    {
+      "path": "probes/REVIEW.md",
+      "sha256": "a6bdccb07687f6882471bcd832c155e3aadaa320467ae93ca15d38fd167d1f90",
+      "bytes": 2387
+    },
+    {
+      "path": "probes/tests/fixtures/synthetic_artifact.txt",
+      "sha256": "05f58dc35675b4a546a29056c78f91b094129c338ae09b9e9a51f7b72f7f3297",
+      "bytes": 26
+    },
+    {
+      "path": "probes/tests/fixtures/synthetic_receipt_valid.json",
+      "sha256": "34ab3eb26fdb59b22873768c5c6edb267e06ab9e855ddd6bb10c79a922ae358b",
+      "bytes": 560
+    },
+    {
+      "path": "probes/tests/test_parent_review.py",
+      "sha256": "00b1237515b2b97f9eb2f329f824a483997ef125c7713bb1db7357d08e6b4368",
+      "bytes": 926
+    },
+    {
+      "path": "probes/tests/test_validate_receipt.py",
+      "sha256": "7ea4987b34988fb96c9d979f046cd67d55e58dee83b5b8fc6f75a4b67053a50f",
+      "bytes": 7208
+    },
+    {
+      "path": "probes/validate_receipt.py",
+      "sha256": "5c271e18047d26b3f6898188e9843ee0cae968eb7e571e2cd7654467032a36b6",
+      "bytes": 8324
+    }
+  ],
+  "checks": [
+    {
+      "command": [
+        "python",
+        "scripts/build_data.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "check-1.log",
+      "sha256": "077c7d17c60ff920b9b07e05abbd4a1df466fd0612d08168caefe313b9981355"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/verify.py"
+      ],
+      "exit_code": 0,
+      "log": "check-2.log",
+      "sha256": "3c3dbf6d29c0b04ac126e37a14e8eb47f9dfd99fa6ae22a54b668d993b8233bd"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "check-3.log",
+      "sha256": "82a41b8bd4834cb1b88a73dc836cc062d86d31804767e644cf9a7f4324ee5446"
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/contracts.test.js",
+        "tests/contracts.test.cjs",
+        "tests/scientific.test.cjs"
+      ],
+      "exit_code": 0,
+      "log": "check-4.log",
+      "sha256": "7ced1c5267bc172838d88923dd08848779480edde311502044e29c49fa2024f9"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "probes/tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "check-5.log",
+      "sha256": "fed34fdeed347a5368fab87079e2fa329c4afecec5f85607c9d0e79cdeea651d"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "check-6.log",
+      "sha256": "7b17e40bdc19b806069e279b5a749318e3476a69d52d79bad876c92a704ee586"
+    }
+  ],
+  "biological_pipeline": "NOT_RUN",
+  "native_site": "SERVICE_METADATA_REPORTS_LIVE_VERSION_1; deployment-ID and visitor test not accepted",
+  "notes": [
+    "Node suite is also partly called inside Python; do not sum repeated executions.",
+    "Copilot PR4 imported at 388cc5e60bb16f1f4a6fb7e4b47239a1120b2999, then parent repaired unhashable input and 1MiB bound.",
+    "Actual Windows checkout exposed CRLF fixture hash mismatch; original Git blob restored and pinned in .gitattributes.",
+    "No credential or private manuscript payload copied."
+  ]
+}

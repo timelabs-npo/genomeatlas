@@ -1,0 +1,3 @@
+/* Public entry point; retained original stylesheet. */
+@import url("styles.css");
+#receipt-preview{white-space:pre-wrap;overflow-wrap:anywhere;max-height:26rem;overflow:auto;background:#edf2eb;padding:1rem} #receipts input{max-width:40rem}

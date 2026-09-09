@@ -1,0 +1,104 @@
+test_oversize_receipt_rejected (test_parent_review.ParentReviewTests.test_oversize_receipt_rejected) ... FAIL
+test_unhashable_scope_or_outcome_rejected_cleanly (test_parent_review.ParentReviewTests.test_unhashable_scope_or_outcome_rejected_cleanly) ... 
+  test_unhashable_scope_or_outcome_rejected_cleanly (test_parent_review.ParentReviewTests.test_unhashable_scope_or_outcome_rejected_cleanly) (key='scope', value=[]) ... FAIL
+  test_unhashable_scope_or_outcome_rejected_cleanly (test_parent_review.ParentReviewTests.test_unhashable_scope_or_outcome_rejected_cleanly) (key='scope', value={}) ... FAIL
+  test_unhashable_scope_or_outcome_rejected_cleanly (test_parent_review.ParentReviewTests.test_unhashable_scope_or_outcome_rejected_cleanly) (key='outcome', value=[]) ... FAIL
+  test_unhashable_scope_or_outcome_rejected_cleanly (test_parent_review.ParentReviewTests.test_unhashable_scope_or_outcome_rejected_cleanly) (key='outcome', value={}) ... FAIL
+test_artifact_tampering (test_validate_receipt.ValidateReceiptCliTests.test_artifact_tampering) ... ok
+test_bad_and_empty_hashes (test_validate_receipt.ValidateReceiptCliTests.test_bad_and_empty_hashes) ... ok
+test_boolean_exit_code_is_rejected (test_validate_receipt.ValidateReceiptCliTests.test_boolean_exit_code_is_rejected) ... ok
+test_duplicate_keys (test_validate_receipt.ValidateReceiptCliTests.test_duplicate_keys) ... ok
+test_end_before_start (test_validate_receipt.ValidateReceiptCliTests.test_end_before_start) ... ok
+test_invalid_commit (test_validate_receipt.ValidateReceiptCliTests.test_invalid_commit) ... ok
+test_invalid_timezone (test_validate_receipt.ValidateReceiptCliTests.test_invalid_timezone) ... ok
+test_malformed_json (test_validate_receipt.ValidateReceiptCliTests.test_malformed_json) ... ok
+test_missing_fields (test_validate_receipt.ValidateReceiptCliTests.test_missing_fields) ... ok
+test_pass_with_nonzero_exit_code (test_validate_receipt.ValidateReceiptCliTests.test_pass_with_nonzero_exit_code) ... ok
+test_path_traversal_in_labels (test_validate_receipt.ValidateReceiptCliTests.test_path_traversal_in_labels) ... ok
+test_unknown_fields (test_validate_receipt.ValidateReceiptCliTests.test_unknown_fields) ... ok
+test_valid_receipt_and_artifact (test_validate_receipt.ValidateReceiptCliTests.test_valid_receipt_and_artifact) ... FAIL
+test_artifact_tampering (test_validate_receipt.ValidateReceiptCliTests.test_artifact_tampering) ... ok
+test_bad_and_empty_hashes (test_validate_receipt.ValidateReceiptCliTests.test_bad_and_empty_hashes) ... ok
+test_boolean_exit_code_is_rejected (test_validate_receipt.ValidateReceiptCliTests.test_boolean_exit_code_is_rejected) ... ok
+test_duplicate_keys (test_validate_receipt.ValidateReceiptCliTests.test_duplicate_keys) ... ok
+test_end_before_start (test_validate_receipt.ValidateReceiptCliTests.test_end_before_start) ... ok
+test_invalid_commit (test_validate_receipt.ValidateReceiptCliTests.test_invalid_commit) ... ok
+test_invalid_timezone (test_validate_receipt.ValidateReceiptCliTests.test_invalid_timezone) ... ok
+test_malformed_json (test_validate_receipt.ValidateReceiptCliTests.test_malformed_json) ... ok
+test_missing_fields (test_validate_receipt.ValidateReceiptCliTests.test_missing_fields) ... ok
+test_pass_with_nonzero_exit_code (test_validate_receipt.ValidateReceiptCliTests.test_pass_with_nonzero_exit_code) ... ok
+test_path_traversal_in_labels (test_validate_receipt.ValidateReceiptCliTests.test_path_traversal_in_labels) ... ok
+test_unknown_fields (test_validate_receipt.ValidateReceiptCliTests.test_unknown_fields) ... ok
+test_valid_receipt_and_artifact (test_validate_receipt.ValidateReceiptCliTests.test_valid_receipt_and_artifact) ... FAIL
+
+======================================================================
+FAIL: test_oversize_receipt_rejected (test_parent_review.ParentReviewTests.test_oversize_receipt_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WD_WORKSPACE>\release-reviewed\probes\tests\test_parent_review.py", line 16, in test_oversize_receipt_rejected
+    p=h.run_cli(json.dumps(r));self.assertEqual(p.returncode,1)
+                               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_unhashable_scope_or_outcome_rejected_cleanly (test_parent_review.ParentReviewTests.test_unhashable_scope_or_outcome_rejected_cleanly) (key='scope', value=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WD_WORKSPACE>\release-reviewed\probes\tests\test_parent_review.py", line 12, in test_unhashable_scope_or_outcome_rejected_cleanly
+    self.assertEqual(p.stderr,'')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+AssertionError: 'Traceback (most recent call last):\n  Fil[969 chars]')\n' != ''
+Diff is 1001 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_unhashable_scope_or_outcome_rejected_cleanly (test_parent_review.ParentReviewTests.test_unhashable_scope_or_outcome_rejected_cleanly) (key='scope', value={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WD_WORKSPACE>\release-reviewed\probes\tests\test_parent_review.py", line 12, in test_unhashable_scope_or_outcome_rejected_cleanly
+    self.assertEqual(p.stderr,'')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+AssertionError: 'Traceback (most recent call last):\n  Fil[969 chars]')\n' != ''
+Diff is 1001 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_unhashable_scope_or_outcome_rejected_cleanly (test_parent_review.ParentReviewTests.test_unhashable_scope_or_outcome_rejected_cleanly) (key='outcome', value=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WD_WORKSPACE>\release-reviewed\probes\tests\test_parent_review.py", line 12, in test_unhashable_scope_or_outcome_rejected_cleanly
+    self.assertEqual(p.stderr,'')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+AssertionError: 'Traceback (most recent call last):\n  Fil[977 chars]')\n' != ''
+Diff is 1009 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_unhashable_scope_or_outcome_rejected_cleanly (test_parent_review.ParentReviewTests.test_unhashable_scope_or_outcome_rejected_cleanly) (key='outcome', value={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WD_WORKSPACE>\release-reviewed\probes\tests\test_parent_review.py", line 12, in test_unhashable_scope_or_outcome_rejected_cleanly
+    self.assertEqual(p.stderr,'')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+AssertionError: 'Traceback (most recent call last):\n  Fil[977 chars]')\n' != ''
+Diff is 1009 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_valid_receipt_and_artifact (test_validate_receipt.ValidateReceiptCliTests.test_valid_receipt_and_artifact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WD_WORKSPACE>\release-reviewed\probes\tests\test_validate_receipt.py", line 52, in test_valid_receipt_and_artifact
+    self.assertEqual(result.returncode, 0, result)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : CompletedProcess(args=['C:\\Users\\wheel\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe', 'C:\\Users\\wheel\\genomeatlas-delivery-20260909T1418\\release-reviewed\\probes\\validate_receipt.py', 'C:\\Users\\wheel\\genomeatlas-delivery-20260909T1418\\release-reviewed\\probes\\tests\\fixtures\\synthetic_receipt_valid.json', '--artifact', 'C:\\Users\\wheel\\genomeatlas-delivery-20260909T1418\\release-reviewed\\probes\\tests\\fixtures\\synthetic_artifact.txt'], returncode=1, stdout='{\n  "artifact_hash_verified": false,\n  "errors": [\n    "artifact hash does not match output_sha256"\n  ],\n  "execution_authenticated": false,\n  "scientific_acceptance": "not-assessed",\n  "structure_valid": true\n}\n', stderr='')
+
+======================================================================
+FAIL: test_valid_receipt_and_artifact (test_validate_receipt.ValidateReceiptCliTests.test_valid_receipt_and_artifact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WD_WORKSPACE>\release-reviewed\probes\tests\test_validate_receipt.py", line 52, in test_valid_receipt_and_artifact
+    self.assertEqual(result.returncode, 0, result)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : CompletedProcess(args=['C:\\Users\\wheel\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe', 'C:\\Users\\wheel\\genomeatlas-delivery-20260909T1418\\release-reviewed\\probes\\validate_receipt.py', 'C:\\Users\\wheel\\genomeatlas-delivery-20260909T1418\\release-reviewed\\probes\\tests\\fixtures\\synthetic_receipt_valid.json', '--artifact', 'C:\\Users\\wheel\\genomeatlas-delivery-20260909T1418\\release-reviewed\\probes\\tests\\fixtures\\synthetic_artifact.txt'], returncode=1, stdout='{\n  "artifact_hash_verified": false,\n  "errors": [\n    "artifact hash does not match output_sha256"\n  ],\n  "execution_authenticated": false,\n  "scientific_acceptance": "not-assessed",\n  "structure_valid": true\n}\n', stderr='')
+
+----------------------------------------------------------------------
+Ran 28 tests in 3.657s
+
+FAILED (failures=7)

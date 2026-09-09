@@ -1,0 +1,42 @@
+✔ browser and data share exact state and allowed-job vocabularies (16.3349ms)
+✔ valid draft and confirmation requests stay unexecuted (4.4621ms)
+✔ missing inputs, hashes, endpoint, reviewer, commit and budget reject (0.9133ms)
+✔ all seven allowed jobs accepted and any other job rejected (0.6369ms)
+✔ approval cannot claim execution, approval verification or a run receipt (0.5602ms)
+✔ bounded public aliases reject paths, URLs, credentials and markup (0.5682ms)
+✔ budget rejects non-finite, negative, excessive, string and fractional cents (0.5171ms)
+✔ import caps bytes and input count; malformed and extra fields reject (1.327ms)
+✔ unknown, missing and failed jobs never become absence (2.7771ms)
+✔ raw hit or complete cassette cannot become curated P (0.646ms)
+✔ curated presence and NOT_DETECTED require full evidence flags (0.609ms)
+✔ valid request and import (4.8917ms)
+✔ missing inputs rejected (0.9513ms)
+✔ duplicate input rejected (0.7006ms)
+✔ consent is not execution (0.6278ms)
+✔ approval and receipt cannot enter request (0.4502ms)
+✔ malformed imports rejected (2.1179ms)
+✔ oversize UTF8 rejected (1.0059ms)
+✔ receipt stays untrusted even if claim passed (0.7674ms)
+✔ receipt unknown fields and false verification rejected (0.7989ms)
+✔ receipt invalid status and text rejected (0.8446ms)
+✔ markup retained as literal text for inert rendering (1.0213ms)
+✔ failed is not absent (0.4615ms)
+✔ unknown missing or not tested is not absent (0.3189ms)
+✔ raw hit remains U and cassette is not proof (2.0688ms)
+✔ curated P needs exact strain evidence (2.1617ms)
+✔ NOT_DETECTED requires complete documented exact strain assessment (0.4651ms)
+✔ state vocabulary and duplicate tool IDs (1.3806ms)
+✔ unallowed job and negative budget rejected (0.6208ms)
+✔ complete successful exact-genome model call is C without functional validation (2.5652ms)
+✔ C requires every computational evidence field (0.6193ms)
+✔ cassette and model evidence do not promote U or P (0.42ms)
+✔ legacy ABSENT normalizes to NOT_DETECTED only after documented assessment (0.5939ms)
+✔ failed and incomplete assessments override all supplied scientific calls (0.5897ms)
+ℹ tests 34
+ℹ suites 0
+ℹ pass 34
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 454.3639
