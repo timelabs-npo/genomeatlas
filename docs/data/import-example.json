@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "kind": "probes",
+  "records": [
+    {
+      "id": "example-observation",
+      "toolId": "iqtree",
+      "observedAt": "2026-09-09T00:00:00Z",
+      "dimension": "executed",
+      "state": "not-tested",
+      "summary": "Example only. No run has been observed."
+    }
+  ]
+}

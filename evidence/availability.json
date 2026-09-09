@@ -1,0 +1,13 @@
+{
+  "date":"2026-09-09",
+  "cwdRelative":"genomeatlas-ops-20260909/repo",
+  "initialHead":"9b7c396f7f40efc9d7b943920affba47a366bb2b",
+  "branch":"feat/site-helper-suite-20260909",
+  "initialWorktree":"clean",
+  "localRuntime":{"node":"24.19.0","python":"3.14.6","gh":"2.96.0","codexCommand":"not on PATH","rg":"not on PATH","playwright":"not installed in tested shell and node_repl resolution contexts","puppeteer":"not installed in shell resolution context"},
+  "session":{"resumedByThisImplementation":false,"newPersistedSessionLocalVerification":"unavailable","parentSnapshot":"Later parent-owned public-probes.json reports a new persisted Codex session RUNNING on WD. Identifier excluded from public projection; no assertion of identity with this tool session."},
+  "nativeSites":{"exposed":true,"tools":["sites_create_site","sites_save_site_version","sites_deploy_private_site_version","sites_deploy_site_version","sites_get_deployment_status"],"status":"BLOCKED","reason":"Version save requires a pushed source commit; final user instruction reserves pushes/publication for parent review.","missingCapability":null,"created":false,"preview":null,"version":null,"deploymentReceipt":null},
+  "failures":[{"operation":"initial rg searches","result":"command unavailable; used bounded PowerShell and git file listing"},{"operation":"gh jq tree filter","result":"function not defined: i/0; used gh path listing with PowerShell filtering"},{"operation":"initial parent probe synchronization","result":"unknown parent schema/BOM rejected; implemented strict supported adapter and retained the parent input unchanged"}],
+  "browserEvidence":"evidence/browser-checks.json",
+  "scope":"Targeted exposed capability names only; no account registry, environment values or auth files collected."
+}

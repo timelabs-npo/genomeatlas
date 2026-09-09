@@ -1,0 +1,64 @@
+{
+  "handoff": {
+    "source": "User task handoff dated 2026-09-09",
+    "originalObservedAt": null,
+    "evidenceIds": [
+      "parent-wd",
+      "parent-wsl",
+      "parent-gh",
+      "parent-codex",
+      "parent-bionemo",
+      "parent-smarts"
+    ],
+    "trust": "parent-reported; not independently reprobed"
+  },
+  "local": {
+    "status": "supplied",
+    "source": "public-probes.json",
+    "sha256": "c713101a17f2959a811b21f0321e424c3c637fe0f2af12da1affe96e48967079",
+    "verified": false,
+    "reason": "Validated shape only; not independently reprobed. No registry state promotion."
+  },
+  "session": {
+    "cwd": "genomeatlas-ops-20260909/repo",
+    "branch": "feat/site-helper-suite-20260909",
+    "initialCommit": "9b7c396f7f40efc9d7b943920affba47a366bb2b",
+    "sessionId": null,
+    "newPersistedSession": "BLOCKED: no local codex command on PATH and no exposed Codex session creation API",
+    "resumed": false,
+    "tools": [
+      "PowerShell exec",
+      "Node 24.19.0",
+      "Python 3.14.6",
+      "gh 2.96.0",
+      "CUA Chrome browser",
+      "native Sites create/save/deploy",
+      "Remote Desktop Commander"
+    ],
+    "rg": "unavailable",
+    "sites": {
+      "exposed": true,
+      "status": "BLOCKED",
+      "missingCapability": null,
+      "reason": "Save version requires a source push. User holds all pushes/publication for parent review.",
+      "version": null,
+      "previewUrl": null,
+      "deploymentReceipt": null
+    }
+  },
+  "evidence": [
+    {
+      "id": "local-gh",
+      "scope": "Public repository visibility and five commit-pinned content fetches through gh",
+      "source": "data/source-manifest.json"
+    },
+    {
+      "id": "session-tools",
+      "scope": "Tool metadata discovery in current session; exposure only"
+    },
+    {
+      "id": "session-sites",
+      "scope": "sites_create_site, sites_save_site_version and deployment schemas discovered; no mutation called"
+    }
+  ]
+}

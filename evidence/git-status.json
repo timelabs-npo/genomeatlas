@@ -1,0 +1,14 @@
+{
+  "branch":"feat/site-helper-suite-20260909",
+  "head":"9b7c396f7f40efc9d7b943920affba47a366bb2b",
+  "commitStatus":"BLOCKED",
+  "attemptedCommand":"git add -- .gitattributes .gitignore README.md SECURITY.md THIRD_PARTY_NOTICES.md package.json docs scripts tests evidence",
+  "exitCode":1,
+  "error":"Unable to create .git/index.lock: Permission denied",
+  "reason":"The active sandbox exposes .git read-only. No permission bypass or repository/config relocation attempted.",
+  "commitAttempted":false,
+  "pushAttempted":false,
+  "mergeAttempted":false,
+  "unrelatedUntrackedFile":"copilot-probe.json appeared during work; not read, modified or included in staging selection.",
+  "parentInput":"public-probes.json read only; excluded from staging; sanitized projection under docs/data."
+}

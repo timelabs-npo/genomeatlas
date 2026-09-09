@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GenomeAtlas execution receipt requirements",
+  "description": "A valid receipt shape is not certification. Verify hashes, timestamps, tool versions and evidence independently.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "kind",
+    "jobRequestSha256",
+    "inputHashes",
+    "outputHashes",
+    "toolVersions",
+    "startedAt",
+    "endedAt",
+    "exitCode",
+    "testGateResult",
+    "reviewer",
+    "evidenceIds",
+    "verificationStatus"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "kind": {
+      "const": "execution-receipt"
+    },
+    "jobRequestSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "inputHashes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^(?!/|[A-Za-z]:|.*(?:^|/)\\.\\.(?:/|$))[^\\\\]+$"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        }
+      }
+    },
+    "outputHashes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^(?!/|[A-Za-z]:|.*(?:^|/)\\.\\.(?:/|$))[^\\\\]+$"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        }
+      }
+    },
+    "toolVersions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "tool",
+          "version"
+        ],
+        "properties": {
+          "tool": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1200
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1200
+          }
+        }
+      }
+    },
+    "startedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "endedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "exitCode": {
+      "type": "integer"
+    },
+    "testGateResult": {
+      "enum": [
+        "passed",
+        "failed",
+        "not-tested"
+      ]
+    },
+    "reviewer": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1200
+    },
+    "evidenceIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]*$",
+        "maxLength": 80
+      }
+    },
+    "verificationStatus": {
+      "const": "requires-independent-review"
+    }
+  }
+}

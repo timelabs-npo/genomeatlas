@@ -1,0 +1,95 @@
+{
+  "command": "python scripts/static-check.py",
+  "scope": "Source and computed color checks, not browser or accessibility certification",
+  "exitCode": 0,
+  "checks": [
+    {
+      "check": "Unique HTML IDs",
+      "passed": true
+    },
+    {
+      "check": "Seven requested views",
+      "passed": true
+    },
+    {
+      "check": "External module only; no inline script",
+      "passed": true
+    },
+    {
+      "check": "Existing MIT license text unchanged",
+      "passed": true
+    },
+    {
+      "check": "Normal text contrast at least 4.5:1: body",
+      "passed": true
+    },
+    {
+      "check": "Normal text contrast at least 4.5:1: muted",
+      "passed": true
+    },
+    {
+      "check": "Normal text contrast at least 4.5:1: links",
+      "passed": true
+    },
+    {
+      "check": "Normal text contrast at least 4.5:1: dark card",
+      "passed": true
+    },
+    {
+      "check": "Normal text contrast at least 4.5:1: yes badge",
+      "passed": true
+    },
+    {
+      "check": "Normal text contrast at least 4.5:1: blocked badge",
+      "passed": true
+    },
+    {
+      "check": "Normal text contrast at least 4.5:1: button",
+      "passed": true
+    }
+  ],
+  "contrast": [
+    {
+      "pair": "body",
+      "foreground": "#172e31",
+      "background": "#f5f7f2",
+      "ratio": 13.23
+    },
+    {
+      "pair": "muted",
+      "foreground": "#4b6263",
+      "background": "#ffffff",
+      "ratio": 6.51
+    },
+    {
+      "pair": "links",
+      "foreground": "#006b60",
+      "background": "#f5f7f2",
+      "ratio": 5.95
+    },
+    {
+      "pair": "dark card",
+      "foreground": "#cfdfd5",
+      "background": "#153d3b",
+      "ratio": 8.61
+    },
+    {
+      "pair": "yes badge",
+      "foreground": "#205139",
+      "background": "#dceee1",
+      "ratio": 7.56
+    },
+    {
+      "pair": "blocked badge",
+      "foreground": "#73400b",
+      "background": "#f7e7d4",
+      "ratio": 7.03
+    },
+    {
+      "pair": "button",
+      "foreground": "#ffffff",
+      "background": "#006b60",
+      "ratio": 6.42
+    }
+  ]
+}

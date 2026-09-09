@@ -1,0 +1,83 @@
+{
+  "status": "supplied",
+  "origin": "parent-supplied-file",
+  "verified": false,
+  "claims": {
+    "schemaVersion": 1,
+    "kind": "probes",
+    "records": [
+      {
+        "id": "wd-shell",
+        "toolId": "wd-shell",
+        "observedAt": "2026-09-09T14:41:00Z",
+        "dimension": "probed",
+        "state": "yes",
+        "summary": "Remote Desktop Commander | PROBED_OK | WD returned a real Windows shell. Private host identity omitted."
+      },
+      {
+        "id": "wsl",
+        "toolId": "wsl",
+        "observedAt": "2026-09-09T14:41:00Z",
+        "dimension": "probed",
+        "state": "yes",
+        "summary": "WSL Ubuntu | PROBED_OK | Ubuntu 26.04 LTS; WSL1; Python 3.14.4; Git 2.53.0; /tmp writable. WSL2/CUDA not tested."
+      },
+      {
+        "id": "wd-wsl-roundtrip",
+        "toolId": "wd-wsl-roundtrip",
+        "observedAt": "2026-09-09T14:41:00Z",
+        "dimension": "probed",
+        "state": "yes",
+        "summary": "Windows / WSL exchange | TEST_PASSED | 40-byte nonce Windows to WSL and response back verified. | input_sha256: b8e4385bf462907123e3c2bdffc427e1dce32aa1f434409c61b377e7d5f6eafa; output_sha256: b2613e20c79499268ff04f033a2264cdea4ce4a06885220399cd3648859de3ee"
+      },
+      {
+        "id": "wd-github",
+        "toolId": "wd-github",
+        "observedAt": "2026-09-09T14:41:00Z",
+        "dimension": "probed",
+        "state": "yes",
+        "summary": "GitHub CLI | TEST_PASSED | Authenticated org access; nonce committed on isolated branch and fetched back. Ubuntu independently fetched same committed bytes with matching hash. | sha256: b2613e20c79499268ff04f033a2264cdea4ce4a06885220399cd3648859de3ee; commit: e61f03b71476d11adc04a2a78b159b8e8c27ec2b"
+      },
+      {
+        "id": "codex",
+        "toolId": "codex",
+        "observedAt": "2026-09-09T14:41:00Z",
+        "dimension": "probed",
+        "state": "yes",
+        "summary": "Codex WD | PROBED_OK | New persisted WD Codex session executed commands and wrote the seven-view suite; exit 0. Parent independently reran 61 Node tests. Browser navigation permission was declined; no browser assertions or screenshots. | version: 0.153.4; exit_code: 0"
+      },
+      {
+        "id": "codex-first-attempt",
+        "toolId": "codex-first-attempt",
+        "observedAt": "2026-09-09T14:41:00Z",
+        "dimension": "probed",
+        "state": "no",
+        "summary": "Codex launcher | FAILED | PowerShell terminated on optional Cloudflare MCP OAuth stderr. Python subprocess launcher now captures stderr separately; no auth bypass. | exit_code: 1"
+      },
+      {
+        "id": "bionemo",
+        "toolId": "bionemo",
+        "observedAt": "2026-09-09T14:41:00Z",
+        "dimension": "installed",
+        "state": "yes",
+        "summary": "NVIDIA BioNeMo Agent Toolkit | INSTALLED_SKILL_READ | Actual plugin manifest and genomics-workflow-acceleration / msa-search-nim skills read on WD. No NIM or GPU execution; no NVIDIA credential in process environment. | version: 0.1.0"
+      },
+      {
+        "id": "smarts",
+        "toolId": "smarts",
+        "observedAt": "2026-09-09T14:41:00Z",
+        "dimension": "authenticated",
+        "state": "blocked",
+        "summary": "smarts.bio: AI for biology | AUTH_BLOCKED | Direct smarts_list_tools call: user has not logged into the tool. No scientific job run."
+      },
+      {
+        "id": "sites",
+        "toolId": "sites",
+        "observedAt": "2026-09-09T14:41:00Z",
+        "dimension": "exposed",
+        "state": "no",
+        "summary": "ChatGPT Sites | NOT_CONNECTED | Native Sites tools exposed inside the actual Codex session. Create/save/deploy not yet executed; save requires a pushed reviewed commit. Native publication pending."
+      }
+    ]
+  }
+}

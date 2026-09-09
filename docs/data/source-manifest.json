@@ -1,0 +1,61 @@
+{
+  "repository": "serg-alexv/genomeops-atlas",
+  "main": "0f139f96494e09ff0387d2b4979318288c6cf54e",
+  "sources": [
+    {
+      "id": "main-status",
+      "commit": "0f139f96494e09ff0387d2b4979318288c6cf54e",
+      "path": "analyses/lab-rm-phylogenomics/STATUS.md",
+      "url": "https://github.com/serg-alexv/genomeops-atlas/blob/0f139f96494e09ff0387d2b4979318288c6cf54e/analyses/lab-rm-phylogenomics/STATUS.md",
+      "sha256": "e7bcd373664f19a247ab99daa107b2f6250be79489ae48f3d981d5fbaa7ad915",
+      "bytes": 359,
+      "status": "fetched",
+      "local": null,
+      "interpretation": "Historical source, not a live scientific result"
+    },
+    {
+      "id": "stage1-journal",
+      "commit": "0f139f96494e09ff0387d2b4979318288c6cf54e",
+      "path": "analyses/lab-rm-phylogenomics/results/STAGE1_2026-08-26.md",
+      "url": "https://github.com/serg-alexv/genomeops-atlas/blob/0f139f96494e09ff0387d2b4979318288c6cf54e/analyses/lab-rm-phylogenomics/results/STAGE1_2026-08-26.md",
+      "sha256": "5dfe31e5f5e48a145fc566e4f6577b5de2cb16afc3911703442da13734a58d95",
+      "bytes": 2170,
+      "status": "fetched",
+      "local": null,
+      "interpretation": "Historical source, not a live scientific result"
+    },
+    {
+      "id": "pr27-review",
+      "commit": "7c27865b7113b0fe8b22a57a751ed82fdaae9c8a",
+      "path": "analyses/lab-rm-phylogenomics/results/evidence_gate_review/INDEPENDENT_REVIEW.md",
+      "url": "https://github.com/serg-alexv/genomeops-atlas/blob/7c27865b7113b0fe8b22a57a751ed82fdaae9c8a/analyses/lab-rm-phylogenomics/results/evidence_gate_review/INDEPENDENT_REVIEW.md",
+      "sha256": "6247eaf9983e0f9cd259dc05a923d4574e155f01c3f6e4abca34c29b16770134",
+      "bytes": 4002,
+      "status": "fetched",
+      "local": null,
+      "interpretation": "Historical source, not a live scientific result"
+    },
+    {
+      "id": "pr28-receipt",
+      "commit": "f5b13cafe3f865a291d9539e6c7dc5ebd66ebce3",
+      "path": "analyses/lab-rm-phylogenomics/tool-atlas/PARENT_DELIVERY_RECEIPT.md",
+      "url": "https://github.com/serg-alexv/genomeops-atlas/blob/f5b13cafe3f865a291d9539e6c7dc5ebd66ebce3/analyses/lab-rm-phylogenomics/tool-atlas/PARENT_DELIVERY_RECEIPT.md",
+      "sha256": "18dadfa3062dfff8c9aba0eee615228a9d7b2f3f97d4c00a2b31f3ec2f09f45d",
+      "bytes": 2756,
+      "status": "fetched",
+      "local": null,
+      "interpretation": "Historical source, not a live scientific result"
+    },
+    {
+      "id": "selected-accessions",
+      "commit": "0f139f96494e09ff0387d2b4979318288c6cf54e",
+      "path": "analyses/lab-rm-phylogenomics/config/selected_accessions_stage1.txt",
+      "url": "https://github.com/serg-alexv/genomeops-atlas/blob/0f139f96494e09ff0387d2b4979318288c6cf54e/analyses/lab-rm-phylogenomics/config/selected_accessions_stage1.txt",
+      "sha256": "56209c6042213da0ea96160d2a2d4e785d7574246b4b8d0371a290333c9e264a",
+      "bytes": 2832,
+      "status": "fetched",
+      "local": "docs/sources/selected_accessions_stage1.txt",
+      "interpretation": "Historical source, not a live scientific result"
+    }
+  ]
+}

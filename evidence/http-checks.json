@@ -1,0 +1,108 @@
+{
+  "command": "node scripts/http-check.mjs",
+  "serverCommand": "python -m http.server 8765 --bind 127.0.0.1 --directory docs",
+  "scope": "HTTP response and asset checks only; NOT browser tests",
+  "exitCode": 0,
+  "httpChecks": 19,
+  "additionalAssertions": [
+    "JavaScript module MIME types",
+    "CSP form-action restriction"
+  ],
+  "checks": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "contentType": "text/html"
+    },
+    {
+      "path": "atlas.svg",
+      "status": 200,
+      "contentType": "image/svg+xml"
+    },
+    {
+      "path": "style.css",
+      "status": 200,
+      "contentType": "text/css"
+    },
+    {
+      "path": "app.mjs",
+      "status": 200,
+      "contentType": "text/javascript"
+    },
+    {
+      "path": "chains.svg",
+      "status": 200,
+      "contentType": "image/svg+xml"
+    },
+    {
+      "path": "sources/selected_accessions_stage1.txt",
+      "status": 200,
+      "contentType": "text/plain"
+    },
+    {
+      "path": "data/registry.json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "path": "data/source-manifest.json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "path": "data/probe-manifest.json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "path": "data/import-example.json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "path": "schemas/registry.schema.json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "path": "schemas/probes.schema.json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "path": "schemas/receipt.schema.json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "path": "core.mjs",
+      "status": 200,
+      "contentType": "text/javascript"
+    },
+    {
+      "path": "data/observations.json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "path": "data/local-probes.json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "path": "data/journal-summaries.json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "path": "data/science.json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "path": "../public-probes.json",
+      "status": 404,
+      "expected": "not served"
+    }
+  ]
+}

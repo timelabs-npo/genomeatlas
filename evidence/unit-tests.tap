@@ -1,0 +1,376 @@
+TAP version 13
+# Subtest: bundled registry has a valid schema and all required tools
+ok 1 - bundled registry has a valid schema and all required tools
+  ---
+  duration_ms: 3.9345
+  type: 'test'
+  ...
+# Subtest: all state values accepted without conflating dimensions
+ok 2 - all state values accepted without conflating dimensions
+  ---
+  duration_ms: 3.6376
+  type: 'test'
+  ...
+# Subtest: invalid registry state rejected
+ok 3 - invalid registry state rejected
+  ---
+  duration_ms: 0.6755
+  type: 'test'
+  ...
+# Subtest: unknown field rejected
+ok 4 - unknown field rejected
+  ---
+  duration_ms: 0.1592
+  type: 'test'
+  ...
+# Subtest: missing field rejected
+ok 5 - missing field rejected
+  ---
+  duration_ms: 1.2826
+  type: 'test'
+  ...
+# Subtest: duplicate tool rejected
+ok 6 - duplicate tool rejected
+  ---
+  duration_ms: 1.1019
+  type: 'test'
+  ...
+# Subtest: empty registry rejected
+ok 7 - empty registry rejected
+  ---
+  duration_ms: 0.2318
+  type: 'test'
+  ...
+# Subtest: oversized registry rejected
+ok 8 - oversized registry rejected
+  ---
+  duration_ms: 0.1487
+  type: 'test'
+  ...
+# Subtest: positive state needs evidence ID
+ok 9 - positive state needs evidence ID
+  ---
+  duration_ms: 0.4812
+  type: 'test'
+  ...
+# Subtest: unsupported schema rejected
+ok 10 - unsupported schema rejected
+  ---
+  duration_ms: 0.376
+  type: 'test'
+  ...
+# Subtest: valid probe schema
+ok 11 - valid probe schema
+  ---
+  duration_ms: 0.6184
+  type: 'test'
+  ...
+# Subtest: invalid probe state rejected
+ok 12 - invalid probe state rejected
+  ---
+  duration_ms: 0.2931
+  type: 'test'
+  ...
+# Subtest: invalid probe dimension rejected
+ok 13 - invalid probe dimension rejected
+  ---
+  duration_ms: 0.1253
+  type: 'test'
+  ...
+# Subtest: invalid and impossible timestamps rejected
+ok 14 - invalid and impossible timestamps rejected
+  ---
+  duration_ms: 0.1577
+  type: 'test'
+  ...
+# Subtest: duplicate probe IDs rejected
+ok 15 - duplicate probe IDs rejected
+  ---
+  duration_ms: 0.0897
+  type: 'test'
+  ...
+# Subtest: scientific design positive
+ok 16 - scientific design positive
+  ---
+  duration_ms: 0.1274
+  type: 'test'
+  ...
+# Subtest: bundled science contract matches frozen design
+ok 17 - bundled science contract matches frozen design
+  ---
+  duration_ms: 1.0231
+  type: 'test'
+  ...
+# Subtest: scientific invariant rejects change: genomes
+ok 18 - scientific invariant rejects change: genomes
+  ---
+  duration_ms: 0.1856
+  type: 'test'
+  ...
+# Subtest: scientific invariant rejects change: groups
+ok 19 - scientific invariant rejects change: groups
+  ---
+  duration_ms: 0.0743
+  type: 'test'
+  ...
+# Subtest: scientific invariant rejects change: enterococcus
+ok 20 - scientific invariant rejects change: enterococcus
+  ---
+  duration_ms: 0.0465
+  type: 'test'
+  ...
+# Subtest: scientific invariant rejects change: markerBasis
+ok 21 - scientific invariant rejects change: markerBasis
+  ---
+  duration_ms: 0.052
+  type: 'test'
+  ...
+# Subtest: scientific invariant rejects change: separateAlignments
+ok 22 - scientific invariant rejects change: separateAlignments
+  ---
+  duration_ms: 0.1016
+  type: 'test'
+  ...
+# Subtest: scientific invariant rejects change: rmIndependent
+ok 23 - scientific invariant rejects change: rmIndependent
+  ---
+  duration_ms: 0.0709
+  type: 'test'
+  ...
+# Subtest: scientific invariant rejects change: missingIsAbsence
+ok 24 - scientific invariant rejects change: missingIsAbsence
+  ---
+  duration_ms: 0.0558
+  type: 'test'
+  ...
+# Subtest: scientific invariant rejects change: unreviewedIsPartial
+ok 25 - scientific invariant rejects change: unreviewedIsPartial
+  ---
+  duration_ms: 0.0564
+  type: 'test'
+  ...
+# Subtest: scientific invariant rejects change: modelIsFunction
+ok 26 - scientific invariant rejects change: modelIsFunction
+  ---
+  duration_ms: 0.0568
+  type: 'test'
+  ...
+# Subtest: frozen accessions exactly 177 unique versioned RefSeq IDs
+ok 27 - frozen accessions exactly 177 unique versioned RefSeq IDs
+  ---
+  duration_ms: 0.7276
+  type: 'test'
+  ...
+# Subtest: valid small accession input
+ok 28 - valid small accession input
+  ---
+  duration_ms: 0.149
+  type: 'test'
+  ...
+# Subtest: empty accessions rejected
+ok 29 - empty accessions rejected
+  ---
+  duration_ms: 0.2087
+  type: 'test'
+  ...
+# Subtest: duplicate accessions rejected
+ok 30 - duplicate accessions rejected
+  ---
+  duration_ms: 0.1001
+  type: 'test'
+  ...
+# Subtest: blank inner accession rejected
+ok 31 - blank inner accession rejected
+  ---
+  duration_ms: 0.0813
+  type: 'test'
+  ...
+# Subtest: unversioned and GenBank IDs rejected
+ok 32 - unversioned and GenBank IDs rejected
+  ---
+  duration_ms: 0.1596
+  type: 'test'
+  ...
+# Subtest: wrong frozen panel size rejected
+ok 33 - wrong frozen panel size rejected
+  ---
+  duration_ms: 0.1144
+  type: 'test'
+  ...
+# Subtest: malformed JSON rejected
+ok 34 - malformed JSON rejected
+  ---
+  duration_ms: 0.1532
+  type: 'test'
+  ...
+# Subtest: nonobject JSON rejected
+ok 35 - nonobject JSON rejected
+  ---
+  duration_ms: 0.15
+  type: 'test'
+  ...
+# Subtest: oversized bytes rejected including multibyte text
+ok 36 - oversized bytes rejected including multibyte text
+  ---
+  duration_ms: 0.6751
+  type: 'test'
+  ...
+# Subtest: reject unsafe imported text "<img src=x onerror=alert(1)>"
+ok 37 - reject unsafe imported text "<img src=x onerror=alert(1)>"
+  ---
+  duration_ms: 0.2327
+  type: 'test'
+  ...
+# Subtest: reject unsafe imported text "<script>alert(1)</script>"
+ok 38 - reject unsafe imported text "<script>alert(1)</script>"
+  ---
+  duration_ms: 0.0996
+  type: 'test'
+  ...
+# Subtest: reject unsafe imported text "javascript:alert(1)"
+ok 39 - reject unsafe imported text "javascript:alert(1)"
+  ---
+  duration_ms: 0.0668
+  type: 'test'
+  ...
+# Subtest: reject unsafe imported text "&\#60;script&\#62;"
+ok 40 - reject unsafe imported text "&\#60;script&\#62;"
+  ---
+  duration_ms: 0.0568
+  type: 'test'
+  ...
+# Subtest: reject unsafe imported text "&lt;svg&gt;"
+ok 41 - reject unsafe imported text "&lt;svg&gt;"
+  ---
+  duration_ms: 0.1254
+  type: 'test'
+  ...
+# Subtest: reject unsafe imported text "‮exe"
+ok 42 - reject unsafe imported text "‮exe"
+  ---
+  duration_ms: 0.1718
+  type: 'test'
+  ...
+# Subtest: prototype and verification fields rejected
+ok 43 - prototype and verification fields rejected
+  ---
+  duration_ms: 0.208
+  type: 'test'
+  ...
+# Subtest: false-result promotion impossible via valid positive claims
+ok 44 - false-result promotion impossible via valid positive claims
+  ---
+  duration_ms: 0.5383
+  type: 'test'
+  ...
+# Subtest: claim export retains provenance and exact content
+ok 45 - claim export retains provenance and exact content
+  ---
+  duration_ms: 0.2774
+  type: 'test'
+  ...
+# Subtest: claim export rejects verified tampering
+ok 46 - claim export rejects verified tampering
+  ---
+  duration_ms: 0.1347
+  type: 'test'
+  ...
+# Subtest: job contains review fields and receipt requirements
+ok 47 - job contains review fields and receipt requirements
+  ---
+  duration_ms: 0.3247
+  type: 'test'
+  ...
+# Subtest: approved request remains unexecuted and uncertified
+ok 48 - approved request remains unexecuted and uncertified
+  ---
+  duration_ms: 0.0884
+  type: 'test'
+  ...
+# Subtest: missing job boundary rejected
+ok 49 - missing job boundary rejected
+  ---
+  duration_ms: 0.0745
+  type: 'test'
+  ...
+# Subtest: invalid decision rejected
+ok 50 - invalid decision rejected
+  ---
+  duration_ms: 0.0671
+  type: 'test'
+  ...
+# Subtest: unsafe job markup rejected
+ok 51 - unsafe job markup rejected
+  ---
+  duration_ms: 0.0527
+  type: 'test'
+  ...
+# Subtest: job export rejects changed execution status
+ok 52 - job export rejects changed execution status
+  ---
+  duration_ms: 0.0945
+  type: 'test'
+  ...
+# Subtest: job export rejects forged receipt
+ok 53 - job export rejects forged receipt
+  ---
+  duration_ms: 0.1136
+  type: 'test'
+  ...
+# Subtest: parent adapter accepts BOM and strips private session reference
+ok 54 - parent adapter accepts BOM and strips private session reference
+  ---
+  duration_ms: 0.5365
+  type: 'test'
+  ...
+# Subtest: parent adapter rejects invalid states
+ok 55 - parent adapter rejects invalid states
+  ---
+  duration_ms: 0.2525
+  type: 'test'
+  ...
+# Subtest: parent adapter rejects injected markup
+ok 56 - parent adapter rejects injected markup
+  ---
+  duration_ms: 0.1556
+  type: 'test'
+  ...
+# Subtest: parent adapter rejects biological-result promotion
+ok 57 - parent adapter rejects biological-result promotion
+  ---
+  duration_ms: 0.1054
+  type: 'test'
+  ...
+# Subtest: parent adapter rejects unexpected fields
+ok 58 - parent adapter rejects unexpected fields
+  ---
+  duration_ms: 1.1765
+  type: 'test'
+  ...
+# Subtest: parent adapter rejects duplicate IDs and bad hashes
+ok 59 - parent adapter rejects duplicate IDs and bad hashes
+  ---
+  duration_ms: 0.3671
+  type: 'test'
+  ...
+# Subtest: parent adapter rejects oversized input
+ok 60 - parent adapter rejects oversized input
+  ---
+  duration_ms: 0.1934
+  type: 'test'
+  ...
+# Subtest: cached plugin entries do not imply enabled/authenticated/runtime readiness
+ok 61 - cached plugin entries do not imply enabled/authenticated/runtime readiness
+  ---
+  duration_ms: 0.1493
+  type: 'test'
+  ...
+1..61
+# tests 61
+# suites 0
+# pass 61
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 142.8669

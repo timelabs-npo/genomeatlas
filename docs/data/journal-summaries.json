@@ -1,0 +1,13 @@
+{
+  "interpretation": "Original summaries of commit-pinned public journals. Source claims are not current execution evidence.",
+  "records": [
+    {"sourceId":"main-status","summary":"An earlier status describes metadata discovery and a planned sampling-policy revision. It is not the accepted panel receipt or a live tree."},
+    {"sourceId":"stage1-journal","summary":"The accepted Stage 1 journal reports 177 assemblies across ten operational groups, with Enterococcus excluded. This establishes a sampling frame only; R-M presence and activity are not established."},
+    {"sourceId":"pr27-review","summary":"The independent review reports synthetic inventory regressions for protein parsing, duplicate rejection, unrequested assemblies and input-bound receipts. It explicitly leaves live Datasets, host-marker and DefenseFinder jobs untested."},
+    {"sourceId":"pr28-receipt","summary":"The parent receipt reports a previous atlas artifact and earlier checks, with browser-navigation limitations. Those claims neither test this implementation nor certify a hosted/native Site or a live scientific pipeline."}
+  ],
+  "pullRequests": [
+    {"number":27,"state":"open","base":"0f139f96494e09ff0387d2b4979318288c6cf54e","head":"7c27865b7113b0fe8b22a57a751ed82fdaae9c8a"},
+    {"number":28,"state":"open","base":"0f139f96494e09ff0387d2b4979318288c6cf54e","head":"f5b13cafe3f865a291d9539e6c7dc5ebd66ebce3"}
+  ]
+}

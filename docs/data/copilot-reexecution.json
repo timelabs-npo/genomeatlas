@@ -1,0 +1,16 @@
+{
+ "probe_id":"copilot-pr27-ubuntu-reexecution",
+ "utc":"2026-09-09T14:43:38.553575+00:00",
+ "repository":"serg-alexv/genomeops-atlas",
+ "pull_request":27,
+ "head_commit":"7c27865b7113b0fe8b22a57a751ed82fdaae9c8a",
+ "endpoint":"WD / Ubuntu / temporary fixtures",
+ "tests_run":10,
+ "tests_passed":10,
+ "exit_code":0,
+ "duration_reported_seconds":4.754,
+ "stdout_sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+ "stderr_sha256":"333ac9a88ff24dec67503e6192474c675f688af4262c9604aa3bd5d8c721c961",
+ "scope":"Independently rerun Copilot inventory regression tests. Synthetic data. This is not a live genome download, phylogeny, or R-M result.",
+ "merge_state":"NOT_MERGED"
+}

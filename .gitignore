@@ -1,0 +1,9 @@
+# The parent owns this input; publish only the validated, sanitized projection.
+/public-probes.json
+/.source-cache/
+# Local runtime artifacts are never public evidence.
+__pycache__/
+*.pyc
+node_modules/
+
+/copilot-probe.json

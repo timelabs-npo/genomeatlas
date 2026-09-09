@@ -1,0 +1,38 @@
+{
+  "utc": "2026-09-09T15:12:25.067759+00:00",
+  "command": [
+    "node",
+    "--test",
+    "--test-reporter=tap",
+    "tests/core.test.mjs"
+  ],
+  "exit_code": 0,
+  "snapshot_stable": true,
+  "code_and_data_hashes": {
+    "docs/.nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/app.mjs": "adf904b7d8d48e31517ceef3b88ebd4bd0957004d3183daaad3820276d0ad7ac",
+    "docs/atlas.svg": "411dfd6c7e405aac01439130e854d97eee2eb2b29a147e7274ac62cfee541a33",
+    "docs/chains.svg": "af20b27aabfba88973b61f03cb7ec4d874570e18ecce911b6e09e019f8423958",
+    "docs/core.mjs": "ea3eaaf444fbc89d2027e8822011ff8a84acc43ae96c3fc165f4b8b30a9c44f2",
+    "docs/data/copilot-reexecution.json": "a077e881fb196665964a88a193defe5adf08e8038e81a11a1acb875739ef5153",
+    "docs/data/import-example.json": "2c8a1c837682fa1a67dfdfc18aac3b85193c2122e1454c70fbc21ac9b6347f5d",
+    "docs/data/journal-summaries.json": "53c19c65eb53043112ae492d105154d98ca8c8c09773af2ca5a0341745d92e11",
+    "docs/data/local-probes.json": "47ec8b41644494426bc29fd3c8adf0156b46513e2c1f5b28656a4a7b097a8a05",
+    "docs/data/observations.json": "6e1a48adfad38d1fd75d0096860a1c612be0179a6570ab2d20b0ab1687640cf7",
+    "docs/data/plugin-cache.json": "bcc35db766fddff18aba9137f59ef04fd5eacfb4f47d31c10ede9f62983e0687",
+    "docs/data/probe-manifest.json": "7b7f26c54f3e6a0e0788e42c72acaeacf619f17a6cc3bc86336dedf816172f0c",
+    "docs/data/registry.json": "c2fb94ff00178ca1df6e415932c738a95cab19a970bd0429d305e563982579a7",
+    "docs/data/science.json": "196297f00ebb54431cf4c91ab908cd32f3060438fc4408192a902ed4acda4028",
+    "docs/data/source-manifest.json": "5ecf74cc4254e3fbd78d4f8772781f93d943bc1cc0926722fe32844e83b3f0ba",
+    "docs/index.html": "c6abc5a916e4e720cffa7b10d05adf6ae972da981ebe2d23978109e7e33c2a44",
+    "docs/schemas/probes.schema.json": "dc125b9cfe855b004498313c1f7d3bd9670d1322e9b14bf2cc56c5935b097b70",
+    "docs/schemas/receipt.schema.json": "1a4c4da9cc7c848eaee1068278b2ddf912475ea38e42e985b3418949c6164e1a",
+    "docs/schemas/registry.schema.json": "c3cfbd781b6141d4ade4cb18da783e9a9e75e613fae3c73f779cf73a7a858908",
+    "docs/sources/selected_accessions_stage1.txt": "56209c6042213da0ea96160d2a2d4e785d7574246b4b8d0371a290333c9e264a",
+    "docs/style.css": "36bb791e5dad22856083ff8821e985bbc779d4584cc09385510f690c030fc66f",
+    "tests/core.test.mjs": "58905fdfa93f46a58f588244fed72fd29d1c7df99461b4df34f66c0b696f23bb"
+  },
+  "scope": "Independent actual WD Node unit tests; not browser or live biology",
+  "stdout_sha256": "6783c9ff27eea98089e66c914d46c6510736e73cef7b5a8d7f11fff491517577",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

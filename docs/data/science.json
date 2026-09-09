@@ -1,0 +1,11 @@
+{
+  "genomes":177,
+  "groups":10,
+  "enterococcus":false,
+  "markerBasis":"conserved-single-copy-proteins",
+  "separateAlignments":true,
+  "rmIndependent":true,
+  "missingIsAbsence":false,
+  "unreviewedIsPartial":false,
+  "modelIsFunction":false
+}

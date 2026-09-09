@@ -1,0 +1,5 @@
+{
+  "command": "node --test --test-reporter=tap tests/core.test.mjs",
+  "wrapper": "node scripts/test.mjs",
+  "exitCode": 0
+}

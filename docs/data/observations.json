@@ -1,0 +1,47 @@
+{
+  "source": "User task handoff, 2026-09-09",
+  "observedAt": null,
+  "independentlyReprobed": false,
+  "records": [
+    {
+      "id": "parent-wd",
+      "title": "Windows + Ubuntu",
+      "summary": "Both responded to parent probes. No private host identifiers published."
+    },
+    {
+      "id": "parent-wsl",
+      "title": "WSL generation",
+      "summary": "Ubuntu is WSL1, not WSL2."
+    },
+    {
+      "id": "parent-gh",
+      "title": "WD GitHub",
+      "summary": "gh authenticated; active org-admin verified by parent. No account IDs or tokens retained."
+    },
+    {
+      "id": "parent-codex",
+      "title": "WD Codex",
+      "summary": "codex-cli 0.153.4 logged in using ChatGPT, as reported by parent."
+    },
+    {
+      "id": "parent-bionemo",
+      "title": "BioNeMo 0.1.0",
+      "summary": "Plugin files verified; genomics-workflow-acceleration and msa-search-nim skills read. No GPU/NIM job executed."
+    },
+    {
+      "id": "parent-smarts",
+      "title": "smarts.bio",
+      "summary": "Direct invocation returned user not logged in. Authentication blocked."
+    },
+    {
+      "id": "plugin-cache-20260909",
+      "title": "71 cached plugin manifests / 344 skill files",
+      "summary": "Actual sanitized WD cache scan. It does not establish enabled state, MCP authentication, or execution. See data/plugin-cache.json."
+    },
+    {
+      "id": "copilot-reexecution",
+      "title": "Copilot patch: 10 tests rerun on WD Ubuntu",
+      "summary": "Exact PR27 head 7c27865b7113b0fe8b22a57a751ed82fdaae9c8a: 10 inventory regressions passed, exit 0. Synthetic fixtures in Ubuntu /tmp; not a biological result or production merge."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-09",
+  "tool": "mcp__cua_repl.js with Chrome extension browser",
+  "attemptedUrl": "http://127.0.0.1:8765",
+  "action": "tab.goto('http://127.0.0.1:8765')",
+  "status": "BLOCKED",
+  "reason": "Browser Use rejected the action because the user declined permission for local navigation.",
+  "policy": "No workaround, indirect execution, raw CDP, alternate browser surface or policy circumvention attempted.",
+  "actualBrowserAssertions": 0,
+  "browserProcessExitCode": null,
+  "desktop": {"plannedViewport":"1440x1050","actualViewport":null,"screenshot":null,"status":"NOT_TESTED"},
+  "mobile": {"plannedViewport":"390x844","actualViewport":null,"screenshot":null,"status":"NOT_TESTED"},
+  "console": "NOT_TESTED",
+  "interactions": "NOT_TESTED",
+  "fallback": "Independent Node unit and HTTP asset checks only. No rendered-page or screenshot success claimed."
+}

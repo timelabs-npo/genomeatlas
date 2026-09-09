@@ -1,0 +1,1415 @@
+{
+  "schemaVersion": 1,
+  "kind": "registry",
+  "records": [
+    {
+      "id": "rdc",
+      "name": "Remote Desktop Commander",
+      "purpose": "Bounded device and terminal probes.",
+      "states": {
+        "exposed": "yes",
+        "installed": "unknown",
+        "authenticated": "unknown",
+        "probed": "yes",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "session-tools",
+        "parent-wd"
+      ],
+      "notes": "Exposed in this session. Parent reports Windows and Ubuntu responded; no broad device execution authorization."
+    },
+    {
+      "id": "github",
+      "name": "GitHub / Copilot",
+      "purpose": "Repository review and code assistance.",
+      "states": {
+        "exposed": "yes",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "yes",
+        "executed": "yes"
+      },
+      "evidenceIds": [
+        "local-gh",
+        "parent-gh"
+      ],
+      "notes": "Local gh public metadata fetch executed. Parent reports WD gh authenticated and active org-admin verified. Copilot execution is not tested."
+    },
+    {
+      "id": "codex",
+      "name": "Codex",
+      "purpose": "Reviewable code implementation and bounded jobs.",
+      "states": {
+        "exposed": "yes",
+        "installed": "unknown",
+        "authenticated": "unknown",
+        "probed": "unknown",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "parent-codex",
+        "session-tools"
+      ],
+      "notes": "Parent reports codex-cli 0.153.4 logged in using ChatGPT on WD. This workspace has no codex command on PATH; new persisted CLI session is not verified."
+    },
+    {
+      "id": "wsl",
+      "name": "WSL",
+      "purpose": "Linux runtime boundary for scientific tools.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "yes",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "parent-wsl"
+      ],
+      "notes": "Parent reports Ubuntu responded and is WSL1, not WSL2. This says nothing about pipeline installation."
+    },
+    {
+      "id": "datasets",
+      "name": "NCBI Datasets",
+      "purpose": "Versioned RefSeq metadata and genome packages.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "unknown",
+        "authenticated": "unknown",
+        "probed": "unknown",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "stage1-journal"
+      ],
+      "notes": "Frozen accession text fetched through gh. No live Datasets CLI or genome download ran here."
+    },
+    {
+      "id": "gtotree",
+      "name": "GToTree",
+      "purpose": "Conserved single-copy marker workflow.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "unknown",
+        "authenticated": "unknown",
+        "probed": "unknown",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [],
+      "notes": "Host-tree chain; live marker extraction not tested."
+    },
+    {
+      "id": "hmmer",
+      "name": "HMMER",
+      "purpose": "Profile-based conserved marker searches.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "unknown",
+        "authenticated": "unknown",
+        "probed": "unknown",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [],
+      "notes": "Retain marker identity; audit copy number and homology."
+    },
+    {
+      "id": "mafft",
+      "name": "MAFFT",
+      "purpose": "Separate alignments for homologous markers.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "unknown",
+        "authenticated": "unknown",
+        "probed": "unknown",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [],
+      "notes": "Do not align all proteins as one homologous set."
+    },
+    {
+      "id": "trimal",
+      "name": "trimAl",
+      "purpose": "Review alignment trimming per marker.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "unknown",
+        "authenticated": "unknown",
+        "probed": "unknown",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [],
+      "notes": "Retain pre/post lengths, masks and marker provenance."
+    },
+    {
+      "id": "iqtree",
+      "name": "IQ-TREE",
+      "purpose": "Protein host-tree inference with support estimates.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "unknown",
+        "authenticated": "unknown",
+        "probed": "unknown",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [],
+      "notes": "No tree, model fit or bootstrap/support run executed here."
+    },
+    {
+      "id": "defensefinder",
+      "name": "DefenseFinder",
+      "purpose": "Independent R-M candidate annotation.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "unknown",
+        "authenticated": "unknown",
+        "probed": "unknown",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [],
+      "notes": "Needs ordered per-replicon genes and matching GFF; candidates require review."
+    },
+    {
+      "id": "rebase",
+      "name": "REBASE",
+      "purpose": "R-M curation reference.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "unknown",
+        "authenticated": "unknown",
+        "probed": "unknown",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [],
+      "notes": "Review source terms and cite record identities; no content bulk import."
+    },
+    {
+      "id": "literature",
+      "name": "Literature search",
+      "purpose": "Find primary evidence for curated system claims.",
+      "states": {
+        "exposed": "yes",
+        "installed": "unknown",
+        "authenticated": "unknown",
+        "probed": "unknown",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "session-tools"
+      ],
+      "notes": "Web and literature connectors exposed; no R-M literature search executed in this build."
+    },
+    {
+      "id": "geneious",
+      "name": "Geneious / iTOL",
+      "purpose": "Sequence review and annotated figure presentation.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "unknown",
+        "authenticated": "unknown",
+        "probed": "unknown",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [],
+      "notes": "Figure layer only. Product access, license and execution remain unknown."
+    },
+    {
+      "id": "bionemo",
+      "name": "NVIDIA BioNeMo Agent Toolkit",
+      "purpose": "Optional GPU/model workflow assistance.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "yes",
+        "executed": "no"
+      },
+      "evidenceIds": [
+        "parent-bionemo"
+      ],
+      "notes": "Parent verified 0.1.0 plugin files and read genomics-workflow-acceleration and msa-search-nim skills on WD. No GPU/NIM job executed; not full readiness."
+    },
+    {
+      "id": "smarts",
+      "name": "smarts.bio",
+      "purpose": "Optional external scientific assistant.",
+      "states": {
+        "exposed": "yes",
+        "installed": "unknown",
+        "authenticated": "blocked",
+        "probed": "yes",
+        "executed": "no"
+      },
+      "evidenceIds": [
+        "parent-smarts"
+      ],
+      "notes": "Parent direct invocation returned user not logged in. Authentication blocked; scientific execution not established."
+    },
+    {
+      "id": "alphagenome",
+      "name": "AlphaGenome",
+      "purpose": "Optional regulatory-model investigation.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "unknown",
+        "authenticated": "unknown",
+        "probed": "unknown",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [],
+      "notes": "Not a replacement for bacterial host phylogeny or R-M review. Vendor terms remain separate; no model called."
+    },
+    {
+      "id": "sites",
+      "name": "Native ChatGPT Sites",
+      "purpose": "Separate native helper delivery target.",
+      "states": {
+        "exposed": "yes",
+        "installed": "unknown",
+        "authenticated": "unknown",
+        "probed": "unknown",
+        "executed": "blocked"
+      },
+      "evidenceIds": [
+        "session-sites"
+      ],
+      "notes": "Create, save and deploy tools exposed. Save requires source push; parent review hold prevents publication. No preview/version/deployment receipt exists."
+    },
+    {
+      "id": "cached-browser-0",
+      "name": "Browser | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 26.903.61454; 0 skill files; openai-bundled. Manifest SHA-256 3a0b6b6e74435e45138b498816bb5ab2943c45510f369fc2ec981d9391f53945. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-chrome-1",
+      "name": "Chrome | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 26.903.61454; 0 skill files; openai-bundled. Manifest SHA-256 d27dd2a995ad1403c36017921a591eeb6c4c6947f53c2f7eb62d2b06e827a9c0. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-chrome-2",
+      "name": "Chrome | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 26.903.61454; 0 skill files; openai-bundled. Manifest SHA-256 d27dd2a995ad1403c36017921a591eeb6c4c6947f53c2f7eb62d2b06e827a9c0. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-codex-app-tools-3",
+      "name": "codex-app-tools | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.1.3; 0 skill files; openai-bundled. Manifest SHA-256 115a1735446a313055d30810fdd2172f41b0a71c74e8eeb23caaf7cd07f8f4a1. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-computer-use-4",
+      "name": "Computer Use | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 26.903.61454; 1 skill files; openai-bundled. Manifest SHA-256 61c306606ee1a9e859c181e59f4ed15ba47dc4f571de733be82de04b5ccbcf9c. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-unified-computer-use-5",
+      "name": "unified-computer-use | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 26.903.61454; 0 skill files; openai-bundled. Manifest SHA-256 4b3d2e749e05da2809981ef4003ce423912448361c44caabd1de3c66df2b909f. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-visualize-6",
+      "name": "Visualize | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 1.0.32; 1 skill files; openai-bundled. Manifest SHA-256 06d78e1902fdd5a32dd720485e92c19b11c73047eaafc832ab51e9e39b900c3f. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-adaptyv-bio-7",
+      "name": "Adaptyv Bio | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.0.4; 4 skill files; openai-curated-remote. Manifest SHA-256 42642e267ebea482209917e8b86af50cb7087b61fd55d9953d2be08e8a8ec1dd. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-airtable-8",
+      "name": "Airtable | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 6.0.1; 3 skill files; openai-curated-remote. Manifest SHA-256 4ea1730571fe733f338f4a73323055da7d31d98760d79eb74aaf3c3a9b7016c7. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-68de829bf7648191acd70a907364c67c-9",
+      "name": "Spotify | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 4.1.0; 0 skill files; openai-curated-remote. Manifest SHA-256 1805b54085184f489ae6a1fa64fc18488c074da66db68b322b088dc3b68c6239. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-68e01e8c1c2081918b4567a0b959d3ff-10",
+      "name": "Coursera | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 2.0.0; 0 skill files; openai-curated-remote. Manifest SHA-256 5633d30925e2150d0e8a3553f1a5567d6bb99838a2ebc10a911453985b85ac4b. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-69312da8e4dc81919370cb86fd172b6c-11",
+      "name": "Adobe | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 8.0.0; 6 skill files; openai-curated-remote. Manifest SHA-256 df5a9399ddb306b0f6e7e4e51336ad96f06c677075325494ae806e3be32c982a. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-6938a7d323f48191aeabaf579802bf45-12",
+      "name": "Adobe Acrobat | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 1.0.0; 0 skill files; openai-curated-remote. Manifest SHA-256 ef8f8cd9f6bf1912be322229e851b3f480751719f11332bb96f83fbde0bfaf6c. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-6938a94a61d881918ef32cb999ff937c-13",
+      "name": "Apple Music | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 1.0.0; 0 skill files; openai-curated-remote. Manifest SHA-256 6c41351adba05cd2cbc930c5473b7d244dfb7b406e01fa12f2265de65ff152e8. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-6943e6f4a928819195962de16fb9ffe4-14",
+      "name": "Consensus | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 4.0.0; 0 skill files; openai-curated-remote. Manifest SHA-256 1ceda3c605493a1445d22123e8861852cf80cfde880950b17238a4aa672418a3. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-6944570636288191b7944d8c4a3fb857-15",
+      "name": "Shazam | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 2.0.0; 0 skill files; openai-curated-remote. Manifest SHA-256 d9494da361427c1d8ef342c1fd2b7b3bdbb3b17ee7afccf9db99f87210a23671. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-6944ee6b0e388191874b78d9b0548944-16",
+      "name": "AhaMotion | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 1.0.0; 0 skill files; openai-curated-remote. Manifest SHA-256 41f0b8d7e0dff023efe8681b7c3874b3afc5d124fcb6529fec715d4db24c6f54. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-6944f7c806d0819195abf0177e5ff78a-17",
+      "name": "Ace Knowledge Graph | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 2.0.0; 0 skill files; openai-curated-remote. Manifest SHA-256 53a1c1eeadea2995387e1fadc2507ffc58834235a1f5681367f63a31207a4b6d. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-6948b1ccbef881919744614875f97c3f-18",
+      "name": "AI Wisebase | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 1.0.0; 0 skill files; openai-curated-remote. Manifest SHA-256 77af1825f83bd3f2f20fe2827dbfe837f86c07f93dfe519b1e425836712e5d7d. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-695c70d5bb648191a156ddd85c967bf6-19",
+      "name": "Private MD Labs | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 2.0.0; 0 skill files; openai-curated-remote. Manifest SHA-256 46c211c718a8d6e02f931b49efd5a46cd62a206b56ca536927b38870a9f23706. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-69a0e374670c819190761772d2092135-20",
+      "name": "Chessy | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 1.0.0; 0 skill files; openai-curated-remote. Manifest SHA-256 4228eccc1f752c2dd20f35760e73ba3d6210fc3d4b6fc3f675ff24cc4e1aed04. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-69fcf53d4d8481919b65501a96bbed02-21",
+      "name": "Elicit | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 1.0.0; 0 skill files; openai-curated-remote. Manifest SHA-256 4214e0c8a62919d31c2746b2c3bd536b33d563d36ac0af301af7fe635a8f29a5. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-69fd7f74d13481919360da072b871129-22",
+      "name": "eSIM Copilot | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 2.0.0; 0 skill files; openai-curated-remote. Manifest SHA-256 6866f3146a15c39be206196d35bd6ffca50a31867fc9da7f067b1e7841798594. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-69fe0bf66c8481919c513d799406436e-23",
+      "name": "Wolfram | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 3.0.0; 0 skill files; openai-curated-remote. Manifest SHA-256 42ea3c71ee15cdca9c2bbc1598aa2144513b50e722556f59fb3af1364af28a70. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-6a04f88a5fbc8191b8679c1ae31f2779-24",
+      "name": "Academic Writing Toolkit | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 1.0.0; 0 skill files; openai-curated-remote. Manifest SHA-256 2b6e855d3eab8f9c2ad3d8a0f20f5d88ff85832631114eb3d2afd4da540da681. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-6a057d268ebc81919918d37eec718425-25",
+      "name": "Remote Desktop Commander | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 1.0.0; 0 skill files; openai-curated-remote. Manifest SHA-256 42f3347ed38f469a4721db2236b20cc73c74f93fbd68e9a6350289c6b94bdf0d. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-6a2e3ae94af4819190469f3503a97d9c-26",
+      "name": "smarts.bio: AI for biology | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 2.0.0; 0 skill files; openai-curated-remote. Manifest SHA-256 0c1887a4e5d9830328c8083be57c7cfd24fc8e1dccccf0d648dbb10d6b53979a. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-6a314a73f8ac819195b0d55e36b9c609-27",
+      "name": "Firecrawl | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 2.0.1; 12 skill files; openai-curated-remote. Manifest SHA-256 7ba1905f7514855089083b837bca7218dd1b798fbce6101e074a301cddf437dc. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-6a3293e129088191abf0875820e839da-28",
+      "name": "Higgsfield | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 1.5.0; 13 skill files; openai-curated-remote. Manifest SHA-256 0d38f001d9d02a207104b05ee654738b0b51fe51f8387919757ee52753fe1966. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-6a5f875215108191ae5d449352363219-29",
+      "name": "Inductive Bio | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 1.0.0; 3 skill files; openai-curated-remote. Manifest SHA-256 bb64747257f10d469ad0d8028386b1827f3a0ce49eb880aa533cfdfae2c78642. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-6a5fc156fad88191a3977b60131d7391-30",
+      "name": "Tamarind Bio | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 1.0.0; 0 skill files; openai-curated-remote. Manifest SHA-256 41787db968b60623216d5d1a139c1dc1473e84195279dbedb51d55cea10ec971. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-6a60df60877081919ad4a8109d27535d-31",
+      "name": "Undermind | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 1.0.1; 0 skill files; openai-curated-remote. Manifest SHA-256 f72400b14c215cf263c23a2239ff38854ebd55a1e7d804ff04c45cd3d664d2b5. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-6a73c480231c819181d7440a0e1499c9-32",
+      "name": "Genomic Intelligence | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 1.0.0; 1 skill files; openai-curated-remote. Manifest SHA-256 3c457f9c1d855a55a13736ddd3d127d3b48f04a3230b0379812621fcae131c16. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-6a88631af75081918917d89fb00269ad-33",
+      "name": "Rowan | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 1.0.0; 1 skill files; openai-curated-remote. Manifest SHA-256 c04ed6483af782b910b1deea6f5428427357934aff75b74ef11aa3b13af88bb8. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-app-6a8a0cf734e48191aec4c958de2d145c-34",
+      "name": "Proto | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.0.1; 0 skill files; openai-curated-remote. Manifest SHA-256 1642a917d87ba325fdf72918c7fae78e0b8cdb255163a9a954c510af7e2401f7. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-biohub-esm-35",
+      "name": "Biohub ESM | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.2.4; 6 skill files; openai-curated-remote. Manifest SHA-256 7e5a8f560f43e2af1542076a9059b74f6a6b1bfa141e86539729bbbb21695839. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-bionemo-agent-toolkit-36",
+      "name": "NVIDIA BioNeMo Agent Toolkit | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.1.0; 31 skill files; openai-curated-remote. Manifest SHA-256 36b5be2ad91d95d9081a9740ada3222d4b9a4971ae7ba32883b51ced932af036. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-biorender-37",
+      "name": "BioRender | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 2.0.1; 0 skill files; openai-curated-remote. Manifest SHA-256 08e230f91a7137272a0238ff2cda94ffbf93da578b17ec64d3d5b80e6101e0d9. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-boltz-api-cli-38",
+      "name": "Boltz | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.1.1; 8 skill files; openai-curated-remote. Manifest SHA-256 9ac6e86a7abf8927e7b92e413600eca8dd6de5afa088442ed25c0aa2f501db73. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-build-ios-apps-39",
+      "name": "Build iOS Apps | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.1.2; 9 skill files; openai-curated-remote. Manifest SHA-256 86d4a225cb929ab68f00f6258a75daffb02122dd34875dabd349c3474dc35908. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-build-macos-apps-40",
+      "name": "Build macOS Apps | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.1.4; 11 skill files; openai-curated-remote. Manifest SHA-256 d8d9c85281df68af2a2012ab6365b2789a573bd399692dacc4b2d5bfd06c0450. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-build-web-apps-41",
+      "name": "Build Web Apps | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.1.2; 6 skill files; openai-curated-remote. Manifest SHA-256 676d1aab332c7bbacfbf59da0d61b1ced0ac3297c5e7788f72110cbd49915968. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-build-web-data-visualization-42",
+      "name": "Build Web Data Visualization | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.1.21; 18 skill files; openai-curated-remote. Manifest SHA-256 fa1f5586afcfdfa8fa58d249fe852efd8103057d30f6c5d4009ce90e83b225a9. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-canva-43",
+      "name": "Canva | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 14.0.0; 8 skill files; openai-curated-remote. Manifest SHA-256 bb9ff2fb6e008f481012608e42f2537addc9b6509ab0afb74956fb265a723fb8. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-cloudflare-44",
+      "name": "Cloudflare | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.1.2; 9 skill files; openai-curated-remote. Manifest SHA-256 790ac166fa1f509f440e66d35c010e1cfb34d773726eb3a30a6a7553dacaf59a. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-data-analytics-45",
+      "name": "Data Analytics | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.2.10-13ceeea1f599; 15 skill files; openai-curated-remote. Manifest SHA-256 5e31ff8c5a927dd262488ab4fa34a1136ff5ecd778fc2b91709f2426588f13ba. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-deep-research-work-46",
+      "name": "Deep Research | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.1.15; 1 skill files; openai-curated-remote. Manifest SHA-256 7c1d94e0c3892469bde09ed42d1cb32c63801f61f93ef1e01d5dde1a2bc01255. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-figma-47",
+      "name": "Figma | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 2.0.21; 12 skill files; openai-curated-remote. Manifest SHA-256 5333104f8a49ba3c7d50475eb233ec2beb6a127543f1a2004eda3bd52cb3d944. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-github-48",
+      "name": "GitHub | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.1.12-5f7cd798dc99; 0 skill files; openai-curated-remote. Manifest SHA-256 c7a102ea4c7c06e49976dfc2f150a4fe2ce46b0e66f9b03883dda5d5cc9cb0ad. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-gmail-49",
+      "name": "Gmail | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.1.10; 0 skill files; openai-curated-remote. Manifest SHA-256 79332756fee94eb5251c57984c8412d43e31c6716f47f28305f3b556a14ff5c6. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-google-calendar-50",
+      "name": "Google Calendar | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 1.2.7; 0 skill files; openai-curated-remote. Manifest SHA-256 bdc047151faa4c2c539fe15e6b55bd1cb6e81148606f4efe1b7727ff161cc73f. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-google-contacts-51",
+      "name": "Google Contacts | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 1.0.0; 0 skill files; openai-curated-remote. Manifest SHA-256 a8c9a0d3b2a4f9b71af673b4b03ec00de4e6a7f41e7190c9716b4b3e3f513849. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-google-drive-52",
+      "name": "Google Drive | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.1.16; 5 skill files; openai-curated-remote. Manifest SHA-256 fb76d7ea1eeaf768fd8bd539e6fbd8bd5fb0a911d4bb0b3af3a875c40df9ecb4. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-hugging-face-53",
+      "name": "Hugging Face | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 1.0.0; 11 skill files; openai-curated-remote. Manifest SHA-256 a910e2669c8bdd4bcb261402b9e3c94cafc1a852256bf0a54aa0432316cb0547. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-life-sciences-databases-54",
+      "name": "Life Sciences Databases | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.1.5; 44 skill files; openai-curated-remote. Manifest SHA-256 57927c62350ad6850564b21cf7527e3906f9ef003f33b53f09a6923e88c7983b. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-life-sciences-literature-55",
+      "name": "Life Sciences Literature | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.1.5; 3 skill files; openai-curated-remote. Manifest SHA-256 d326ee61d6070b15117a1a260516371c9ef1745c3ce3cf8a949b5efcec886600. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-network-solutions-56",
+      "name": "Network Solutions | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 1.0.0; 0 skill files; openai-curated-remote. Manifest SHA-256 b6e5ee3b5ea8e85919eba6324389f0ad8130c3a237506f223661744e85249708. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-ngs-analysis-workbench-57",
+      "name": "NGS Analysis Workbench | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.2.16; 5 skill files; openai-curated-remote. Manifest SHA-256 a32ecaede3ce6d04098191997359900169259682e2b4909200a624fafe2e0ea1. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-openai-developers-58",
+      "name": "OpenAI Developers | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 1.2.3; 5 skill files; openai-curated-remote. Manifest SHA-256 547f6c8e73514cb921d6570ccc7d1114d397a88506bdc8ad1338709d6d435b8a. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-openai-templates-59",
+      "name": "Default templates | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.1.1; 20 skill files; openai-curated-remote. Manifest SHA-256 d2cbbd434a5c8123a9e1612663f0598cdd13ba71bfb55e172e8132ed9e5d4474. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-plugin-management-60",
+      "name": "Plugin Management | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.1.0; 1 skill files; openai-curated-remote. Manifest SHA-256 5deb3b2f943fff03a928e1faed2b040bad7dabcf71c11f183fc67dcc0793e3c3. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-product-design-61",
+      "name": "Product Design | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.1.54; 10 skill files; openai-curated-remote. Manifest SHA-256 3820b68ed8ea0190f599a7cf050a3bfc167fe3e0fc20e4d0bf98ef8ace1ef5bf. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-rosalind-62",
+      "name": "Rosalind Workbench | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.2.5-research-preview; 0 skill files; openai-curated-remote. Manifest SHA-256 638bc4bfb9c0646bee841748702bed6520124b5d8c514a2bc647635a33061413. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-sequence-viewer-63",
+      "name": "Biological Sequence & Alignment Viewer | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.1.43; 1 skill files; openai-curated-remote. Manifest SHA-256 e2a3160d5cfb1556546f9d3709825580f09da2faf0c036df37ec660a7ffe6ff4. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-slack-64",
+      "name": "Slack | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.1.8; 0 skill files; openai-curated-remote. Manifest SHA-256 28188364c74d514acc63248db5c47fb8a948ea4810b99c17ff9e2d98affd3dc3. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-vercel-65",
+      "name": "Vercel | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 0.21.4; 54 skill files; openai-curated-remote. Manifest SHA-256 868bc1954080f6bfba006c824d41c800a1c9294088a34c395afe5656508641e2. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-documents-66",
+      "name": "Documents | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 26.905.11957; 1 skill files; openai-primary-runtime. Manifest SHA-256 196b6667f9181760fe59dcc7394fac1467c7ab6023711d6f3f933ccecd8ca6f3. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-pdf-67",
+      "name": "PDF | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 26.905.11957; 1 skill files; openai-primary-runtime. Manifest SHA-256 8cf6f5d8067c166fa4000e9b3a0ad3f600f453d7d2f8601ac48c8f6be7c4f97b. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-presentations-68",
+      "name": "Presentations | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 26.905.11957; 1 skill files; openai-primary-runtime. Manifest SHA-256 4d32b11f48c5457d7626cfb66f777c4e91bcfc388bb29f4e317638bc7337567a. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-spreadsheets-69",
+      "name": "Spreadsheets | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 26.905.11957; 2 skill files; openai-primary-runtime. Manifest SHA-256 ef4ccdb445c4b4bd7190e0a28d76246f930fe8784ad188122a3036c77b0bd8ed. Installed=yes here means cached files only; runtime enablement was not checked."
+    },
+    {
+      "id": "cached-template-creator-70",
+      "name": "Template Creator | cache record",
+      "purpose": "Local plugin-definition files observed. This is not proof of enabled tools, authenticated MCPs, or inference readiness.",
+      "states": {
+        "exposed": "unknown",
+        "installed": "yes",
+        "authenticated": "unknown",
+        "probed": "not-tested",
+        "executed": "not-tested"
+      },
+      "evidenceIds": [
+        "plugin-cache-20260909"
+      ],
+      "notes": "Cache version 26.905.11957; 1 skill files; openai-primary-runtime. Manifest SHA-256 bf52837bc9f9cb201767e7f5a34c7cd1c4282a60601e3bfc3b8dcbeb37a242b6. Installed=yes here means cached files only; runtime enablement was not checked."
+    }
+  ]
+}

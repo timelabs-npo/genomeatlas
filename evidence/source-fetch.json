@@ -1,0 +1,53 @@
+{
+  "wrapper": "python scripts/fetch-public.py",
+  "calls": [
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/serg-alexv/genomeops-atlas"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/serg-alexv/genomeops-atlas/contents/analyses/lab-rm-phylogenomics/STATUS.md?ref=0f139f96494e09ff0387d2b4979318288c6cf54e"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/serg-alexv/genomeops-atlas/contents/analyses/lab-rm-phylogenomics/results/STAGE1_2026-08-26.md?ref=0f139f96494e09ff0387d2b4979318288c6cf54e"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/serg-alexv/genomeops-atlas/contents/analyses/lab-rm-phylogenomics/results/evidence_gate_review/INDEPENDENT_REVIEW.md?ref=7c27865b7113b0fe8b22a57a751ed82fdaae9c8a"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/serg-alexv/genomeops-atlas/contents/analyses/lab-rm-phylogenomics/tool-atlas/PARENT_DELIVERY_RECEIPT.md?ref=f5b13cafe3f865a291d9539e6c7dc5ebd66ebce3"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/serg-alexv/genomeops-atlas/contents/analyses/lab-rm-phylogenomics/config/selected_accessions_stage1.txt?ref=0f139f96494e09ff0387d2b4979318288c6cf54e"
+      ],
+      "exitCode": 0
+    }
+  ]
+}
