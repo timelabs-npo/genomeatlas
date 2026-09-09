@@ -1,0 +1,16 @@
+test_no_deployment (test_contracts.Contracts.test_no_deployment) ... ok
+test_node_contract_suite (test_contracts.Contracts.test_node_contract_suite) ... ok
+test_parent_reports_attributed (test_contracts.Contracts.test_parent_reports_attributed) ... ok
+test_repository_invariants (test_contracts.Contracts.test_repository_invariants) ... ok
+test_bad_state_and_empty_contract_rejected (test_hardening.Hardening.test_bad_state_and_empty_contract_rejected) ... ok
+test_changed_accession_order_rejected (test_hardening.Hardening.test_changed_accession_order_rejected) ... ok
+test_changed_accession_version_rejected (test_hardening.Hardening.test_changed_accession_version_rejected) ... ok
+test_duplicate_tool_id_rejected (test_hardening.Hardening.test_duplicate_tool_id_rejected) ... ok
+test_exact_accession_bytes_pass (test_hardening.Hardening.test_exact_accession_bytes_pass) ... ok
+test_missing_contract_rejected (test_hardening.Hardening.test_missing_contract_rejected) ... ok
+test_short_or_duplicate_panel_rejected (test_hardening.Hardening.test_short_or_duplicate_panel_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.594s
+
+OK

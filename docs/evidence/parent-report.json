@@ -1,0 +1,95 @@
+{
+  "kind": "ATTRIBUTED_PARENT_REPORT",
+  "source": "CODEX_TASK.md with superseding user report on 2026-09-09; attributed, not locally replayed",
+  "captured_date": "2026-09-09",
+  "checked_at": null,
+  "limitation": "Task-supplied facts, not raw command receipts independently replayed by this site. Missing check timestamps remain null.",
+  "probes": [
+    {
+      "id": "wd-powershell",
+      "name": "WD file access & PowerShell",
+      "state": "PASSED",
+      "origin": "PARENT_REPORT",
+      "checked_at": null,
+      "detail": "Remote Desktop Commander file access and fresh PowerShell execution passed. Operation scope only; no biology receipt.",
+      "evidence_reference": "evidence/parent-report.json"
+    },
+    {
+      "id": "wsl",
+      "name": "WSL Ubuntu runtime",
+      "state": "PASSED",
+      "origin": "PARENT_REPORT",
+      "checked_at": null,
+      "detail": "Python 3.14.4 and /tmp were tested. WSL reported version 1, not version 2. No GPU inference follows.",
+      "evidence_reference": "evidence/parent-report.json"
+    },
+    {
+      "id": "roundtrip",
+      "name": "Cross-device nonce",
+      "state": "PASSED",
+      "origin": "PARENT_REPORT",
+      "checked_at": null,
+      "detail": "A historical Windows-to-Ubuntu nonce roundtrip was verified. Its timestamp was not supplied. The fresh nonce below is supplied separately, not a newly verified roundtrip.",
+      "evidence_reference": "evidence/parent-report.json"
+    },
+    {
+      "id": "fresh-nonce",
+      "name": "Fresh nonce supplied",
+      "state": "DECLARED",
+      "origin": "PARENT_REPORT",
+      "checked_at": "2026-09-09T14:23:22Z",
+      "detail": "Fresh nonce supplied by parent; value withheld from public assets. Parent observed historical nonce exchange; no new local exchange tested.",
+      "evidence_reference": "evidence/parent-report.json"
+    },
+    {
+      "id": "source-access",
+      "name": "GitHub source access",
+      "state": "PASSED",
+      "origin": "PARENT_REPORT",
+      "checked_at": null,
+      "detail": "Windows git 2.45.1, gh authentication and organization role succeeded. Repository timelabs-npo/genomeatlas exists. No publication action is authorized here.",
+      "evidence_reference": "evidence/parent-report.json"
+    },
+    {
+      "id": "service-auth",
+      "name": "smarts.bio deterministic GC probe",
+      "state": "BLOCKED",
+      "origin": "PARENT_REPORT",
+      "checked_at": null,
+      "detail": "Parent reports workspace-list succeeded; deterministic GC tool returned HTTP 404 and its agent confirmed BLOCKED. Discovery success is not a biological job success.",
+      "evidence_reference": "evidence/parent-report.json"
+    },
+    {
+      "id": "toolkit",
+      "name": "BioNeMo skill installation",
+      "state": "DECLARED",
+      "origin": "PARENT_REPORT",
+      "checked_at": null,
+      "detail": "Parent reports BioNeMo skill installed. GPU runtime and API execution NOT_TESTED; no NVIDIA model downloaded.",
+      "evidence_reference": "evidence/parent-report.json"
+    },
+    {
+      "id": "publication",
+      "name": "Native Sites publication",
+      "state": "BLOCKED",
+      "origin": "PARENT_REPORT",
+      "checked_at": null,
+      "detail": "Native Sites tool is not exposed in the parent. NOT_DEPLOYED. GitHub Pages would be a separate publication route.",
+      "evidence_reference": "evidence/parent-report.json"
+    },
+    {
+      "id": "smarts-workspaces",
+      "name": "smarts.bio workspace-list",
+      "state": "PASSED",
+      "origin": "PARENT_REPORT",
+      "checked_at": null,
+      "detail": "Parent reports workspace-list succeeded. Inventory omitted; deterministic GC execution is separately BLOCKED.",
+      "evidence_reference": "evidence/parent-report.json"
+    }
+  ],
+  "additional_facts": [
+    "Codex login reported as ChatGPT; current static site task executing; backend model and thread ID unavailable.",
+    "Copilot PR27 is a separate unmerged review in the original repository.",
+    "Trae and Antigravity directory sightings only; no session or probe performed."
+  ]
+}

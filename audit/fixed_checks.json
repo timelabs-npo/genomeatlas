@@ -1,0 +1,36 @@
+{
+  "origin": "PARENT_ON_WD",
+  "checks": [
+    {
+      "command": [
+        "python",
+        "scripts/verify.py"
+      ],
+      "exit_code": 0,
+      "log": "fixed_0.log"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "fixed_1.log"
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/contracts.test.js"
+      ],
+      "exit_code": 0,
+      "log": "fixed_2.log"
+    }
+  ],
+  "utc": "2026-09-09T15:16:36.027450+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "utc": "2026-09-09T15:25:25.313240+00:00",
+  "scope": "Actual Windows to Ubuntu /tmp to Windows transport; not biological data",
+  "result": "PASSED",
+  "input_sha256": "bc06e6d4ed6b37f9a3dfe4b39d80743c394e33026892b06274e3a8b34566b1ce",
+  "ubuntu_sha256": "bc06e6d4ed6b37f9a3dfe4b39d80743c394e33026892b06274e3a8b34566b1ce",
+  "returned_sha256": "bc06e6d4ed6b37f9a3dfe4b39d80743c394e33026892b06274e3a8b34566b1ce",
+  "ubuntu": {
+    "sha256": "bc06e6d4ed6b37f9a3dfe4b39d80743c394e33026892b06274e3a8b34566b1ce",
+    "python": "3.14.4",
+    "kernel": "4.4.0-26100-Microsoft"
+  },
+  "command_exit": 0,
+  "bionemo_runtime_command_presence": {
+    "nvidia-smi": false,
+    "pbrun": false,
+    "git": true,
+    "python3": true
+  },
+  "no_model_inference": true
+}

@@ -1,0 +1,6 @@
+* text=auto eol=lf
+inputs/selected_accessions.txt -text
+docs/data/selected_accessions.txt -text
+*.png binary
+*.jpg binary
+*.zip binary

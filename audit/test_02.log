@@ -1,0 +1,44 @@
+test_no_deployment (test_contracts.Contracts.test_no_deployment) ... ok
+test_node_contract_suite (test_contracts.Contracts.test_node_contract_suite) ... ok
+test_parent_reports_attributed (test_contracts.Contracts.test_parent_reports_attributed) ... ok
+test_repository_invariants (test_contracts.Contracts.test_repository_invariants) ... FAIL
+test_bad_state_and_empty_contract_rejected (test_hardening.Hardening.test_bad_state_and_empty_contract_rejected) ... ok
+test_changed_accession_order_rejected (test_hardening.Hardening.test_changed_accession_order_rejected) ... ok
+test_changed_accession_version_rejected (test_hardening.Hardening.test_changed_accession_version_rejected) ... ok
+test_duplicate_tool_id_rejected (test_hardening.Hardening.test_duplicate_tool_id_rejected) ... ok
+test_exact_accession_bytes_pass (test_hardening.Hardening.test_exact_accession_bytes_pass) ... FAIL
+test_missing_contract_rejected (test_hardening.Hardening.test_missing_contract_rejected) ... ok
+test_short_or_duplicate_panel_rejected (test_hardening.Hardening.test_short_or_duplicate_panel_rejected) ... ok
+
+======================================================================
+FAIL: test_repository_invariants (test_contracts.Contracts.test_repository_invariants)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\tests\test_contracts.py", line 11, in test_repository_invariants
+    self.assertEqual(verify(), 10)
+                     ~~~~~~^^
+  File "<repository>\scripts\verify.py", line 55, in verify
+    assert not validate_panel(raw, data["panel"]["accessions"]), validate_panel(raw, data["panel"]["accessions"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ['Supplied accession bytes changed']
+
+======================================================================
+FAIL: test_exact_accession_bytes_pass (test_hardening.Hardening.test_exact_accession_bytes_pass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\tests\test_hardening.py", line 37, in test_exact_accession_bytes_pass
+    self.assertEqual(validate_panel(self.raw, self.data["panel"]["accessions"]), [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['Supplied accession bytes changed'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'Supplied accession bytes changed'
+
+- ['Supplied accession bytes changed']
++ []
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.500s
+
+FAILED (failures=2)

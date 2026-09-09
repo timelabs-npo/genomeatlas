@@ -1,0 +1,29 @@
+{
+  "checks": [
+    {
+      "case": "scope_container",
+      "exit": 1,
+      "authenticated": false,
+      "errors": [
+        "scope must be one of: connectivity, live-data, synthetic"
+      ]
+    },
+    {
+      "case": "outcome_container",
+      "exit": 1,
+      "authenticated": false,
+      "errors": [
+        "outcome must be one of: blocked, fail, not-run, pass"
+      ]
+    },
+    {
+      "case": "oversized",
+      "exit": 1,
+      "authenticated": false,
+      "errors": [
+        "receipt exceeds 64 KiB"
+      ]
+    }
+  ],
+  "utc": "2026-09-09T15:24:03.435153+00:00"
+}

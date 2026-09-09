@@ -1,0 +1,49 @@
+{
+  "scope": "ACTUAL_WD_CHROME_FROZEN_RELEASE_UI",
+  "checks": [
+    {
+      "name": "title",
+      "result": "PASS"
+    },
+    {
+      "name": "seven_chain_buttons",
+      "result": "PASS"
+    },
+    {
+      "name": "marker_inspection",
+      "result": "PASS"
+    },
+    {
+      "name": "tool_search",
+      "result": "PASS"
+    },
+    {
+      "name": "request_requires_confirmation",
+      "result": "PASS"
+    },
+    {
+      "name": "no_execution_claim",
+      "result": "PASS"
+    },
+    {
+      "name": "export_actual_file",
+      "result": "PASS"
+    },
+    {
+      "name": "forged_receipt_rejected",
+      "result": "PASS"
+    },
+    {
+      "name": "mobile_no_horizontal_overflow",
+      "result": "PASS"
+    },
+    {
+      "name": "no_javascript_errors",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "utc": "2026-09-09T15:19:59.374Z",
+  "native_chatgpt_site": "NOT_DEPLOYED",
+  "note": "Browser test captured before the native deployment was re-confirmed; NOT_DEPLOYED there is a historical observation."
+}

@@ -1,0 +1,11 @@
+{
+  "issue": "Git Windows checkout converted frozen input LF to CRLF",
+  "fix": "restore exact frozen bytes, mark accession files -text in .gitattributes",
+  "expected_sha256": "56209c6042213da0ea96160d2a2d4e785d7574246b4b8d0371a290333c9e264a",
+  "fixed_files": [
+    "inputs/selected_accessions.txt",
+    "docs/data/selected_accessions.txt"
+  ],
+  "weakened_hash_check": false,
+  "utc": "2026-09-09T15:16:34.377089+00:00"
+}

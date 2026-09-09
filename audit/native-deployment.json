@@ -1,0 +1,27 @@
+{
+  "kind": "FINAL_NATIVE_SITE_RECEIPT",
+  "origin": "NATIVE_SERVICE_STATUS_AND_SUPPORTED_BROWSER_VERIFICATION",
+  "checked_at_utc": "2026-09-09 15:17:38 UTC",
+  "project_id": "appgprj_6aa1709139648191ab998de6fccc4890",
+  "version_number": 1,
+  "version_id": "appgprj_6aa1709139648191ab998de6fccc4890~appgver_201555c8245c81919a9eaac114e07461",
+  "deployment_id": "appgdep_6aa175d1acec8191b809edbc5f34f3e8",
+  "terminal_state": "succeeded",
+  "url": "https://genomeatlas-site-helper-suite.hx31337.chatgpt.site",
+  "audience": "public",
+  "source_commit": "683401cf1f2255414a4df3e0f2e9d606686a8fdf",
+  "deployment_requested_at": "2026-09-09T15:05:53.955434+00:00",
+  "deployment_updated_at": "2026-09-09T15:06:50.563534+00:00",
+  "NOT_TESTED": [
+    "production export download completion and downloaded bytes",
+    "production untrusted receipt rejection because browser file selection was denied",
+    "separate anonymous browser context",
+    "production mobile/responsive matrix",
+    "biological runs and model inference"
+  ],
+  "limitations": [
+    "Site contains a labeled pre-publication evidence snapshot; historical NOT_DEPLOYED badges do not override the current native service deployment receipt.",
+    "Public audience confirmed by native service; a separately anonymous browser context was not tested.",
+    "No fresh push, upload, credential request, audience change, save or deployment restart was performed in this final verification continuation."
+  ]
+}

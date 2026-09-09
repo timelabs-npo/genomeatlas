@@ -1,0 +1,31 @@
+{
+  "kind": "RM_EVIDENCE_TEMPLATE",
+  "schema_version": 1,
+  "state": "DRAFT",
+  "assembly_accession": null,
+  "strain": null,
+  "sequence_id": null,
+  "protein_id": null,
+  "contig_id": null,
+  "coordinates": null,
+  "ring": null,
+  "allowed_rings": [
+    "I",
+    "II",
+    "III",
+    "IV"
+  ],
+  "subtype": null,
+  "subtype_note": "IIG belongs to ring II.",
+  "job_status": "NOT_TESTED",
+  "call": "NA",
+  "evidence_reference": null,
+  "exact_strain_evidence": false,
+  "curated": false,
+  "assessment_complete": false,
+  "curator": null,
+  "tool_version": null,
+  "database_version": null,
+  "input_sha256": null,
+  "functional_proof": null
+}

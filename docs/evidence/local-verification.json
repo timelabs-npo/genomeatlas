@@ -1,0 +1,151 @@
+{
+  "origin": "LOCAL_TEST_EXECUTION",
+  "checked_at": "2026-09-09T15:03:50.030562+00:00",
+  "core_checks_state": "PASSED",
+  "checks": [
+    {
+      "command": "python --version",
+      "started_at": "2026-09-09T15:03:46.538768+00:00",
+      "finished_at": "2026-09-09T15:03:46.558045+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "Python 3.14.6",
+      "stderr": ""
+    },
+    {
+      "command": "node --version",
+      "started_at": "2026-09-09T15:03:46.558153+00:00",
+      "finished_at": "2026-09-09T15:03:46.605822+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "v24.19.0",
+      "stderr": ""
+    },
+    {
+      "command": "git --version",
+      "started_at": "2026-09-09T15:03:46.605914+00:00",
+      "finished_at": "2026-09-09T15:03:46.659408+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "git version 2.45.1.windows.1",
+      "stderr": ""
+    },
+    {
+      "command": "python scripts/build_data.py --check",
+      "started_at": "2026-09-09T15:03:46.659540+00:00",
+      "finished_at": "2026-09-09T15:03:46.897503+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "PASS: public JSON and file-compatible bundle match",
+      "stderr": ""
+    },
+    {
+      "command": "python scripts/verify.py",
+      "started_at": "2026-09-09T15:03:46.897562+00:00",
+      "finished_at": "2026-09-09T15:03:47.136352+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "PASS: 10 invariant groups; 177 unique versioned accession records; byte identity preserved",
+      "stderr": ""
+    },
+    {
+      "command": "python -m unittest discover -s tests -v",
+      "started_at": "2026-09-09T15:03:47.136492+00:00",
+      "finished_at": "2026-09-09T15:03:48.150871+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "",
+      "stderr": "test_no_deployment (test_contracts.Contracts.test_no_deployment) ... ok\ntest_node_contract_suite (test_contracts.Contracts.test_node_contract_suite) ... ok\ntest_parent_reports_attributed (test_contracts.Contracts.test_parent_reports_attributed) ... ok\ntest_repository_invariants (test_contracts.Contracts.test_repository_invariants) ... ok\ntest_bad_state_and_empty_contract_rejected (test_hardening.Hardening.test_bad_state_and_empty_contract_rejected) ... ok\ntest_changed_accession_order_rejected (test_hardening.Hardening.test_changed_accession_order_rejected) ... ok\ntest_changed_accession_version_rejected (test_hardening.Hardening.test_changed_accession_version_rejected) ... ok\ntest_duplicate_tool_id_rejected (test_hardening.Hardening.test_duplicate_tool_id_rejected) ... ok\ntest_exact_accession_bytes_pass (test_hardening.Hardening.test_exact_accession_bytes_pass) ... ok\ntest_missing_contract_rejected (test_hardening.Hardening.test_missing_contract_rejected) ... ok\ntest_short_or_duplicate_panel_rejected (test_hardening.Hardening.test_short_or_duplicate_panel_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.605s\n\nOK"
+    },
+    {
+      "command": "node --test tests/contracts.test.js tests/contracts.test.cjs",
+      "started_at": "2026-09-09T15:03:48.151013+00:00",
+      "finished_at": "2026-09-09T15:03:48.718382+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "\u2714 browser and data share exact state and allowed-job vocabularies (12.6153ms)\n\u2714 valid draft and confirmation requests stay unexecuted (4.2797ms)\n\u2714 missing inputs, hashes, endpoint, reviewer, commit and budget reject (2.0305ms)\n\u2714 all seven allowed jobs accepted and any other job rejected (1.4404ms)\n\u2714 approval cannot claim execution, approval verification or a run receipt (0.6812ms)\n\u2714 bounded public aliases reject paths, URLs, credentials and markup (0.3466ms)\n\u2714 budget rejects non-finite, negative, excessive, string and fractional cents (0.3368ms)\n\u2714 import caps bytes and input count; malformed and extra fields reject (0.8374ms)\n\u2714 unknown, missing and failed jobs never become absence (0.3863ms)\n\u2714 raw hit or complete cassette cannot become curated P (0.3333ms)\n\u2714 supplied curated presence or reviewed absence requires full evidence flags (0.1822ms)\n\u2714 valid request and import (8.528ms)\n\u2714 missing inputs rejected (1.8902ms)\n\u2714 duplicate input rejected (1.1826ms)\n\u2714 consent is not execution (1.3439ms)\n\u2714 approval and receipt cannot enter request (0.9582ms)\n\u2714 malformed imports rejected (2.8325ms)\n\u2714 oversize UTF8 rejected (2.4268ms)\n\u2714 receipt stays untrusted even if claim passed (1.3608ms)\n\u2714 receipt unknown fields and false verification rejected (1.6016ms)\n\u2714 receipt invalid status and text rejected (2.0965ms)\n\u2714 markup retained as literal text for inert rendering (2.1111ms)\n\u2714 failed is not absent (1.043ms)\n\u2714 unknown missing or not tested is not absent (0.4048ms)\n\u2714 raw hit remains U and cassette is not proof (0.1639ms)\n\u2714 curated P needs exact strain evidence (0.6915ms)\n\u2714 absence requires complete exact strain assessment (3.5511ms)\n\u2714 state vocabulary and duplicate tool IDs (3.9022ms)\n\u2714 unallowed job and negative budget rejected (1.5241ms)\n\u2139 tests 29\n\u2139 suites 0\n\u2139 pass 29\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 390.9291",
+      "stderr": ""
+    },
+    {
+      "command": "node --check docs/contracts.js",
+      "started_at": "2026-09-09T15:03:48.718714+00:00",
+      "finished_at": "2026-09-09T15:03:48.944429+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "node --check docs/app.js",
+      "started_at": "2026-09-09T15:03:48.944649+00:00",
+      "finished_at": "2026-09-09T15:03:49.147137+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "node --check docs/data.js",
+      "started_at": "2026-09-09T15:03:49.147203+00:00",
+      "finished_at": "2026-09-09T15:03:49.353972+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "node --check tests/browser-smoke.js",
+      "started_at": "2026-09-09T15:03:49.354035+00:00",
+      "finished_at": "2026-09-09T15:03:49.506107+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "node --check scripts/browser_smoke.mjs",
+      "started_at": "2026-09-09T15:03:49.506170+00:00",
+      "finished_at": "2026-09-09T15:03:49.702894+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "python -c \"import ast,pathlib; files=list(pathlib.Path('scripts').glob('*.py'))+list(pathlib.Path('tests').glob('*.py')); [ast.parse(p.read_text(encoding='utf-8'),filename=str(p)) for p in files]; print('PASS: Python syntax for',len(files),'files')\"",
+      "started_at": "2026-09-09T15:03:49.702949+00:00",
+      "finished_at": "2026-09-09T15:03:49.936354+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "PASS: Python syntax for 10 files",
+      "stderr": ""
+    },
+    {
+      "command": "git diff --check",
+      "started_at": "2026-09-09T15:03:49.936423+00:00",
+      "finished_at": "2026-09-09T15:03:50.030113+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it"
+    }
+  ],
+  "browser_assertions": "NOT_TESTED",
+  "prior_browser_attempt": {
+    "kind": "LOCAL_BROWSER_SMOKE",
+    "state": "FAILED",
+    "assertion_execution": "NOT_TESTED",
+    "command": "node scripts/browser_smoke.mjs",
+    "started_at": "2026-09-09T14:56:44.379Z",
+    "finished_at": "2026-09-09T14:56:51.124Z",
+    "browser": "Chrome/152.0.7977.83",
+    "browser_process_exit": 2147483651,
+    "exit_code": 1,
+    "checks": [],
+    "failure": "CDP timeout: Runtime.enable",
+    "errors": [],
+    "website_http_requests": []
+  },
+  "browser_limitation": "Prior Edge and Chrome attempts returned no assertions; browser automation URL policy blocked local preview. See evidence/browser-policy.json. No browser rerun is implied by syntax validation.",
+  "not_biological_receipts": true
+}

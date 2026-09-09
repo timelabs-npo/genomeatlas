@@ -1,0 +1,26 @@
+✔ valid request and import (4.9811ms)
+✔ missing inputs rejected (1.1054ms)
+✔ duplicate input rejected (0.7531ms)
+✔ consent is not execution (0.7779ms)
+✔ approval and receipt cannot enter request (0.664ms)
+✔ malformed imports rejected (1.5017ms)
+✔ oversize UTF8 rejected (1.1305ms)
+✔ receipt stays untrusted even if claim passed (0.8136ms)
+✔ receipt unknown fields and false verification rejected (1.051ms)
+✔ receipt invalid status and text rejected (0.9696ms)
+✔ markup retained as literal text for inert rendering (1.1853ms)
+✔ failed is not absent (0.5602ms)
+✔ unknown missing or not tested is not absent (0.5621ms)
+✔ raw hit remains U and cassette is not proof (1.5736ms)
+✔ curated P needs exact strain evidence (1.9015ms)
+✔ absence requires complete exact strain assessment (1.4276ms)
+✔ state vocabulary and duplicate tool IDs (5.6776ms)
+✔ unallowed job and negative budget rejected (2.399ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 291.6237
