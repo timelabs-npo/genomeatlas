@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-09-09T15:27:25Z",
+  "mode": "READ_ONLY_RECONCILIATION",
+  "status": "PROVIDER_LIVE_URL_AND_SAVED_VERSION_CONFIRMED",
+  "local_source": {
+    "repository": "timelabs-npo/genomeatlas",
+    "branch": "feat/site-helper-suite-20260909",
+    "head": "d64eeddd3730cb3a705163abcf45a12f59b64b84",
+    "unchanged": true
+  },
+  "parent_journal_claims": {
+    "independently_fetched_in_this_readback": false,
+    "main_commit": "e44827702a8153f682de64d92e92ef1a88bba4c8",
+    "pull_request": 13,
+    "pull_request_head": "582c95038b5dae4ad9a7cfc8b54e6657b02212a3",
+    "claimed_native_source": "683401cf1f2255414a4df3e0f2e9d606686a8fdf",
+    "claimed_version": 1,
+    "claimed_url": "https://genomeatlas-site-helper-suite.hx31337.chatgpt.site/"
+  },
+  "actions": [
+    {
+      "tool": "mcp__codex_apps__sites_list_sites",
+      "arguments": {
+        "limit": 20,
+        "role": "owner"
+      },
+      "isError": false,
+      "matched": true,
+      "unrelated_data": "not retained",
+      "returned_match": {
+        "id": "appgprj_6aa1709139648191ab998de6fccc4890",
+        "slug": "genomeatlas-site-helper-suite",
+        "status": "active",
+        "latest_version_number": 1,
+        "current_live_url": "https://genomeatlas-site-helper-suite.hx31337.chatgpt.site",
+        "access_mode": "public"
+      }
+    },
+    {
+      "tool": "mcp__codex_apps__sites_get_site",
+      "arguments": {
+        "project_id": "appgprj_6aa1709139648191ab998de6fccc4890",
+        "include_mcp_connection": false
+      },
+      "status": "SUCCEEDED",
+      "result": {
+        "id": "appgprj_6aa1709139648191ab998de6fccc4890",
+        "slug": "genomeatlas-site-helper-suite",
+        "title": "GenomeAtlas - Site Helper Suite",
+        "status": "active",
+        "latest_version_number": 1,
+        "current_live_url": "https://genomeatlas-site-helper-suite.hx31337.chatgpt.site",
+        "current_preview_url": null,
+        "access_mode": "public",
+        "current_user_role": "owner",
+        "disabled_by": null,
+        "updated_at": "2026-09-09T15:15:21.331220+00:00",
+        "access_policy": {
+          "access_mode": "public",
+          "revision": 2,
+          "external_visitor_count": 0
+        }
+      }
+    },
+    {
+      "tool": "mcp__codex_apps__sites_list_site_versions",
+      "arguments": {
+        "project_id": "appgprj_6aa1709139648191ab998de6fccc4890",
+        "limit": 5
+      },
+      "status": "SUCCEEDED",
+      "result": {
+        "items": [
+          {
+            "id": "appgprj_6aa1709139648191ab998de6fccc4890~appgver_201555c8245c81919a9eaac114e07461",
+            "project_id": "appgprj_6aa1709139648191ab998de6fccc4890",
+            "version_number": 1,
+            "source": {
+              "commit_sha": "683401cf1f2255414a4df3e0f2e9d606686a8fdf"
+            },
+            "archive_storage": {
+              "archive_format": "tar",
+              "content_hash": "sha256:253ae6539d07e7804c853d173bfee0d4a7b75ea2eed5e62c387d102cec2c034e",
+              "size_bytes": 163840,
+              "file_count": 18
+            }
+          }
+        ],
+        "cursor": null
+      }
+    },
+    {
+      "tool": "mcp__codex_apps__sites_get_site_version",
+      "arguments": {
+        "project_id": "appgprj_6aa1709139648191ab998de6fccc4890",
+        "version_id": "appgprj_6aa1709139648191ab998de6fccc4890~appgver_201555c8245c81919a9eaac114e07461"
+      },
+      "status": "SUCCEEDED",
+      "result": {
+        "id": "appgprj_6aa1709139648191ab998de6fccc4890~appgver_201555c8245c81919a9eaac114e07461",
+        "project_id": "appgprj_6aa1709139648191ab998de6fccc4890",
+        "version_number": 1,
+        "source": {
+          "commit_sha": "683401cf1f2255414a4df3e0f2e9d606686a8fdf"
+        },
+        "archive_storage": {
+          "archive_format": "tar",
+          "content_hash": "sha256:253ae6539d07e7804c853d173bfee0d4a7b75ea2eed5e62c387d102cec2c034e",
+          "size_bytes": 163840,
+          "file_count": 18
+        }
+      }
+    }
+  ],
+  "proven_state": {
+    "site_id": "appgprj_6aa1709139648191ab998de6fccc4890",
+    "slug": "genomeatlas-site-helper-suite",
+    "provider_site_status": "active",
+    "current_live_url": "https://genomeatlas-site-helper-suite.hx31337.chatgpt.site",
+    "current_preview_url": null,
+    "audience": "public",
+    "access_policy_revision": 2,
+    "current_user_role": "owner",
+    "latest_saved_version": 1,
+    "version_id": "appgprj_6aa1709139648191ab998de6fccc4890~appgver_201555c8245c81919a9eaac114e07461",
+    "saved_source_commit": "683401cf1f2255414a4df3e0f2e9d606686a8fdf",
+    "saved_archive_hash": "sha256:253ae6539d07e7804c853d173bfee0d4a7b75ea2eed5e62c387d102cec2c034e",
+    "saved_version_matches_parent_claim": true,
+    "saved_source_differs_from_our_source": true
+  },
+  "deployment_status_read": {
+    "tool": "mcp__codex_apps__sites_get_deployment_status",
+    "attempted": false,
+    "deployment_id": null,
+    "terminal_deployment_status": null,
+    "reason": "No deployment ID or live-version binding was returned by the available site/list/version reads. Did not invent an ID or substitute a site/version ID."
+  },
+  "http_check": {
+    "action": "Unauthenticated Python urllib GET, timeout 20 seconds, maximum read 262145 bytes",
+    "requested_url": "https://genomeatlas-site-helper-suite.hx31337.chatgpt.site",
+    "final_url": "https://genomeatlas-site-helper-suite.hx31337.chatgpt.site",
+    "http_status": 200,
+    "content_type": "text/html",
+    "bytes_read": 20375,
+    "body_truncated": false,
+    "sha256_of_read_bytes": "8b0a50b7feb9f8a31365003c0bbbe746dc63d3e7807836247f2ca7f82b521476",
+    "contains_genomeatlas": true,
+    "contains_registry": true,
+    "exit_code": 0,
+    "scope": "HTTP response/body sanity only, no browser, cookies, stored credentials or rendering.",
+    "raw_body_saved": false
+  },
+  "limitations": [
+    "The provider confirms a current live URL and an active Site. HTTP returns 200 and matching product text.",
+    "The only saved version is version 1 with the reported source commit; these read APIs did not explicitly bind that version to the current live deployment.",
+    "No deployment ID was available, so terminal deployment status could not be queried.",
+    "Public audience is observed pre-existing state, not an access change performed here.",
+    "Browser QA remains BLOCKED by the prior permission denial. No browser controls, alternate browser, CDP or headless rendering were used.",
+    "No scientific execution, runtime interaction/import/export tests, or comparison of deployed content against all local source files was performed.",
+    "Provider screenshot URLs, private account/group identities, unrelated Site data, credentials and storage identifiers are omitted."
+  ],
+  "preservation": {
+    "earlier_failed_create_receipt": "evidence/NATIVE_SITE_RECEIPT.json",
+    "earlier_receipt_modified": false,
+    "site_mutations": [],
+    "source_changes": [],
+    "commits": [],
+    "pushes": [],
+    "merges": [],
+    "new_file": "evidence/NATIVE_SITE_READBACK.json"
+  },
+  "errors": []
+}

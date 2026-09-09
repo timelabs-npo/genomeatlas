@@ -47,3 +47,11 @@ smarts.bio discovery responded, but the sequence catalog was empty and its agent
 ## Scientific boundary
 
 The intended study excludes Enterococcus and uses conserved marker proteins for the host tree, followed by independent R-M Type I, II/IIG, III and IV annotation. Missing/failed evidence is not biological absence. Complete computational system architecture is not proof of restriction activity. This release is the helper suite, **not a completed 177-genome phylogenomic analysis**.
+
+## Latest scoped WD registry integration
+
+The additive integration on this branch retains the existing app and publication journals. Registry:134 records (63 existing catalog entries +71 observed plugin-cache manifests,344 skill-file records). Cached definitions do not imply enabled/authenticated MCPs or model execution. Current parent ChatGPT smarts.bio invocation remains authentication-blocked; historical discovery/404/empty-catalog observations belong to their recorded sessions and are retained. BioNeMo package0.1.0 and two skills were inspected without GPU/NIM execution.
+
+Parent local session01a0869a-6af8-75e3-b8d1-0879e92c6723 actually executed development and native Site readback. Independent tests for this integration:30 Python and14 Node tests passed (one Node wrapper repeats Python; counts are not additive unique tests). Windows/Ubuntu/GitHub SHA-256 roundtrips and10 independent Copilot inventory tests passed separately. No new browser tests were performed after permission was declined.
+
+See data/current-probes.json, data/plugin-cache.json, data/native-site-readback.json, data/copilot-reexecution.json and evidence/parent-reconciliation/. This new source is not asserted live until a new native save/deploy receipt binds it.

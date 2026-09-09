@@ -1,0 +1,2416 @@
+{
+  "schema_version": "1.0",
+  "observed_at": "2026-09-09T14:48:59.571421+00:00",
+  "scope": "sanitized local plugin-cache metadata; not a claim of enabled or authenticated tools",
+  "plugins": [
+    {
+      "slug": "browser",
+      "name": "Browser",
+      "version": "26.903.61454",
+      "channel": "openai-bundled",
+      "description": "Browser / browser-use plugin\n\nAliases: @browser, @browser-use, browser-use, Browser, in-app browser.\n\nUse Browser, the ChatGPT in-app browser, when the user asks to open, inspect, navigate, test, click, type, or screenshot local web targets such as localhost, 127.0.0.1, ::1, file:// URLs, or the current in-app browser tab.\n\nAfter significant frontend changes to a local app, use Browser to open the relevant local target when it is known or obvious, unless the user asks for another browser tool.\n\nFor requests like \"open localhost:3000\" or \"open to localhost:4000\", navigate the in-app browser to http://localhost:3000 or http://localhost:4000.\n\nDo not satisfy explicit @browser or @browser-use requests with macOS `open`, shell commands, or generic web browsing unless the user asks for another browser tool or approves a fallback.",
+      "license": "Proprietary",
+      "manifest_sha256": "3a0b6b6e74435e45138b498816bb5ab2943c45510f369fc2ec981d9391f53945",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "chrome",
+      "name": "Chrome",
+      "version": "26.903.61454",
+      "channel": "openai-bundled",
+      "description": "Chrome automation for tasks that depend on the user's existing Chrome state: tabs, logged-in sessions, cookies, extensions, and ChatGPT Chrome Extension setup. Prefer purpose-built connectors, APIs, or CLIs. If one fails due to missing or expired authentication, ask the user to reauthenticate or explicitly approve Chrome as a fallback.",
+      "license": "Proprietary",
+      "manifest_sha256": "d27dd2a995ad1403c36017921a591eeb6c4c6947f53c2f7eb62d2b06e827a9c0",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "chrome",
+      "name": "Chrome",
+      "version": "26.903.61454",
+      "channel": "openai-bundled",
+      "description": "Chrome automation for tasks that depend on the user's existing Chrome state: tabs, logged-in sessions, cookies, extensions, and ChatGPT Chrome Extension setup. Prefer purpose-built connectors, APIs, or CLIs. If one fails due to missing or expired authentication, ask the user to reauthenticate or explicitly approve Chrome as a fallback.",
+      "license": "Proprietary",
+      "manifest_sha256": "d27dd2a995ad1403c36017921a591eeb6c4c6947f53c2f7eb62d2b06e827a9c0",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "codex-app-tools",
+      "name": "codex-app-tools",
+      "version": "0.1.3",
+      "channel": "openai-bundled",
+      "description": "Exposes Codex desktop app tools through one local MCP server.",
+      "license": "Proprietary",
+      "manifest_sha256": "115a1735446a313055d30810fdd2172f41b0a71c74e8eeb23caaf7cd07f8f4a1",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "computer-use",
+      "name": "Computer Use",
+      "version": "26.903.61454",
+      "channel": "openai-bundled",
+      "description": "Control desktop apps on Windows from ChatGPT through Computer Use.",
+      "license": "Proprietary",
+      "manifest_sha256": "61c306606ee1a9e859c181e59f4ed15ba47dc4f571de733be82de04b5ccbcf9c",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "computer-use",
+          "sha256": "8211e4b11a19a0dc4f0ace91096c74c5b36037ca4cb2c8988f0f535bb209e951"
+        }
+      ]
+    },
+    {
+      "slug": "unified-computer-use",
+      "name": "unified-computer-use",
+      "version": "26.903.61454",
+      "channel": "openai-bundled",
+      "description": "App-managed browser automation runtime.",
+      "license": "unspecified",
+      "manifest_sha256": "4b3d2e749e05da2809981ef4003ce423912448361c44caabd1de3c66df2b909f",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "visualize",
+      "name": "Visualize",
+      "version": "1.0.32",
+      "channel": "openai-bundled",
+      "description": "Create interactive charts, maps, diagrams, simulations, 3D models, data explorers, and UI previews directly in Codex.",
+      "license": "Proprietary",
+      "manifest_sha256": "06d78e1902fdd5a32dd720485e92c19b11c73047eaafc832ab51e9e39b900c3f",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "visualize",
+          "sha256": "ac99fd6fdd261c85e5cc60676d45e2fed1930bad86339c76c63be20cca93d41e"
+        }
+      ]
+    },
+    {
+      "slug": "adaptyv-bio",
+      "name": "Adaptyv Bio",
+      "version": "0.0.4",
+      "channel": "openai-curated-remote",
+      "description": "Grounded workflows for preparing, estimating, submitting, and monitoring protein experiments through Adaptyv Bio's hosted MCP server.",
+      "license": "Proprietary",
+      "manifest_sha256": "42642e267ebea482209917e8b86af50cb7087b61fd55d9953d2be08e8a8ec1dd",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "index",
+          "sha256": "b6346066958b269234ad756d08168d220c96bf1c2e5cd5767b84132fd70a1001"
+        },
+        {
+          "name": "prepare-experiment",
+          "sha256": "cfce3ce0b0dd5d1a94d64ac03fe8f0972026675d87a1dbbb5188b93f72f29049"
+        },
+        {
+          "name": "review-and-submit-experiment",
+          "sha256": "563839e0221fb7e7e46581d5d6d8525d7417a6ba25f535c68041e287c7986708"
+        },
+        {
+          "name": "track-experiment",
+          "sha256": "b353e38aa88ee0e6da7290f60d6a373ddc3bec21c363e145b92ff6d3a01eb5b9"
+        }
+      ]
+    },
+    {
+      "slug": "airtable",
+      "name": "Airtable",
+      "version": "6.0.1",
+      "channel": "openai-curated-remote",
+      "description": "Bring operational data and context into the flow of your ChatGPT conversations. You can ask questions, create and update records, and analyze your data—all through conversation. Use the data in Airtable as input to the work you’re doing in ChatGPT, like building a landing page using content you’ve organized in Airtable. Make quick updates to Airtable without leaving the chat. Airtable for ChatGPT is ideal anytime you need quick access to structured internal data to inform your conversation.\n\nAirtable's App connects ChatGPT directly to your Airtable bases, so you can ask questions, create and update records, and analyze your data—all through conversation",
+      "license": "unspecified",
+      "manifest_sha256": "4ea1730571fe733f338f4a73323055da7d31d98760d79eb74aaf3c3a9b7016c7",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "airtable-cli",
+          "sha256": "8c7aa197e1f14866cba1ff25e8365b46e08b6ec8f828ebee14e18bd9468da788"
+        },
+        {
+          "name": "airtable-filters",
+          "sha256": "a73cf412d5f806483eb90f0d4b0b820bdebddca999311d6c7798f888b6e70a73"
+        },
+        {
+          "name": "airtable-overview",
+          "sha256": "07111021f00157d505e088d054f10a1c4af95d28bba031ff6502201b6e2abec9"
+        }
+      ]
+    },
+    {
+      "slug": "app-68de829bf7648191acd70a907364c67c",
+      "name": "Spotify",
+      "version": "4.1.0",
+      "channel": "openai-curated-remote",
+      "description": "Explore a new way to discover music, podcasts and audiobooks, with recommendations picked just for you.\n\nWant music to power your next run, study session, or party? Just ask and Spotify will drop the right songs, artists or playlists into your conversation.\n\nWith Spotify in ChatGPT you can:\nAsk for songs, artists, genres, or playlists and play them in Spotify.\nFind podcasts and audiobooks that match your interests.\nSpotify Premium listeners can describe a vibe and get a playlist made to match.\nGet recommendations based on your history right in your chat.",
+      "license": "unspecified",
+      "manifest_sha256": "1805b54085184f489ae6a1fa64fc18488c074da66db68b322b088dc3b68c6239",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "app-68e01e8c1c2081918b4567a0b959d3ff",
+      "name": "Coursera",
+      "version": "2.0.0",
+      "channel": "openai-curated-remote",
+      "description": "Coursera helps learners find and watch relevant lecture videos inside ChatGPT based on their learning goals, skill level, preferred topic, course interest, and desired learning format. The app returns a playable course video preview with course context, instructor details, learning objectives, skills, and related Coursera courses.",
+      "license": "unspecified",
+      "manifest_sha256": "5633d30925e2150d0e8a3553f1a5567d6bb99838a2ebc10a911453985b85ac4b",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "app-69312da8e4dc81919370cb86fd172b6c",
+      "name": "Adobe",
+      "version": "8.0.0",
+      "channel": "openai-curated-remote",
+      "description": "Adobe unlocks more ways to create and get work done from the conversation. Previously available as Photoshop, the Adobe connector now brings creativity and productivity capabilities across Creative Cloud and Acrobat. Describe what you want to make or change, and Adobe can help turn ideas, images, videos, and documents into polished outputs — from editing photos and creating PDFs to designing social assets, resizing videos, searching Creative Cloud assets, and generating data-driven documents.\nKey capabilities:\n\n* Retouch portraits or edit photos in bulk: Drop in photos and describe the look you want — adjust color, lighting, and tone; remove distractions and generate new elements; apply Lightroom presets; remove backgrounds; blur, crop, resize, and expand images.\n* Design from template: Start from an Express template, update text and colors, and then animate for social media or convert to PDF.\n* Refine video for any platform: Upload a horizontal clip and ask to reformat it for YouTube Shorts, Instagram Reels, or any platform. You can also stitch clips into a single sequence.\n* Search and organize creative work: Describe what you're looking for and surface assets from your Creative Cloud library — by subject, style, mood, or content — without browsing folders.\n* Work with PDFs and documents: Create and convert polished PDFs and documents.\n* Create data-driven documents: Describe your output and provide your data — the connector turns raw data or content into formatted, shareable PDFs, including badges, cards, catalogs, and more.\n\nYou can get started as a guest, and sign in with your Adobe account for more capabilities and tools, Creative Cloud storage, and saved work across sessions.",
+      "license": "unspecified",
+      "manifest_sha256": "df5a9399ddb306b0f6e7e4e51336ad96f06c677075325494ae806e3be32c982a",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "adobe-batch-edit-photos",
+          "sha256": "062112a424340bef585f0c3aed9a484721ff4b200044883dd0bdb1dd7599642c"
+        },
+        {
+          "name": "adobe-create-mockups",
+          "sha256": "65a8fd58c8495210296eb1da51d0846d1ad9a7cf80a286ea4220874c0f4e56f2"
+        },
+        {
+          "name": "adobe-create-social-variations",
+          "sha256": "f2404147b9a05f7d759d8a7c0c51af06f9841ad55025395a887d27429be6d63d"
+        },
+        {
+          "name": "adobe-design-from-template",
+          "sha256": "11d9eaed34c526b350185c298d8dd3c764d3cebeb111905f59230d3b3c291207"
+        },
+        {
+          "name": "adobe-edit-quick-cut",
+          "sha256": "5515014c80995b846dfe511058f507beeedb428078fda1bd60d47531f51b5500"
+        },
+        {
+          "name": "adobe-retouch-portraits",
+          "sha256": "c35b690c539285cb72204431d2f86f0e753ff6f862398e1437edebd8ca8cdeaf"
+        }
+      ]
+    },
+    {
+      "slug": "app-6938a7d323f48191aeabaf579802bf45",
+      "name": "Adobe Acrobat",
+      "version": "1.0.0",
+      "channel": "openai-curated-remote",
+      "description": "Adobe Acrobat for ChatGPT helps you transform and organize documents seamlessly. Edit, reorder, rotate, split, or merge pages; convert PDFs to other formats or redact sensitive details; and extract text from scans with OCR. You can also compress files and build organized packets in seconds. Ideal for students, professionals, and anyone who wants fast, reliable PDF solutions without opening another app.",
+      "license": "unspecified",
+      "manifest_sha256": "ef8f8cd9f6bf1912be322229e851b3f480751719f11332bb96f83fbde0bfaf6c",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "app-6938a94a61d881918ef32cb999ff937c",
+      "name": "Apple Music",
+      "version": "1.0.0",
+      "channel": "openai-curated-remote",
+      "description": "Build playlists and find music",
+      "license": "unspecified",
+      "manifest_sha256": "6c41351adba05cd2cbc930c5473b7d244dfb7b406e01fa12f2265de65ff152e8",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "app-6943e6f4a928819195962de16fb9ffe4",
+      "name": "Consensus",
+      "version": "4.0.0",
+      "channel": "openai-curated-remote",
+      "description": "Consensus is the go-to MCP for academic research. Connect directly to 220M+ peer-reviewed papers to search, synthesize, and build structured research outputs from within your conversation.\n\nRun literature reviews, build boolean search strategies, generate bibliographies, identify research gaps, and draft cited content — grounded in studies from PubMed, Semantic Scholar, and ArXiv. Pre-built workflows handle complex tasks in minutes: systematic reviews, curriculum reading lists, grant research with novelty analysis, and clinical evidence synthesis.\n\nBuilt for researchers, students, faculty, and clinicians across biomedical, social science, STEM, and all academic disciplines.",
+      "license": "unspecified",
+      "manifest_sha256": "1ceda3c605493a1445d22123e8861852cf80cfde880950b17238a4aa672418a3",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "app-6944570636288191b7944d8c4a3fb857",
+      "name": "Shazam",
+      "version": "2.0.0",
+      "channel": "openai-curated-remote",
+      "description": "Identify any song playing around you, right within ChatGPT. Use @Shazam in your prompt to discover music with the same powerful recognition technology trusted by hundreds of millions worldwide. Preview songs inline, and save discoveries directly to your Shazam library.",
+      "license": "unspecified",
+      "manifest_sha256": "d9494da361427c1d8ef342c1fd2b7b3bdbb3b17ee7afccf9db99f87210a23671",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "app-6944ee6b0e388191874b78d9b0548944",
+      "name": "AhaMotion",
+      "version": "1.0.0",
+      "channel": "openai-curated-remote",
+      "description": "AhaMotion turns complex topics into clear, animated explanations. Whether you are tackling K-12 assignments or just curious about the world, simply ask and view the concept visually.\n\n1. Universal Concept Visualizer\nCurious about “Why volcanoes erupt” or “How rain forms”? We break down general knowledge into easy-to-watch video summaries.\n\n2. K-12 Science & Math Tutor\nVisual Math Solver: Watch how functions graph and how geometric shapes transform to better understand Algebra and Geometry logic.\nScience Visualization: Visualize concepts in Physics, Biology, Chemistry and related subjects.\n\n3. General Learning Support\nTurn study sessions into engaging visual stories. It acts as a tutor that draws key ideas out to support understanding and review.\n\nHow to Use in ChatGPT\n1. Connect App: Connect AhaMotion to ChatGPT.\n2. Trigger: Type \"@AhaMotion\"\nSample Prompts：\n\"@AhaMotion Generate a short educational video explaining how photosynthesis works.\"\n\"@AhaMotion Generate a video explaining Euler’s formula and its geometric meaning.\"\n\"@AhaMotion Create a video that explains the Pythagorean theorem for middle school students.\"",
+      "license": "unspecified",
+      "manifest_sha256": "41f0b8d7e0dff023efe8681b7c3874b3afc5d124fcb6529fec715d4db24c6f54",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "app-6944f7c806d0819195abf0177e5ff78a",
+      "name": "Ace Knowledge Graph",
+      "version": "2.0.0",
+      "channel": "openai-curated-remote",
+      "description": "Visualize files and topics with interactive Knowledge Graphs. Transform your documents into structured networks where you can simply click nodes to explain concepts and clarify relationships instantly—making complex information easy to digest.\n\n- Interactive Exploration: Go beyond a static image. Interact with the graph to understand the underlying logic.\n\n- Explain Concepts: Click on any node to get a clear definition and background.\n\n- Clarify Relationships: Click on any connecting line to get an instant explanation of how two concepts are related (e.g., cause-and-effect).\n\n\nIdeal Use Cases: For researchers, students, and analysts who need to visualize complex relationships in files or topics through interactive exploration.\n\n\nHow to Use in ChatGPT\n\n1. Connect App: Connect Ace Knowledge Graph to ChatGPT.\n\n2. Trigger: Type “@Ace Knowledge Graph”.\n\nSample prompts:\n\n- \"@Ace Knowledge Graph Research the technical principles of LLMs and generate a knowledge graph.\"\n\n- \"@Ace Knowledge Graph Create a knowledge graph mapping out a modern web development stack.\"\n\n- \"@Ace Knowledge Graph make a knowledge graph showing how cybersecurity threats and defenses relate.\"",
+      "license": "unspecified",
+      "manifest_sha256": "53a1c1eeadea2995387e1fadc2507ffc58834235a1f5681367f63a31207a4b6d",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "app-6948b1ccbef881919744614875f97c3f",
+      "name": "AI Wisebase",
+      "version": "1.0.0",
+      "channel": "openai-curated-remote",
+      "description": "A Simple Way to Chat with Your Own Information.\n\nAI Wisebase is your personal knowledge base. It allows you to use your saved files and chat history directly within ChatGPT to generate responses grounded in your own data.\n\n1. Organize Your Files and Chats\nSave Chat History: Save important ChatGPT chats as editable documents for future reference.\n\nUpload Files: Add your personal files to your knowledge base to build your private library.\n\nEasy Access: View and access your uploaded files and saved chats in one simple list.\n\n2. Chat with Your Knowledge Base\nGrounded Answers: Ask questions and get responses based on your saved data, complete with references to the source content. This helps ChatGPT write reports or summarize topics that matter to you.\n\n3. Specialized Tools for Learning\nVideo Explanations: Transform concepts into easy-to-follow animations or video summaries.\n\nKnowledge Graphs: Generate interactive knowledge graphs to visualize and explore your saved files and chats.\n\nStudy Aids: Turn your saved chats and files into flashcards or quizzes for review.\n\nDocument Translation: Translate PDF files and view original and translated text side-by-side.\n\nHow to Use:\nConnect: Link AI Wisebase to your ChatGPT account.\n\nAdd Data: Upload your files or save chat history directly.\n\nTrigger: Type @AI Wisebase followed by your request.\n\nSample Prompts:\nSave History: \"@AI Wisebase Save this discussion as a document.\"\n\nKnowledge Base: \"@AI Wisebase Draft a report using my knowledge base.\"\n\nKnowledge Graph: \"@AI Wisebase Generate an interactive knowledge graph for my files.\"\n\nVideo Learning: \"@AI Wisebase Create a video explaining this concept.\"\n\nQuiz/Flashcards: \"@AI Wisebase Create flashcards from my saved chats.\"\n\nTranslate: \"@AI Wisebase Translate this PDF into English.\"",
+      "license": "unspecified",
+      "manifest_sha256": "77af1825f83bd3f2f20fe2827dbfe837f86c07f93dfe519b1e425836712e5d7d",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "app-695c70d5bb648191a156ddd85c967bf6",
+      "name": "Private MD Labs",
+      "version": "2.0.0",
+      "channel": "openai-curated-remote",
+      "description": "Ask about any health topic - cholesterol, thyroid, vitamin D, hormones, or anything else - and learn what's happening inside your body.",
+      "license": "unspecified",
+      "manifest_sha256": "46c211c718a8d6e02f931b49efd5a46cd62a206b56ca536927b38870a9f23706",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "app-69a0e374670c819190761772d2092135",
+      "name": "Chessy",
+      "version": "1.0.0",
+      "channel": "openai-curated-remote",
+      "description": "Challenge yourself to a game of chess against ChatGPT that thinks through each move in real time. You play white, the ChatGPT plays black — make your move and watch it respond.",
+      "license": "unspecified",
+      "manifest_sha256": "4228eccc1f752c2dd20f35760e73ba3d6210fc3d4b6fc3f675ff24cc4e1aed04",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "app-69fcf53d4d8481919b65501a96bbed02",
+      "name": "Elicit",
+      "version": "1.0.0",
+      "channel": "openai-curated-remote",
+      "description": "Elicit's MCP server gives AI assistants direct access to a corpus of over 125 million academic papers. Search for relevant literature using natural language queries, create structured reports that extract and synthesize data across papers, and retrieve detailed report results — all programmatically. Built for life sciences R&D workflows, the server enables agents to rapidly survey evidence, compare findings across studies, and surface key data points without manual literature review, accelerating everything from target discovery to systematic evidence assessment.",
+      "license": "unspecified",
+      "manifest_sha256": "4214e0c8a62919d31c2746b2c3bd536b33d563d36ac0af301af7fe635a8f29a5",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "app-69fd7f74d13481919360da072b871129",
+      "name": "eSIM Copilot",
+      "version": "2.0.0",
+      "channel": "openai-curated-remote",
+      "description": "eSIM Copilot helps users find mobile plans for home and abroad.  Use ChatGPT to help you create an account, buy and install eSIMs that save you money, manage plans, troubleshoot your network connect and analyse your account activity.",
+      "license": "unspecified",
+      "manifest_sha256": "6866f3146a15c39be206196d35bd6ffca50a31867fc9da7f067b1e7841798594",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "app-69fe0bf66c8481919c513d799406436e",
+      "name": "Wolfram",
+      "version": "3.0.0",
+      "channel": "openai-curated-remote",
+      "description": "The Wolfram MCP Server transforms your AI environment into a rigorous computational powerhouse. By integrating Wolfram Language and Wolfram|Alpha, this server provides access to curated data and sophisticated algorithms. When a user submits a query, the LLM works with Wolfram to convert it into Wolfram Language for precise evaluation, and these exact results are incorporated into the response provided by the LLM.\n\nWhether you are solving complex differential equations, analyzing chemical structures or querying real-time socioeconomic data, the MCP Server ensures your AI has the \"computational brain\" necessary to deliver verified, high-level technical results that can be trusted.",
+      "license": "unspecified",
+      "manifest_sha256": "42ea3c71ee15cdca9c2bbc1598aa2144513b50e722556f59fb3af1364af28a70",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "app-6a04f88a5fbc8191b8679c1ae31f2779",
+      "name": "Academic Writing Toolkit",
+      "version": "1.0.0",
+      "channel": "openai-curated-remote",
+      "description": "Academic Writing Toolkit helps users review pasted academic writing materials in ChatGPT. It can audit citation consistency between draft prose and reading-note source lines, check conservative British English spelling, flag paragraph-level logic issues, validate BibTeX records offline, and create a standard reading-notes Markdown template.",
+      "license": "unspecified",
+      "manifest_sha256": "2b6e855d3eab8f9c2ad3d8a0f20f5d88ff85832631114eb3d2afd4da540da681",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "app-6a057d268ebc81919918d37eec718425",
+      "name": "Remote Desktop Commander",
+      "version": "1.0.0",
+      "channel": "openai-curated-remote",
+      "description": "Reach an authorized computer's filesystem and terminal from ChatGPT through Desktop Commander's Remote MCP. The app relays a secure connection to a machine the user controls so ChatGPT can inspect files, run commands, manage processes, edit local documents, and automate development workflows from chat. Users stay in control of which devices are connected and can disconnect them at any time.",
+      "license": "unspecified",
+      "manifest_sha256": "42f3347ed38f469a4721db2236b20cc73c74f93fbd68e9a6350289c6b94bdf0d",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "app-6a2e3ae94af4819190469f3503a97d9c",
+      "name": "smarts.bio: AI for biology",
+      "version": "2.0.0",
+      "channel": "openai-curated-remote",
+      "description": "smarts.bio brings a real bioinformatics platform into ChatGPT. Describe your analysis in plain English and run actual tools and pipelines on your own data — no scripting or setup required.\n\nWhat you can do:\n* Run sequence searches and analyses — BLAST, GC content, ORFs, domains, and more across DNA, RNA, and protein\n* Call and annotate variants, align reads (WES, RNA-seq), and run quality-control and other multi-step pipelines\n* Upload and manage workspace files, then open results — FASTA, BAM, VCF, PDB, CSV — in interactive viewers\n* Search genes, literature, and patents alongside your analysis\n\nWho it's for: biologists, bioinformaticians, computational biologists, and researchers who'd rather describe an analysis than wire up the tooling.\n\nConnect your smarts.bio account to get started. Long-running jobs keep working in the background, and your files stay in your own workspace.",
+      "license": "unspecified",
+      "manifest_sha256": "0c1887a4e5d9830328c8083be57c7cfd24fc8e1dccccf0d648dbb10d6b53979a",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "app-6a314a73f8ac819195b0d55e36b9c609",
+      "name": "Firecrawl",
+      "version": "2.0.1",
+      "channel": "openai-curated-remote",
+      "description": "Firecrawl helps users search the web, retrieve clean page content, crawl sites, parse documents, run web research jobs, search scientific and developer indexes, and manage recurring page monitors through ChatGPT.",
+      "license": "unspecified",
+      "manifest_sha256": "7ba1905f7514855089083b837bca7218dd1b798fbce6101e074a301cddf437dc",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "firecrawl",
+          "sha256": "49b977048ea278fa186a311a1664ccd8270762371767e2213b7c2fd8a1418703"
+        },
+        {
+          "name": "firecrawl-agent",
+          "sha256": "426e19a29dd5cefd1546f99d4c3a824028a1bbce356a967a5025b4411fab888c"
+        },
+        {
+          "name": "firecrawl-crawl",
+          "sha256": "9cf1758c7f60861601bd6e518b11d6169b9f5dfeff8787dae893cfdcdaedb253"
+        },
+        {
+          "name": "firecrawl-developer-index",
+          "sha256": "8ef8edcf6957a963fce8d339c2be38bd665c81b984f076d0c57452354260cd9b"
+        },
+        {
+          "name": "firecrawl-download",
+          "sha256": "6437d9122b0155535305931b3907a065bada11881f361f6bf221ffdb8c332614"
+        },
+        {
+          "name": "firecrawl-interact",
+          "sha256": "2f9afcf1de61feee2d6d8a9708a2c59a2a03737fc96379d9b1bc9bfee2e831d8"
+        },
+        {
+          "name": "firecrawl-map",
+          "sha256": "c09663f6a8c822d9e6d65c1458f549e80062ff8ddcba6e7e21c95a9df03fcef0"
+        },
+        {
+          "name": "firecrawl-monitor",
+          "sha256": "8e2f03660db70b7904cbc06be0c7aee90f22c909d7a16cc6cadfaf7bc88278ac"
+        },
+        {
+          "name": "firecrawl-parse",
+          "sha256": "a6c575bea7daa8c042bb29a4129929aea323aebdc7439936a637b4f2afbfac57"
+        },
+        {
+          "name": "firecrawl-research-index",
+          "sha256": "4e12d402a82f252940b0c31335114bf4118c420f7f108cad04300dfb0861ef36"
+        },
+        {
+          "name": "firecrawl-scrape",
+          "sha256": "b1be6f3fb7329f68ec03687d8a6467daa0095c41a743ae9e716eefa4cd91eb6a"
+        },
+        {
+          "name": "firecrawl-search",
+          "sha256": "b3f1649ff94b53c5d8e08b36b1f7786b743ce4a45c1b2971a230aef0839e8211"
+        }
+      ]
+    },
+    {
+      "slug": "app-6a3293e129088191abf0875820e839da",
+      "name": "Higgsfield",
+      "version": "1.5.0",
+      "channel": "openai-curated-remote",
+      "description": "Create images, cinematic videos, branded assets, and social content directly in ChatGPT. Start with an idea or reference image, and use Higgsfield to turn it into a product photoshoot, a video ad, or a narrated story.\n\nExplore creative models including Nano Banana Pro, Seedance, Kling, Seedream, and Higgsfield Soul in one conversation. Ask for a model recommendation, use your favorite, and create variations to find the right look.\n\nWith Higgsfield, you can:\n\n• Generate images and videos from text or reference images. Create portraits, illustrations, and cinematic scenes, or bring a still photo to life.\n\n• Create product photoshoots with studio packshots, lifestyle scenes, campaign imagery, and coordinated ad variations.\n\n• Use Ad Multiplier to turn one existing video ad into multiple ordered variations. Replace people, products, clothing, objects, backgrounds, or selected text while preserving the original motion, timing, captions, and audio.\n\n• Build your brand's visual identity and apply it to social graphics, banners, packaging, and mockups, keeping your logo, colors, and typography consistent.\n\n• Make AI-generated UGC-style content: talking-head product showcases, product-only videos, unboxings, tutorials, and fashion try-ons. Create website and app promos with a virtual presenter and real screenshots.\n\n• Produce faceless videos, narrated explainers, and illustrated stories with a consistent visual style, voiceover, and subtitles.\n\n• Create YouTube thumbnails and Instagram covers, generate spoken narration, and add subtitles to your videos.\n\nDescribe what you want to make, review the results in chat, and build on your previous creations. From your next campaign to your next channel video, develop your content through conversation.\n\nConnect your Higgsfield account to get started. No API key required. Generations use the same credit system as the Higgsfield platform.",
+      "license": "unspecified",
+      "manifest_sha256": "0d38f001d9d02a207104b05ee654738b0b51fe51f8387919757ee52753fe1966",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "ad-multiplier",
+          "sha256": "30275c413e337071c58b92e25313eeed71b16248ff38798c46d00fdc748ed9d1"
+        },
+        {
+          "name": "brand-asset-creation",
+          "sha256": "3c1ac4370b68544ad5c95b2183e8c483001f267540ee7e9d5c8e2f505192bf2e"
+        },
+        {
+          "name": "faceless-video",
+          "sha256": "dac47541a9d28f97312e8f8c71050e7403ee6f2fa4c31d43341f1a7ade380069"
+        },
+        {
+          "name": "narrator",
+          "sha256": "0bfde8869308811376350b29ec693fb961730a1e056aba6b9777fa16bf3e9de2"
+        },
+        {
+          "name": "product-photoshoot",
+          "sha256": "29f74fd6d28a1c9809ad1dca5c6851127ddf8f2d883e5f95850c30b1f0afca28"
+        },
+        {
+          "name": "subtitles",
+          "sha256": "9d57f234643e944e7d6ef36caa0dca7a03a7e5eadbdd386b8b3762a3ac7229bf"
+        },
+        {
+          "name": "thumbnail-generation",
+          "sha256": "8971cc8c84617b7e4388917c40c2d72311c6e6b77b6e073f15f5236953858e7b"
+        },
+        {
+          "name": "ugc-product-video",
+          "sha256": "9a09f6553d1ff8826f2b5a469fbfc5de96806f11b8922329a232fde02606cab9"
+        },
+        {
+          "name": "ugc-review-video",
+          "sha256": "2e1ad9ee7b6694d62f2c0f01aba2d2c968762e49c98a74a1c17518abde370814"
+        },
+        {
+          "name": "ugc-try-on-video",
+          "sha256": "c9e8eabef51f066669b6f4364d95b635b3bec0356c75726e93f5f845802ad2f8"
+        },
+        {
+          "name": "ugc-tutorial-video",
+          "sha256": "4c8623098a00ed63d3f328a123b08a8a6f1be58d57537d20c53d3878277f3f21"
+        },
+        {
+          "name": "ugc-unboxing-video",
+          "sha256": "3432bd01d3622dd8117dfe4ee76645d8a803130ffcd3e40ea854885a4b536aea"
+        },
+        {
+          "name": "ugc-website-video",
+          "sha256": "1bc441216410d1531622b97108b7bde4512d9dfe152faec1b3b7bfd179b7db33"
+        }
+      ]
+    },
+    {
+      "slug": "app-6a5f875215108191ae5d449352363219",
+      "name": "Inductive Bio",
+      "version": "1.0.0",
+      "channel": "openai-curated-remote",
+      "description": "Inductive Bio’s absorption, distribution, metabolism, excretion, and toxicity (ADMET) models predict the chemical and pharmacokinetic properties that determine whether a molecule can become a viable drug. By surfacing these predictions directly in your conversation, scientists can evaluate compounds, triage ideas, and prioritize which molecules to synthesize, without leaving their existing workflow.\n\nThrough this MCP server, users can access Inductive Bio’s models for the physicochemical properties LogD (lipophilicity) and pKa (acid/base ionization), key drivers of solubility and permeability.",
+      "license": "unspecified",
+      "manifest_sha256": "bb64747257f10d469ad0d8028386b1827f3a0ce49eb880aa533cfdfae2c78642",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "compare-analogs",
+          "sha256": "96945a7734fb0462054af4779a8daecdab20c898b24d7ec0d2ee3a1a1f918fbe"
+        },
+        {
+          "name": "index",
+          "sha256": "6d09d6574f6af10cfd6a250530ad629159ad6eff4909c72724eadaa8aa82c4dd"
+        },
+        {
+          "name": "predict-properties",
+          "sha256": "e25610ca928b1e5fe4580d23019ffb2a0231768a41a16edcc016035c1de3cccf"
+        }
+      ]
+    },
+    {
+      "slug": "app-6a5fc156fad88191a3977b60131d7391",
+      "name": "Tamarind Bio",
+      "version": "1.0.0",
+      "channel": "openai-curated-remote",
+      "description": "Connect ChatGPT to your Tamarind Bio workspace for protein and molecular science. Validate, estimate, submit, and monitor jobs across 300+ tools — structure prediction, docking, protein and antibody design, molecular dynamics, and property prediction. Chain tools into pipelines, batch many inputs at once, and pull back structures, results, and logs — all from chat.",
+      "license": "unspecified",
+      "manifest_sha256": "41787db968b60623216d5d1a139c1dc1473e84195279dbedb51d55cea10ec971",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "app-6a60df60877081919ad4a8109d27535d",
+      "name": "Undermind",
+      "version": "1.0.1",
+      "channel": "openai-curated-remote",
+      "description": "Undermind is your AI co-researcher for the scientific literature. Ask a research question and Undermind searches the literature for you. It follows citation trails, evaluates hundreds of papers, and comes back with a ranked reading list rather than a page of keyword matches.\n\nWith Undermind you can:\n\n- Run deep literature searches. Undermind's search agents explore a research question for a few minutes, then report back with a summary and a ranked list of relevant papers.\n\n- Look up papers by topic, author, title, DOI, or citation relationships (papers citing or cited by a paper you know), with abstracts and citation metrics.\n\n- Ask questions about a paper's full text, including its figures, tables, and equations, and check the answers against the source.\n\n- Keep your work organized in workspaces with folders, starred papers, saved searches, and notes, all synced with your account at undermind.ai.\n\nScientists at thousands of research institutions use Undermind, from university labs to pharma R&D teams. Use it to check whether an idea is new, get oriented in an unfamiliar field, or track down the one method paper you need.\n\nYou'll need an Undermind account (free or paid) and to sign in when connecting.",
+      "license": "unspecified",
+      "manifest_sha256": "f72400b14c215cf263c23a2239ff38854ebd55a1e7d804ff04c45cd3d664d2b5",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "app-6a73c480231c819181d7440a0e1499c9",
+      "name": "Genomic Intelligence",
+      "version": "1.0.0",
+      "channel": "openai-curated-remote",
+      "description": "Run six DNA sequence-analysis tasks over the hosted Genomic Intelligence API: promoter region prediction, splice donor/acceptor sites, enhancer activity, chromatin state, sequence-to-expression, and de-novo gene annotation, plus a composite find-genes-then-predict-expression workflow. Give it a gene symbol, a genomic region, or a FASTA; it resolves the sequence from Ensembl and returns structured predictions. No local GPU, model weights, or API key required. For research use, not clinical or diagnostic decisions.",
+      "license": "unspecified",
+      "manifest_sha256": "3c457f9c1d855a55a13736ddd3d127d3b48f04a3230b0379812621fcae131c16",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "genomic-intelligence",
+          "sha256": "d27ac35d8c5384cbbcd0e9b42b1fc8bbf1281bb12c627836faf43f80ed917e0d"
+        }
+      ]
+    },
+    {
+      "slug": "app-6a88631af75081918917d89fb00269ad",
+      "name": "Rowan",
+      "version": "1.0.0",
+      "channel": "openai-curated-remote",
+      "description": "Use Rowan in ChatGPT to run and manage computational chemistry and structural biology workflows. Predict molecular properties, search conformers and reaction paths, and calculate energies, structures, spectra, and electronic properties with quantum chemistry. Prepare proteins and run structure prediction, docking, molecular dynamics, and binding workflows. Calculations are saved to Rowan and available in the web app,   while existing Rowan work can be viewed and managed from ChatGPT. Track jobs, inspect results, and download supported files.",
+      "license": "unspecified",
+      "manifest_sha256": "c04ed6483af782b910b1deea6f5428427357934aff75b74ef11aa3b13af88bb8",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "computational-chemistry-and-biology",
+          "sha256": "5276b56bcee0391daa1f287e54ab0d7c76eec0f2c28a922ddc6a2d937d47fcb9"
+        }
+      ]
+    },
+    {
+      "slug": "app-6a8a0cf734e48191aec4c958de2d145c",
+      "name": "Proto",
+      "version": "0.0.1",
+      "channel": "openai-curated-remote",
+      "description": "Proto helps users run biological AI and bioinformatics tools, inspect their schemas and examples, run analyses and models, deploy these tools to a Modal compute workspace, and collect or fetch stored results through ChatGPT.",
+      "license": "unspecified",
+      "manifest_sha256": "1642a917d87ba325fdf72918c7fae78e0b8cdb255163a9a954c510af7e2401f7",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "biohub-esm",
+      "name": "Biohub ESM",
+      "version": "0.2.4",
+      "channel": "openai-curated-remote",
+      "description": "Understand proteins with ESM: explore mutation landscapes, interpret learned features, predict and view structures, discover relatives, and plan binder workflows.",
+      "license": "MIT",
+      "manifest_sha256": "7e5a8f560f43e2af1542076a9059b74f6a6b1bfa141e86539729bbbb21695839",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "biohub-esm",
+          "sha256": "f934f0041b7b6e43f72958f0b21478f4d8353cd87c2b172eddf6f003904c3e5c"
+        },
+        {
+          "name": "biohub-esm-setup",
+          "sha256": "a675ca5bf137540917280583c7345fef76c0194faee44c9afb3db2c9f2fa30ef"
+        },
+        {
+          "name": "esm-atlas",
+          "sha256": "676fe1f4b487246f68cbf18e1dcdc913ecf8a0e0fa13aee04767ab38e7d7db03"
+        },
+        {
+          "name": "esmc",
+          "sha256": "958fee332b1700d5afa0dba8ecc97376f4b9122e3ce29015da885a3f2462cf95"
+        },
+        {
+          "name": "esmfold2",
+          "sha256": "cf96cbfb63752a51105c4a1208b8aeedcec49661b71add7a383c779591993e35"
+        },
+        {
+          "name": "esmfold2-binder-design",
+          "sha256": "4698591e4b9e4e00f42239b4f0704607c50c2c9b708ced9943e69e7f3c11299e"
+        }
+      ]
+    },
+    {
+      "slug": "bionemo-agent-toolkit",
+      "name": "NVIDIA BioNeMo Agent Toolkit",
+      "version": "0.1.0",
+      "channel": "openai-curated-remote",
+      "description": "NVIDIA BioNeMo agent skills for life sciences — protein folding, molecular docking, generative chemistry, genomics, protein design, and biomarker discovery as ready-to-call tools.",
+      "license": "Apache-2.0",
+      "manifest_sha256": "36b5be2ad91d95d9081a9740ada3222d4b9a4971ae7ba32883b51ced932af036",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "boltz2-nim",
+          "sha256": "2922790dee8174bce9bd75252789b1ae4080645f96509ae1af031ed7dd6ce8fa"
+        },
+        {
+          "name": "complexa-binder-design",
+          "sha256": "c3133e62db7cb56e373b9ab4e17aa8d8eecd82062051cadf0a0225cffef88ccb"
+        },
+        {
+          "name": "complexa-design",
+          "sha256": "4a31a28001b38635dcf946f3d1f69979b4690973131b9aef547a12f16e1a7b9e"
+        },
+        {
+          "name": "complexa-evaluate-pdbs",
+          "sha256": "06ef38789516c2b9f2a25dcc6321d016ae8d08f4a6c4d8cc796e64e89a2c0b6f"
+        },
+        {
+          "name": "complexa-setup",
+          "sha256": "aeb450ce7472384f3f1d5396af68de1ecb2fe92457cb87046dfbf5ac08d18c46"
+        },
+        {
+          "name": "complexa-sweep",
+          "sha256": "6e93293a8e04112575eb0aaa50236bdd2aea916e905c944590453ccfe5cca29f"
+        },
+        {
+          "name": "complexa-target",
+          "sha256": "9960f8c0041586bfdf9bd269f7754a41882b47482fc2b481365036405ab1f916"
+        },
+        {
+          "name": "cuEquivariance",
+          "sha256": "5297f6d212d1d1608407c334d227793d6c59713955579c146adca0281ce73b90"
+        },
+        {
+          "name": "diffdock-nim",
+          "sha256": "8f7574aba302e7f1bd48841ee3af1df3387380a747ef0d16c503f453a40f1798"
+        },
+        {
+          "name": "drug-discovery-pipeline",
+          "sha256": "508ae783fefa4ade905c0b9a3a0ba5ff603d69e72128a864754e8bec7f0e75ba"
+        },
+        {
+          "name": "evo2-nim",
+          "sha256": "5a89a82906bb9ccaf6fceb07d6ad3239295e77c03e626cd4d7b9c1103d73f61a"
+        },
+        {
+          "name": "genmol-nim",
+          "sha256": "d872e789ad8b7789b44a97b537054a95143b32d1a988fded95ca763908720941"
+        },
+        {
+          "name": "genomics-workflow-acceleration",
+          "sha256": "6d2f53ec9f72594e5265350e7043098062458e7b0aa818aa49aa41e49f0eae65"
+        },
+        {
+          "name": "kermt-add-cmim-pretrain",
+          "sha256": "e1d84e99a89d10e3c9b8adc67cc816c3bcdbce71e8a72f37d2dcb8852df8b49f"
+        },
+        {
+          "name": "kermt-continue-pretrain",
+          "sha256": "0498d70f6cdd3464f1c56cabe2618b15abcf4eed638a06a305b272276e197bfc"
+        },
+        {
+          "name": "kermt-embed",
+          "sha256": "9e4ff3ae2e74155866e7a5bd664f5a4f260b3f27a55d645fb0d1b4b5a165465d"
+        },
+        {
+          "name": "kermt-finetune",
+          "sha256": "4ca427b614e55a501b80ff7af010b6acac55f2480d9e86abff81d6cca7880519"
+        },
+        {
+          "name": "kermt-infer",
+          "sha256": "bc74060116d9061ef2357adfa26d85615c9e2dcf0d17c3e60fb5af998bb3a5f3"
+        },
+        {
+          "name": "kermt-monitor",
+          "sha256": "c2da2d920ad8d24d2d1f9c9f56c768b7a8bfc732f17d6ebf264bb52007a4ce52"
+        },
+        {
+          "name": "kermt-pretrain-scratch",
+          "sha256": "7727a68bcd84d390a2d88de87adc6be7ff36caeb9bd9b2474289578b74c6f54d"
+        },
+        {
+          "name": "kermt-setup",
+          "sha256": "3916f4207e7a6f3f75d2598c93fb461ff741213af51434535460d2f4285686f5"
+        },
+        {
+          "name": "molmim-nim",
+          "sha256": "9ea44aa921413a8ffd977c686c3ed2cb376d536d5725c5eb77ffc9ea49a2a414"
+        },
+        {
+          "name": "msa-search-nim",
+          "sha256": "bb10a1854481960ce4425a29c2c0150cdbec0b7a7aa4315ccc6cb30ef2c7ddfd"
+        },
+        {
+          "name": "msa-structure-prediction-pipeline",
+          "sha256": "9022af4b36fdcbde3e5643914287ab5e40a6cef028fedfff9087a43d755964bf"
+        },
+        {
+          "name": "nvMolKit",
+          "sha256": "1e7aa4102c100a7dfd06f1b093c68159fc74146ca6a9bfc1683f85236a059af2"
+        },
+        {
+          "name": "openfold2-nim",
+          "sha256": "ba567cd67dbdf6f1863ed2120c8f0df61d0bab8f2286ea4bfb382d047924efd3"
+        },
+        {
+          "name": "openfold3-nim",
+          "sha256": "39ebe7b3fcd8f3a2f6403a352410e9cade1d5dee896f8fec6290307009142f07"
+        },
+        {
+          "name": "parabricks",
+          "sha256": "bfb39342b2fca4ca4048065b010ea8c2bda156a7ca8c09d636361db818585445"
+        },
+        {
+          "name": "protein-binder-design",
+          "sha256": "a9bfe2b3a477fd1bc95efca8617e015f7202e9e00d902b4549d5985b258f9fa1"
+        },
+        {
+          "name": "proteinmpnn-nim",
+          "sha256": "66d377f77fa4261e4a9de87b2b7cfae92a12d4d6c4877439a1d6cf78ededcd2d"
+        },
+        {
+          "name": "rfdiffusion-nim",
+          "sha256": "794b5acbec4c80e4310123818745c475a507abf5a72a41e9f139a300715f61b2"
+        }
+      ]
+    },
+    {
+      "slug": "biorender",
+      "name": "BioRender",
+      "version": "2.0.1",
+      "channel": "openai-curated-remote",
+      "description": "Search BioRender's library of scientific templates, find your files, and generate custom first-draft figures with AI. Results and previews appear right in your conversation, and every item links back to BioRender so you can open and keep editing.",
+      "license": "unspecified",
+      "manifest_sha256": "08e230f91a7137272a0238ff2cda94ffbf93da578b17ec64d3d5b80e6101e0d9",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "boltz-api-cli",
+      "name": "Boltz",
+      "version": "0.1.1",
+      "channel": "openai-curated-remote",
+      "description": "Predict structures, screen molecules and proteins, and design binders.",
+      "license": "MIT",
+      "manifest_sha256": "9ac6e86a7abf8927e7b92e413600eca8dd6de5afa088442ed25c0aa2f501db73",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "boltz-check-status",
+          "sha256": "2026f9fee3a1c029f6ebef79312d7b5cb09b28eaa3e3c3117902929438da2078"
+        },
+        {
+          "name": "boltz-cli-setup",
+          "sha256": "d8b14284822d76d093f3c662222f86057e965f08ca1512af3c7fcbf55a8c2d5f"
+        },
+        {
+          "name": "boltz-protein-design",
+          "sha256": "83973679a755563254467daa535361974e67cf1181e71259be738ecde5b44a73"
+        },
+        {
+          "name": "boltz-protein-screen",
+          "sha256": "0bb22295439ee40e6543b0a18e917c406ac4b4b8a30a422e7d118635a7c771b8"
+        },
+        {
+          "name": "boltz-small-molecule-adme",
+          "sha256": "3cb1550e214ebbffd26127e0d5b904830379d29f05ac2de1c4a3f11fb2257b9c"
+        },
+        {
+          "name": "boltz-small-molecule-design",
+          "sha256": "eb1dc365004d18a7481c92de0be49aef96b6e2cac8d84c2d4c7c5a0ae8afcef8"
+        },
+        {
+          "name": "boltz-small-molecule-screen",
+          "sha256": "b61cb73b02f28bd480758805cfddcdd1ad284c5f04bac8a19cbb948194cfe869"
+        },
+        {
+          "name": "boltz-structure-and-binding",
+          "sha256": "f2623ffe1422adbb7161b1e30d4bbc4b3d399f90f139ff864ee1cbefc8ad1879"
+        }
+      ]
+    },
+    {
+      "slug": "build-ios-apps",
+      "name": "Build iOS Apps",
+      "version": "0.1.2",
+      "channel": "openai-curated-remote",
+      "description": "Build iOS apps with workflows for App Intents, SwiftUI UI work, Simulator mirroring in the Codex in-app browser, performance profiling, leak investigation, and simulator debugging.",
+      "license": "MIT",
+      "manifest_sha256": "86d4a225cb929ab68f00f6258a75daffb02122dd34875dabd349c3474dc35908",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "ios-app-intents",
+          "sha256": "ecfa87ec1070bccfdfa0d21ee997bbfbfd78edfb1f22da5da9c05ff006e9fa52"
+        },
+        {
+          "name": "ios-debugger-agent",
+          "sha256": "bb8ad932ec473cee097c9c8d106051134e9ab6cf9dc85d6a8e62ce80ad24c385"
+        },
+        {
+          "name": "ios-ettrace-performance",
+          "sha256": "1888c0b2fc6b7d9f3d54d06333e9628a2c4660b9d9b5ddf3edc37f126c773935"
+        },
+        {
+          "name": "ios-memgraph-leaks",
+          "sha256": "f09a1e78c00b342196035f6570723f16e40e34a800d353c7c885d1dab4dc8781"
+        },
+        {
+          "name": "ios-simulator-browser",
+          "sha256": "f3f0216323cd7713a73f1bc4beee1b740a7867f20affef331760dd1932a1ec4b"
+        },
+        {
+          "name": "swiftui-liquid-glass",
+          "sha256": "8e9ec37d9b6ed146672faf12c88be61d367c280ab6159bfbc7726a122030b78b"
+        },
+        {
+          "name": "swiftui-performance-audit",
+          "sha256": "6fc6bd4d49b49ccb2089be706c449f195daa7db2c36d8097d883426488eb4b1a"
+        },
+        {
+          "name": "swiftui-ui-patterns",
+          "sha256": "a96f078512c6c679a3504ec20e0eedff4a9be3a06eb9a95107f3556c081bb708"
+        },
+        {
+          "name": "swiftui-view-refactor",
+          "sha256": "129cbb511987985ed7bf9e3f20443632a7becdf0c2824ded6b52241cc339243a"
+        }
+      ]
+    },
+    {
+      "slug": "build-macos-apps",
+      "name": "Build macOS Apps",
+      "version": "0.1.4",
+      "channel": "openai-curated-remote",
+      "description": "Build, run, test, debug, instrument, and implement local macOS apps using Xcode, SwiftUI, AppKit interop, unified logging, and shell-first desktop workflows.",
+      "license": "MIT",
+      "manifest_sha256": "d8d9c85281df68af2a2012ab6365b2789a573bd399692dacc4b2d5bfd06c0450",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "appkit-interop",
+          "sha256": "7c91be82e30340ed9c929270f102965da3d67bcf509eecf8bf207c8a679fd3b6"
+        },
+        {
+          "name": "build-run-debug",
+          "sha256": "bd32f3fa611fd731d01113450929aaeab8b40bfdda669b6cad76d877a096b722"
+        },
+        {
+          "name": "liquid-glass",
+          "sha256": "b2bbb5ea8a62523931d89d9db47cfecf6745406f17722cbe7a6f1c06026472c3"
+        },
+        {
+          "name": "packaging-notarization",
+          "sha256": "adc0d5e0c48e74ac6c5078b5846d00cbb798a8fd08bd775590f23793c8e69b2b"
+        },
+        {
+          "name": "signing-entitlements",
+          "sha256": "79326e5096325b53c4350db9e1586c9a2ef56976705f01c24d3643a592dc3030"
+        },
+        {
+          "name": "swiftpm-macos",
+          "sha256": "4bd2a889a2f96569773b8d408710326df715f5cfa7c4b3e942be4f895e2b382a"
+        },
+        {
+          "name": "swiftui-patterns",
+          "sha256": "ebfc06b1c1e11cadec83e5c204b20f33f01db1c36cb5796639567bd8eac0fe07"
+        },
+        {
+          "name": "telemetry",
+          "sha256": "64fae6fd88c411d108b321462f90b74deb42fb043b815baae04b199a07dfbd25"
+        },
+        {
+          "name": "test-triage",
+          "sha256": "e6ed34d34d2b4f62a262f3ab9076ab02bfb75d7661491383493bee78545b7851"
+        },
+        {
+          "name": "view-refactor",
+          "sha256": "924b1a3a6f894443d26987346bc21fa8bf0815d463d2f741cb58a3e4321dc854"
+        },
+        {
+          "name": "window-management",
+          "sha256": "9fea3f84f6cd96c629bbb45cfe2715e9669a737f088a3453a20bd6083067e64d"
+        }
+      ]
+    },
+    {
+      "slug": "build-web-apps",
+      "name": "Build Web Apps",
+      "version": "0.1.2",
+      "channel": "openai-curated-remote",
+      "description": "Build web apps with frontend asset design, browser testing, UI components, payments, and database guidance.",
+      "license": "MIT",
+      "manifest_sha256": "676d1aab332c7bbacfbf59da0d61b1ced0ac3297c5e7788f72110cbd49915968",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "frontend-app-builder",
+          "sha256": "9273de02827b29534be28fb2b37154c1571ac38b4e20d3ef5482b7e22af67394"
+        },
+        {
+          "name": "frontend-testing-debugging",
+          "sha256": "03724620cf7e7de425b607a5492f572d867b1cf5d9c92c74bf50d057d7415e0b"
+        },
+        {
+          "name": "react-best-practices",
+          "sha256": "cc7d03309817f392c419a203e1bc1f1759ef94831f7dbedf39d91a35ac5bc86a"
+        },
+        {
+          "name": "shadcn-best-practices",
+          "sha256": "7678f5168d4ee6f3ae3ce4d3d41c654f0aebc7b88cbc392a9504822dec0dff28"
+        },
+        {
+          "name": "stripe-best-practices",
+          "sha256": "5062f0c980030af377a0ac33b77c9d233676e2ecbb57b3d3cd8734fc0da464b2"
+        },
+        {
+          "name": "supabase-best-practices",
+          "sha256": "cfc4da3ed47c14f4fb24c5b4db4be443fa200e12e71d674fb1270eecce87a302"
+        }
+      ]
+    },
+    {
+      "slug": "build-web-data-visualization",
+      "name": "Build Web Data Visualization",
+      "version": "0.1.21",
+      "channel": "openai-curated-remote",
+      "description": "Design, critique, implement, test, and export web data visualizations in Codex, including charts, maps, dashboards, Gantt, UML, scrollytelling, reports, slides, mobile views, shareable state, and advanced WebGL concepts.",
+      "license": "MIT",
+      "manifest_sha256": "fa1f5586afcfdfa8fa58d249fe852efd8103057d30f6c5d4009ce90e83b225a9",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "accessibility-and-inclusive-visualization",
+          "sha256": "4b027cdceb71903dc24f9b4323344a77390fdf312fe4aeb0d2d4dd0f9628742a"
+        },
+        {
+          "name": "canvas2d-data-visualization",
+          "sha256": "84818b1115021ef92305dd5a602553b7d2980ba5b512a9f356391e3b62798f30"
+        },
+        {
+          "name": "d3-data-visualization",
+          "sha256": "1c735a00399eef9f63774f692a13c024380a331a44b1076ba72d440510f22b8f"
+        },
+        {
+          "name": "dashboards-and-real-time-visualization",
+          "sha256": "564c20838617d3fa2e7fb93419af553035e7683f4f7350f7ecdafb4fb4fd0ab1"
+        },
+        {
+          "name": "data-visualization",
+          "sha256": "6e71d7fc7976d4949f77eb57cc6e2557bd8fc07cf513a793bc6a8d4b88f88b66"
+        },
+        {
+          "name": "gantt-chart-visualization",
+          "sha256": "a0dab154479273473e298ce1790226a493aee0ca92f6c75caab1f3f1e375d299"
+        },
+        {
+          "name": "geospatial-and-cartographic-visualization",
+          "sha256": "18f5cf852b8a2d635a8198ba0b7da69118860d66c9755ef3108d476bfa8be0ee"
+        },
+        {
+          "name": "grammar-of-graphics-and-declarative-visualization",
+          "sha256": "0bec7b4ae2a2a3eda9ad462370ffb642dad4d520b5380cea36fe67c5bab5cbfd"
+        },
+        {
+          "name": "node-link-and-diagram-layout",
+          "sha256": "3da1d3c598ad9298ca49f8728d816490d542ca5eed2fe204e2790cb693fe5ece"
+        },
+        {
+          "name": "react-and-nextjs-data-visualization",
+          "sha256": "95326e7c73c15919e60615314805197b52613fff167eecabecdba191230db7f8"
+        },
+        {
+          "name": "reports-pdfs-and-slide-automation",
+          "sha256": "9acd03be0694d3b5b88edd1d8571d54a6507f65665e20d98689543139ec9ead4"
+        },
+        {
+          "name": "scrollytelling-and-parallax-data-visualization",
+          "sha256": "edfcb78d543d4d80d470f390446d65951179d07e13ada03cdd4bc3d77678eafe"
+        },
+        {
+          "name": "statistical-and-uncertainty-visualization",
+          "sha256": "544542158d7b2302ca34f8d992349b4048d106b30b238bf7184a57c457f95b3a"
+        },
+        {
+          "name": "testing-data-visualizations",
+          "sha256": "fba1423c24dac1f401c76d85cbc39d7b354bd2fb18cc9055d62798e6cca6d28e"
+        },
+        {
+          "name": "threejs-data-visualization",
+          "sha256": "bc3141b5d655b6c222d180d668010d9246e1dfb77e9f433450cf560876036917"
+        },
+        {
+          "name": "typescript-data-visualization-engineering",
+          "sha256": "9f48cf4ec5458e2d023ec4ed7765699a97c9c2f87b647fa4ac0ca01aa09379f5"
+        },
+        {
+          "name": "uml-and-software-architecture-visualization",
+          "sha256": "66c7aa61b25c2e68835f8a7eda725a2a232ba25c0631702a5668879aa760460e"
+        },
+        {
+          "name": "visualization-strategy-and-critique",
+          "sha256": "71f6e7b4538d90b1d0350045e3f18bf5a4709bf06602925a2daf901f8bd2ac2c"
+        }
+      ]
+    },
+    {
+      "slug": "canva",
+      "name": "Canva",
+      "version": "14.0.0",
+      "channel": "openai-curated-remote",
+      "description": "Bring your Canva design workflow into Codex and create, refine, and review designs through natural conversation.\nAvailable skills:\nResize for social media: Adapt a design for Facebook, Instagram, and LinkedIn in one step.\nBulk create: Generate multiple designs from spreadsheet data using a brand template.\nEdit designs: Update text, media, and formatting, or reposition and resize elements.\nGet design feedback: Receive structured feedback on visual hierarchy, layout, readability, consistency, and accessibility.\nImplement feedback: Review comment threads and apply clear, actionable changes.\nBrand check: Check colors, fonts, logo usage, and copy against your Brand Kit.\nOnce installed, describe what you want in plain language or invoke Canva directly with @Canva.\nTry prompts like:\n- @Canva, resize this design for social media.\n- @Canva, create designs from this spreadsheet using my brand template.\n- @Canva, update the headline in this design.\n- @Canva, review this design’s visual hierarchy and readability.\n- @Canva, implement the feedback in the comment threads.\n- @Canva, check this design against my Brand Kit.\n\nRequirements: Connect your Canva account to use the plugin. Bulk Create requires an eligible Canva Enterprise plan.\n\nWant to take a more hands-on approach? Instantly open your design in Canva’s powerful editor for the final touches.",
+      "license": "unspecified",
+      "manifest_sha256": "bb9ff2fb6e008f481012608e42f2537addc9b6509ab0afb74956fb265a723fb8",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "canva-brand-check",
+          "sha256": "b292189744392db22b9e72481056a0db94781bd64892480abe2ce50c76efbb73"
+        },
+        {
+          "name": "canva-branded-presentation",
+          "sha256": "cb941d4892cfeda9034f77cccaf1e1d8c45546bd3a41c5c85e72e37055150ca1"
+        },
+        {
+          "name": "canva-bulk-create",
+          "sha256": "65deda62b60ce9e748c7a90b3e41e91dadc38f6deee3ba4aca799fd7502eb8b4"
+        },
+        {
+          "name": "canva-design-feedback",
+          "sha256": "e18303be61308ad6dc8e05c4735b7254873f42ab9c6bc6c37b9cec339119be7b"
+        },
+        {
+          "name": "canva-edit-design",
+          "sha256": "842eeec8f89bfcfb3490ca92092f4ef441577ff7f9b7bae979aad99cc92ceaa8"
+        },
+        {
+          "name": "canva-implement-feedback",
+          "sha256": "cb0d8a7434e7abd7a129ef74aa526ea7f5c0c7ea89db17e3a0ebf27d6108aa36"
+        },
+        {
+          "name": "canva-resize-for-social-media",
+          "sha256": "bb36807630daf3ba7c2a27e83de64b329e03ce68457da874c36c5022ceff7094"
+        },
+        {
+          "name": "canva-translate-design",
+          "sha256": "c10b609033f5727c53d3c05dddd61c4e3d0de9a314b78420b2109dc6629192eb"
+        }
+      ]
+    },
+    {
+      "slug": "cloudflare",
+      "name": "Cloudflare",
+      "version": "0.1.2",
+      "channel": "openai-curated-remote",
+      "description": "Cloudflare platform plugin with curated skills for Workers, Wrangler, and Agents SDK plus the official Cloudflare API MCP server.",
+      "license": "MIT",
+      "manifest_sha256": "790ac166fa1f509f440e66d35c010e1cfb34d773726eb3a30a6a7553dacaf59a",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "agents-sdk",
+          "sha256": "007d6ccf85808a6c779f5b058b1be970d77785000071cb27a55a5f580fbc845b"
+        },
+        {
+          "name": "building-ai-agent-on-cloudflare",
+          "sha256": "31554ff30e2edb8c2dc9bd5fba15438691fb07f3541f0a0cc843b6a13cdaa573"
+        },
+        {
+          "name": "building-mcp-server-on-cloudflare",
+          "sha256": "d76ee46c043d3876d542245e0c26e9d084f4ca8241d811593e93d8d2594118e8"
+        },
+        {
+          "name": "cloudflare",
+          "sha256": "613c4c57c19bd6385a870b4d441e00a0d88cc6c348c447f8a88889d34b17b2d0"
+        },
+        {
+          "name": "durable-objects",
+          "sha256": "cd6797cb18f3ae8f721dfd2e5cb27b73a0aa8636683f1a38163dab2fd51a8dfb"
+        },
+        {
+          "name": "sandbox-sdk",
+          "sha256": "0f3501e6510921401be3f54bcb24d2a432a1b5c63af8f719eded3a087ad88ea9"
+        },
+        {
+          "name": "web-perf",
+          "sha256": "746b3490d401c8020900f0a62ece846c22d3df15782ee843c082acfa89f26703"
+        },
+        {
+          "name": "workers-best-practices",
+          "sha256": "099432ff265ff6080327ef0b392c118b835d2a5bda98a7de07e1afd115ed6458"
+        },
+        {
+          "name": "wrangler",
+          "sha256": "0aa6fbe6932df4392779bfda67b1a0165697369668cb2dbef66d018a34f44c11"
+        }
+      ]
+    },
+    {
+      "slug": "data-analytics",
+      "name": "Data Analytics",
+      "version": "0.2.10-13ceeea1f599",
+      "channel": "openai-curated-remote",
+      "description": "Answer product and business questions with data",
+      "license": "Proprietary",
+      "manifest_sha256": "5e31ff8c5a927dd262488ab4fa34a1136ff5ecd778fc2b91709f2426588f13ba",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "analyze-data-quality",
+          "sha256": "9a3c994f87da0c7a8c5ce37bbf08a59fc6f5b4f368475d3d7438f622b753d5f0"
+        },
+        {
+          "name": "build-dashboard",
+          "sha256": "c453ef3e1187477f696aae9a68b116d0e7e0bd6f665ab03a9d1634d13482aaaa"
+        },
+        {
+          "name": "build-report",
+          "sha256": "03db47974dc400b026d9268730de1ef317b5446a7a6bc9906ad471bfb117fd22"
+        },
+        {
+          "name": "create-data-context",
+          "sha256": "b004f792fa63e639dbce197562c97230eb58250e639b6bbe926085e3a44b0c2b"
+        },
+        {
+          "name": "design-kpis",
+          "sha256": "fcefdecacd1d64f847fbb7c45e93a6bd49c679dff66b8966ebc74c4dc39b8f21"
+        },
+        {
+          "name": "gather-business-context",
+          "sha256": "e8a1e917b8c4d03248987f33ca49fb7b1d6ed533328c39a02cafcc5b88b4577c"
+        },
+        {
+          "name": "index",
+          "sha256": "2239188d6ac667a9e4b546ffb441f17ac3cfe90fe7683ac68506789ef8dabeb3"
+        },
+        {
+          "name": "jupyter-notebooks",
+          "sha256": "8303d33041a5d5ccbfbb5addbb60bd8b0559027f01a586f98b7728e58c4127ed"
+        },
+        {
+          "name": "kpi-reporting",
+          "sha256": "a4ee918f3c87af4db8bb007cf8fefec444cd47b96b76de711349f11d7232861a"
+        },
+        {
+          "name": "market-sizing",
+          "sha256": "dd353ab8c7229d3bc831234725db7d02ceeb1a889ee781103f90997879ac1951"
+        },
+        {
+          "name": "metric-diagnostics",
+          "sha256": "c9293227b592328c06cb9f6a2f23c0114ddcd1ca456a42f1ceebfe5981007314"
+        },
+        {
+          "name": "product-business-analysis",
+          "sha256": "3e6b684ace151bbf777afd88fe34758b337ac0d6ff2bf332958d7a495d624a4b"
+        },
+        {
+          "name": "publish-artifact-to-sites",
+          "sha256": "26b3846191d1c5237262a26da61694aa67bef38c4ed03eb3167e39f39c6f07a3"
+        },
+        {
+          "name": "validate-data",
+          "sha256": "7aa5c77b22b9e5bf1b054e4ab6320a12dfd5342aa6cb18f8e497b46c713be20e"
+        },
+        {
+          "name": "visualize-data",
+          "sha256": "ff2601669022a2ef43524e0225eb4833acc03260db90b996a2d6f74fbbce7b12"
+        }
+      ]
+    },
+    {
+      "slug": "deep-research-work",
+      "name": "Deep Research",
+      "version": "0.1.15",
+      "channel": "openai-curated-remote",
+      "description": "Conduct cited, multi-pass research inside the current Work or Codex session.",
+      "license": "Proprietary",
+      "manifest_sha256": "7c1d94e0c3892469bde09ed42d1cb32c63801f61f93ef1e01d5dde1a2bc01255",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "deep-research",
+          "sha256": "fe92f226b47314a3963738a7b98d5afc5d51973c7b589c72277e3cc9e59d44eb"
+        }
+      ]
+    },
+    {
+      "slug": "figma",
+      "name": "Figma",
+      "version": "2.0.21",
+      "channel": "openai-curated-remote",
+      "description": "Figma workflows for design implementation, Code Connect templates, and design system rule generation.",
+      "license": "LicenseRef-Figma-Developer-Terms",
+      "manifest_sha256": "5333104f8a49ba3c7d50475eb233ec2beb6a127543f1a2004eda3bd52cb3d944",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "figma-code-connect",
+          "sha256": "87af3996edb167d6aa3c044cb1bbb6a0d8e2d631c731bb896b1e1e8669640415"
+        },
+        {
+          "name": "figma-create-new-file",
+          "sha256": "82e0a018692d3d009b5d2c83ecce9203a4ce7dfbdb98b7b13a4f7e5b11832bc2"
+        },
+        {
+          "name": "figma-design-to-code",
+          "sha256": "936bbe68b4731d4a8748db15f85247efde232c8ae0902857c2c79a9ed40649ea"
+        },
+        {
+          "name": "figma-generate-design",
+          "sha256": "4585464c09bed50215151e468ab8476848adcf56da017811ddcbfff199ee0b56"
+        },
+        {
+          "name": "figma-generate-diagram",
+          "sha256": "7297638dbf2130d1b37bfd85df65d290a4dd0b11a11b54abafcf7d07565922b5"
+        },
+        {
+          "name": "figma-generate-library",
+          "sha256": "3c995d483bbf4761392ba0c2e00df2b1b1c632cc05c6e7df57a2e89c311f53b7"
+        },
+        {
+          "name": "figma-implement-motion",
+          "sha256": "2e26e67284d47c6a74aedf9dca7543f4c8817dafc59a11abb156d4f7feedb2c2"
+        },
+        {
+          "name": "figma-swiftui",
+          "sha256": "868c4defe2c0854f5a3e27594d3fa0f20347c86a9b15d103483b7488bfa8affe"
+        },
+        {
+          "name": "figma-use",
+          "sha256": "7de62bb574c7acf3241643e0aafcea13e48ff06a12ef5203447eda3584e6ff4f"
+        },
+        {
+          "name": "figma-use-figjam",
+          "sha256": "16b15da304f777e6bdc79bf425da73fa1ce0ea41af726cab8ddd6f40180acd74"
+        },
+        {
+          "name": "figma-use-motion",
+          "sha256": "d74fa8c9435a5260f8a61e3a8fbf11c068f940ae3423e9be2efde8b5e785d78c"
+        },
+        {
+          "name": "figma-use-slides",
+          "sha256": "0a69a65e686dcc223581afb409a4d31cf318716e2c65cc9c926839a8737e71a4"
+        }
+      ]
+    },
+    {
+      "slug": "github",
+      "name": "GitHub",
+      "version": "0.1.12-5f7cd798dc99",
+      "channel": "openai-curated-remote",
+      "description": "Inspect repositories, triage pull requests and issues, debug CI, and publish changes through a hybrid GitHub connector and CLI workflow.",
+      "license": "MIT",
+      "manifest_sha256": "c7a102ea4c7c06e49976dfc2f150a4fe2ce46b0e66f9b03883dda5d5cc9cb0ad",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "gmail",
+      "name": "Gmail",
+      "version": "0.1.10",
+      "channel": "openai-curated-remote",
+      "description": "Work with Gmail using the configured Gmail app connector.",
+      "license": "MIT",
+      "manifest_sha256": "79332756fee94eb5251c57984c8412d43e31c6716f47f28305f3b556a14ff5c6",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "google-calendar",
+      "name": "Google Calendar",
+      "version": "1.2.7",
+      "channel": "openai-curated-remote",
+      "description": "Connect Google Calendar for scheduling, availability, daily briefs, and event management.",
+      "license": "MIT",
+      "manifest_sha256": "bdc047151faa4c2c539fe15e6b55bd1cb6e81148606f4efe1b7727ff161cc73f",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "google-contacts",
+      "name": "Google Contacts",
+      "version": "1.0.0",
+      "channel": "openai-curated-remote",
+      "description": "Find people and contact details from Google Contacts.",
+      "license": "unspecified",
+      "manifest_sha256": "a8c9a0d3b2a4f9b71af673b4b03ec00de4e6a7f41e7190c9716b4b3e3f513849",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "google-drive",
+      "name": "Google Drive",
+      "version": "0.1.16",
+      "channel": "openai-curated-remote",
+      "description": "Use Google Drive as the single entrypoint for Drive, Docs, Sheets, and Slides work.",
+      "license": "MIT",
+      "manifest_sha256": "fb76d7ea1eeaf768fd8bd539e6fbd8bd5fb0a911d4bb0b3af3a875c40df9ecb4",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "google-docs",
+          "sha256": "8e5c26053d800e2980b74ab82c2ce95db94a17fbb443f8f6e30baeb442f1d464"
+        },
+        {
+          "name": "google-drive",
+          "sha256": "dabae8a192c861b76cf7b5742bdf14f8ed35e67d8e6cacfd5f746ffbefd6da5c"
+        },
+        {
+          "name": "google-drive-comments",
+          "sha256": "a3077375a8f7558b9e052c98047747b8a4a1a90a9a90b552009c28fcdadfe94a"
+        },
+        {
+          "name": "google-sheets",
+          "sha256": "54d160c27532e4ff610e9c5a7870fb80dc496b2d1d3f302996c21c505419c862"
+        },
+        {
+          "name": "google-slides",
+          "sha256": "fd14974d7c4ea9ff134bcc21cd32b2b1d61eeaa77c6dc757075b07eef6bedbdb"
+        }
+      ]
+    },
+    {
+      "slug": "hugging-face",
+      "name": "Hugging Face",
+      "version": "1.0.0",
+      "channel": "openai-curated-remote",
+      "description": "Inspect models, datasets, Spaces, and research",
+      "license": "MIT",
+      "manifest_sha256": "a910e2669c8bdd4bcb261402b9e3c94cafc1a852256bf0a54aa0432316cb0547",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "cli",
+          "sha256": "ee85209886c4ec3d3d850489368be193d11a8a3fa589012b39a4a5bbf7c7da2e"
+        },
+        {
+          "name": "community-evals",
+          "sha256": "a97f1c703f55b72427453a76af858237e6392a447fcafa9eeb85f7ac67f0155d"
+        },
+        {
+          "name": "datasets",
+          "sha256": "5af74f3e042313efadf02e85c316a2576bdc0b0ff92c43c3ba5dcb6e2dae1ded"
+        },
+        {
+          "name": "gradio",
+          "sha256": "e2f4c232c38682bccfc73115ca7d0a5427f7d625e6fd56b32515fe4c0900f997"
+        },
+        {
+          "name": "jobs",
+          "sha256": "b85252f49569e97adc3d85e75ea37ed505028249fe1d9991069a6c52d0a64f35"
+        },
+        {
+          "name": "llm-trainer",
+          "sha256": "6628c305a8ae8de81fea38d05c4712b54a97fed4e19e776b1edc18e392d98f48"
+        },
+        {
+          "name": "paper-publisher",
+          "sha256": "04b59406cf88054ab365f5bbbc57fe2e2fcb369e942dff2841c4f4297318c353"
+        },
+        {
+          "name": "papers",
+          "sha256": "985c2d5c7261aba2b157811cde0c2b30134663694a4ab701280de28f941eb3b2"
+        },
+        {
+          "name": "trackio",
+          "sha256": "893ac9695f8677db4c4f0c15795e789346946f6142305c89d7ee57774e22ffb1"
+        },
+        {
+          "name": "transformers.js",
+          "sha256": "89a70a8a0604fc90cf6ae1063cb0f7d2f625bdf4d337f4f24e3f19cea4f99511"
+        },
+        {
+          "name": "vision-trainer",
+          "sha256": "c7aba4de75fa6595ffdaf5c50136786e8346aba0c9ff0261eaee656af4a3b0d9"
+        }
+      ]
+    },
+    {
+      "slug": "life-sciences-databases",
+      "name": "Life Sciences Databases",
+      "version": "0.1.5",
+      "channel": "openai-curated-remote",
+      "description": "Structured public life-science database research across genetics, omics, biology, chemistry, structure, and clinical evidence.",
+      "license": "Proprietary",
+      "manifest_sha256": "57927c62350ad6850564b21cf7527e3906f9ef003f33b53f09a6923e88c7983b",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "alphafold-skill",
+          "sha256": "b4529ce08450dee72077479c56bcabde1ffa411e5cd94845cef29104dcd3c666"
+        },
+        {
+          "name": "bgee-skill",
+          "sha256": "19a30b9c5f411ecc640a352cdb2932b17226ff06dcd51304524932f23c26534d"
+        },
+        {
+          "name": "bindingdb-skill",
+          "sha256": "7842f95e46b6048449b0018efd094a43bc0e41bd9645f2858dabf474ad5acea5"
+        },
+        {
+          "name": "biobankjapan-phewas-skill",
+          "sha256": "30d692c5179bfe3c5f7ee2c3b192e022edda824ffbcb73cf625c80daf8f90520"
+        },
+        {
+          "name": "biostudies-arrayexpress-skill",
+          "sha256": "cded59750d050d4404610fd2988e5a0266230178ddab93d812372bf9eed84f24"
+        },
+        {
+          "name": "cbioportal-skill",
+          "sha256": "d5bdac3c035c48ce11dfdfc63556619395eb4417062f2d5a182707cbff4373fd"
+        },
+        {
+          "name": "cellxgene-skill",
+          "sha256": "26c6151d21d4ff233a53df23ea17f9144f98b48b61e1f40b6a0d8cc3af461650"
+        },
+        {
+          "name": "chebi-skill",
+          "sha256": "c0eeda8ba2fe66d1473377f0cf379d5be89fe717482a8e4cef1dfdc6f8ed074a"
+        },
+        {
+          "name": "chembl-skill",
+          "sha256": "c4ece2f55e2431429dd82776f4afa3e74f1a2ee6e5d2c779e2377d164ac3a9fd"
+        },
+        {
+          "name": "civic-skill",
+          "sha256": "f99ff5827a336664922fdf57dc4091bce589f6909778451a4844aef5433027a7"
+        },
+        {
+          "name": "clinicaltrials-skill",
+          "sha256": "71ff02add60ba6429eb1b07222472a6b1b1b88af18df84df4904079c6e139199"
+        },
+        {
+          "name": "clinvar-variation-skill",
+          "sha256": "13879ffbd26e4c03bde1f47271cb2e7cfacc262411221b45af62078904ae3ede"
+        },
+        {
+          "name": "efo-ontology-skill",
+          "sha256": "e0147f573634d9954b39e5d76cc97c4a36cebfe41df78eae2266ffa37137180a"
+        },
+        {
+          "name": "encode-skill",
+          "sha256": "e6d59779eafa5a33a9a98fdddd7a3f4e6544b142d283547fc7d95ad8a77cdaac"
+        },
+        {
+          "name": "ensembl-skill",
+          "sha256": "98b0b3fc26ce6ac9fdfe4461358121f85baa04719a27cb0c20dfce6b5f7f5301"
+        },
+        {
+          "name": "epigraphdb-skill",
+          "sha256": "bf70e1a73ed8d0521dac63f6d99f8e28949d5501ccac27e68e8062cddb5449ad"
+        },
+        {
+          "name": "eqtl-catalogue-skill",
+          "sha256": "f5920d81388ee0fe0139795e2165724c35fb0f2d69d71db806a6de87d0b2e64a"
+        },
+        {
+          "name": "eva-skill",
+          "sha256": "7994097cfb3c023c0128633fbf8ca41b483086dcb427edef9ef8720a95fa6c21"
+        },
+        {
+          "name": "finngen-phewas-skill",
+          "sha256": "cfd5e6f8ad0c3876a219701b7cf039ec307745ba856ab352856db2330553086c"
+        },
+        {
+          "name": "genebass-gene-burden-skill",
+          "sha256": "12b96a763af43063a6670612cb182e17d1d98a29e843b043c3a5dabb62cba54a"
+        },
+        {
+          "name": "gnomad-graphql-skill",
+          "sha256": "074e022c70d73b8963ec5acf4d8196738fbe2a7289fe708071a4913198347e3e"
+        },
+        {
+          "name": "gtex-eqtl-skill",
+          "sha256": "96c965451076ec3ade64e5e194c8e69b450636989c1be93628925d909487f3ea"
+        },
+        {
+          "name": "gwas-catalog-skill",
+          "sha256": "d8352bf85748195611d8850ff291623a4348993042bc703b3c77a382da8c2fb9"
+        },
+        {
+          "name": "human-protein-atlas-skill",
+          "sha256": "7370471f8792bf8fd862fd062a88fd4111d8a8fef4fea43ea0c380acdbffc077"
+        },
+        {
+          "name": "ipd-skill",
+          "sha256": "fb3d1c99d0a2648d07e25336d4a09efc32e4838cf641c75880caf532a97cd696"
+        },
+        {
+          "name": "metabolights-skill",
+          "sha256": "d0862e8bf9efcf6610e055e84c712e6c5b3b2b3eabaef4925e752c0b4b70f314"
+        },
+        {
+          "name": "mgnify-skill",
+          "sha256": "8e5d748852ad72521067d94cd3289d6830a49f83d18c387f50172784efa91434"
+        },
+        {
+          "name": "ncbi-clinicaltables-skill",
+          "sha256": "f5d12431408f3a2cf667d308372466fa30b93f0ddf6aa69e7f9c6cf4b8f9ee37"
+        },
+        {
+          "name": "ncbi-datasets-skill",
+          "sha256": "51b20aecdaeca9db1aaee4073780506d3ef387f4072f97a40a1c0933dc450c5a"
+        },
+        {
+          "name": "ncbi-entrez-skill",
+          "sha256": "35a63e62f6e18cf7b67dd020e54214b568452e5a888993310e417d442cf3bc94"
+        },
+        {
+          "name": "opentargets-skill",
+          "sha256": "efa92e192f4b18bc77b03b3499c5024843401a209ed80ea692db8c6a9c1c4d33"
+        },
+        {
+          "name": "pharmgkb-skill",
+          "sha256": "182bf8a3f1e924cf532fae992bef0a7d5902a2eba599daeacff7c4409376f59e"
+        },
+        {
+          "name": "pride-skill",
+          "sha256": "9d49c30d11dc2025a8e0ae59bff02a9c767e53813631736dad81914efe7c63d1"
+        },
+        {
+          "name": "proteomexchange-skill",
+          "sha256": "4b5da4097415c672fb81c9b4d1bea2453c509cf18ede36a1e297ba2445c3229e"
+        },
+        {
+          "name": "pubchem-pug-skill",
+          "sha256": "b01ce210d5e32817865a4e20ce61bad43b78c7fb6ba6b6d1c414b9d9de6c611a"
+        },
+        {
+          "name": "quickgo-skill",
+          "sha256": "8376ac033bacf3400c5f5db971dc1fe3acd5a5b2a10dbb28ad3c481d3fde123e"
+        },
+        {
+          "name": "rcsb-pdb-skill",
+          "sha256": "2f8e74d2e149535834e3576a5dafaf3eb944c24457bf3bb20d962ecbe7130936"
+        },
+        {
+          "name": "reactome-skill",
+          "sha256": "75ec27b2656943178aa4f399192f8d9ca80effb3767c55d302e140b684516eb0"
+        },
+        {
+          "name": "rhea-skill",
+          "sha256": "cca8e7beb33d3d31eb2099a7e3c0f4c2d31f83616d3dcdafa744e24039f48992"
+        },
+        {
+          "name": "rnacentral-skill",
+          "sha256": "30e3e9fb5c7a8d0bcdf54a4e862db02d3f2128e5b3d96181d0c1d9ff903613d4"
+        },
+        {
+          "name": "string-skill",
+          "sha256": "87a8ecd9535b7ffbe9c204373f5c0c159f6ae55f46dd0722eae93bf968cfbe4a"
+        },
+        {
+          "name": "tpmi-phewas-skill",
+          "sha256": "2ccffe3ab245ec69198d52f2994e6a4c4051860dd729c50cb81d4f4ac7923990"
+        },
+        {
+          "name": "ukb-topmed-phewas-skill",
+          "sha256": "f431c14b6fe6766fb3e955e317b2966ab923ce26955d4a97401c4177126d54c7"
+        },
+        {
+          "name": "uniprot-skill",
+          "sha256": "bdeed361ea38f8443b2dc673ea79246450ad0da474418a38da1816e43ca5ef20"
+        }
+      ]
+    },
+    {
+      "slug": "life-sciences-literature",
+      "name": "Life Sciences Literature",
+      "version": "0.1.5",
+      "channel": "openai-curated-remote",
+      "description": "Biomedical literature discovery across PubMed, PMC Open Access, bioRxiv, and medRxiv.",
+      "license": "Proprietary",
+      "manifest_sha256": "d326ee61d6070b15117a1a260516371c9ef1745c3ce3cf8a949b5efcec886600",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "biorxiv-skill",
+          "sha256": "f5a43cc26c27c45993190a2e5291943cfc3053d0688474df86efd437b650bc9f"
+        },
+        {
+          "name": "ncbi-entrez-skill",
+          "sha256": "4920552d9f1ce149f40ea878a59958937384e0b1fad50eccc832247a1e5e1249"
+        },
+        {
+          "name": "ncbi-pmc-skill",
+          "sha256": "70e189c31f0a3d4e471b9bec2568da6dffadc326b1add622ebeb4696a4e7a20a"
+        }
+      ]
+    },
+    {
+      "slug": "network-solutions",
+      "name": "Network Solutions",
+      "version": "1.0.0",
+      "channel": "openai-curated-remote",
+      "description": "The Network Solutions Domain Search Assistant makes finding an available domain fast, simple, and conversational. Instead of searching one name at a time, users can describe their idea in plain language and instantly check domain availability across relevant extensions. The assistant helps refine names, suggest alternatives, and quickly identify options that are ready to register.\n\nBuilt to remove friction and frustration from domain discovery, this chat-powered experience keeps users moving forward when names are taken and surfaces smarter, brand-ready options in real time. Whether you’re launching a business, starting a personal project, or exploring new ideas, Network Solutions helps you go from concept to available domain with confidence.",
+      "license": "MIT",
+      "manifest_sha256": "b6e5ee3b5ea8e85919eba6324389f0ad8130c3a237506f223661744e85249708",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "ngs-analysis-workbench",
+      "name": "NGS Analysis Workbench",
+      "version": "0.2.16",
+      "channel": "openai-curated-remote",
+      "description": "Journey-oriented NGS data understanding, scientific analysis design, approval-gated execution, and file-backed result interpretation.",
+      "license": "MIT",
+      "manifest_sha256": "a32ecaede3ce6d04098191997359900169259682e2b4909200a624fafe2e0ea1",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "design-ngs-analysis",
+          "sha256": "fb2c6609b47572a8ad29f0fdc189989376fedc984c323613bb36b3f6e333c5cd"
+        },
+        {
+          "name": "ngs-analysis-workbench",
+          "sha256": "ce2dd71e32c7cafb2906884635e88a019ebb4544e602cc145c87d83bc134a1e4"
+        },
+        {
+          "name": "run-ngs-analysis",
+          "sha256": "fb5e48c66f4557858ae67d440d1046771cd74b961f31be267d79be16bf83d99d"
+        },
+        {
+          "name": "understand-ngs-data",
+          "sha256": "cc047c57fa41d11ceb64b21e3a44ba0e69cf07d3829280d08f79b7e59863e215"
+        },
+        {
+          "name": "understand-ngs-results",
+          "sha256": "68b60db1155b7357770e5ff8113271f6d77ad21dcd8c1e2a89536380e0cb9e73"
+        }
+      ]
+    },
+    {
+      "slug": "openai-developers",
+      "name": "OpenAI Developers",
+      "version": "1.2.3",
+      "channel": "openai-curated-remote",
+      "description": "Build with OpenAI APIs, Agents SDK, and ChatGPT Apps, and create and save OpenAI API keys from Codex.",
+      "license": "Proprietary",
+      "manifest_sha256": "547f6c8e73514cb921d6570ccc7d1114d397a88506bdc8ad1338709d6d435b8a",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "agents-sdk",
+          "sha256": "61830dccd552307bc714b961acae80b1c9c9c30b5d2faaa9e6043b6fb0414760"
+        },
+        {
+          "name": "build-chatgpt-app",
+          "sha256": "b4ba5e0847e9b56b327da4e7546f5f0bf3325f54d6d21fc119b320bc2c898a53"
+        },
+        {
+          "name": "chatgpt-app-submission",
+          "sha256": "c9b43ca8fe60189e541afa30ea32a86f1bd7ab58a353faac777192a282b796cf"
+        },
+        {
+          "name": "openai-api-troubleshooting",
+          "sha256": "9fb4e152430c2f0475d1d14ce61b413267d322af9c032f2affb64698ca562662"
+        },
+        {
+          "name": "openai-platform-api-key",
+          "sha256": "780670286fb0acf32660abafc1bc34d7a25ff7a74af59e02db8fb62bbdd21ac2"
+        }
+      ]
+    },
+    {
+      "slug": "openai-templates",
+      "name": "Default templates",
+      "version": "0.1.1",
+      "channel": "openai-curated-remote",
+      "description": "OpenAI default document, presentation, and spreadsheet templates.",
+      "license": "Proprietary",
+      "manifest_sha256": "d2cbbd434a5c8123a9e1612663f0598cdd13ba71bfb55e172e8132ed9e5d4474",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "artifact-template-analytics-dashboard",
+          "sha256": "cf5360fd8b197673bb237c52c603c97fa319c875c3dfa2cd8efff52d4422f513"
+        },
+        {
+          "name": "artifact-template-business-review",
+          "sha256": "27721fc1d67d1b41949caa75ac8f94f81952ff124406878af6524047929e60d2"
+        },
+        {
+          "name": "artifact-template-design-report",
+          "sha256": "563722f53854e606f8a9f87e37e72d7ef70a22d46d5836b8e4d6abfb1b79e9e0"
+        },
+        {
+          "name": "artifact-template-experiment-analysis",
+          "sha256": "0b05effc47df0a14f8e0c3e3597e6722224747435546385d38a2cae279bd20b9"
+        },
+        {
+          "name": "artifact-template-financial-budget",
+          "sha256": "c0b6b7a62a15597aaf2b1ec679e21da48f533b756127f0aef957cdfe9f3da738"
+        },
+        {
+          "name": "artifact-template-investment-committee-memo",
+          "sha256": "68abd08cfe5e073e3c446a3f675f44c5bf98f57434dba679e8acd8a763379a8b"
+        },
+        {
+          "name": "artifact-template-legal-memorandum",
+          "sha256": "51fb9d21baf6119c4ccb1903638a6bac0e859210de63460fffa7025d52e997e0"
+        },
+        {
+          "name": "artifact-template-market-trends-report",
+          "sha256": "d58d019b89cb6f292ac3ab991d561489eef477ff53ce05fb024a0c936f5af26a"
+        },
+        {
+          "name": "artifact-template-minimal-letterhead",
+          "sha256": "880ef094d4d0c89a7bde5ce9bbe4086625c186651e9e6efc8ba8bdd7cc77f9d5"
+        },
+        {
+          "name": "artifact-template-operating-calendar",
+          "sha256": "33bb660791a0b9a21628a42c34934932220203b6aabd84e98cb1b45327d0384c"
+        },
+        {
+          "name": "artifact-template-operating-review",
+          "sha256": "6d63c5cd025ffe936e7bab5db3023672bbaec26af55c2bb8b057d38c202c9c32"
+        },
+        {
+          "name": "artifact-template-project-kickoff",
+          "sha256": "aa893ebd89e7c8d1db4261d01cc2b1add35d78d00785871ccaaa5fc8db783ec9"
+        },
+        {
+          "name": "artifact-template-project-tracker",
+          "sha256": "d97d5be20189b7f53dd269b6e1c5f694eaf53e5a72f6559fcb1578911b7cda82"
+        },
+        {
+          "name": "artifact-template-sales-pipeline",
+          "sha256": "15cfeeedf440021f16ed3f3ad8c7c1ef6d48898b9447741e223d2fb41cfc9800"
+        },
+        {
+          "name": "artifact-template-simple-dark-mode",
+          "sha256": "b7c8d0c05f75878b9bc21e56a57c41ec1aa29700aca0a24822be0f9f1bd53207"
+        },
+        {
+          "name": "artifact-template-simple-light-mode",
+          "sha256": "7c68430c6cf57b55b457d4735dbd1a46b889bef135a32222902dd0848b6e1752"
+        },
+        {
+          "name": "artifact-template-strategy-memorandum",
+          "sha256": "51d7882ac94e8e57b323394825728c33925af878806e37277217c2dc12a912e5"
+        },
+        {
+          "name": "artifact-template-system-design",
+          "sha256": "87f7b7ed1b0d8410f5e5971cd7f7db9a4165e2f37069e97e52dbfb469b75a57c"
+        },
+        {
+          "name": "artifact-template-team-alignment",
+          "sha256": "26d7cafdcd1899a937b325c5d02ac57c162d45002153be33a934d35f81eb6110"
+        },
+        {
+          "name": "artifact-template-three-statement-forecast",
+          "sha256": "74f4a5cccec0107b861548b157e04c51d9b58ec13a990c86394b4c529b8ecf41"
+        }
+      ]
+    },
+    {
+      "slug": "plugin-management",
+      "name": "Plugin Management",
+      "version": "0.1.0",
+      "channel": "openai-curated-remote",
+      "description": "Discover relevant plugins and manage app connections, permissions, and dependencies.",
+      "license": "Proprietary",
+      "manifest_sha256": "5deb3b2f943fff03a928e1faed2b040bad7dabcf71c11f183fc67dcc0793e3c3",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "plugin-management",
+          "sha256": "653841cc21205269f08b0ce135891e1518dac616a766bcfb0b57d788d3f68b10"
+        }
+      ]
+    },
+    {
+      "slug": "product-design",
+      "name": "Product Design",
+      "version": "0.1.54",
+      "channel": "openai-curated-remote",
+      "description": "The Product Design plugin is built for turning early ideas into prototypes teams can review. It starts design and build work by confirming the brief, then helps teams explore product directions, audit user flows, prototype from a live URL, and make static screenshots interactive.",
+      "license": "Proprietary",
+      "manifest_sha256": "3820b68ed8ea0190f599a7cf050a3bfc167fe3e0fc20e4d0bf98ef8ace1ef5bf",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "audit",
+          "sha256": "087f798c3fe02e91b4cca18cc0f42c358a4dc2c02ccf37a348b476fb19b64aa3"
+        },
+        {
+          "name": "design-qa",
+          "sha256": "19303684c7c84e279f3582d784493a6f09d207d92a29e9b15b7056020bcf306e"
+        },
+        {
+          "name": "get-context",
+          "sha256": "151267c873003b7b03715c0842ef798369420464844218492f732edd2f6f7fd1"
+        },
+        {
+          "name": "ideate",
+          "sha256": "649e8782ca93d5aece712964fae5be2b111cc3143577e1507b98df7f9d8e6bde"
+        },
+        {
+          "name": "image-to-code",
+          "sha256": "694b4102bc339e3038173f8063d83a19e08d2a2cfab1f2e478d6412870a61ff0"
+        },
+        {
+          "name": "index",
+          "sha256": "8e9916d9e5dc3b6a394bedcaa38cd9c8833a1f3b0c4538b75647cf9f62f779fc"
+        },
+        {
+          "name": "research",
+          "sha256": "bf824e72dd93941c8d591e4af13bb7e3a09380cd6ed7dd8c1f61a295648fa023"
+        },
+        {
+          "name": "share",
+          "sha256": "19327c50a52f3b9e2ebfcef47d394d988bd6f4c64524c98f665d43bdf5f02c45"
+        },
+        {
+          "name": "url-to-code",
+          "sha256": "2624d0e2ec5f14ba2a4bf74fe05aaa23520b4fb76ca57973c9dadd54fd4b09d2"
+        },
+        {
+          "name": "user-context",
+          "sha256": "5690a7f99cf896970493f5d0bd7f35f62ab9cbe21744352acf84dc0ceea4194c"
+        }
+      ]
+    },
+    {
+      "slug": "rosalind",
+      "name": "Rosalind Workbench",
+      "version": "0.2.5-research-preview",
+      "channel": "openai-curated-remote",
+      "description": "A workbench for guided life-science workflows in ChatGPT.",
+      "license": "unspecified",
+      "manifest_sha256": "638bc4bfb9c0646bee841748702bed6520124b5d8c514a2bc647635a33061413",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "sequence-viewer",
+      "name": "Biological Sequence & Alignment Viewer",
+      "version": "0.1.43",
+      "channel": "openai-curated-remote",
+      "description": "Inspect, analyze, safely edit, and compare biological sequences and alignments.",
+      "license": "MIT",
+      "manifest_sha256": "e2a3160d5cfb1556546f9d3709825580f09da2faf0c036df37ec660a7ffe6ff4",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "biological-sequence-viewer",
+          "sha256": "3cf6655a4560290c4bc8939bc4bf4b4935c3228486b5a32944013ff8dda37560"
+        }
+      ]
+    },
+    {
+      "slug": "slack",
+      "name": "Slack",
+      "version": "0.1.8",
+      "channel": "openai-curated-remote",
+      "description": "Work with Slack using the configured Slack integration.",
+      "license": "MIT",
+      "manifest_sha256": "28188364c74d514acc63248db5c47fb8a948ea4810b99c17ff9e2d98affd3dc3",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": []
+    },
+    {
+      "slug": "vercel",
+      "name": "Vercel",
+      "version": "0.21.4",
+      "channel": "openai-curated-remote",
+      "description": "Build and deploy web apps and agents",
+      "license": "Apache-2.0",
+      "manifest_sha256": "868bc1954080f6bfba006c824d41c800a1c9294088a34c395afe5656508641e2",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "agent-browser",
+          "sha256": "268feb796ace9927d54310ffda8f72bac63cd1c0d88a0506294beab6472a611b"
+        },
+        {
+          "name": "agent-browser-verify",
+          "sha256": "ddba077d6c07d6b5cce7aa8fb8b2c56e043cd561d70f20f096b7422dd44a1ee6"
+        },
+        {
+          "name": "ai-elements",
+          "sha256": "47ae062a3ca7dc004f667591b39998d650a0cd0d909fe3a06ca6bb9a9f685567"
+        },
+        {
+          "name": "ai-gateway",
+          "sha256": "cdfc9062b39056d43b406a93ba081d38383473a62d5391b8c9561b89079c6647"
+        },
+        {
+          "name": "ai-generation-persistence",
+          "sha256": "275935c3e309762399764595e6bfa0f9408132f197e170bbe377a7194f4327ba"
+        },
+        {
+          "name": "ai-sdk",
+          "sha256": "787895e07e49c8686ad12b5017bc7f5160fa88863c2739a98976b540f709e2b5"
+        },
+        {
+          "name": "auth",
+          "sha256": "22f46358aeb87caddde759176073aea63dab402930ada7250741068a67318e3f"
+        },
+        {
+          "name": "bootstrap",
+          "sha256": "509de0d4efe0611ef39bdbeb3514daaf42794898fc36c67466370d2b1cbd914c"
+        },
+        {
+          "name": "cdn-caching",
+          "sha256": "b4024155cacc4d2d385ee0ee7ad1b5e6c1079e1b2599885fc2b3d197ea433f64"
+        },
+        {
+          "name": "chat-sdk",
+          "sha256": "4b57ca391f11d05ce5f9b43bd2d316ca1099947542a105162818122ba05fc5f7"
+        },
+        {
+          "name": "cms",
+          "sha256": "d5f22976cb562714110ecd2e358b5123cd12baaffec6d7dc6af086e272b93ff5"
+        },
+        {
+          "name": "cron-jobs",
+          "sha256": "16b197f8fc40559cc16c4aa1d535466d3f595ac2aec0b297203f1db23d98f873"
+        },
+        {
+          "name": "deployments-cicd",
+          "sha256": "0eb60b7627053f47eebe13685fb06c2ecee1cc3ada6fee283b3775a2a3ae4e64"
+        },
+        {
+          "name": "email",
+          "sha256": "bd601c2f88f5879ce01fc235efb902a8f50575eb0b24f445fe827ae0b909248c"
+        },
+        {
+          "name": "env-vars",
+          "sha256": "6390db2eaa8fece483672975cc23f308fe10286c08126b7db6566dda64ba31c4"
+        },
+        {
+          "name": "eve",
+          "sha256": "33139452b6dfec01a35b5f1d4089f7fa95075edfa593522855950c35e4bb492e"
+        },
+        {
+          "name": "geist",
+          "sha256": "000d1515d168deabce0097b86ceaf7b5cc6c891e505e6a80c40b65b46b47b77e"
+        },
+        {
+          "name": "geistdocs",
+          "sha256": "ebd9221a886c61a53e999382ca2bbcbd01e5100e7fe11a554da9bff1a4462284"
+        },
+        {
+          "name": "investigation-mode",
+          "sha256": "7fb010f9716e7c8f814976263a6ac5b64f1e266a9b3d71b0559fce015d93a86a"
+        },
+        {
+          "name": "json-render",
+          "sha256": "89f5c6e94dcc53310c569f9dadede009be51bddec04af50efa3b6a2181b05a24"
+        },
+        {
+          "name": "knowledge-update",
+          "sha256": "88e7a902e08fb6140cc637bd76e0836a67cf489054e9b3377f1972a37fc21da6"
+        },
+        {
+          "name": "marketplace",
+          "sha256": "57df1817f77785369753a2f8fbbfb21ed3859f7393a5d5e23376cd6ed47cf052"
+        },
+        {
+          "name": "micro",
+          "sha256": "8d694a0b60a57bf3ab7e61bdf555545a2c941acb1a8d2938bf94a0d7cd624fe4"
+        },
+        {
+          "name": "microfrontends",
+          "sha256": "aea264a84984cb809c1d8cc9bc9bde2cee8ec92d1101242d89ce743ac484807e"
+        },
+        {
+          "name": "ncc",
+          "sha256": "e37c814ba40e85f0e280a50c78b266a5b4b808f69cfe6231a46d306446cf0dc2"
+        },
+        {
+          "name": "next-cache-components",
+          "sha256": "337a928c251c4500b9107152c2560a5b506707a22f763dd94902b8fc5b3b44bd"
+        },
+        {
+          "name": "next-forge",
+          "sha256": "1427a3c22669d365b26daf1dfa1d67e599155679a4b8fc13651017ab761288e0"
+        },
+        {
+          "name": "next-upgrade",
+          "sha256": "3ed69b824fb67fd116886ce0d7c06104f7ab35f156f4cd9bba448952a3274ad0"
+        },
+        {
+          "name": "nextjs",
+          "sha256": "cdd014ce090e4a137abd81682238d994a41fcd73a626cd70a2af47e2451bbb0c"
+        },
+        {
+          "name": "observability",
+          "sha256": "ec9869baf54d7aaa65e34685deab4c855c23b2e65a9ed987ba2e9ce2ee0d4c48"
+        },
+        {
+          "name": "payments",
+          "sha256": "102127fccfef4a019e3944fd719f75dce1ad60237d0996ea0aa216636981cce4"
+        },
+        {
+          "name": "react-best-practices",
+          "sha256": "64cbd5962d4a6005e55503138c29930053d55dacc6290e60bad22ebeebca5fca"
+        },
+        {
+          "name": "routing-middleware",
+          "sha256": "0b9144b76ee253d169453505a7c9d8d42ceefe8ab835bc136b7c56402ae9877f"
+        },
+        {
+          "name": "runtime-cache",
+          "sha256": "d8c9263c079330012710b33de933c5568ce32a781478f0bfcb44d4187d0d846b"
+        },
+        {
+          "name": "satori",
+          "sha256": "e18bc83ab691fa888301a3678b7d7d888f2d8989d9ee9344ec192dec3c75fddc"
+        },
+        {
+          "name": "shadcn",
+          "sha256": "f624e06541dcf3c3c8cb3978fe924fa2fded979048f360ae4919f27edbb67fb2"
+        },
+        {
+          "name": "sign-in-with-vercel",
+          "sha256": "7e2484055684e96d6c2f3b968939b32cad8e75c224189110ae09e4de7cb1fadf"
+        },
+        {
+          "name": "swr",
+          "sha256": "3c88522d609da8c8bc981225f44471d436609b5acdf854fc40e8d29aae191d50"
+        },
+        {
+          "name": "turbopack",
+          "sha256": "92b7684d1900cdbb6e23529ff77c943d744fea6ddd5ffcc45468fa79654e8d77"
+        },
+        {
+          "name": "turborepo",
+          "sha256": "3c4b0658cedf2f342b49919d5116371a6f3c03a03759d1d6ff29a52d22059704"
+        },
+        {
+          "name": "v0-dev",
+          "sha256": "3fc9dc2b71b9fd27f1e95ac2df97eee81cb27550b4c6463615a4d492f4f2d22d"
+        },
+        {
+          "name": "vercel-agent",
+          "sha256": "4e1d77cd9405e40222a923f8a1bce4639ee24acf555f30a37c363a63c96d990f"
+        },
+        {
+          "name": "vercel-api",
+          "sha256": "74bf57484948269645b28eb1b6ed2b6b6691bf02cb1bec7b9ceb3fb91d906dbf"
+        },
+        {
+          "name": "vercel-cli",
+          "sha256": "0962de55d37c10eab8889dd8a90ca04d2747f2812102cd2f1e6aecefd7e533f7"
+        },
+        {
+          "name": "vercel-connect",
+          "sha256": "65438f9a3500e5fa94825a762bf271be201e5de68689f64f6fb805ce8292d152"
+        },
+        {
+          "name": "vercel-firewall",
+          "sha256": "ff7654dc6b4dba878e34a69951deee3ffd2e0779b88b0e29d062a960539c1991"
+        },
+        {
+          "name": "vercel-flags",
+          "sha256": "e668b1e4384bfbfbb0ac0df7c953183bb1a8956c5ba558d1f43836d09d9c5e46"
+        },
+        {
+          "name": "vercel-functions",
+          "sha256": "f7a80c5159847c8c8d22e3d02c5157e10e85aeac8d501eaeda8d8c4355af95e8"
+        },
+        {
+          "name": "vercel-queues",
+          "sha256": "8e12371a880cd754359a765a63b5d3d54243c11cc700cae6513e8cc95822f54c"
+        },
+        {
+          "name": "vercel-sandbox",
+          "sha256": "d549ffa8793afdb2e4ba60eacef1d004de1c25e938db1bdb99702d4c4ead07aa"
+        },
+        {
+          "name": "vercel-services",
+          "sha256": "1638be9f8ff41638bf4eba03d9880abd19ccc027b646ad25cddf429b61e07f45"
+        },
+        {
+          "name": "vercel-storage",
+          "sha256": "39790b7fe708b2ba845a08c7f5ee1eff6e0f2b799f09ebc898d00c0f8cd13866"
+        },
+        {
+          "name": "verification",
+          "sha256": "8baf446b9cc0894c85d8d79484ef8c72d03e8a6cac6f6bd20f672da708c929c9"
+        },
+        {
+          "name": "workflow",
+          "sha256": "e4f3981d54efc3de50c898eba48ba71ccf45dfd25ce8806c1e100f9826a9885b"
+        }
+      ]
+    },
+    {
+      "slug": "documents",
+      "name": "Documents",
+      "version": "26.905.11957",
+      "channel": "openai-primary-runtime",
+      "description": "Create and edit document artifacts in Codex, including Word files and Google Docs.",
+      "license": "MIT",
+      "manifest_sha256": "196b6667f9181760fe59dcc7394fac1467c7ab6023711d6f3f933ccecd8ca6f3",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "documents",
+          "sha256": "8ab26c226c6e4919989185934c44091d89dd67c9e86c1b960c3fd8f08dd90ed2"
+        }
+      ]
+    },
+    {
+      "slug": "pdf",
+      "name": "PDF",
+      "version": "26.905.11957",
+      "channel": "openai-primary-runtime",
+      "description": "Read, create, inspect, render, and verify PDF files in Codex.",
+      "license": "MIT",
+      "manifest_sha256": "8cf6f5d8067c166fa4000e9b3a0ad3f600f453d7d2f8601ac48c8f6be7c4f97b",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "pdf",
+          "sha256": "9e429bfc5ada20ccf25a531484e3dcc5da59811d936a7cc5dfd23dbf2dfadd31"
+        }
+      ]
+    },
+    {
+      "slug": "presentations",
+      "name": "Presentations",
+      "version": "26.905.11957",
+      "channel": "openai-primary-runtime",
+      "description": "Create, edit, render, verify, and export presentation slide decks. Use when Codex needs to build or modify a deck, slidedeck, presentation deck, slide deck, slides, PowerPoint, Google Slides, PPT, PPTX, .ppt, or .pptx file.",
+      "license": "MIT",
+      "manifest_sha256": "4d32b11f48c5457d7626cfb66f777c4e91bcfc388bb29f4e317638bc7337567a",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "presentations",
+          "sha256": "1491c1aa68c19ccc75e4eda7f7c66d664f8da503e376b31e4552310309446fba"
+        }
+      ]
+    },
+    {
+      "slug": "spreadsheets",
+      "name": "Spreadsheets",
+      "version": "26.905.11957",
+      "channel": "openai-primary-runtime",
+      "description": "Create, edit, analyze, visualize, render, and export spreadsheets, Microsoft Excel or Google Sheets-ready workbooks in Codex.",
+      "license": "MIT",
+      "manifest_sha256": "ef4ccdb445c4b4bd7190e0a28d76246f930fe8784ad188122a3036c77b0bd8ed",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "excel-live-control",
+          "sha256": "dde282af0ea3e186b04830a1255ce0eeade63042d53a2516ccb4c816986467a2"
+        },
+        {
+          "name": "spreadsheets",
+          "sha256": "b9d22e609239db30ad5a88452b71f9913d5baf4bac5c26864cbfcd8a455e8f5b"
+        }
+      ]
+    },
+    {
+      "slug": "template-creator",
+      "name": "Template Creator",
+      "version": "26.905.11957",
+      "channel": "openai-primary-runtime",
+      "description": "Create and update personal templates from files, Google Docs, Slides, and Sheets links, ImageGen or Product Design images, emails, Slack messages, and Site projects.",
+      "license": "Proprietary",
+      "manifest_sha256": "bf52837bc9f9cb201767e7f5a34c7cd1c4282a60601e3bfc3b8dcbeb37a242b6",
+      "state": "CACHE_MANIFEST_OBSERVED",
+      "enabled": "NOT_VERIFIED",
+      "authenticated": "NOT_VERIFIED",
+      "execution": "NOT_TESTED",
+      "skills": [
+        {
+          "name": "template-creator",
+          "sha256": "244bfef01d3e17c6013952ccf34621a90ddfee9c7828058245c3c46f51114944"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

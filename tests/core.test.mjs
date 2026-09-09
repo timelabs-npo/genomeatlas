@@ -8,9 +8,9 @@ const probe = JSON.parse(fs.readFileSync(new URL('../templates/probe-result.synt
 const task = JSON.parse(fs.readFileSync(new URL('../templates/task-request.json',import.meta.url)));
 
 test('actual registry: full search plus intersecting layer/status/probed filters',() => {
-  assert.equal(filterRegistry(data.registry.entries).length,63);
-  assert.equal(filterRegistry(data.registry.entries,{query:'smarts.bio',status:'DISCOVERY_OK_EXECUTION_404',probed:'true'}).length,1);
-  assert.equal(filterRegistry(data.registry.entries,{query:'smarts.bio',status:'DISCOVERY_OK_EXECUTION_404',probed:'false'}).length,0);
+  assert.equal(filterRegistry(data.registry.entries).length,134);
+  assert.equal(filterRegistry(data.registry.entries,{query:'smarts.bio',status:'AUTH_REQUIRED',probed:'true'}).length,1);
+  assert.equal(filterRegistry(data.registry.entries,{query:'smarts.bio',status:'AUTH_REQUIRED',probed:'false'}).length,0);
   assert.equal(filterRegistry(data.registry.entries,{layer:'skill-package'}).length,6);
   assert.equal(filterRegistry(data.registry.entries,{query:'NOT-A-REAL-TOOL'}).length,0);
 });

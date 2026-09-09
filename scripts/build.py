@@ -6,7 +6,7 @@ import re
 import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA_FILES = ['registry.json', 'panel.json', 'chains.json', 'probes.json', 'selected_accessions.txt', 'live_probes.json']
+DATA_FILES = ['registry.json', 'panel.json', 'chains.json', 'probes.json', 'selected_accessions.txt', 'live_probes.json', 'plugin-cache.json', 'current-probes.json', 'native-site-readback.json', 'copilot-reexecution.json']
 PUBLIC_FILES = ['index.html', 'assets/styles.css', 'assets/app.mjs', 'assets/core.mjs',
                 'assets/mark.svg', 'assets/data.mjs', 'LICENSE', 'THIRD_PARTY_NOTICES.md',
                 'schemas/task-request.schema.json', 'schemas/probe-result.schema.json',
@@ -38,7 +38,7 @@ def load_snapshot():
         raise ValueError('Duplicate registry IDs')
     manifest = {f'data/{name}': hashlib.sha256((ROOT / 'data' / name).read_bytes()).hexdigest() for name in DATA_FILES}
     return {'live':read_json('data/live_probes.json'), 'registry':registry, 'panel':panel, 'chains':chains, 'probes':read_json('data/probes.json'),
-            'native':read_json('evidence/native-tools.json'), 'manifest':manifest,
+            'native':read_json('evidence/native-tools-current.json'), 'manifest':manifest,
             'schemas':{'task':read_json('schemas/task-request.schema.json'), 'probe':read_json('schemas/probe-result.schema.json')}}
 
 
