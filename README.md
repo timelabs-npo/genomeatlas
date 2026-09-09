@@ -47,3 +47,6 @@ smarts.bio discovery responded, but the sequence catalog was empty and its agent
 ## Scientific boundary
 
 The intended study excludes Enterococcus and uses conserved marker proteins for the host tree, followed by independent R-M Type I, II/IIG, III and IV annotation. Missing/failed evidence is not biological absence. Complete computational system architecture is not proof of restriction activity. This release is the helper suite, **not a completed 177-genome phylogenomic analysis**.
+
+## Additional WD-tested helper
+The [independently tested helper](https://timelabs-npo.github.io/genomeatlas/helper/) is additive; existing GenomeAtlas content stays intact. Source and tests: integrations/site-helper-suite/.

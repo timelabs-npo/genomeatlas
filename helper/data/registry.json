@@ -1,0 +1,626 @@
+{
+  "version": "2026-09-09.1",
+  "project": "GenomeAtlas",
+  "repository": "timelabs-npo/GenomeAtlas",
+  "license": "MIT",
+  "scope": {
+    "genomes": 177,
+    "namedSpeciesApprox": 110,
+    "excludedGenus": "Enterococcus",
+    "status": "inherited-description",
+    "sourceId": "task-scope"
+  },
+  "session": {
+    "agentPath": "redacted",
+    "threadId": null,
+    "modelIdentity": "not-independently-observed",
+    "appControl": "Local headless Chromium CDP tested; native desktop app control not tested. Exposed CUA instructions disable native computer APIs.",
+    "nativeSites": {
+      "schema": "discovered",
+      "operations": [
+        "create_site",
+        "save_site_version",
+        "deploy_site_version",
+        "deploy_private_site_version"
+      ],
+      "execution": "not-tested",
+      "publication": "NOT_DEPLOYED",
+      "reason": "Requires an actual Sites deployment receipt; a static source or GitHub Pages URL is not a native ChatGPT Site."
+    }
+  },
+  "semantics": {
+    "installation": "Declared is a named dependency; installed is a local or explicitly sourced parent observation. Neither proves readiness.",
+    "schema": "Discovered means a callable argument schema was visible. Unknown means not inspected or not exposed.",
+    "probe": "Passed, failed, auth-required, or unknown, with the tested scope and source preserved. A catalog response is not authenticated analysis.",
+    "execution": "Tested is limited to the named action; parent-tested remains separately attributed. No biological execution was tested.",
+    "scientificAcceptance": "Not-assessed throughout this registry. Independent scientific review is separate from tool access, checksums, and software tests.",
+    "imports": "Imported receipts always remain unverified. Claimed success is a claim, not accepted execution evidence.",
+    "review": "Confirmation checkboxes are transient local review state, bound to one plan hash. They never authorize terminal, MCP, account, compute, or publication actions."
+  },
+  "sources": [
+    {
+      "id": "task-scope",
+      "kind": "inherited-description",
+      "title": "Inherited LAB R-M panel and workflow",
+      "date": "2026-09-09",
+      "summary": "User-supplied scope: 177 selected LAB genomes, approximately 110 named species, no Enterococcus. Versioned NCBI panel and both workflow branches are inherited descriptions. No genome rows, sequences, R-M states, or biological results were supplied or generated.",
+      "limits": "Panel membership, accession versions, and manuscript evidence are not present in this site."
+    },
+    {
+      "id": "parent-probes",
+      "kind": "parent-reported",
+      "title": "Parent-supplied operational probes",
+      "date": "2026-09-09",
+      "summary": "Parent reports a successful Windows remote command; Ubuntu under WSL1; a nonce round-trip Windows → Ubuntu /tmp → Windows; authenticated Windows gh with organization push/admin permissions; public MIT repository; Codex CLI 0.134.0 logged in using ChatGPT.",
+      "limits": "Historical parent observations, not re-executed here. No account names, device identifiers, home paths, or raw logs are included."
+    },
+    {
+      "id": "parent-integrations",
+      "kind": "parent-reported",
+      "title": "Parent-supplied integration limits",
+      "date": "2026-09-09",
+      "summary": "smarts.bio plugin present; authenticated discovery requires user login according to parent. BioNeMo is an installed skill toolkit, not a verified GPU endpoint.",
+      "limits": "No analysis, GPU endpoint, authenticated workspace access, or scientific result is established."
+    },
+    {
+      "id": "local-cli",
+      "kind": "locally-observed",
+      "title": "Bounded local CLI probes",
+      "date": "2026-09-09",
+      "summary": "node --version: v24.19.0. npm.cmd --version: 11.17.0. python --version: Python 3.14.6. gh --version: 2.96.0. codex.cmd --version: 0.153.4. Commands resolved for WSL and Copilot, but neither was executed. Specified scientific CLI names did not resolve on Windows PATH.",
+      "limits": "Version commands test only launch/version reporting. Authentication was not inspected. Windows PATH absence says nothing about WSL, other installations, or remote endpoints. npm --version initially failed because PowerShell blocked npm.ps1; npm.cmd succeeded."
+    },
+    {
+      "id": "local-connectors",
+      "kind": "locally-observed",
+      "title": "Exposed connector schemas and bounded discovery",
+      "date": "2026-09-09",
+      "summary": "RDC ping and remote command schemas are exposed. Untargeted RDC ping returned INVALID_ARGUMENT requiring a target device; no target was selected. smarts.bio smarts_list_tools({}) returned status success and 78 catalog entries. No workspace or analysis calls were made.",
+      "limits": "A tool catalog is not proof of authenticated workspace access or executable analysis. RDC current-session connectivity remains unconfirmed; account/device details are omitted."
+    },
+    {
+      "id": "local-sites",
+      "kind": "schema-observed",
+      "title": "Native Sites operations exposed",
+      "date": "2026-09-09",
+      "summary": "Session tool metadata exposes Sites create_site, save_site_version, deploy_site_version, and deploy_private_site_version. These operations were not called. Native publication is BLOCKED_BY_TASK: the user prohibited publishing, pushing, and changing settings.",
+      "limits": "Schema discovery does not establish provisioning, authentication, or successful deployment. This static artifact is not a deployed ChatGPT Site or a live GitHub Pages site.",
+      "url": "https://learn.chatgpt.com/docs/sites"
+    },
+    {
+      "id": "local-browser",
+      "kind": "locally-observed",
+      "title": "Local browser availability",
+      "date": "2026-09-09",
+      "summary": "Edge and Chrome executables were observed. Sandboxed attempts timed out at Page.enable; Chrome reported 152.0.7977.83. A temporary headless Chrome profile with --no-sandbox passed actual UI checks. No browser package was installed; the driver uses Node built-in WebSocket and the local DevTools Protocol.",
+      "limits": "The successful browser run disabled the browser sandbox only for its disposable test process. Native desktop app control, sandboxed renderer operation, Firefox, Safari, and assistive technology are not validated. Exact test counts and captures live in the implementation test report."
+    },
+    {
+      "id": "local-checkout",
+      "kind": "locally-observed",
+      "title": "Checkout and license inspection",
+      "date": "2026-09-09",
+      "summary": "LICENSE and README read before implementation. LICENSE is MIT, copyright 2026 timelabs non-profit corp. Branch: build/site-helper-suite-20260909. Observed starting HEAD: 9b7c396f7f40efc9d7b943920affba47a366bb2b. Requested base 3df231b621d4515c7f071667b9e47ba23fd978be3 is absent from this non-shallow checkout.",
+      "limits": "git merge-base returned 'fatal: Not a valid object name'. No fetch, reset, branch change, commit, push, or publication was performed."
+    },
+    {
+      "id": "parent-acceptance",
+      "kind": "parent-executed",
+      "title": "Actual endpoint and software checks",
+      "date": "2026-09-09",
+      "summary": "35 node unit/server tests and22 actual Edge browser checks passed on WD. Transport and single NCBI metadata probe executed.",
+      "limits": "smarts.bio integrity/repeat-call failures unresolved. No full biological run or native deployment established."
+    }
+  ],
+  "tools": [
+    {
+      "id": "rdc",
+      "name": "RDC",
+      "group": "Connection",
+      "role": "Remote Desktop Commander",
+      "installation": "installed",
+      "schema": "discovered",
+      "probe": "passed",
+      "execution": "tested",
+      "scientificAcceptance": "not-assessed",
+      "detail": "Parent verified bounded Windows command execution and exact Windows/Ubuntu nonce round-trip.",
+      "sourceIds": [
+        "local-connectors",
+        "parent-probes",
+        "parent-acceptance"
+      ]
+    },
+    {
+      "id": "github",
+      "name": "GitHub / gh",
+      "group": "Engineering",
+      "role": "Repository inspection and delivery",
+      "installation": "installed",
+      "schema": "unknown",
+      "probe": "passed",
+      "execution": "tested",
+      "scientificAcceptance": "not-assessed",
+      "detail": "Authenticated WD GitHub write/read probe passed on a separate branch. A separate connector read the exact committed nonce.",
+      "sourceIds": [
+        "local-cli",
+        "parent-probes",
+        "parent-acceptance"
+      ]
+    },
+    {
+      "id": "codex",
+      "name": "Codex",
+      "group": "Engineering",
+      "role": "Implementation assistant and CLI",
+      "installation": "installed",
+      "schema": "unknown",
+      "probe": "passed",
+      "execution": "tested",
+      "scientificAcceptance": "not-assessed",
+      "detail": "An actual codex exec thread started on WD. Completion is not asserted; candidate site tests were independently executed by the parent.",
+      "sourceIds": [
+        "local-cli",
+        "parent-probes",
+        "parent-acceptance"
+      ]
+    },
+    {
+      "id": "copilot",
+      "name": "Copilot",
+      "group": "Engineering",
+      "role": "Optional coding assistance",
+      "installation": "installed",
+      "schema": "unknown",
+      "probe": "unknown",
+      "execution": "not-tested",
+      "scientificAcceptance": "not-assessed",
+      "detail": "Command resolves on Windows PATH. Version, authentication, generation, and execution unknown.",
+      "sourceIds": [
+        "local-cli"
+      ]
+    },
+    {
+      "id": "wsl",
+      "name": "WSL / Ubuntu",
+      "group": "Connection",
+      "role": "Linux execution environment",
+      "installation": "installed",
+      "schema": "unknown",
+      "probe": "passed",
+      "execution": "tested",
+      "scientificAcceptance": "not-assessed",
+      "detail": "Ubuntu command execution, temporary-file creation and Windows round-trip verified. Initial probe identifies WSL1; no conversion performed.",
+      "sourceIds": [
+        "local-cli",
+        "parent-probes",
+        "parent-acceptance"
+      ]
+    },
+    {
+      "id": "python",
+      "name": "Python",
+      "group": "Engineering",
+      "role": "Local scripting",
+      "installation": "installed",
+      "schema": "unknown",
+      "probe": "passed",
+      "execution": "tested",
+      "scientificAcceptance": "not-assessed",
+      "detail": "Python 3.14.6 launch/version probe passed. No biological packages or computations tested.",
+      "sourceIds": [
+        "local-cli"
+      ]
+    },
+    {
+      "id": "node",
+      "name": "Node.js",
+      "group": "Engineering",
+      "role": "Static serving and site tests",
+      "installation": "installed",
+      "schema": "unknown",
+      "probe": "passed",
+      "execution": "tested",
+      "scientificAcceptance": "not-assessed",
+      "detail": "Node v24.19.0; npm.cmd 11.17.0. No browser runtime dependency. Site tests have their own report.",
+      "sourceIds": [
+        "local-cli"
+      ]
+    },
+    {
+      "id": "ncbi",
+      "name": "NCBI Datasets",
+      "group": "Biology",
+      "role": "Versioned genome panel retrieval",
+      "installation": "declared",
+      "schema": "unknown",
+      "probe": "passed",
+      "execution": "tested",
+      "scientificAcceptance": "not-assessed",
+      "detail": "One public versioned NCBI assembly metadata request succeeded. No full genome/protein download or phylogenetic computation performed.",
+      "sourceIds": [
+        "task-scope",
+        "local-cli",
+        "parent-acceptance"
+      ]
+    },
+    {
+      "id": "gtotree",
+      "name": "GToTree / HMMER",
+      "group": "Biology",
+      "role": "Conserved single-copy marker families",
+      "installation": "declared",
+      "schema": "unknown",
+      "probe": "unknown",
+      "execution": "not-tested",
+      "scientificAcceptance": "not-assessed",
+      "detail": "hmmsearch did not resolve on Windows PATH. GToTree installation unknown. No marker search or acceptance.",
+      "sourceIds": [
+        "task-scope",
+        "local-cli"
+      ]
+    },
+    {
+      "id": "mafft",
+      "name": "MAFFT / trimAl",
+      "group": "Biology",
+      "role": "Independent marker alignments and trimming",
+      "installation": "declared",
+      "schema": "unknown",
+      "probe": "unknown",
+      "execution": "not-tested",
+      "scientificAcceptance": "not-assessed",
+      "detail": "mafft and trimal did not resolve on Windows PATH. No alignments or trimming performed.",
+      "sourceIds": [
+        "task-scope",
+        "local-cli"
+      ]
+    },
+    {
+      "id": "iqtree",
+      "name": "IQ-TREE",
+      "group": "Biology",
+      "role": "Host phylogeny from concatenated markers",
+      "installation": "declared",
+      "schema": "unknown",
+      "probe": "unknown",
+      "execution": "not-tested",
+      "scientificAcceptance": "not-assessed",
+      "detail": "iqtree did not resolve on Windows PATH. No tree, support values, or evolutionary conclusions generated.",
+      "sourceIds": [
+        "task-scope",
+        "local-cli"
+      ]
+    },
+    {
+      "id": "defensefinder",
+      "name": "DefenseFinder",
+      "group": "Biology",
+      "role": "R-M candidate detection",
+      "installation": "declared",
+      "schema": "unknown",
+      "probe": "unknown",
+      "execution": "not-tested",
+      "scientificAcceptance": "not-assessed",
+      "detail": "defense-finder did not resolve on Windows PATH. No calls, hits, locus states, or classifications generated.",
+      "sourceIds": [
+        "task-scope",
+        "local-cli"
+      ]
+    },
+    {
+      "id": "rebase",
+      "name": "REBASE",
+      "group": "Reference",
+      "role": "R-M reference resource",
+      "installation": "declared",
+      "schema": "unknown",
+      "probe": "unknown",
+      "execution": "not-tested",
+      "scientificAcceptance": "not-assessed",
+      "detail": "Declared reference role. Access, licensing for any future data reuse, and scientific review remain unknown.",
+      "sourceIds": [
+        "task-scope"
+      ]
+    },
+    {
+      "id": "geneious",
+      "name": "Geneious / iTOL",
+      "group": "Biology",
+      "role": "Host tree export and reviewed ring presentation",
+      "installation": "declared",
+      "schema": "unknown",
+      "probe": "unknown",
+      "execution": "not-tested",
+      "scientificAcceptance": "not-assessed",
+      "detail": "Declared workflow destinations. Neither application connectivity nor any export was tested.",
+      "sourceIds": [
+        "task-scope"
+      ]
+    },
+    {
+      "id": "smarts",
+      "name": "smarts.bio",
+      "group": "Connection",
+      "role": "Optional bioinformatics connector",
+      "installation": "installed",
+      "schema": "discovered",
+      "probe": "failed",
+      "execution": "tested",
+      "scientificAcceptance": "not-assessed",
+      "detail": "Catalog/workspace discovery and bounded calls returned. GC numeric output agreed; provider checksum did not match independent SHA-256. Latest repeat returned tool-not-found404. Rediscovery and integrity repair required.",
+      "sourceIds": [
+        "parent-integrations",
+        "local-connectors",
+        "parent-acceptance"
+      ]
+    },
+    {
+      "id": "bionemo",
+      "name": "BioNeMo",
+      "group": "Reference",
+      "role": "Installed skill toolkit",
+      "installation": "installed",
+      "schema": "unknown",
+      "probe": "unknown",
+      "execution": "not-tested",
+      "scientificAcceptance": "not-assessed",
+      "detail": "Installed BioNeMo skill toolkit and official genomics guidance inspected. nvidia-smi and pbrun absent on initial WD probe; no GPU or hosted inference validated.",
+      "sourceIds": [
+        "parent-integrations",
+        "parent-acceptance"
+      ]
+    },
+    {
+      "id": "alphagenome",
+      "name": "AlphaGenome",
+      "group": "Reference",
+      "role": "Optional engineering reference",
+      "installation": "declared",
+      "schema": "unknown",
+      "probe": "unknown",
+      "execution": "not-tested",
+      "scientificAcceptance": "not-assessed",
+      "detail": "Optional engineering reference only; outside this LAB R-M workflow. No API, model, account, or biological capability tested.",
+      "sourceIds": [
+        "task-scope"
+      ]
+    },
+    {
+      "id": "sites",
+      "name": "Native ChatGPT Sites",
+      "group": "Publishing",
+      "role": "Native site creation and publication",
+      "installation": "declared",
+      "schema": "discovered",
+      "probe": "unknown",
+      "execution": "not-tested",
+      "scientificAcceptance": "not-assessed",
+      "detail": "Creation and publishing schemas are exposed. Publication BLOCKED_BY_TASK; no site created or deployed.",
+      "sourceIds": [
+        "local-sites"
+      ]
+    },
+    {
+      "id": "browser",
+      "name": "Browser automation",
+      "group": "Engineering",
+      "role": "Real browser UI verification",
+      "installation": "installed",
+      "schema": "unknown",
+      "probe": "passed",
+      "execution": "tested",
+      "scientificAcceptance": "not-assessed",
+      "detail": "Parent executed22 Edge browser checks on WD, including desktop/mobile screenshots, imports, exports and authority non-promotion.",
+      "sourceIds": [
+        "local-browser",
+        "parent-acceptance"
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "id": "panel",
+      "name": "Versioned NCBI genome panel",
+      "branch": "Shared",
+      "toolIds": [
+        "ncbi"
+      ],
+      "dependsOn": [],
+      "description": "Accession versions and a panel manifest must fix the selected genomes. The inherited panel describes 177 LAB genomes and approximately 110 named species; Enterococcus is excluded.",
+      "acceptance": "Panel manifest with accession.version and checksum; no rows supplied.",
+      "status": "not-run",
+      "sourceIds": [
+        "task-scope"
+      ]
+    },
+    {
+      "id": "proteins",
+      "name": "Annotated proteins",
+      "branch": "Shared",
+      "toolIds": [
+        "ncbi"
+      ],
+      "dependsOn": [
+        "panel"
+      ],
+      "description": "Preserve assembly, annotation version, protein identifiers, and provenance before either branch begins.",
+      "acceptance": "Protein annotation provenance tied to the versioned panel; no sequences supplied.",
+      "status": "not-run",
+      "sourceIds": [
+        "task-scope"
+      ]
+    },
+    {
+      "id": "markers",
+      "name": "Conserved single-copy marker families",
+      "branch": "Host phylogeny",
+      "toolIds": [
+        "gtotree"
+      ],
+      "dependsOn": [
+        "proteins"
+      ],
+      "description": "Identify conserved single-copy marker families with explicit family definitions and copy-count review.",
+      "acceptance": "Family membership, copy-count QC, tool and database versions.",
+      "status": "not-run",
+      "sourceIds": [
+        "task-scope"
+      ]
+    },
+    {
+      "id": "alignments",
+      "name": "Independent alignments",
+      "branch": "Host phylogeny",
+      "toolIds": [
+        "mafft"
+      ],
+      "dependsOn": [
+        "markers"
+      ],
+      "description": "Align each marker family independently. Record trimming parameters and inspect each alignment.",
+      "acceptance": "Per-family alignments, trimming decisions, and QC.",
+      "status": "not-run",
+      "sourceIds": [
+        "task-scope"
+      ]
+    },
+    {
+      "id": "concatenation",
+      "name": "Concatenation",
+      "branch": "Host phylogeny",
+      "toolIds": [
+        "gtotree",
+        "python"
+      ],
+      "dependsOn": [
+        "alignments"
+      ],
+      "description": "Join reviewed marker alignments in a recorded order and retain partition boundaries.",
+      "acceptance": "Concatenated alignment plus marker order and partitions.",
+      "status": "not-run",
+      "sourceIds": [
+        "task-scope"
+      ]
+    },
+    {
+      "id": "host-tree",
+      "name": "IQ-TREE host phylogeny",
+      "branch": "Host phylogeny",
+      "toolIds": [
+        "iqtree"
+      ],
+      "dependsOn": [
+        "concatenation"
+      ],
+      "description": "Infer the host phylogeny only from the marker alignment. Record model, partitions, support procedure, seed, and version.",
+      "acceptance": "Tree and run provenance with independent scientific review.",
+      "status": "not-run",
+      "sourceIds": [
+        "task-scope"
+      ]
+    },
+    {
+      "id": "export",
+      "name": "Geneious export",
+      "branch": "Host phylogeny",
+      "toolIds": [
+        "geneious"
+      ],
+      "dependsOn": [
+        "host-tree"
+      ],
+      "description": "Export the reviewed host phylogeny for downstream presentation. Keep tip identifiers mapped to the panel.",
+      "acceptance": "Reviewed export and tip-to-panel identifier mapping.",
+      "status": "not-run",
+      "sourceIds": [
+        "task-scope"
+      ]
+    },
+    {
+      "id": "ordered",
+      "name": "Ordered proteins and coordinates",
+      "branch": "R-M annotation",
+      "toolIds": [
+        "python"
+      ],
+      "dependsOn": [
+        "proteins"
+      ],
+      "description": "Retain protein order and genomic coordinates for locus interpretation, independently of tree inference.",
+      "acceptance": "Ordered protein IDs, contig IDs, strand, and coordinates.",
+      "status": "not-run",
+      "sourceIds": [
+        "task-scope"
+      ]
+    },
+    {
+      "id": "detection",
+      "name": "DefenseFinder",
+      "branch": "R-M annotation",
+      "toolIds": [
+        "defensefinder"
+      ],
+      "dependsOn": [
+        "ordered"
+      ],
+      "description": "Run candidate detection only against explicitly versioned protein and coordinate inputs.",
+      "acceptance": "Candidate output plus tool, model, and input provenance.",
+      "status": "not-run",
+      "sourceIds": [
+        "task-scope"
+      ]
+    },
+    {
+      "id": "hits",
+      "name": "Complete versus unreviewed hits",
+      "branch": "R-M annotation",
+      "toolIds": [
+        "defensefinder"
+      ],
+      "dependsOn": [
+        "detection"
+      ],
+      "description": "Separate hits described as complete by the method from unreviewed candidates. Complete does not mean scientifically accepted.",
+      "acceptance": "Separate candidate categories with method criteria; no counts supplied.",
+      "status": "not-run",
+      "sourceIds": [
+        "task-scope"
+      ]
+    },
+    {
+      "id": "review",
+      "name": "Manual locus review",
+      "branch": "R-M annotation",
+      "toolIds": [
+        "geneious",
+        "rebase"
+      ],
+      "dependsOn": [
+        "hits"
+      ],
+      "description": "Review candidate loci and context manually. Missing or unreviewed evidence is not an absence call.",
+      "acceptance": "Locus decisions, reviewer rationale, and source evidence.",
+      "status": "not-run",
+      "sourceIds": [
+        "task-scope"
+      ]
+    },
+    {
+      "id": "rings",
+      "name": "Four reviewed R-M rings",
+      "branch": "R-M annotation",
+      "toolIds": [
+        "geneious"
+      ],
+      "dependsOn": [
+        "review"
+      ],
+      "description": "Present Type I, Type II (including IIG), Type III, and Type IV annotations against the host tree. Rings encode reviewed annotation, not a separate inferred tree.",
+      "acceptance": "Four reviewed annotation tracks linked to the host export; no R-M states supplied.",
+      "status": "not-run",
+      "sourceIds": [
+        "task-scope"
+      ]
+    }
+  ]
+}

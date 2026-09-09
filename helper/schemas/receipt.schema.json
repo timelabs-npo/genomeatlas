@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GenomeAtlas unverified receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "kind",
+    "receiptId",
+    "stageId",
+    "toolId",
+    "planHash",
+    "plan",
+    "inputHashes",
+    "outputs",
+    "claimedOutcome",
+    "evidenceStatus",
+    "scientificAcceptance",
+    "notes"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "kind": {
+      "const": "receipt"
+    },
+    "receiptId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "stageId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "toolId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "planHash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "kind",
+        "registryVersion",
+        "registryHash",
+        "stageId",
+        "toolId",
+        "inputs",
+        "parameters",
+        "purpose",
+        "authority",
+        "planHash"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "1.0"
+        },
+        "kind": {
+          "const": "plan"
+        },
+        "registryVersion": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "stageId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "toolId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "inputs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 16,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label",
+              "bytes",
+              "sha256"
+            ],
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._ -]*$"
+              },
+              "bytes": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 8388608
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^sha256:[a-f0-9]{64}$"
+              }
+            }
+          }
+        },
+        "parameters": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "purpose": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        },
+        "authority": {
+          "const": "local-review-only"
+        },
+        "planHash": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "registryHash": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        }
+      }
+    },
+    "inputHashes": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 16,
+      "items": {
+        "type": "string",
+        "pattern": "^sha256:[a-f0-9]{64}$"
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "label",
+          "bytes",
+          "sha256"
+        ],
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._ -]*$"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 8388608
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^sha256:[a-f0-9]{64}$"
+          }
+        }
+      }
+    },
+    "claimedOutcome": {
+      "enum": [
+        "not-run",
+        "succeeded",
+        "failed",
+        "unknown"
+      ]
+    },
+    "evidenceStatus": {
+      "const": "unverified"
+    },
+    "scientificAcceptance": {
+      "const": "not-assessed"
+    },
+    "notes": {
+      "type": "string",
+      "maxLength": 4000
+    }
+  }
+}
