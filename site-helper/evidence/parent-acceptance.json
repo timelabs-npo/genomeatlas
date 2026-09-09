@@ -1,0 +1,23 @@
+{
+  "schema":"genomeatlas.parent-acceptance/1",
+  "status":"CODE_VERIFIED_NOT_SCIENTIFICALLY_ACCEPTED",
+  "source":"WD-local Codex implementation, copied to isolated release worktree",
+  "data":{"frozen_accessions":177,"registry_entries":63,"proposed_chains":8},
+  "tests":[
+    {"test":"release build","endpoint":"WD","exit_code":0},
+    {"test":"Python integrity and synthetic adversarial contracts","endpoint":"WD","count":22,"exit_code":0},
+    {"test":"Node contracts","endpoint":"WD","count":13,"exit_code":0},
+    {"test":"earlier identical static candidate Python suite","endpoint":"WD_Ubuntu","count":21,"exit_code":0}
+  ],
+  "probes":[
+    {"id":"wd-ubuntu-roundtrip","status":"PASS","scope":"nonce and hash verification in both directions"},
+    {"id":"wd-github-chatgpt-roundtrip","status":"PASS","scope":"public nonce commit and connector acknowledgement","commit":"e264c63e52332978dafe778ea106f4b28130fa03"},
+    {"id":"ncbi-single-assembly-metadata","status":"PASS","http_status":200,"accession":"GCF_023499275.1","sha256":"54a9579e4b7ad2f2c25a3a270bf3272a2aaf47d3b146d425812232ecc42e2886","genome_downloaded":false},
+    {"id":"bionemo","status":"SKILL_READ_RUNTIME_NOT_READY","scope":"genomics-workflow-acceleration v1.1.0; no nvidia-smi or pbrun found; no inference"},
+    {"id":"smarts-bio","status":"AUTH_REQUIRED","scope":"tool discovery; no scientific job"}
+  ],
+  "not_tested":["current UI in browser","native deployed Site visitor access","full LAB phylogeny","R-M annotation","experimental evidence","GPU parity"],
+  "browser_note":"Local Chrome CDP failed, and further browser access was declined. No browser acceptance is claimed for this Codex build.",
+  "native_site_note":"Owner-restricted project metadata was reached separately; no accepted version/deployment is recorded here. Optional slug rename blocked by approval policy; not retried.",
+  "raw_private_logs":"retained on authorized endpoint; not published"
+}

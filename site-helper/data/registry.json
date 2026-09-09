@@ -1,0 +1,446 @@
+{
+  "schema": "genomeatlas.registry/1",
+  "entries": [
+    {
+      "id": "AI_Wisebase",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Academic_Writing_Toolkit",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Ace_Knowledge_Graph",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Adobe",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Adobe_Acrobat",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "AhaMotion",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Airtable",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Apple_Music",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "BioRender",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Canva",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Chessy",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Consensus",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Coursera",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Elicit",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Figma",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Finances",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Firecrawl",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Genomic_Intelligence",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "GitHub",
+      "layer": "connector",
+      "status": "PROBED",
+      "scope": "WD gh authenticated; org admin membership and repository read succeeded",
+      "probed": true
+    },
+    {
+      "id": "Gmail",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Google_Calendar",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Google_Contacts",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Google_Drive",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Higgsfield",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Hugging_Face",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Inductive_Bio",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Network_Solutions",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "OpenAI_Platform",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Plugin_Management",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Private_MD_Labs",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Proto",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Remote_Desktop_Commander",
+      "layer": "connector",
+      "status": "PROBED",
+      "scope": "WD shell commands and filesystem nonce test succeeded",
+      "probed": true
+    },
+    {
+      "id": "Rowan",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Shazam",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Spotify",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Tamarind_Bio",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Target",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Undermind",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Vercel",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Wolfram",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "eSIM_Copilot",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "files",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "smarts.bio:_AI_for_biology",
+      "layer": "connector",
+      "status": "AUTH_REQUIRED",
+      "scope": "smarts_list_tools asked for login; no analysis job",
+      "probed": true
+    },
+    {
+      "id": "bionemo-agent-toolkit",
+      "layer": "skill-package",
+      "status": "SKILL_READ",
+      "scope": "genomics-workflow-acceleration v1.1.0 read; no GPU inference",
+      "probed": true
+    },
+    {
+      "id": "openai-developers",
+      "layer": "skill-package",
+      "status": "INSTALLED_NOT_EXECUTED",
+      "scope": "Skill instructions, not proof of runtime or API credentials",
+      "probed": false
+    },
+    {
+      "id": "life-sciences-databases",
+      "layer": "skill-package",
+      "status": "INSTALLED_NOT_EXECUTED",
+      "scope": "Skill instructions, not proof of runtime or API credentials",
+      "probed": false
+    },
+    {
+      "id": "life-sciences-literature",
+      "layer": "skill-package",
+      "status": "INSTALLED_NOT_EXECUTED",
+      "scope": "Skill instructions, not proof of runtime or API credentials",
+      "probed": false
+    },
+    {
+      "id": "build-web-apps",
+      "layer": "skill-package",
+      "status": "INSTALLED_NOT_EXECUTED",
+      "scope": "Skill instructions, not proof of runtime or API credentials",
+      "probed": false
+    },
+    {
+      "id": "build-web-data-visualization",
+      "layer": "skill-package",
+      "status": "INSTALLED_NOT_EXECUTED",
+      "scope": "Skill instructions, not proof of runtime or API credentials",
+      "probed": false
+    },
+    {
+      "id": "NCBI_Datasets",
+      "layer": "CLI-or-data-service",
+      "status": "NOT_TESTED",
+      "scope": "Proposed for the LAB RM chain",
+      "probed": false
+    },
+    {
+      "id": "GToTree",
+      "layer": "CLI-or-data-service",
+      "status": "NOT_TESTED",
+      "scope": "Proposed for the LAB RM chain",
+      "probed": false
+    },
+    {
+      "id": "HMMER",
+      "layer": "CLI-or-data-service",
+      "status": "NOT_TESTED",
+      "scope": "Proposed for the LAB RM chain",
+      "probed": false
+    },
+    {
+      "id": "MAFFT",
+      "layer": "CLI-or-data-service",
+      "status": "NOT_TESTED",
+      "scope": "Proposed for the LAB RM chain",
+      "probed": false
+    },
+    {
+      "id": "trimAl",
+      "layer": "CLI-or-data-service",
+      "status": "NOT_TESTED",
+      "scope": "Proposed for the LAB RM chain",
+      "probed": false
+    },
+    {
+      "id": "IQ-TREE",
+      "layer": "CLI-or-data-service",
+      "status": "NOT_TESTED",
+      "scope": "Proposed for the LAB RM chain",
+      "probed": false
+    },
+    {
+      "id": "DefenseFinder",
+      "layer": "CLI-or-data-service",
+      "status": "NOT_TESTED",
+      "scope": "Proposed for the LAB RM chain",
+      "probed": false
+    },
+    {
+      "id": "REBASE",
+      "layer": "CLI-or-data-service",
+      "status": "NOT_TESTED",
+      "scope": "Proposed for the LAB RM chain",
+      "probed": false
+    },
+    {
+      "id": "Geneious",
+      "layer": "CLI-or-data-service",
+      "status": "NOT_TESTED",
+      "scope": "Proposed for the LAB RM chain",
+      "probed": false
+    },
+    {
+      "id": "iTOL",
+      "layer": "CLI-or-data-service",
+      "status": "NOT_TESTED",
+      "scope": "Proposed for the LAB RM chain",
+      "probed": false
+    },
+    {
+      "id": "AlphaGenome",
+      "layer": "CLI-or-data-service",
+      "status": "NOT_TESTED",
+      "scope": "Proposed for the LAB RM chain",
+      "probed": false
+    },
+    {
+      "id": "Codex_WD",
+      "layer": "CLI-or-data-service",
+      "status": "AUTH_PROBED",
+      "scope": "CLI0.153.4 installed project-locally; ChatGPT login detected",
+      "probed": true
+    },
+    {
+      "id": "WSL_Ubuntu",
+      "layer": "CLI-or-data-service",
+      "status": "PROBED",
+      "scope": "WSL1 Ubuntu Python3.14.4; nonce Windows-to-Ubuntu-to-Windows passes",
+      "probed": true
+    },
+    {
+      "id": "ChatGPT_Sites",
+      "layer": "CLI-or-data-service",
+      "status": "NOT_DEPLOYED",
+      "scope": "Native deployment tool has not been observed",
+      "probed": true
+    }
+  ]
+}

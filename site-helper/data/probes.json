@@ -1,0 +1,23 @@
+{
+  "schema": "genomeatlas.probes/1",
+  "receipts": [
+    {
+      "status": "PASS",
+      "windows_to_ubuntu": true,
+      "ubuntu_to_windows": true,
+      "nonce": "GENOMEATLAS_94c65b1d_20260909",
+      "id": "wd-wsl-roundtrip",
+      "scope": "FILE_EXCHANGE_ONLY"
+    },
+    {
+      "id": "github-org",
+      "status": "PASS",
+      "scope": "AUTHENTICATED_READ"
+    },
+    {
+      "id": "smarts-bio",
+      "status": "AUTH_REQUIRED",
+      "scope": "DISCOVERY_ONLY"
+    }
+  ]
+}
