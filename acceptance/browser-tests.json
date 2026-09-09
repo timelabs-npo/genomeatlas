@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "scope": "actual WD Chrome browser; synthetic receipt input; no biological execution",
+  "checks": [
+    {
+      "name": "page identity",
+      "pass": true
+    },
+    {
+      "name": "177 accession rows",
+      "pass": true
+    },
+    {
+      "name": "empty search",
+      "pass": true
+    },
+    {
+      "name": "restore registry",
+      "pass": true
+    },
+    {
+      "name": "flow selected state",
+      "pass": true
+    },
+    {
+      "name": "confirmation is not execution",
+      "pass": true
+    },
+    {
+      "name": "untrusted markup inert",
+      "pass": true
+    },
+    {
+      "name": "mobile no document overflow",
+      "pass": true
+    },
+    {
+      "name": "no page errors",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "url_local_only": true
+}

@@ -1,0 +1,75 @@
+{
+  "time_utc": "2026-09-09T15:20:31.729814+00:00",
+  "scope": "code and synthetic controls, NOT biological execution",
+  "base_commit": "d51e6b8633c6e75cdd988e05cf248733f00df818",
+  "copilot_source_commit": "388cc5e60bb16f1f4a6fb7e4b47239a1120b2999",
+  "commands": [
+    {
+      "argv": [
+        "python",
+        "scripts/build_data.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: public JSON and file-compatible bundle match\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python",
+        "scripts/verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: 10 invariant groups; 177 unique versioned accession records; byte identity preserved\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "node",
+        "--test",
+        "tests/contracts.test.js"
+      ],
+      "exit_code": 0,
+      "stdout": "\u2714 valid request and import (1.5087ms)\n\u2714 missing inputs rejected (1.0004ms)\n\u2714 duplicate input rejected (0.2391ms)\n\u2714 consent is not execution (0.1886ms)\n\u2714 approval and receipt cannot enter request (0.1202ms)\n\u2714 malformed imports rejected (0.3638ms)\n\u2714 oversize UTF8 rejected (0.3264ms)\n\u2714 receipt stays untrusted even if claim passed (0.209ms)\n\u2714 receipt unknown fields and false verification rejected (0.2424ms)\n\u2714 receipt invalid status and text rejected (0.5201ms)\n\u2714 markup retained as literal text for inert rendering (0.3505ms)\n\u2714 failed is not absent (0.1646ms)\n\u2714 unknown missing or not tested is not absent (0.2034ms)\n\u2714 raw hit remains U and cassette is not proof (0.0882ms)\n\u2714 curated P needs exact strain evidence (0.9538ms)\n\u2714 NOT_DETECTED requires complete documented exact strain assessment (0.1803ms)\n\u2714 state vocabulary and duplicate tool IDs (0.7336ms)\n\u2714 unallowed job and negative budget rejected (0.1894ms)\n\u2139 tests 18\n\u2139 suites 0\n\u2139 pass 18\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 80.769\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_no_deployment (test_contracts.Contracts.test_no_deployment) ... ok\ntest_node_contract_suite (test_contracts.Contracts.test_node_contract_suite) ... ok\ntest_parent_reports_attributed (test_contracts.Contracts.test_parent_reports_attributed) ... ok\ntest_repository_invariants (test_contracts.Contracts.test_repository_invariants) ... ok\ntest_bad_state_and_empty_contract_rejected (test_hardening.Hardening.test_bad_state_and_empty_contract_rejected) ... ok\ntest_changed_accession_order_rejected (test_hardening.Hardening.test_changed_accession_order_rejected) ... ok\ntest_changed_accession_version_rejected (test_hardening.Hardening.test_changed_accession_version_rejected) ... ok\ntest_duplicate_tool_id_rejected (test_hardening.Hardening.test_duplicate_tool_id_rejected) ... ok\ntest_exact_accession_bytes_pass (test_hardening.Hardening.test_exact_accession_bytes_pass) ... ok\ntest_missing_contract_rejected (test_hardening.Hardening.test_missing_contract_rejected) ... ok\ntest_short_or_duplicate_panel_rejected (test_hardening.Hardening.test_short_or_duplicate_panel_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.152s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "probes/tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_artifact_tampering (test_validate_receipt.ValidateReceiptCliTests.test_artifact_tampering) ... ok\ntest_bad_and_empty_hashes (test_validate_receipt.ValidateReceiptCliTests.test_bad_and_empty_hashes) ... ok\ntest_boolean_exit_code_is_rejected (test_validate_receipt.ValidateReceiptCliTests.test_boolean_exit_code_is_rejected) ... ok\ntest_duplicate_keys (test_validate_receipt.ValidateReceiptCliTests.test_duplicate_keys) ... ok\ntest_end_before_start (test_validate_receipt.ValidateReceiptCliTests.test_end_before_start) ... ok\ntest_invalid_commit (test_validate_receipt.ValidateReceiptCliTests.test_invalid_commit) ... ok\ntest_invalid_timezone (test_validate_receipt.ValidateReceiptCliTests.test_invalid_timezone) ... ok\ntest_malformed_json (test_validate_receipt.ValidateReceiptCliTests.test_malformed_json) ... ok\ntest_missing_fields (test_validate_receipt.ValidateReceiptCliTests.test_missing_fields) ... ok\ntest_pass_with_nonzero_exit_code (test_validate_receipt.ValidateReceiptCliTests.test_pass_with_nonzero_exit_code) ... ok\ntest_path_traversal_in_labels (test_validate_receipt.ValidateReceiptCliTests.test_path_traversal_in_labels) ... ok\ntest_unknown_fields (test_validate_receipt.ValidateReceiptCliTests.test_unknown_fields) ... ok\ntest_valid_receipt_and_artifact (test_validate_receipt.ValidateReceiptCliTests.test_valid_receipt_and_artifact) ... ok\n\n----------------------------------------------------------------------\nRan 13 tests in 1.148s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'README.md', CRLF will be replaced by LF the next time Git touches it\n"
+    }
+  ]
+}
