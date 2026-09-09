@@ -1,0 +1,29 @@
+
+> genomeatlas-site-helper-suite@1.0.0 test:browser
+> node tests/browser.test.mjs
+
+Browser: Edg/152.0.4191.66
+PASS desktop overview, inherited scope, publication boundary and screenshot
+PASS five-view navigation and browser history
+PASS tool search, category, probe filtering and empty state
+PASS source inspection opens attributed detail and Escape closes dialog
+PASS JSON and CSV tool downloads reflect active filter
+PASS SVG workflow selection and keyboard activation
+PASS receipt empty state and malformed JSON rejection
+PASS receipt negative: unknown stage
+PASS receipt negative: unknown tool
+PASS receipt negative: missing hashes
+PASS receipt negative: unsupported verified claim
+PASS receipt negative: unsupported scientific acceptance
+PASS HTML injection is literal text; no element, code execution or URL request
+PASS receipt export retains unverified status and safely quotes CSV
+PASS real file hashing, plan generation and local checklist
+PASS plan, template and review download hash bindings
+PASS matching template can import but remains unverified
+PASS input change clears review; changed-input receipt reuse rejected
+PASS mobile navigation, no page overflow, readable controls and actual screenshot
+PASS tablet layout and fresh empty state on reload
+PASS registry network failure shows helpful error and retry recovers
+PASS GitHub Pages style subdirectory serves all views and relative assets
+PASS normal app requests stay local and no uncaught JavaScript errors
+23 browser checks passed. Screenshots are actual browser captures in .test-artifacts/.

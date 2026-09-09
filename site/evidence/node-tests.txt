@@ -1,0 +1,50 @@
+﻿
+> genomeatlas-site-helper-suite@1.0.0 test
+> node --test tests/unit.test.mjs tests/server.test.mjs
+
+▶ static server serves only public files, uses correct headers, and is read-only
+  ✔ HTML and module MIME types (41.7388ms)
+  ✔ CSP disallows bridges and embedding (6.7539ms)
+  ✔ private and nonexistent paths rejected (22.4682ms)
+  ✔ encoded traversal rejected via raw HTTP request (6.389ms)
+  ✔ POST cannot write and HEAD has no body (11.3525ms)
+  ✔ registry and schemas parse (12.3678ms)
+✔ static server serves only public files, uses correct headers, and is read-only (126.7461ms)
+✔ subdirectory mount redirects, serves assets, and rejects paths outside prefix (26.656ms)
+✔ SHA-256 agrees with known abc vector (9.7235ms)
+✔ canonical JSON sorts object keys recursively, preserving array order (0.3417ms)
+✔ valid synthetic receipt remains unverified even with claimed success (6.155ms)
+✔ receipt template is a valid not-run claim, never a successful receipt (2.141ms)
+✔ malformed JSON is rejected with helpful error (0.9186ms)
+✔ null, array and primitive receipts are rejected (0.3417ms)
+✔ oversize receipt rejected before parsing (1.9354ms)
+✔ unknown stage rejected even when hash is valid (3.8441ms)
+✔ unknown tool rejected even when hash is valid (2.2334ms)
+✔ known tool cannot be reused at incompatible stage (2.47ms)
+✔ missing plan hash, receipt hash, input hash and output hash rejected (3.372ms)
+✔ unsupported verified/accepted claims cannot import (2.6282ms)
+✔ extra authority, URL and prototype fields are rejected (3.0596ms)
+✔ HTML in allowed imported text remains literal data (1.6256ms)
+✔ tampered embedded input rejected by plan hash (1.6338ms)
+✔ changed purpose and method invalidate plan hash (3.9347ms)
+✔ changed input reuse blocked against active plan, even with fresh self-consistent receipt (3.6116ms)
+✔ receipt-to-plan input hash mismatch rejected (2.0446ms)
+✔ receipt stage mismatch and plan hash mismatch rejected (2.8605ms)
+✔ duplicate input labels rejected (2.0988ms)
+✔ foreign registry version rejected (1.7148ms)
+✔ registry edits invalidate the binding even without a version change (2.1018ms)
+✔ absolute path and sensitive path-shaped input labels rejected (1.4451ms)
+✔ schema numeric constraints and unsupported keywords fail closed (0.3309ms)
+✔ local review bound to exact hash and all six checks (1.5132ms)
+✔ CSV quoting, newlines, Unicode and formula injection are handled (0.5152ms)
+✔ registry has complete required tools, valid references and no accepted science (0.3796ms)
+✔ workflow keeps host and R-M branches separate (0.9089ms)
+✔ browser source uses no HTML sinks, execution bridge, storage or imported fetches (1.8189ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 273.847

@@ -1,0 +1,8 @@
+﻿node_modules/
+.test-artifacts/
+.browser-profile/
+__pycache__/
+*.pyc
+*.log
+CODEX_TASK.md
+NATIVE_SITE_RESULT.json

@@ -1,0 +1,14 @@
+{
+  "name": "genomeatlas-site-helper-suite",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test tests/unit.test.mjs tests/server.test.mjs",
+    "test:browser": "node tests/browser.test.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "engines": { "node": ">=22" }
+}
