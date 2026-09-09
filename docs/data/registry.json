@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-09-09T00:00:00Z",
+  "generatedAt": null,
   "entries": [
     {
       "id": "rdc",
@@ -77,15 +77,15 @@
       "id": "codex-cli-session",
       "name": "Codex CLI/session",
       "category": "implementation",
-      "state": "BLOCKED",
+      "state": "EXECUTED",
       "stageIds": [
         "review"
       ],
-      "probeTimestamp": "2026-09-09T14:33:00Z",
-      "evidenceLocation": "docs/evidence/parent-observations.json#obs-codex-thread-failed",
+      "probeTimestamp": null,
+      "evidenceLocation": "docs/evidence/parent-observations.json#obs-codex-review-complete",
       "inputContract": "Local Codex CLI probe, login status read, and read-only thread bootstrap request.",
       "outputContract": "CLI version/login output plus read-only thread/session status.",
-      "notes": "CLI version 0.153.4 and ChatGPT login status succeeded, then a new read-only thread started and later failed on an unrelated Cloudflare MCP OAuth-required transport error; no completion receipt is claimed."
+      "notes": "Authorized WD observations showed CLI version 0.153.4 and ChatGPT login success; a separate Codex review completed with the wrong test path so zero tests run by Codex, and an earlier OAuth transport error remained a distinct historical observation."
     },
     {
       "id": "wsl-ubuntu",
@@ -301,15 +301,16 @@
       "id": "native-chatgpt-sites",
       "name": "native ChatGPT Sites",
       "category": "deployment",
-      "state": "BLOCKED",
+      "state": "PROBED",
       "stageIds": [
         "review"
       ],
       "probeTimestamp": null,
-      "evidenceLocation": "docs/evidence/parent-observations.json#obs-native-sites",
+      "evidenceLocation": "docs/evidence/parent-observations.json#obs-native-sites-list",
       "inputContract": "Native Site deployment or receipt lookup.",
       "outputContract": "Deployment receipt.",
-      "notes": "Native ChatGPT Sites were not exposed to the parent observer, so no native deployment receipt exists."
+      "notes": "A WD Codex session successfully listed native ChatGPT Sites after correcting the limit parameter from 100 to the service maximum of 50. No deployment receipt exists yet, and unrelated site/account data remains undisclosed.",
+      "deploymentStatus": "PENDING"
     }
   ]
 }

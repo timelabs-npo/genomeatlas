@@ -1,21 +1,22 @@
-✔ exact four ring labels are preserved (1.185035ms)
-✔ flow lineage keeps host tree and R-M detection as independent branches (3.785654ms)
-✔ fallback data matches seeded JSON files exactly (0.582074ms)
-✔ observation records stay distinct from probe receipts (0.156617ms)
-✔ valid measured receipts accept bare and sha256-prefixed 64-hex digests and import as unverified (0.944036ms)
-✔ malicious HTML, unknown state, missing exit code, invalid hashes, and status/exit inconsistencies are rejected (0.385465ms)
-✔ FAILED and UNKNOWN classifications are never remapped to NOT_DETECTED (0.246555ms)
-✔ request confirmation creates REQUESTED artifacts without execution or verification (0.507759ms)
-✔ registry filtering supports search, state, and stage (0.325109ms)
-✔ CSV export escapes spreadsheet formulas safely including leading whitespace controls (0.502633ms)
-✔ local probe creation reuses registry contracts and supports explicit not_measured hashes (0.315273ms)
-✔ historical assertions keep null probe timestamps unless exact timing is known and never claim verification (1.088188ms)
-✔ required static assets exist and HTML references resolve locally (0.421858ms)
-ℹ tests 13
+✔ exact four ring labels are preserved (2.315761ms)
+✔ flow lineage keeps host tree and R-M detection on the corrected scientific graph (0.300962ms)
+✔ fallback data matches seeded JSON files exactly (0.68986ms)
+✔ observation records stay distinct from probe receipts (0.204402ms)
+✔ valid measured receipts accept bare and sha256-prefixed 64-hex digests and import as unverified (1.267661ms)
+✔ malicious HTML, unknown state, missing exit code, invalid hashes, and status/exit inconsistencies are rejected (0.720738ms)
+✔ FAILED and UNKNOWN classifications are never remapped to NOT_DETECTED (0.315921ms)
+✔ request confirmation creates REQUESTED artifacts without execution or verification (0.633103ms)
+✔ registry filtering supports search, state, and stage (0.503642ms)
+✔ CSV export escapes spreadsheet formulas safely including leading whitespace controls (0.639275ms)
+✔ local probe creation reuses registry contracts and supports explicit not_measured hashes (1.123531ms)
+✔ historical assertions keep null probe timestamps unless exact timing is known and never claim verification (0.279113ms)
+✔ strict ISO timestamp validation rejects Date.parse-style loose values (0.178364ms)
+✔ required static assets exist and HTML references resolve locally (0.736126ms)
+ℹ tests 14
 ℹ suites 0
-ℹ pass 13
+ℹ pass 14
 ℹ fail 0
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 69.13794
+ℹ duration_ms 86.382048

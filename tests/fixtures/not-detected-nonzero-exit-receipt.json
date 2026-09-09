@@ -1,0 +1,23 @@
+{
+  "kind": "probe-receipt",
+  "version": "1.0.0",
+  "toolId": "github-cli",
+  "state": "EXECUTED",
+  "probeTimestamp": "2026-09-09T14:21:19.3399192Z",
+  "summary": "Not detected classifications cannot report a non-zero exit code.",
+  "inputContract": "Authenticated GitHub read command.",
+  "outputContract": "Command success/failure plus repository-readable output.",
+  "evidence": {
+    "location": "external-receipt://github-cli/windows-read",
+    "hashStatus": "measured",
+    "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+  },
+  "result": {
+    "classification": "NOT_DETECTED",
+    "exitCode": 2
+  },
+  "review": {
+    "verified": false,
+    "reviewer": null
+  }
+}

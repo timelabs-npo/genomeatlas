@@ -8,3 +8,4 @@
 - add Node built-in tests plus synthetic software-only test logs
 - correct ring labels, branched lineage metadata, and receipt hash/timestamp handling for historical assertions
 - separate historical observation records from probe receipts, allow optional `sha256:` prefixes for measured digests, and add adversarial validation coverage
+- correct the scientific lineage so R-M detection consumes proteomes plus genomic coordinates, tighten ISO timestamp parsing, expand CSV control-character escaping, and update Codex/Sites observations without fabricated timestamps

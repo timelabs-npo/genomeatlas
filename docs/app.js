@@ -10,7 +10,7 @@
   const FALLBACK_DATA = {
   "registry": {
     "version": "1.0.0",
-    "generatedAt": "2026-09-09T00:00:00Z",
+    "generatedAt": null,
     "entries": [
       {
         "id": "rdc",
@@ -87,15 +87,15 @@
         "id": "codex-cli-session",
         "name": "Codex CLI/session",
         "category": "implementation",
-        "state": "BLOCKED",
+        "state": "EXECUTED",
         "stageIds": [
           "review"
         ],
-        "probeTimestamp": "2026-09-09T14:33:00Z",
-        "evidenceLocation": "docs/evidence/parent-observations.json#obs-codex-thread-failed",
+        "probeTimestamp": null,
+        "evidenceLocation": "docs/evidence/parent-observations.json#obs-codex-review-complete",
         "inputContract": "Local Codex CLI probe, login status read, and read-only thread bootstrap request.",
         "outputContract": "CLI version/login output plus read-only thread/session status.",
-        "notes": "CLI version 0.153.4 and ChatGPT login status succeeded, then a new read-only thread started and later failed on an unrelated Cloudflare MCP OAuth-required transport error; no completion receipt is claimed."
+        "notes": "Authorized WD observations showed CLI version 0.153.4 and ChatGPT login success; a separate Codex review completed with the wrong test path so zero tests run by Codex, and an earlier OAuth transport error remained a distinct historical observation."
       },
       {
         "id": "wsl-ubuntu",
@@ -311,15 +311,16 @@
         "id": "native-chatgpt-sites",
         "name": "native ChatGPT Sites",
         "category": "deployment",
-        "state": "BLOCKED",
+        "state": "PROBED",
         "stageIds": [
           "review"
         ],
         "probeTimestamp": null,
-        "evidenceLocation": "docs/evidence/parent-observations.json#obs-native-sites",
+        "evidenceLocation": "docs/evidence/parent-observations.json#obs-native-sites-list",
         "inputContract": "Native Site deployment or receipt lookup.",
         "outputContract": "Deployment receipt.",
-        "notes": "Native ChatGPT Sites were not exposed to the parent observer, so no native deployment receipt exists."
+        "notes": "A WD Codex session successfully listed native ChatGPT Sites after correcting the limit parameter from 100 to the service maximum of 50. No deployment receipt exists yet, and unrelated site/account data remains undisclosed.",
+        "deploymentStatus": "PENDING"
       }
     ]
   },
@@ -361,17 +362,17 @@
       {
         "id": "rm-detection",
         "title": "Independent R-M detection",
-        "description": "Run DefenseFinder and related R-M review independently from host tree inference using the same upstream alignment context only where appropriate."
+        "description": "Run DefenseFinder and related R-M review from original ordered per-replicon proteomes plus genomic coordinates, independent of host-marker alignments."
       },
       {
         "id": "review",
         "title": "Locus review",
-        "description": "Review loci manually with explicit evidence links and human approval gates after both tree and R-M branches are available."
+        "description": "Review loci manually with explicit evidence links and human approval gates after R-M detection; host tree context may be added later but is not required."
       },
       {
         "id": "rings",
         "title": "Four rings",
-        "description": "Publish the Type I, Type II (including IIG), Type III, and Type IV rings only from verified upstream artifacts."
+        "description": "Publish the Type I, Type II (including IIG), Type III, and Type IV rings from reviewed R-M evidence, with host-tree context optionally layered directly into the rings."
       }
     ],
     "edges": [
@@ -392,12 +393,8 @@
         "to": "host-tree"
       },
       {
-        "from": "alignments",
+        "from": "proteomes",
         "to": "rm-detection"
-      },
-      {
-        "from": "host-tree",
-        "to": "review"
       },
       {
         "from": "rm-detection",
@@ -405,6 +402,10 @@
       },
       {
         "from": "review",
+        "to": "rings"
+      },
+      {
+        "from": "host-tree",
         "to": "rings"
       }
     ]
@@ -524,13 +525,13 @@
       },
       {
         "kind": "observation-record",
-        "recordType": "reference-snapshot",
-        "id": "obs-codex-thread-failed",
-        "recordedAt": "2026-09-09T14:33:00Z",
-        "probeTimestamp": "2026-09-09T14:33:00Z",
+        "recordType": "historical-assertion",
+        "id": "obs-codex-thread-oauth-error",
+        "recordedAt": null,
+        "probeTimestamp": null,
         "toolId": "codex-cli-session",
         "state": "BLOCKED",
-        "summary": "A new local read-only Codex thread started and then hit an unrelated Cloudflare MCP OAuth-required transport error.",
+        "summary": "A new local read-only Codex thread later hit an unrelated Cloudflare MCP OAuth-required transport error.",
         "classification": "FAILED",
         "exitCode": 1,
         "hashStatus": "not_measured",
@@ -538,7 +539,25 @@
         "historicalStatus": "UNVERIFIED",
         "sourceProvenance": "WD task metadata",
         "evidenceLocation": "WD task metadata",
-        "notes": "The session genuinely started, but review work did not complete. Session IDs remain private by default."
+        "notes": "Parent reported process exit 1, but no retained exact UTC event metadata was provided."
+      },
+      {
+        "kind": "observation-record",
+        "recordType": "historical-assertion",
+        "id": "obs-codex-review-complete",
+        "recordedAt": null,
+        "probeTimestamp": null,
+        "toolId": "codex-cli-session",
+        "state": "EXECUTED",
+        "summary": "A separate authorized WD Codex review completed, but it targeted the wrong test path so zero tests run by Codex.",
+        "classification": "UNKNOWN",
+        "exitCode": 0,
+        "hashStatus": "not_measured",
+        "hashSha256": null,
+        "historicalStatus": "UNVERIFIED",
+        "sourceProvenance": "parent observation ledger",
+        "evidenceLocation": "parent observation ledger",
+        "notes": "This is distinct from the independent WSL Ubuntu run that passed 10 software-only tests."
       },
       {
         "kind": "observation-record",
@@ -633,20 +652,20 @@
       {
         "kind": "observation-record",
         "recordType": "historical-assertion",
-        "id": "obs-native-sites",
+        "id": "obs-native-sites-list",
         "recordedAt": null,
         "probeTimestamp": null,
         "toolId": "native-chatgpt-sites",
-        "state": "BLOCKED",
-        "summary": "Native ChatGPT Sites were not exposed to the parent observer, so no native deployment receipt exists.",
-        "classification": "FAILED",
-        "exitCode": 1,
+        "state": "PROBED",
+        "summary": "Native ChatGPT Sites list_sites succeeded after correcting limit 100 to the service maximum of 50; no deployment occurred.",
+        "classification": "DETECTED",
+        "exitCode": 0,
         "hashStatus": "not_measured",
         "hashSha256": null,
         "historicalStatus": "UNVERIFIED",
         "sourceProvenance": "parent observation ledger",
         "evidenceLocation": "parent observation ledger",
-        "notes": "No native deployment or published URL claim is made without a real deployment receipt."
+        "notes": "Only public-safe capability facts are retained here. No unrelated site or account inventory is exposed."
       },
       {
         "kind": "observation-record",
@@ -712,7 +731,14 @@
   }
 
   function isIsoTimestamp(value) {
-    return typeof value === "string" && !Number.isNaN(Date.parse(value));
+    if (typeof value !== "string") {
+      return false;
+    }
+    const isoPattern = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,9})?Z$/;
+    if (!isoPattern.test(value)) {
+      return false;
+    }
+    return !Number.isNaN(Date.parse(value));
   }
 
   function hasClassificationExitConsistency(result) {
@@ -842,7 +868,7 @@
     if (/^[\t\r\n ]*[=+\-@]/.test(text)) {
       text = "'" + text;
     }
-    if (/[",\n]/.test(text)) {
+    if (/[",\r\n]/.test(text)) {
       text = '"' + text.replace(/"/g, '""') + '"';
     }
     return text;
@@ -1430,7 +1456,8 @@
     collectObservationRecords: collectObservationRecords,
     buildStageLineage: buildStageLineage,
     formatRegistryTimestamp: formatRegistryTimestamp,
-    hasClassificationExitConsistency: hasClassificationExitConsistency
+    hasClassificationExitConsistency: hasClassificationExitConsistency,
+    isIsoTimestamp: isIsoTimestamp
   };
 
   if (typeof module !== "undefined" && module.exports) {

@@ -16,13 +16,15 @@ test('exact four ring labels are preserved', function () {
   assert.deepEqual(rings, ['Type I', 'Type II (including IIG)', 'Type III', 'Type IV']);
 });
 
-test('flow lineage keeps host tree and R-M detection as independent branches', function () {
+test('flow lineage keeps host tree and R-M detection on the corrected scientific graph', function () {
   const lineage = app.buildStageLineage(app.FALLBACK_DATA.chains);
   assert.deepEqual(lineage['host-tree'].incoming, ['alignments']);
-  assert.deepEqual(lineage['rm-detection'].incoming, ['alignments']);
-  assert.deepEqual(lineage.review.incoming.sort(), ['host-tree', 'rm-detection']);
+  assert.deepEqual(lineage['rm-detection'].incoming, ['proteomes']);
+  assert.deepEqual(lineage.review.incoming, ['rm-detection']);
+  assert.deepEqual(lineage.rings.incoming.sort(), ['host-tree', 'review']);
   assert.equal(lineage['host-tree'].outgoing.includes('rm-detection'), false);
   assert.equal(lineage['rm-detection'].outgoing.includes('host-tree'), false);
+  assert.equal(lineage.review.incoming.includes('host-tree'), false);
 });
 
 test('fallback data matches seeded JSON files exactly', function () {
@@ -68,7 +70,8 @@ test('malicious HTML, unknown state, missing exit code, invalid hashes, and stat
     'bogus-short-hash-receipt.json',
     'status-exit-inconsistency-receipt.json',
     'failed-zero-exit-receipt.json',
-    'invalid-date-receipt.json'
+    'invalid-date-receipt.json',
+    'not-detected-nonzero-exit-receipt.json'
   ].forEach(function (name) {
     const verdict = app.validateReceipt(readJson(name));
     assert.equal(verdict.valid, false, name + ' should be invalid');
@@ -111,7 +114,7 @@ test('request confirmation creates REQUESTED artifacts without execution or veri
 
 test('registry filtering supports search, state, and stage', function () {
   const entries = app.FALLBACK_DATA.registry.entries;
-  const stateMatch = app.filterRegistry(entries, { search: '', state: 'BLOCKED', stage: 'ALL' });
+  const stateMatch = app.filterRegistry(entries, { search: '', state: 'PROBED', stage: 'ALL' });
   assert.ok(stateMatch.some(function (entry) { return entry.id === 'native-chatgpt-sites'; }));
 
   const queryMatch = app.filterRegistry(entries, { search: '87 tools', state: 'ALL', stage: 'ALL' });
@@ -127,7 +130,8 @@ test('CSV export escapes spreadsheet formulas safely including leading whitespac
     { summary: '=2+3', toolId: 'github-cli' },
     { summary: ' +SUM(A1:A2)', toolId: 'rdc' },
     { summary: '\t@malicious', toolId: 'smarts-bio' },
-    { summary: '\n-2+4', toolId: 'wsl-ubuntu' }
+    { summary: '\n-2+4', toolId: 'wsl-ubuntu' },
+    { summary: '\r=cmd()', toolId: 'codex-cli-session' }
   ], [
     { key: 'toolId', label: 'toolId' },
     { key: 'summary', label: 'summary' }
@@ -137,6 +141,7 @@ test('CSV export escapes spreadsheet formulas safely including leading whitespac
   assert.match(csv, /' \+SUM\(A1:A2\)/);
   assert.match(csv, /'\t@malicious/);
   assert.match(csv, /"'\n-2\+4"/);
+  assert.match(csv, /"'\r=cmd\(\)"/);
 });
 
 test('local probe creation reuses registry contracts and supports explicit not_measured hashes', function () {
@@ -176,7 +181,24 @@ test('historical assertions keep null probe timestamps unless exact timing is kn
   const github = observations.find(function (observation) {
     return observation.id === 'obs-gh-auth';
   });
+  const codex = observations.find(function (observation) {
+    return observation.id === 'obs-codex-review-complete';
+  });
+  const nativeSites = app.FALLBACK_DATA.registry.entries.find(function (entry) {
+    return entry.id === 'native-chatgpt-sites';
+  });
   assert.equal(github.probeTimestamp, '2026-09-09T14:21:19.3399192Z');
+  assert.ok(codex);
+  assert.equal(codex.probeTimestamp, null);
+  assert.match(codex.summary, /zero tests run by codex/i);
+  assert.equal(nativeSites.state, 'PROBED');
+  assert.equal(nativeSites.deploymentStatus, 'PENDING');
+});
+
+test('strict ISO timestamp validation rejects Date.parse-style loose values', function () {
+  assert.equal(app.isIsoTimestamp('1'), false);
+  assert.equal(app.isIsoTimestamp('2026-09-09T15:01:28Z'), true);
+  assert.equal(app.isIsoTimestamp('2026-09-09 15:01:28Z'), false);
 });
 
 test('required static assets exist and HTML references resolve locally', function () {

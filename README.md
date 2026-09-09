@@ -10,10 +10,10 @@ This repository now ships a **zero-build static app** under `docs/` for:
 - portable source import into environments that accept plain HTML/CSS/JS
 - local review from a filesystem copy or a simple static server
 
-The app is not a native ChatGPT Site deployment. Native ChatGPT Sites were **not exposed** in the parent observations, so this repository should distinguish between:
+The app is not a native ChatGPT Site deployment. Parent observations now show native ChatGPT Sites discovery/probing via `list_sites`, but there is still **no deployment receipt**, so this repository should distinguish between:
 
 - **Portable/GitHub Pages source**: the HTML/CSS/JS and JSON files in `docs/`
-- **Native ChatGPT Site**: not available here, with no native deployment receipt to import or claim
+- **Native ChatGPT Site**: discovery/probe evidence only, with deployment still pending and no native deployment receipt to import or claim
 
 ## Local use
 
@@ -36,7 +36,7 @@ Key views:
 - parent assertions without exact timing use `probeTimestamp: null`; `recordedAt` is tracked separately when a source snapshot time is known
 - measured receipt hashes must be exactly 64 hexadecimal digits, with or without a literal `sha256:` prefix; otherwise use `null` with `not_measured`
 - all user-supplied text is rendered with `textContent`
-- CSV export escapes spreadsheet formula prefixes including leading spaces, tabs, and newlines
+- CSV export escapes spreadsheet formula prefixes including leading spaces, tabs, carriage returns, and newlines
 
 ## Data files
 
