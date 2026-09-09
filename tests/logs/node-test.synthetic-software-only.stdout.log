@@ -1,19 +1,21 @@
-✔ exact four ring labels are preserved (1.629782ms)
-✔ flow lineage keeps host tree and R-M detection as independent branches (0.297444ms)
-✔ valid measured and not_measured receipts validate and import as unverified (1.947373ms)
-✔ malicious HTML, unknown state, missing exit code, and strict hash failures are rejected (0.609204ms)
-✔ FAILED and UNKNOWN classifications are never remapped to NOT_DETECTED (0.309816ms)
-✔ request confirmation creates REQUESTED artifacts without execution or verification (0.605677ms)
-✔ registry filtering supports search, state, and stage (0.406536ms)
-✔ CSV export escapes spreadsheet formulas safely (0.421745ms)
-✔ local probe creation reuses registry contracts and supports explicit not_measured hashes (0.452592ms)
-✔ historical observations preserve null timestamps and null hashes unless real source metadata exists (0.448534ms)
-✔ required static assets exist and HTML references resolve locally (0.545264ms)
-ℹ tests 11
+✔ exact four ring labels are preserved (1.185035ms)
+✔ flow lineage keeps host tree and R-M detection as independent branches (3.785654ms)
+✔ fallback data matches seeded JSON files exactly (0.582074ms)
+✔ observation records stay distinct from probe receipts (0.156617ms)
+✔ valid measured receipts accept bare and sha256-prefixed 64-hex digests and import as unverified (0.944036ms)
+✔ malicious HTML, unknown state, missing exit code, invalid hashes, and status/exit inconsistencies are rejected (0.385465ms)
+✔ FAILED and UNKNOWN classifications are never remapped to NOT_DETECTED (0.246555ms)
+✔ request confirmation creates REQUESTED artifacts without execution or verification (0.507759ms)
+✔ registry filtering supports search, state, and stage (0.325109ms)
+✔ CSV export escapes spreadsheet formulas safely including leading whitespace controls (0.502633ms)
+✔ local probe creation reuses registry contracts and supports explicit not_measured hashes (0.315273ms)
+✔ historical assertions keep null probe timestamps unless exact timing is known and never claim verification (1.088188ms)
+✔ required static assets exist and HTML references resolve locally (0.421858ms)
+ℹ tests 13
 ℹ suites 0
-ℹ pass 11
+ℹ pass 13
 ℹ fail 0
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 88.412239
+ℹ duration_ms 69.13794

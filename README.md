@@ -23,7 +23,7 @@ Key views:
 
 1. scoped LAB phylogenomics flow
 2. searchable/filterable evidence-bound tool registry
-3. actual probes and receipt import/export
+3. separate historical observation records and local/imported probe receipts
 4. delegation and confirmation planner that writes only local `REQUESTED` artifacts
 
 ## Safety and evidence model
@@ -32,16 +32,17 @@ Key views:
 - no inline event handlers
 - no remote execution controls
 - imported or manually recorded receipts remain **unverified** until external review
-- parent historical assertions without source receipts retain null timestamps and `not_measured` hashes
-- measured receipt hashes must be exactly 64 hexadecimal digits; otherwise use `null` with `not_measured`
+- historical observations remain separately tagged `observation-record` entries and never masquerade as execution receipts
+- parent assertions without exact timing use `probeTimestamp: null`; `recordedAt` is tracked separately when a source snapshot time is known
+- measured receipt hashes must be exactly 64 hexadecimal digits, with or without a literal `sha256:` prefix; otherwise use `null` with `not_measured`
 - all user-supplied text is rendered with `textContent`
-- CSV export escapes spreadsheet formula prefixes
+- CSV export escapes spreadsheet formula prefixes including leading spaces, tabs, and newlines
 
 ## Data files
 
 - `docs/data/registry.json` — registry entries and contracts
 - `docs/data/chains.json` — LAB flow stages and ring descriptions
-- `docs/evidence/parent-observations.json` — redacted historical observations only
+- `docs/evidence/parent-observations.json` — redacted observation records only
 - `schemas/probe.schema.json` — receipt schema documented for import/export validation
 
 ## Tests
@@ -52,7 +53,7 @@ Run the Node built-in test runner from the repository root:
 node --test
 ```
 
-Focused tests cover exact ring labels, branched lineage validation, schema validation, malicious receipt rejection, strict hash rules, CSV escaping, registry filtering, confirmation planning, and static asset integrity.
+Focused tests cover exact ring labels, branched lineage validation, seeded/fallback consistency, observation-versus-receipt separation, schema validation, malicious receipt rejection, strict hash rules, status/exit consistency, spreadsheet-formula CSV escaping, confirmation planning, and static asset integrity.
 
 ## AlphaGenome best-practice note
 

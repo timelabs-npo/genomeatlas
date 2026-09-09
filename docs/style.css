@@ -110,7 +110,7 @@ textarea {
 
 .summary-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
   gap: 0.75rem;
   margin: 0;
 }
@@ -188,6 +188,12 @@ textarea {
   border: 1px solid var(--line);
 }
 
+.stage-meta {
+  margin: 0.45rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .rings-card {
   margin-top: 1rem;
   background: #f8fbfc;
@@ -245,7 +251,7 @@ textarea {
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 720px;
+  min-width: 760px;
 }
 
 th,
@@ -284,10 +290,4 @@ th {
   .button-row {
     flex-direction: column;
   }
-}
-
-.stage-meta {
-  margin: 0.45rem 0 0;
-  color: var(--muted);
-  font-size: 0.95rem;
 }

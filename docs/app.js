@@ -2,10 +2,10 @@
   const TOOL_STATES = ["DECLARED", "DISCOVERED", "PROBED", "EXECUTED", "BLOCKED"];
   const RESULT_CLASSES = ["DETECTED", "NOT_DETECTED", "FAILED", "UNKNOWN"];
   const HASH_STATUSES = ["measured", "not_measured"];
-  const HEX64_PATTERN = /^[A-Fa-f0-9]{64}$/;
+  const MEASURED_SHA_PATTERN = /^(?:sha256:)?[A-Fa-f0-9]{64}$/;
   const STORAGE_KEYS = {
     requests: "genomeatlas.requests.v1",
-    probes: "genomeatlas.probes.v1"
+    probes: "genomeatlas.probeReceipts.v1"
   };
   const FALLBACK_DATA = {
   "registry": {
@@ -21,10 +21,10 @@
           "review"
         ],
         "probeTimestamp": null,
-        "evidenceLocation": "docs/evidence/parent-observations.json#obs-rdc-nonce",
-        "inputContract": "Authorized endpoint command request with nonce payload.",
-        "outputContract": "Completion record proving nonce execution on the authorized Windows endpoint.",
-        "notes": "Historical observation only; no live session is implied; source receipt timestamp or payload hash was not attached."
+        "evidenceLocation": "docs/evidence/parent-observations.json#obs-rdc-challenge-nonce",
+        "inputContract": "Authorized endpoint challenge or command request.",
+        "outputContract": "Challenge file read/write confirmation or command outcome from the authorized endpoint boundary.",
+        "notes": "Challenge file write/read on Windows and WSL readback succeeded; a fuller WSL tmp acknowledgment script-write remained safety-blocked. Historical assertions remain unverified unless a retained receipt exists."
       },
       {
         "id": "github-connector",
@@ -36,10 +36,10 @@
           "review"
         ],
         "probeTimestamp": null,
-        "evidenceLocation": "docs/evidence/parent-observations.json#obs-github-connector",
+        "evidenceLocation": "docs/evidence/parent-observations.json#obs-github-connector-read",
         "inputContract": "Read-only repository metadata request.",
-        "outputContract": "Repository listing or file metadata for the current repository.",
-        "notes": "Current evidence is read-only access to this repository; source receipt timestamp or payload hash was not attached."
+        "outputContract": "Repository listing, file metadata, or public source snapshots.",
+        "notes": "Historical source browsing is separate from receipt-backed execution proof; the earlier repo-absence result is superseded by repository creation and must not be shown as current."
       },
       {
         "id": "github-cli",
@@ -49,11 +49,25 @@
         "stageIds": [
           "review"
         ],
-        "probeTimestamp": null,
+        "probeTimestamp": "2026-09-09T14:21:19.3399192Z",
         "evidenceLocation": "docs/evidence/parent-observations.json#obs-gh-auth",
         "inputContract": "Authenticated GitHub read command.",
-        "outputContract": "Command success/failure plus repository-readable output.",
-        "notes": "A historical repo-absence result is retained only as superseded evidence and not treated as current; source receipt timestamp or payload hash was not attached."
+        "outputContract": "Authenticated repository-readable output with exit status.",
+        "notes": "The authenticated Windows GitHub probe predates repository creation at 14:21:35Z, so any earlier repo-absence result is superseded historical context only."
+      },
+      {
+        "id": "github-actions",
+        "name": "GitHub Actions",
+        "category": "ci-verification",
+        "state": "EXECUTED",
+        "stageIds": [
+          "review"
+        ],
+        "probeTimestamp": "2026-09-09T14:47:55Z",
+        "evidenceLocation": "docs/evidence/parent-observations.json#obs-ci-verify-2e5d87a",
+        "inputContract": "Bounded workflow-dispatch verification request against an exact source commit.",
+        "outputContract": "Workflow logs, archive receipts, and synthetic software-only test outputs.",
+        "notes": "Run 34365988867 verified source retrieval and blob hashing for commit 2e5d87a without approving unrelated observation or hash-model defects."
       },
       {
         "id": "copilot",
@@ -67,21 +81,21 @@
         "evidenceLocation": "docs/evidence/parent-observations.json#obs-copilot-pr",
         "inputContract": "Issue or pull request implementation request.",
         "outputContract": "Repository changes and test artifacts on the active PR branch.",
-        "notes": "Source provenance is GitHub Actions run metadata; implementation remains in progress in this PR."
+        "notes": "Source provenance is GitHub Actions run metadata; this is Copilot PR work, not a WD-local Codex review completion."
       },
       {
         "id": "codex-cli-session",
         "name": "Codex CLI/session",
         "category": "implementation",
-        "state": "PROBED",
+        "state": "BLOCKED",
         "stageIds": [
           "review"
         ],
         "probeTimestamp": "2026-09-09T14:33:00Z",
-        "evidenceLocation": "docs/evidence/parent-observations.json#obs-codex-session-started",
-        "inputContract": "Local Codex session bootstrap request.",
-        "outputContract": "Established local coding session metadata.",
-        "notes": "WD Codex task session start was observed from task metadata; implementation was still pending and no completion receipt is claimed."
+        "evidenceLocation": "docs/evidence/parent-observations.json#obs-codex-thread-failed",
+        "inputContract": "Local Codex CLI probe, login status read, and read-only thread bootstrap request.",
+        "outputContract": "CLI version/login output plus read-only thread/session status.",
+        "notes": "CLI version 0.153.4 and ChatGPT login status succeeded, then a new read-only thread started and later failed on an unrelated Cloudflare MCP OAuth-required transport error; no completion receipt is claimed."
       },
       {
         "id": "wsl-ubuntu",
@@ -92,10 +106,10 @@
           "review"
         ],
         "probeTimestamp": null,
-        "evidenceLocation": "docs/evidence/parent-observations.json#obs-wsl-uname",
-        "inputContract": "Remote uname or shell command against Ubuntu in WSL.",
-        "outputContract": "Kernel and distribution details.",
-        "notes": "Ubuntu reported a WSL1 kernel, not WSL2; source receipt timestamp or payload hash was not attached."
+        "evidenceLocation": "docs/evidence/parent-observations.json#obs-wsl-inventory-tests",
+        "inputContract": "WSL Ubuntu command execution or legacy repository software-only test request.",
+        "outputContract": "Command output, kernel details, or software-only test results.",
+        "notes": "Ubuntu reported WSL1 rather than WSL2, and a separate synthetic inventory regression run passed 10 tests on legacy commit 7c27865b7113b0fe8b22a57a751ed82fdaae9c8a."
       },
       {
         "id": "ncbi-datasets",
@@ -241,15 +255,15 @@
         "id": "bionemo-nim",
         "name": "BioNeMo/NIM",
         "category": "ai-assistant",
-        "state": "DISCOVERED",
+        "state": "PROBED",
         "stageIds": [
           "review"
         ],
         "probeTimestamp": null,
-        "evidenceLocation": "docs/evidence/parent-observations.json#obs-bionemo-skills",
-        "inputContract": "Installed-skill listing or NIM skill resource lookup.",
-        "outputContract": "Skill catalogue entries or skill-read result.",
-        "notes": "Listed installed skills, but actual skill read returned resource-not-found; no NIM API or GPU job executed; source receipt timestamp or payload hash was not attached."
+        "evidenceLocation": "docs/evidence/parent-observations.json#obs-bionemo-source",
+        "inputContract": "Toolkit source retrieval, installed-skill lookup, or NIM skill resource request.",
+        "outputContract": "Source snapshots, skill catalogue entries, or NIM route status.",
+        "notes": "Official toolkit source and MSA-Search SKILL.md were retrieved through GitHub, but the installed skill route remains unresolved and no NIM job ran. Use only as optional structural or homolog-search guidance, not as a replacement for the frozen LAB conserved-marker alignment."
       },
       {
         "id": "smarts-bio",
@@ -260,10 +274,10 @@
           "review"
         ],
         "probeTimestamp": null,
-        "evidenceLocation": "docs/evidence/parent-observations.json#obs-smarts-bio",
+        "evidenceLocation": "docs/evidence/parent-observations.json#obs-smarts-bio-mismatch",
         "inputContract": "Catalogue browse or named tool execution request.",
         "outputContract": "Catalogue entries, tool execution receipt, or explicit no-execution reply.",
-        "notes": "Catalogue/execution mismatch: 87 tools listed, 404 on bio_gc_content, and smarts_query answered manually for synthetic ACGTACGT with no tool executed; source receipt timestamp or payload hash was not attached."
+        "notes": "The catalogue/execution mismatch remains unresolved: 87 tools listed, 404 on bio_gc_content, and a manual 50% GC answer for synthetic ACGTACGT that was explicitly not a tool run."
       },
       {
         "id": "genomic-intelligence",
@@ -305,7 +319,7 @@
         "evidenceLocation": "docs/evidence/parent-observations.json#obs-native-sites",
         "inputContract": "Native Site deployment or receipt lookup.",
         "outputContract": "Deployment receipt.",
-        "notes": "Native ChatGPT Sites were not exposed to the parent observer, so no native deployment receipt exists; source receipt timestamp or payload hash was not attached."
+        "notes": "Native ChatGPT Sites were not exposed to the parent observer, so no native deployment receipt exists."
       }
     ]
   },
@@ -401,11 +415,14 @@
     "redacted": true,
     "observations": [
       {
-        "id": "obs-rdc-nonce",
-        "timestamp": null,
+        "kind": "observation-record",
+        "recordType": "historical-assertion",
+        "id": "obs-rdc-challenge-nonce",
+        "recordedAt": null,
+        "probeTimestamp": null,
         "toolId": "rdc",
         "state": "EXECUTED",
-        "summary": "Remote Desktop Commander nonce command completed on an authorized Windows endpoint.",
+        "summary": "Windows challenge file write/read and WSL read of the same nonce succeeded on the authorized boundary.",
         "classification": "DETECTED",
         "exitCode": 0,
         "hashStatus": "not_measured",
@@ -413,29 +430,17 @@
         "historicalStatus": "UNVERIFIED",
         "sourceProvenance": "parent observation ledger",
         "evidenceLocation": "parent observation ledger",
-        "notes": "Redacted to exclude endpoint identifiers and private device metadata. No source receipt timestamp or payload digest was attached."
+        "notes": "Historical assertion only. No retained payload hash or precise UTC timestamp was provided."
       },
       {
-        "id": "obs-wsl-uname",
-        "timestamp": null,
-        "toolId": "wsl-ubuntu",
-        "state": "EXECUTED",
-        "summary": "Git and Ubuntu uname returned successfully; Ubuntu reported a WSL1 kernel, not WSL2.",
-        "classification": "DETECTED",
-        "exitCode": 0,
-        "hashStatus": "not_measured",
-        "hashSha256": null,
-        "historicalStatus": "UNVERIFIED",
-        "sourceProvenance": "parent observation ledger",
-        "evidenceLocation": "parent observation ledger",
-        "notes": "Historical observation only; not a live connection test, and no source receipt timestamp or payload digest was attached."
-      },
-      {
+        "kind": "observation-record",
+        "recordType": "historical-assertion",
         "id": "obs-script-write-blocked",
-        "timestamp": null,
+        "recordedAt": null,
+        "probeTimestamp": null,
         "toolId": "rdc",
         "state": "BLOCKED",
-        "summary": "A separate remote script-write attempt was blocked by platform safety and must not be bypassed.",
+        "summary": "A fuller WSL tmp acknowledgment script-write was safety-blocked and must not be bypassed.",
         "classification": "FAILED",
         "exitCode": 1,
         "hashStatus": "not_measured",
@@ -443,14 +448,17 @@
         "historicalStatus": "UNVERIFIED",
         "sourceProvenance": "parent observation ledger",
         "evidenceLocation": "parent observation ledger",
-        "notes": "This suite records the block and does not attempt any bypass. No source receipt timestamp or payload digest was attached."
+        "notes": "Historical assertion only. No retained payload hash or precise UTC timestamp was provided."
       },
       {
-        "id": "obs-github-connector",
-        "timestamp": null,
+        "kind": "observation-record",
+        "recordType": "historical-assertion",
+        "id": "obs-github-connector-read",
+        "recordedAt": null,
+        "probeTimestamp": null,
         "toolId": "github-connector",
         "state": "PROBED",
-        "summary": "GitHub connector could read this repository and saw the existing MIT license with only README and LICENSE during initial inspection.",
+        "summary": "GitHub connector could read this repository and initially saw the MIT license with only README and LICENSE present.",
         "classification": "DETECTED",
         "exitCode": 0,
         "hashStatus": "not_measured",
@@ -458,14 +466,35 @@
         "historicalStatus": "UNVERIFIED",
         "sourceProvenance": "parent observation ledger",
         "evidenceLocation": "parent observation ledger",
-        "notes": "Repository contents have since changed in this PR. No source receipt timestamp or payload digest was attached."
+        "notes": "Historical assertion only. The earlier repo-absence result preceded repository creation and is superseded, never current."
       },
       {
+        "kind": "observation-record",
+        "recordType": "reference-snapshot",
         "id": "obs-gh-auth",
-        "timestamp": null,
+        "recordedAt": "2026-09-09T14:21:19.3399192Z",
+        "probeTimestamp": "2026-09-09T14:21:19.3399192Z",
         "toolId": "github-cli",
         "state": "EXECUTED",
-        "summary": "WD gh authenticated read returned success.",
+        "summary": "Authenticated Windows GitHub probe succeeded.",
+        "classification": "DETECTED",
+        "exitCode": 0,
+        "hashStatus": "not_measured",
+        "hashSha256": null,
+        "historicalStatus": "UNVERIFIED",
+        "sourceProvenance": "parent reference snapshot",
+        "evidenceLocation": "Windows GitHub probe metadata",
+        "notes": "Repository creation followed at 2026-09-09T14:21:35Z, so any prior repo-absence result is superseded historical context only."
+      },
+      {
+        "kind": "observation-record",
+        "recordType": "historical-assertion",
+        "id": "obs-codex-cli-version",
+        "recordedAt": null,
+        "probeTimestamp": null,
+        "toolId": "codex-cli-session",
+        "state": "EXECUTED",
+        "summary": "On the authorized WD, `npx @openai/codex --version` returned `codex-cli 0.153.4` and exit 0.",
         "classification": "DETECTED",
         "exitCode": 0,
         "hashStatus": "not_measured",
@@ -473,29 +502,107 @@
         "historicalStatus": "UNVERIFIED",
         "sourceProvenance": "parent observation ledger",
         "evidenceLocation": "parent observation ledger",
-        "notes": "A repo-absence result happened earlier before repository creation and is retained only as superseded historical context, never as current state. No source receipt timestamp or payload digest was attached."
+        "notes": "Historical assertion only. The CLI is present; no precise UTC timestamp or retained payload hash was provided."
       },
       {
-        "id": "obs-smarts-bio",
-        "timestamp": null,
-        "toolId": "smarts-bio",
-        "state": "PROBED",
-        "summary": "smarts.bio catalogue returned 87 tools, bio_gc_content execution returned 404, and smarts_query manually answered 50% GC for synthetic ACGTACGT with no tool executed.",
-        "classification": "UNKNOWN",
-        "exitCode": 404,
+        "kind": "observation-record",
+        "recordType": "historical-assertion",
+        "id": "obs-codex-login",
+        "recordedAt": null,
+        "probeTimestamp": null,
+        "toolId": "codex-cli-session",
+        "state": "EXECUTED",
+        "summary": "Codex login status reported logged in with ChatGPT.",
+        "classification": "DETECTED",
+        "exitCode": 0,
         "hashStatus": "not_measured",
         "hashSha256": null,
         "historicalStatus": "UNVERIFIED",
         "sourceProvenance": "parent observation ledger",
         "evidenceLocation": "parent observation ledger",
-        "notes": "Catalogue/execution mismatch; explicit NO TOOL EXECUTED. No source receipt timestamp or payload digest was attached."
+        "notes": "Historical assertion only. Session identifiers remain private by default."
       },
       {
-        "id": "obs-bionemo-skills",
-        "timestamp": null,
+        "kind": "observation-record",
+        "recordType": "reference-snapshot",
+        "id": "obs-codex-thread-failed",
+        "recordedAt": "2026-09-09T14:33:00Z",
+        "probeTimestamp": "2026-09-09T14:33:00Z",
+        "toolId": "codex-cli-session",
+        "state": "BLOCKED",
+        "summary": "A new local read-only Codex thread started and then hit an unrelated Cloudflare MCP OAuth-required transport error.",
+        "classification": "FAILED",
+        "exitCode": 1,
+        "hashStatus": "not_measured",
+        "hashSha256": null,
+        "historicalStatus": "UNVERIFIED",
+        "sourceProvenance": "WD task metadata",
+        "evidenceLocation": "WD task metadata",
+        "notes": "The session genuinely started, but review work did not complete. Session IDs remain private by default."
+      },
+      {
+        "kind": "observation-record",
+        "recordType": "historical-assertion",
+        "id": "obs-wsl-runtime",
+        "recordedAt": null,
+        "probeTimestamp": null,
+        "toolId": "wsl-ubuntu",
+        "state": "EXECUTED",
+        "summary": "Git and Ubuntu uname succeeded in WSL Ubuntu, which reported a WSL1 kernel rather than WSL2.",
+        "classification": "DETECTED",
+        "exitCode": 0,
+        "hashStatus": "not_measured",
+        "hashSha256": null,
+        "historicalStatus": "UNVERIFIED",
+        "sourceProvenance": "parent observation ledger",
+        "evidenceLocation": "parent observation ledger",
+        "notes": "Historical assertion only. No retained payload hash or precise UTC timestamp was provided."
+      },
+      {
+        "kind": "observation-record",
+        "recordType": "historical-assertion",
+        "id": "obs-wsl-inventory-tests",
+        "recordedAt": null,
+        "probeTimestamp": null,
+        "toolId": "wsl-ubuntu",
+        "state": "EXECUTED",
+        "summary": "WSL Ubuntu independently ran 10 inventory regression tests against legacy repo commit 7c27865b7113b0fe8b22a57a751ed82fdaae9c8a; all 10 passed in 10.376s.",
+        "classification": "DETECTED",
+        "exitCode": 0,
+        "hashStatus": "not_measured",
+        "hashSha256": null,
+        "historicalStatus": "UNVERIFIED",
+        "sourceProvenance": "parent observation ledger",
+        "evidenceLocation": "legacy repo software-only test summary",
+        "notes": "Synthetic software-only scope, not genomic execution. Precise UTC timing was not retained."
+      },
+      {
+        "kind": "observation-record",
+        "recordType": "historical-assertion",
+        "id": "obs-bionemo-source",
+        "recordedAt": null,
+        "probeTimestamp": null,
+        "toolId": "bionemo-nim",
+        "state": "PROBED",
+        "summary": "NVIDIA-BioNeMo/bionemo-agent-toolkit and its MSA-Search SKILL.md were retrieved through GitHub.",
+        "classification": "DETECTED",
+        "exitCode": 0,
+        "hashStatus": "not_measured",
+        "hashSha256": null,
+        "historicalStatus": "UNVERIFIED",
+        "sourceProvenance": "parent observation ledger",
+        "evidenceLocation": "public GitHub source snapshot",
+        "notes": "Toolkit source is Apache-2.0 and documentation includes CC-BY-4.0 materials. Installed skill routing remains unresolved and no NIM job ran."
+      },
+      {
+        "kind": "observation-record",
+        "recordType": "historical-assertion",
+        "id": "obs-bionemo-installed-route-unresolved",
+        "recordedAt": null,
+        "probeTimestamp": null,
         "toolId": "bionemo-nim",
         "state": "DISCOVERED",
-        "summary": "BioNeMo Agent Toolkit listed installed skills including NIM navigator and molecular geometry, but a skill-read returned resource-not-found.",
+        "summary": "The installed BioNeMo skill route remains unresolved.",
         "classification": "UNKNOWN",
         "exitCode": 404,
         "hashStatus": "not_measured",
@@ -503,11 +610,32 @@
         "historicalStatus": "UNVERIFIED",
         "sourceProvenance": "parent observation ledger",
         "evidenceLocation": "parent observation ledger",
-        "notes": "No NIM API or GPU job executed. No source receipt timestamp or payload digest was attached."
+        "notes": "Use the toolkit only as optional structural or homolog-search guidance, never as a replacement for the frozen LAB conserved-marker alignment."
       },
       {
+        "kind": "observation-record",
+        "recordType": "historical-assertion",
+        "id": "obs-smarts-bio-mismatch",
+        "recordedAt": null,
+        "probeTimestamp": null,
+        "toolId": "smarts-bio",
+        "state": "PROBED",
+        "summary": "smarts.bio listed 87 tools, returned 404 on bio_gc_content, and manually answered 50% GC for synthetic ACGTACGT with no tool executed.",
+        "classification": "UNKNOWN",
+        "exitCode": 404,
+        "hashStatus": "not_measured",
+        "hashSha256": null,
+        "historicalStatus": "UNVERIFIED",
+        "sourceProvenance": "parent observation ledger",
+        "evidenceLocation": "parent observation ledger",
+        "notes": "Catalogue/execution mismatch remains unresolved. The manual 50% GC answer must not be turned into a tool run."
+      },
+      {
+        "kind": "observation-record",
+        "recordType": "historical-assertion",
         "id": "obs-native-sites",
-        "timestamp": null,
+        "recordedAt": null,
+        "probeTimestamp": null,
         "toolId": "native-chatgpt-sites",
         "state": "BLOCKED",
         "summary": "Native ChatGPT Sites were not exposed to the parent observer, so no native deployment receipt exists.",
@@ -518,26 +646,32 @@
         "historicalStatus": "UNVERIFIED",
         "sourceProvenance": "parent observation ledger",
         "evidenceLocation": "parent observation ledger",
-        "notes": "No native deployment receipt is available. No source receipt timestamp or payload digest was attached."
+        "notes": "No native deployment or published URL claim is made without a real deployment receipt."
       },
       {
-        "id": "obs-codex-session-started",
-        "timestamp": "2026-09-09T14:33:00Z",
-        "toolId": "codex-cli-session",
-        "state": "PROBED",
-        "summary": "WD Codex task session started; implementation was pending at observation time.",
+        "kind": "observation-record",
+        "recordType": "reference-snapshot",
+        "id": "obs-ci-verify-2e5d87a",
+        "recordedAt": "2026-09-09T14:48:03.6470110Z",
+        "probeTimestamp": "2026-09-09T14:48:02.3731859Z",
+        "toolId": "github-actions",
+        "state": "EXECUTED",
+        "summary": "GitHub Actions run 34365988867 retrieved the exact 2e5d87a source, ran 8 software-only Node tests, and published archive/hash receipts.",
         "classification": "DETECTED",
         "exitCode": 0,
         "hashStatus": "not_measured",
         "hashSha256": null,
         "historicalStatus": "UNVERIFIED",
-        "sourceProvenance": "WD task metadata",
-        "evidenceLocation": "WD task metadata",
-        "notes": "This replaces the obsolete blocked-session assertion without claiming completion or producing a fabricated receipt digest."
+        "sourceProvenance": "GitHub Actions job log",
+        "evidenceLocation": "https://github.com/timelabs-npo/genomeatlas/actions/runs/34365988867",
+        "notes": "This confirms source retrieval and archived blob hashing for that workflow run only; it is not acceptance of unrelated hash-model or observation defects."
       },
       {
+        "kind": "observation-record",
+        "recordType": "reference-snapshot",
         "id": "obs-copilot-pr",
-        "timestamp": "2026-09-09T14:26:52Z",
+        "recordedAt": "2026-09-09T14:26:52Z",
+        "probeTimestamp": "2026-09-09T14:26:52Z",
         "toolId": "copilot",
         "state": "EXECUTED",
         "summary": "Copilot is actively implementing this pull request.",
@@ -548,7 +682,7 @@
         "historicalStatus": "UNVERIFIED",
         "sourceProvenance": "GitHub Actions run metadata",
         "evidenceLocation": "GitHub Actions run metadata",
-        "notes": "This is not a WD-local Codex session and no payload digest was attached to the run metadata."
+        "notes": "This is not a WD-local Codex session."
       }
     ]
   }
@@ -579,6 +713,19 @@
 
   function isIsoTimestamp(value) {
     return typeof value === "string" && !Number.isNaN(Date.parse(value));
+  }
+
+  function hasClassificationExitConsistency(result) {
+    if (!result || !Number.isInteger(result.exitCode)) {
+      return true;
+    }
+    if (result.classification === "DETECTED" || result.classification === "NOT_DETECTED") {
+      return result.exitCode === 0;
+    }
+    if (result.classification === "FAILED") {
+      return result.exitCode !== 0;
+    }
+    return true;
   }
 
   function validateReceipt(receipt) {
@@ -623,8 +770,8 @@
         errors.push("evidence.hashStatus must be measured or not_measured.");
       }
       if (receipt.evidence.hashStatus === "measured") {
-        if (!HEX64_PATTERN.test(String(receipt.evidence.sha256 || ""))) {
-          errors.push("evidence.sha256 must be exactly 64 hexadecimal digits when measured.");
+        if (!MEASURED_SHA_PATTERN.test(String(receipt.evidence.sha256 || ""))) {
+          errors.push("evidence.sha256 must be 64 hexadecimal digits with an optional sha256: prefix when measured.");
         }
       } else if (receipt.evidence.hashStatus === "not_measured") {
         if (receipt.evidence.sha256 !== null) {
@@ -643,6 +790,9 @@
       }
       if (!Number.isInteger(receipt.result.exitCode)) {
         errors.push("result.exitCode must be an integer.");
+      }
+      if (!hasClassificationExitConsistency(receipt.result)) {
+        errors.push("result.classification and result.exitCode are inconsistent.");
       }
     }
 
@@ -689,7 +839,7 @@
 
   function escapeCsvCell(value) {
     let text = value == null ? "" : String(value);
-    if (/^[=+\-@]/.test(text)) {
+    if (/^[\t\r\n ]*[=+\-@]/.test(text)) {
       text = "'" + text;
     }
     if (/[",\n]/.test(text)) {
@@ -788,6 +938,27 @@
     return receipt;
   }
 
+  function normalizeObservationRecord(observation) {
+    return {
+      kind: observation.kind,
+      recordType: observation.recordType,
+      id: observation.id,
+      recordedAt: observation.recordedAt || null,
+      probeTimestamp: observation.probeTimestamp || null,
+      toolId: observation.toolId,
+      state: observation.state,
+      summary: observation.summary,
+      classification: observation.classification,
+      exitCode: observation.exitCode,
+      hashStatus: observation.hashStatus,
+      hashSha256: observation.hashSha256,
+      historicalStatus: observation.historicalStatus || "UNVERIFIED",
+      sourceProvenance: observation.sourceProvenance || null,
+      evidenceLocation: observation.evidenceLocation,
+      notes: observation.notes || ""
+    };
+  }
+
   function safeStorageGet(key) {
     try {
       if (typeof localStorage === "undefined") {
@@ -820,36 +991,6 @@
     link.click();
     link.remove();
     URL.revokeObjectURL(url);
-  }
-
-  function observationToReceipt(observation, registryMap) {
-    const tool = registryMap[observation.toolId] || {};
-    return {
-      kind: "probe-receipt",
-      version: "1.0.0",
-      toolId: observation.toolId,
-      state: observation.state,
-      probeTimestamp: observation.timestamp,
-      summary: observation.summary,
-      inputContract: tool.inputContract || "Historical observation input contract unavailable.",
-      outputContract: tool.outputContract || "Historical observation output contract unavailable.",
-      evidence: {
-        location: observation.evidenceLocation,
-        hashStatus: observation.hashStatus || "not_measured",
-        sha256: observation.hashSha256 == null ? null : observation.hashSha256
-      },
-      result: {
-        classification: observation.classification,
-        exitCode: observation.exitCode
-      },
-      review: {
-        verified: false,
-        reviewer: null
-      },
-      historicalStatus: observation.historicalStatus || null,
-      sourceProvenance: observation.sourceProvenance || null,
-      source: "parent-observation"
-    };
   }
 
   function stageTitleMap(stages) {
@@ -904,14 +1045,11 @@
     if (entry.probeTimestamp) {
       return entry.probeTimestamp;
     }
-    return entry.state === "DECLARED" ? "Not yet probed" : "Unverified historical assertion";
+    return entry.state === "DECLARED" ? "Not yet probed" : "Historical assertion or timing unavailable";
   }
 
-  function formatHashLabel(evidence) {
-    if (!evidence) {
-      return "not_measured";
-    }
-    return evidence.hashStatus === "measured" ? evidence.sha256 : "not_measured";
+  function formatHashLabel(hashStatus, sha256) {
+    return hashStatus === "measured" ? sha256 : "not_measured";
   }
 
   function renderFlow(data, root) {
@@ -968,21 +1106,47 @@
     });
   }
 
-  function renderProbes(probes, root) {
-    const body = root.querySelector("tbody");
+  function renderObservations(observations, root) {
+    const body = root.querySelector("[data-observations-table] tbody");
     body.textContent = "";
-    probes.forEach(function (probe) {
+    observations.forEach(function (observation) {
       const row = document.createElement("tr");
       [
-        probe.toolId,
-        probe.state,
-        probe.result.classification,
-        probe.result.exitCode,
-        formatTimestampLabel(probe.probeTimestamp, "Unverified historical assertion"),
-        formatHashLabel(probe.evidence),
-        probe.evidence.location,
-        probe.review.verified ? "VERIFIED" : (probe.importStatus || probe.historicalStatus || "UNVERIFIED"),
-        probe.summary
+        observation.toolId,
+        observation.recordType,
+        observation.state,
+        observation.classification,
+        observation.exitCode,
+        formatTimestampLabel(observation.probeTimestamp, "unknown"),
+        formatTimestampLabel(observation.recordedAt, "unknown"),
+        formatHashLabel(observation.hashStatus, observation.hashSha256),
+        observation.historicalStatus,
+        observation.evidenceLocation,
+        observation.summary
+      ].forEach(function (value) {
+        const cell = document.createElement("td");
+        cell.textContent = String(value);
+        row.appendChild(cell);
+      });
+      body.appendChild(row);
+    });
+  }
+
+  function renderReceipts(receipts, root) {
+    const body = root.querySelector("[data-receipts-table] tbody");
+    body.textContent = "";
+    receipts.forEach(function (receipt) {
+      const row = document.createElement("tr");
+      [
+        receipt.toolId,
+        receipt.state,
+        receipt.result.classification,
+        receipt.result.exitCode,
+        receipt.probeTimestamp,
+        formatHashLabel(receipt.evidence.hashStatus, receipt.evidence.sha256),
+        receipt.evidence.location,
+        receipt.review.verified ? "VERIFIED" : (receipt.importStatus || "UNVERIFIED"),
+        receipt.summary
       ].forEach(function (value) {
         const cell = document.createElement("td");
         cell.textContent = String(value);
@@ -1006,14 +1170,10 @@
     });
   }
 
-  function collectProbeRecords(data, localProbes) {
-    const registryMap = data.registry.entries.reduce(function (map, entry) {
-      map[entry.id] = entry;
-      return map;
-    }, {});
+  function collectObservationRecords(data) {
     return data.evidence.observations.map(function (observation) {
-      return observationToReceipt(observation, registryMap);
-    }).concat(localProbes);
+      return normalizeObservationRecord(observation);
+    });
   }
 
   async function loadData() {
@@ -1047,6 +1207,7 @@
     const appRoot = document.querySelector("[data-app]");
     const message = document.querySelector("[data-message]");
     const registrySection = document.querySelector("[data-registry]");
+    const observationsSection = document.querySelector("[data-observations]");
     const probesSection = document.querySelector("[data-probes]");
     const requestsSection = document.querySelector("[data-requests]");
     const flowSection = document.querySelector("[data-flow]");
@@ -1057,14 +1218,15 @@
     const probeForm = document.querySelector("#probe-form");
     const requestForm = document.querySelector("#request-form");
     const summaryTools = document.querySelector("[data-summary-tools]");
-    const summaryProbes = document.querySelector("[data-summary-probes]");
+    const summaryObservations = document.querySelector("[data-summary-observations]");
+    const summaryReceipts = document.querySelector("[data-summary-receipts]");
     const summaryRequests = document.querySelector("[data-summary-requests]");
 
     const registryMap = data.registry.entries.reduce(function (map, entry) {
       map[entry.id] = entry;
       return map;
     }, {});
-    let localProbes = safeStorageGet(STORAGE_KEYS.probes);
+    let localReceipts = safeStorageGet(STORAGE_KEYS.probes);
     let requests = safeStorageGet(STORAGE_KEYS.requests);
 
     populateSelect(registryState, TOOL_STATES.map(function (state) {
@@ -1073,7 +1235,6 @@
     populateSelect(registryStage, data.chains.stages.map(function (stage) {
       return { value: stage.id, label: stage.title };
     }), "All stages");
-
     populateSelect(document.querySelector("#probe-tool"), data.registry.entries.map(function (entry) {
       return { value: entry.id, label: entry.name };
     }));
@@ -1099,36 +1260,59 @@
         state: registryState.value,
         stage: registryStage.value
       });
-      const probes = collectProbeRecords(data, localProbes);
+      const observations = collectObservationRecords(data);
       renderFlow(data, flowSection);
       renderRegistry(filtered, data, registrySection);
-      renderProbes(probes, probesSection);
+      renderObservations(observations, observationsSection);
+      renderReceipts(localReceipts, probesSection);
       renderRequests(requests, requestsSection);
       summaryTools.textContent = String(filtered.length);
-      summaryProbes.textContent = String(probes.length);
+      summaryObservations.textContent = String(observations.length);
+      summaryReceipts.textContent = String(localReceipts.length);
       summaryRequests.textContent = String(requests.length);
       appRoot.dataset.ready = "true";
     }
 
+    function exportObservationsJson() {
+      downloadText("genomeatlas-observations.json", JSON.stringify(collectObservationRecords(data), null, 2), "application/json");
+    }
+
+    function exportObservationsCsv() {
+      const csv = recordsToCsv(collectObservationRecords(data), [
+        { key: "toolId", label: "toolId" },
+        { key: "recordType", label: "recordType" },
+        { key: "state", label: "state" },
+        { key: "classification", label: "classification" },
+        { key: "exitCode", label: "exitCode" },
+        { key: "probeTimestamp", label: "probeTimestamp" },
+        { key: "recordedAt", label: "recordedAt" },
+        { key: "hashStatus", label: "hashStatus" },
+        { key: "hashSha256", label: "sha256" },
+        { key: "historicalStatus", label: "historicalStatus" },
+        { key: "evidenceLocation", label: "evidenceLocation" },
+        { key: "summary", label: "summary" }
+      ]);
+      downloadText("genomeatlas-observations.csv", csv, "text/csv");
+    }
+
     function exportProbeJson() {
-      downloadText("genomeatlas-probes.json", JSON.stringify(collectProbeRecords(data, localProbes), null, 2), "application/json");
+      downloadText("genomeatlas-probe-receipts.json", JSON.stringify(localReceipts, null, 2), "application/json");
     }
 
     function exportProbeCsv() {
-      const probes = collectProbeRecords(data, localProbes);
-      const csv = recordsToCsv(probes, [
+      const csv = recordsToCsv(localReceipts, [
         { key: "toolId", label: "toolId" },
         { key: "state", label: "state" },
         { label: "classification", getter: function (probe) { return probe.result.classification; } },
         { label: "exitCode", getter: function (probe) { return probe.result.exitCode; } },
-        { label: "probeTimestamp", getter: function (probe) { return formatTimestampLabel(probe.probeTimestamp, "Unverified historical assertion"); } },
+        { key: "probeTimestamp", label: "probeTimestamp" },
         { label: "hashStatus", getter: function (probe) { return probe.evidence.hashStatus; } },
         { label: "sha256", getter: function (probe) { return probe.evidence.sha256; } },
         { label: "evidenceLocation", getter: function (probe) { return probe.evidence.location; } },
         { label: "verified", getter: function (probe) { return probe.review.verified; } },
         { key: "summary", label: "summary" }
       ]);
-      downloadText("genomeatlas-probes.csv", csv, "text/csv");
+      downloadText("genomeatlas-probe-receipts.csv", csv, "text/csv");
     }
 
     function exportRequestJson() {
@@ -1151,6 +1335,8 @@
     registryState.addEventListener("change", refresh);
     registryStage.addEventListener("change", refresh);
 
+    document.querySelector("[data-export-observation-json]").addEventListener("click", exportObservationsJson);
+    document.querySelector("[data-export-observation-csv]").addEventListener("click", exportObservationsCsv);
     document.querySelector("[data-export-probe-json]").addEventListener("click", exportProbeJson);
     document.querySelector("[data-export-probe-csv]").addEventListener("click", exportProbeCsv);
     document.querySelector("[data-export-request-json]").addEventListener("click", exportRequestJson);
@@ -1166,8 +1352,8 @@
       reader.onload = function () {
         try {
           const imported = importReceiptText(String(reader.result || ""));
-          localProbes = localProbes.concat(imported);
-          safeStorageSet(STORAGE_KEYS.probes, localProbes);
+          localReceipts = localReceipts.concat(imported);
+          safeStorageSet(STORAGE_KEYS.probes, localReceipts);
           refresh();
           setMessage(message, "Imported " + imported.length + " receipt(s) as unverified evidence.", "success");
           importInput.value = "";
@@ -1192,8 +1378,8 @@
           hashStatus: formData.get("hashStatus"),
           hashSha256: formData.get("hashSha256")
         }, registryMap);
-        localProbes = localProbes.concat(receipt);
-        safeStorageSet(STORAGE_KEYS.probes, localProbes);
+        localReceipts = localReceipts.concat(receipt);
+        safeStorageSet(STORAGE_KEYS.probes, localReceipts);
         refresh();
         probeForm.reset();
         setMessage(message, "Recorded a local probe receipt without marking it verified.", "success");
@@ -1224,7 +1410,7 @@
     });
 
     refresh();
-    setMessage(message, "Loaded historical observations plus local-only planning and export controls.", "neutral");
+    setMessage(message, "Loaded historical observations plus separate local-only receipt and planning controls.", "neutral");
   }
 
   const exported = {
@@ -1240,9 +1426,11 @@
     filterRegistry: filterRegistry,
     createRequestArtifact: createRequestArtifact,
     createProbeReceipt: createProbeReceipt,
-    observationToReceipt: observationToReceipt,
+    normalizeObservationRecord: normalizeObservationRecord,
+    collectObservationRecords: collectObservationRecords,
     buildStageLineage: buildStageLineage,
-    formatRegistryTimestamp: formatRegistryTimestamp
+    formatRegistryTimestamp: formatRegistryTimestamp,
+    hasClassificationExitConsistency: hasClassificationExitConsistency
   };
 
   if (typeof module !== "undefined" && module.exports) {

@@ -11,10 +11,10 @@
         "review"
       ],
       "probeTimestamp": null,
-      "evidenceLocation": "docs/evidence/parent-observations.json#obs-rdc-nonce",
-      "inputContract": "Authorized endpoint command request with nonce payload.",
-      "outputContract": "Completion record proving nonce execution on the authorized Windows endpoint.",
-      "notes": "Historical observation only; no live session is implied; source receipt timestamp or payload hash was not attached."
+      "evidenceLocation": "docs/evidence/parent-observations.json#obs-rdc-challenge-nonce",
+      "inputContract": "Authorized endpoint challenge or command request.",
+      "outputContract": "Challenge file read/write confirmation or command outcome from the authorized endpoint boundary.",
+      "notes": "Challenge file write/read on Windows and WSL readback succeeded; a fuller WSL tmp acknowledgment script-write remained safety-blocked. Historical assertions remain unverified unless a retained receipt exists."
     },
     {
       "id": "github-connector",
@@ -26,10 +26,10 @@
         "review"
       ],
       "probeTimestamp": null,
-      "evidenceLocation": "docs/evidence/parent-observations.json#obs-github-connector",
+      "evidenceLocation": "docs/evidence/parent-observations.json#obs-github-connector-read",
       "inputContract": "Read-only repository metadata request.",
-      "outputContract": "Repository listing or file metadata for the current repository.",
-      "notes": "Current evidence is read-only access to this repository; source receipt timestamp or payload hash was not attached."
+      "outputContract": "Repository listing, file metadata, or public source snapshots.",
+      "notes": "Historical source browsing is separate from receipt-backed execution proof; the earlier repo-absence result is superseded by repository creation and must not be shown as current."
     },
     {
       "id": "github-cli",
@@ -39,11 +39,25 @@
       "stageIds": [
         "review"
       ],
-      "probeTimestamp": null,
+      "probeTimestamp": "2026-09-09T14:21:19.3399192Z",
       "evidenceLocation": "docs/evidence/parent-observations.json#obs-gh-auth",
       "inputContract": "Authenticated GitHub read command.",
-      "outputContract": "Command success/failure plus repository-readable output.",
-      "notes": "A historical repo-absence result is retained only as superseded evidence and not treated as current; source receipt timestamp or payload hash was not attached."
+      "outputContract": "Authenticated repository-readable output with exit status.",
+      "notes": "The authenticated Windows GitHub probe predates repository creation at 14:21:35Z, so any earlier repo-absence result is superseded historical context only."
+    },
+    {
+      "id": "github-actions",
+      "name": "GitHub Actions",
+      "category": "ci-verification",
+      "state": "EXECUTED",
+      "stageIds": [
+        "review"
+      ],
+      "probeTimestamp": "2026-09-09T14:47:55Z",
+      "evidenceLocation": "docs/evidence/parent-observations.json#obs-ci-verify-2e5d87a",
+      "inputContract": "Bounded workflow-dispatch verification request against an exact source commit.",
+      "outputContract": "Workflow logs, archive receipts, and synthetic software-only test outputs.",
+      "notes": "Run 34365988867 verified source retrieval and blob hashing for commit 2e5d87a without approving unrelated observation or hash-model defects."
     },
     {
       "id": "copilot",
@@ -57,21 +71,21 @@
       "evidenceLocation": "docs/evidence/parent-observations.json#obs-copilot-pr",
       "inputContract": "Issue or pull request implementation request.",
       "outputContract": "Repository changes and test artifacts on the active PR branch.",
-      "notes": "Source provenance is GitHub Actions run metadata; implementation remains in progress in this PR."
+      "notes": "Source provenance is GitHub Actions run metadata; this is Copilot PR work, not a WD-local Codex review completion."
     },
     {
       "id": "codex-cli-session",
       "name": "Codex CLI/session",
       "category": "implementation",
-      "state": "PROBED",
+      "state": "BLOCKED",
       "stageIds": [
         "review"
       ],
       "probeTimestamp": "2026-09-09T14:33:00Z",
-      "evidenceLocation": "docs/evidence/parent-observations.json#obs-codex-session-started",
-      "inputContract": "Local Codex session bootstrap request.",
-      "outputContract": "Established local coding session metadata.",
-      "notes": "WD Codex task session start was observed from task metadata; implementation was still pending and no completion receipt is claimed."
+      "evidenceLocation": "docs/evidence/parent-observations.json#obs-codex-thread-failed",
+      "inputContract": "Local Codex CLI probe, login status read, and read-only thread bootstrap request.",
+      "outputContract": "CLI version/login output plus read-only thread/session status.",
+      "notes": "CLI version 0.153.4 and ChatGPT login status succeeded, then a new read-only thread started and later failed on an unrelated Cloudflare MCP OAuth-required transport error; no completion receipt is claimed."
     },
     {
       "id": "wsl-ubuntu",
@@ -82,10 +96,10 @@
         "review"
       ],
       "probeTimestamp": null,
-      "evidenceLocation": "docs/evidence/parent-observations.json#obs-wsl-uname",
-      "inputContract": "Remote uname or shell command against Ubuntu in WSL.",
-      "outputContract": "Kernel and distribution details.",
-      "notes": "Ubuntu reported a WSL1 kernel, not WSL2; source receipt timestamp or payload hash was not attached."
+      "evidenceLocation": "docs/evidence/parent-observations.json#obs-wsl-inventory-tests",
+      "inputContract": "WSL Ubuntu command execution or legacy repository software-only test request.",
+      "outputContract": "Command output, kernel details, or software-only test results.",
+      "notes": "Ubuntu reported WSL1 rather than WSL2, and a separate synthetic inventory regression run passed 10 tests on legacy commit 7c27865b7113b0fe8b22a57a751ed82fdaae9c8a."
     },
     {
       "id": "ncbi-datasets",
@@ -231,15 +245,15 @@
       "id": "bionemo-nim",
       "name": "BioNeMo/NIM",
       "category": "ai-assistant",
-      "state": "DISCOVERED",
+      "state": "PROBED",
       "stageIds": [
         "review"
       ],
       "probeTimestamp": null,
-      "evidenceLocation": "docs/evidence/parent-observations.json#obs-bionemo-skills",
-      "inputContract": "Installed-skill listing or NIM skill resource lookup.",
-      "outputContract": "Skill catalogue entries or skill-read result.",
-      "notes": "Listed installed skills, but actual skill read returned resource-not-found; no NIM API or GPU job executed; source receipt timestamp or payload hash was not attached."
+      "evidenceLocation": "docs/evidence/parent-observations.json#obs-bionemo-source",
+      "inputContract": "Toolkit source retrieval, installed-skill lookup, or NIM skill resource request.",
+      "outputContract": "Source snapshots, skill catalogue entries, or NIM route status.",
+      "notes": "Official toolkit source and MSA-Search SKILL.md were retrieved through GitHub, but the installed skill route remains unresolved and no NIM job ran. Use only as optional structural or homolog-search guidance, not as a replacement for the frozen LAB conserved-marker alignment."
     },
     {
       "id": "smarts-bio",
@@ -250,10 +264,10 @@
         "review"
       ],
       "probeTimestamp": null,
-      "evidenceLocation": "docs/evidence/parent-observations.json#obs-smarts-bio",
+      "evidenceLocation": "docs/evidence/parent-observations.json#obs-smarts-bio-mismatch",
       "inputContract": "Catalogue browse or named tool execution request.",
       "outputContract": "Catalogue entries, tool execution receipt, or explicit no-execution reply.",
-      "notes": "Catalogue/execution mismatch: 87 tools listed, 404 on bio_gc_content, and smarts_query answered manually for synthetic ACGTACGT with no tool executed; source receipt timestamp or payload hash was not attached."
+      "notes": "The catalogue/execution mismatch remains unresolved: 87 tools listed, 404 on bio_gc_content, and a manual 50% GC answer for synthetic ACGTACGT that was explicitly not a tool run."
     },
     {
       "id": "genomic-intelligence",
@@ -295,7 +309,7 @@
       "evidenceLocation": "docs/evidence/parent-observations.json#obs-native-sites",
       "inputContract": "Native Site deployment or receipt lookup.",
       "outputContract": "Deployment receipt.",
-      "notes": "Native ChatGPT Sites were not exposed to the parent observer, so no native deployment receipt exists; source receipt timestamp or payload hash was not attached."
+      "notes": "Native ChatGPT Sites were not exposed to the parent observer, so no native deployment receipt exists."
     }
   ]
 }

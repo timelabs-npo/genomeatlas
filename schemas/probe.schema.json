@@ -102,7 +102,7 @@
             "properties": {
               "sha256": {
                 "type": "string",
-                "pattern": "^[A-Fa-f0-9]{64}$"
+                "pattern": "^(?:sha256:)?[A-Fa-f0-9]{64}$"
               }
             }
           }

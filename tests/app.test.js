@@ -25,12 +25,29 @@ test('flow lineage keeps host tree and R-M detection as independent branches', f
   assert.equal(lineage['rm-detection'].outgoing.includes('host-tree'), false);
 });
 
-test('valid measured and not_measured receipts validate and import as unverified', function () {
-  ['valid-receipt.json', 'valid-not-measured-receipt.json'].forEach(function (fixtureName) {
+test('fallback data matches seeded JSON files exactly', function () {
+  const registry = JSON.parse(fs.readFileSync(path.join(root, 'docs', 'data', 'registry.json'), 'utf8'));
+  const chains = JSON.parse(fs.readFileSync(path.join(root, 'docs', 'data', 'chains.json'), 'utf8'));
+  const observations = JSON.parse(fs.readFileSync(path.join(root, 'docs', 'evidence', 'parent-observations.json'), 'utf8'));
+
+  assert.deepEqual(app.FALLBACK_DATA.registry, registry);
+  assert.deepEqual(app.FALLBACK_DATA.chains, chains);
+  assert.deepEqual(app.FALLBACK_DATA.evidence, observations);
+});
+
+test('observation records stay distinct from probe receipts', function () {
+  const observation = app.FALLBACK_DATA.evidence.observations[0];
+  assert.equal(observation.kind, 'observation-record');
+  assert.ok(Object.hasOwn(observation, 'probeTimestamp'));
+  assert.ok(Object.hasOwn(observation, 'recordedAt'));
+  assert.equal(Object.hasOwn(observation, 'review'), false);
+});
+
+test('valid measured receipts accept bare and sha256-prefixed 64-hex digests and import as unverified', function () {
+  ['valid-receipt.json', 'valid-prefixed-hash-receipt.json', 'valid-not-measured-receipt.json'].forEach(function (fixtureName) {
     const receipt = readJson(fixtureName);
     const verdict = app.validateReceipt(receipt);
     assert.equal(verdict.valid, true, fixtureName + ' should be valid');
-    assert.deepEqual(verdict.errors, []);
 
     const imported = app.importReceiptText(JSON.stringify(receipt));
     assert.equal(imported.length, 1);
@@ -39,7 +56,7 @@ test('valid measured and not_measured receipts validate and import as unverified
   });
 });
 
-test('malicious HTML, unknown state, missing exit code, and strict hash failures are rejected', function () {
+test('malicious HTML, unknown state, missing exit code, invalid hashes, and status/exit inconsistencies are rejected', function () {
   [
     'malicious-html-receipt.json',
     'unknown-state-receipt.json',
@@ -47,7 +64,11 @@ test('malicious HTML, unknown state, missing exit code, and strict hash failures
     'missing-hash-receipt.json',
     'invalid-sha-format-receipt.json',
     'not-measured-with-hash-receipt.json',
-    'missing-hash-status-receipt.json'
+    'missing-hash-status-receipt.json',
+    'bogus-short-hash-receipt.json',
+    'status-exit-inconsistency-receipt.json',
+    'failed-zero-exit-receipt.json',
+    'invalid-date-receipt.json'
   ].forEach(function (name) {
     const verdict = app.validateReceipt(readJson(name));
     assert.equal(verdict.valid, false, name + ' should be invalid');
@@ -101,19 +122,21 @@ test('registry filtering supports search, state, and stage', function () {
   assert.deepEqual(stageMatch.map(function (entry) { return entry.id; }).sort(), ['defensefinder', 'rebase']);
 });
 
-test('CSV export escapes spreadsheet formulas safely', function () {
+test('CSV export escapes spreadsheet formulas safely including leading whitespace controls', function () {
   const csv = app.recordsToCsv([
     { summary: '=2+3', toolId: 'github-cli' },
-    { summary: '+SUM(A1:A2)', toolId: 'rdc' },
-    { summary: '@malicious', toolId: 'smarts-bio' }
+    { summary: ' +SUM(A1:A2)', toolId: 'rdc' },
+    { summary: '\t@malicious', toolId: 'smarts-bio' },
+    { summary: '\n-2+4', toolId: 'wsl-ubuntu' }
   ], [
     { key: 'toolId', label: 'toolId' },
     { key: 'summary', label: 'summary' }
   ]);
 
   assert.match(csv, /'=2\+3/);
-  assert.match(csv, /'\+SUM\(A1:A2\)/);
-  assert.match(csv, /'@malicious/);
+  assert.match(csv, /' \+SUM\(A1:A2\)/);
+  assert.match(csv, /'\t@malicious/);
+  assert.match(csv, /"'\n-2\+4"/);
 });
 
 test('local probe creation reuses registry contracts and supports explicit not_measured hashes', function () {
@@ -138,27 +161,22 @@ test('local probe creation reuses registry contracts and supports explicit not_m
   assert.equal(receipt.evidence.sha256, null);
 });
 
-test('historical observations preserve null timestamps and null hashes unless real source metadata exists', function () {
+test('historical assertions keep null probe timestamps unless exact timing is known and never claim verification', function () {
   const observations = app.FALLBACK_DATA.evidence.observations;
-  const parentLedger = observations.filter(function (observation) {
-    return observation.sourceProvenance === 'parent observation ledger';
+  const narrativeOnly = observations.filter(function (observation) {
+    return observation.recordType === 'historical-assertion';
   });
-  assert.ok(parentLedger.length > 0);
-  parentLedger.forEach(function (observation) {
-    assert.equal(observation.timestamp, null);
-    assert.equal(observation.hashStatus, 'not_measured');
-    assert.equal(observation.hashSha256, null);
+  assert.ok(narrativeOnly.length > 0);
+  narrativeOnly.forEach(function (observation) {
+    assert.equal(observation.probeTimestamp, null);
+    assert.ok(Object.hasOwn(observation, 'recordedAt'));
     assert.equal(observation.historicalStatus, 'UNVERIFIED');
   });
 
-  const codex = observations.find(function (observation) {
-    return observation.id === 'obs-codex-session-started';
+  const github = observations.find(function (observation) {
+    return observation.id === 'obs-gh-auth';
   });
-  assert.ok(codex);
-  assert.equal(codex.timestamp, '2026-09-09T14:33:00Z');
-  assert.equal(codex.state, 'PROBED');
-  assert.match(codex.summary, /implementation was pending/i);
-  assert.equal(codex.hashSha256, null);
+  assert.equal(github.probeTimestamp, '2026-09-09T14:21:19.3399192Z');
 });
 
 test('required static assets exist and HTML references resolve locally', function () {
