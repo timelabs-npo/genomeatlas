@@ -1,0 +1,199 @@
+{
+  "origin": "LOCAL_TEST_EXECUTION",
+  "checked_at": "2026-09-09T15:10:36.849825+00:00",
+  "core_checks_state": "FAILED",
+  "checks": [
+    {
+      "command": "python --version",
+      "started_at": "2026-09-09T15:10:26.434542+00:00",
+      "finished_at": "2026-09-09T15:10:26.447249+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "Python 3.14.6",
+      "stderr": ""
+    },
+    {
+      "command": "node --version",
+      "started_at": "2026-09-09T15:10:26.447314+00:00",
+      "finished_at": "2026-09-09T15:10:26.481700+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "v24.19.0",
+      "stderr": ""
+    },
+    {
+      "command": "git --version",
+      "started_at": "2026-09-09T15:10:26.481766+00:00",
+      "finished_at": "2026-09-09T15:10:26.523871+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "git version 2.45.1.windows.1",
+      "stderr": ""
+    },
+    {
+      "command": "python scripts/build_data.py --check",
+      "started_at": "2026-09-09T15:10:26.523938+00:00",
+      "finished_at": "2026-09-09T15:10:26.644159+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "PASS: public JSON and file-compatible bundle match",
+      "stderr": ""
+    },
+    {
+      "command": "python scripts/verify.py",
+      "started_at": "2026-09-09T15:10:26.644228+00:00",
+      "finished_at": "2026-09-09T15:10:26.736501+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "PASS: 10 invariant groups; 177 unique versioned accession records; byte identity preserved",
+      "stderr": ""
+    },
+    {
+      "command": "python -m unittest discover -s tests -v",
+      "started_at": "2026-09-09T15:10:26.736557+00:00",
+      "finished_at": "2026-09-09T15:10:27.114320+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "",
+      "stderr": "test_no_deployment (test_contracts.Contracts.test_no_deployment) ... ok\ntest_node_contract_suite (test_contracts.Contracts.test_node_contract_suite) ... ok\ntest_parent_reports_attributed (test_contracts.Contracts.test_parent_reports_attributed) ... ok\ntest_repository_invariants (test_contracts.Contracts.test_repository_invariants) ... ok\ntest_bad_state_and_empty_contract_rejected (test_hardening.Hardening.test_bad_state_and_empty_contract_rejected) ... ok\ntest_changed_accession_order_rejected (test_hardening.Hardening.test_changed_accession_order_rejected) ... ok\ntest_changed_accession_version_rejected (test_hardening.Hardening.test_changed_accession_version_rejected) ... ok\ntest_duplicate_tool_id_rejected (test_hardening.Hardening.test_duplicate_tool_id_rejected) ... ok\ntest_exact_accession_bytes_pass (test_hardening.Hardening.test_exact_accession_bytes_pass) ... ok\ntest_missing_contract_rejected (test_hardening.Hardening.test_missing_contract_rejected) ... ok\ntest_short_or_duplicate_panel_rejected (test_hardening.Hardening.test_short_or_duplicate_panel_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.232s\n\nOK"
+    },
+    {
+      "command": "node --test tests/contracts.test.js tests/contracts.test.cjs tests/scientific.test.cjs",
+      "started_at": "2026-09-09T15:10:27.114392+00:00",
+      "finished_at": "2026-09-09T15:10:27.351665+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "\u2714 browser and data share exact state and allowed-job vocabularies (3.917ms)\n\u2714 valid draft and confirmation requests stay unexecuted (1.2149ms)\n\u2714 missing inputs, hashes, endpoint, reviewer, commit and budget reject (0.6383ms)\n\u2714 all seven allowed jobs accepted and any other job rejected (0.4625ms)\n\u2714 approval cannot claim execution, approval verification or a run receipt (0.3171ms)\n\u2714 bounded public aliases reject paths, URLs, credentials and markup (0.3851ms)\n\u2714 budget rejects non-finite, negative, excessive, string and fractional cents (0.3561ms)\n\u2714 import caps bytes and input count; malformed and extra fields reject (1.1037ms)\n\u2714 unknown, missing and failed jobs never become absence (0.5304ms)\n\u2714 raw hit or complete cassette cannot become curated P (0.4183ms)\n\u2714 curated presence and NOT_DETECTED require full evidence flags (0.2669ms)\n\u2714 valid request and import (3.6255ms)\n\u2714 missing inputs rejected (0.65ms)\n\u2714 duplicate input rejected (0.3449ms)\n\u2714 consent is not execution (0.3806ms)\n\u2714 approval and receipt cannot enter request (0.2944ms)\n\u2714 malformed imports rejected (0.8564ms)\n\u2714 oversize UTF8 rejected (0.6086ms)\n\u2714 receipt stays untrusted even if claim passed (0.4569ms)\n\u2714 receipt unknown fields and false verification rejected (0.6468ms)\n\u2714 receipt invalid status and text rejected (0.9443ms)\n\u2714 markup retained as literal text for inert rendering (1.1943ms)\n\u2714 failed is not absent (0.6353ms)\n\u2714 unknown missing or not tested is not absent (0.4151ms)\n\u2714 raw hit remains U and cassette is not proof (0.4055ms)\n\u2714 curated P needs exact strain evidence (0.387ms)\n\u2714 NOT_DETECTED requires complete documented exact strain assessment (0.5139ms)\n\u2714 state vocabulary and duplicate tool IDs (1.9781ms)\n\u2714 unallowed job and negative budget rejected (0.5081ms)\n\u2714 complete successful exact-genome model call is C without functional validation (2.2451ms)\n\u2714 C requires every computational evidence field (0.4459ms)\n\u2714 cassette and model evidence do not promote U or P (0.2918ms)\n\u2714 legacy ABSENT normalizes to NOT_DETECTED only after documented assessment (0.4215ms)\n\u2714 failed and incomplete assessments override all supplied scientific calls (0.419ms)\n\u2139 tests 34\n\u2139 suites 0\n\u2139 pass 34\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 162.1107",
+      "stderr": ""
+    },
+    {
+      "command": "node --check docs/contracts.js",
+      "started_at": "2026-09-09T15:10:27.351780+00:00",
+      "finished_at": "2026-09-09T15:10:27.459752+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "node --check docs/app.js",
+      "started_at": "2026-09-09T15:10:27.459832+00:00",
+      "finished_at": "2026-09-09T15:10:27.557994+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "node --check docs/data.js",
+      "started_at": "2026-09-09T15:10:27.558090+00:00",
+      "finished_at": "2026-09-09T15:10:27.670025+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "node --check tests/browser-smoke.js",
+      "started_at": "2026-09-09T15:10:27.670119+00:00",
+      "finished_at": "2026-09-09T15:10:27.759103+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "node --check scripts/browser_smoke.mjs",
+      "started_at": "2026-09-09T15:10:27.759175+00:00",
+      "finished_at": "2026-09-09T15:10:27.878727+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "python -c \"import ast,pathlib; files=list(pathlib.Path('scripts').glob('*.py'))+list(pathlib.Path('tests').glob('*.py')); [ast.parse(p.read_text(encoding='utf-8'),filename=str(p)) for p in files]; print('PASS: Python syntax for',len(files),'files')\"",
+      "started_at": "2026-09-09T15:10:27.878850+00:00",
+      "finished_at": "2026-09-09T15:10:28.073747+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "PASS: Python syntax for 12 files",
+      "stderr": ""
+    },
+    {
+      "command": "git diff --check",
+      "started_at": "2026-09-09T15:10:28.073842+00:00",
+      "finished_at": "2026-09-09T15:10:28.187118+00:00",
+      "exit_code": 0,
+      "state": "PASSED",
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs/contracts.js', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'docs/data.js', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'docs/evidence/native-capability.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'scripts/finalize_evidence.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'scripts/run_checks.py', LF will be replaced by CRLF the next time Git touches it"
+    },
+    {
+      "command": "node scripts/browser_smoke.mjs",
+      "started_at": "2026-09-09T15:10:28.187211+00:00",
+      "finished_at": "2026-09-09T15:10:36.833711+00:00",
+      "exit_code": 1,
+      "state": "FAILED",
+      "stdout": "",
+      "stderr": "FAIL: CDP timeout: Runtime.enable"
+    }
+  ],
+  "browser_assertions": "NOT_TESTED",
+  "prior_browser_attempt": {
+    "kind": "LOCAL_BROWSER_SMOKE",
+    "state": "FAILED",
+    "assertion_execution": "NOT_TESTED",
+    "command": "node scripts/browser_smoke.mjs",
+    "started_at": "2026-09-09T15:10:28.326Z",
+    "finished_at": "2026-09-09T15:10:36.816Z",
+    "browser": "Chrome/152.0.7977.83",
+    "browser_process_exit": 2147483651,
+    "exit_code": 1,
+    "checks": [],
+    "failure": "CDP timeout: Runtime.enable",
+    "errors": [],
+    "website_http_requests": []
+  },
+  "browser_limitation": "Only the explicit browser command and its assertion receipt establish current browser execution. Parent assertions are separately attributed.",
+  "source_stable_during_checks": true,
+  "reviewed_source_sha256": {
+    "AGENTS.md": "e562eefcfc78cfafd8504dba4a412d80ebbd6f21a19361864551f19865aa062a",
+    "docs/app.js": "40905b3bc42a42e08f914663e5d35106adeb979c4c595e149593cf49b692ef15",
+    "docs/contracts.js": "63297b609b13e573db64bec5ce73ba474d3ab64bdb9de235bf8a131a69999060",
+    "docs/data/atlas.json": "25a9dc068a7228580c6c9c5155fafb637fa09e1a70cb2bc518e52c2b63820e73",
+    "docs/data/selected_accessions.txt": "56209c6042213da0ea96160d2a2d4e785d7574246b4b8d0371a290333c9e264a",
+    "docs/data.js": "233ef63254093bdc5485ab22f6e1793bace9cb3c3098ec2e5ead1383b9de879d",
+    "docs/evidence/native-capability.json": "c6ad72dc270fbe873c37fac22f73c9d53c1bd9ad74f791e476d1be03e152f2e6",
+    "docs/evidence/parent-report.json": "ffaba509955c1a84f669fee3c866558dfbb46cac87b1b853d8f507a8cae440f2",
+    "docs/favicon.svg": "cea53e2a8d96ba601e007ec790bf830187251c9599ac5bc5d6b4043460ed92a3",
+    "docs/index.html": "352ee39bd73f1b87dd6be47b7f1847479fc92e1fdef5df2ec53b4cb4aff4cc07",
+    "docs/style.css": "25f6a7d01a440273b3544cf775432f1d40684ea81a6aaa990736fdfb9fa64d6e",
+    "docs/styles.css": "f6d64f582072e73c210a3ca4a785e395cf217006f7b75114b188629c0ac73bc4",
+    "docs/templates/provenance.json": "9be5267930415fdacd7c22f5f7eadbd15fb800ba5ac1ab476be354c8dc31406e",
+    "docs/templates/review-request.json": "5b4f30adb058717e0c3e2c007dbcacbb6ae25494a783a2e04920e8df83eddebf",
+    "docs/templates/rm-evidence.json": "d21eeb025c18e88c47eab6794f6b1e7ad669aa394322fccbeadd77f210c860b8",
+    "LICENSE": "b8541a8d14f89c4ced66af6e5e3bb1913cb03aaf02279c2ef728d2fdcbc09b51",
+    "NATIVE_SITES.md": "55ded02432f4d1544e3265e4f1b59c348b80437be0240bb6c5b8956216068802",
+    "README.md": "6a75e5bfbed700efae58105bb560b66e7d0fd4de8d5a5d9c952b7b72122f07ae",
+    "scripts/browser_smoke.mjs": "f52c5c2434547b5057ddae89adb0d16c6bf8df9b87e38a6099812eaed70e6ea5",
+    "scripts/browser_smoke.py": "31a77a216a0bca023a0c0a01032189b0f611e51593c8bb23a8630b01056d44e1",
+    "scripts/build_data.py": "7f87c23be921ebedfe4b648d746ffa13a65a1d633d98bd1528478cbab6d733bc",
+    "scripts/finalize_evidence.py": "38a1cc8037c2cc3d2f4742b44fd61a2cefdf96b532b7bf0f81e24917bc884053",
+    "scripts/finish_suite.py": "4ab0ac7169229a49bcfa973f35cf5e173d16bed51f53595c024799ff971ebc2a",
+    "scripts/native_preflight.py": "9b678de5e77f4dc9c24418944747d6ced4e55048229f814f594cf5d33e1fbd50",
+    "scripts/native_saved_preview.py": "36cb42f0cd3411d627e11019ac22577ac86a245b9eecd88b5465327ac430cd5c",
+    "scripts/prepare_native_source.py": "6d1ea25d623fe8e110f5a3fa2d0548f863551f08155a852c679f08e37843dc78",
+    "scripts/refresh_public_receipts.py": "1fc59aac5a56c704b69f0e813dd3700b36ff503b8ab5d670fb9d88582cfbe17e",
+    "scripts/run_checks.py": "ea5c2ddc74e9eefb68b9f30f9e7b857d13de043625c932422f669fa26703acca",
+    "scripts/verify.py": "73f184a392e339fc3cba1822955dad3ed2b9ac0072f43121e4ac6221b6f16824",
+    "tests/browser-smoke.js": "7fa659b8aef4d9884ff9b9daced71b2a3ca63c8b95c57853e130d27b141848f0",
+    "tests/contracts.test.cjs": "355a1a88417560e5cae5aea03e1c6fba27fe5b612b9d34c9765e500aeb6be519",
+    "tests/contracts.test.js": "615ba2ada685167084e685fcf609ab4d264094870e1efe2340aa5e290c10b34b",
+    "tests/scientific.test.cjs": "bba2d85c4eb379fe62cb4aaf0a97fb7f18ef9fc173a7e741bfbca2be955464de",
+    "tests/test_contracts.py": "77525d7e1274f19124d3b67f71ef98c1efeb2ef2b04f0cc0a42e1deb551efcaf",
+    "tests/test_hardening.py": "f714ad548df1f54295467d090445b8bb8b3efbccc52b05e7bfaee8370dc92273",
+    "THIRD_PARTY_NOTICES.md": "7073e1e7f0058b9e4ea11fc54c27130baec6ab19a76ad00440a7f16d227e0e07"
+  },
+  "not_biological_receipts": true
+}

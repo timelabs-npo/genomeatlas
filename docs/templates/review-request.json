@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "kind": "REVIEW_REQUEST",
+  "state": "DRAFT",
+  "job": "panel-audit",
+  "source_commit": "9b7c396f7f40efc9d7b943920affba47a366bb2b",
+  "input_hashes": [
+    {
+      "name": "selected_accessions.txt",
+      "sha256": "56209c6042213da0ea96160d2a2d4e785d7574246b4b8d0371a290333c9e264a"
+    }
+  ],
+  "requested_endpoint": "",
+  "reviewer": "",
+  "budget_cap": {
+    "amount": 0,
+    "currency": "USD"
+  },
+  "execution": "NOT_EXECUTED",
+  "run_receipt": null
+}
