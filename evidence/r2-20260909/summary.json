@@ -1,0 +1,53 @@
+{
+  "schema": "genomeatlas.parent-review/1",
+  "utc": "2026-09-09T15:58:10.248502+00:00",
+  "source_commit": "9a4aef2d2fc37fb68803fc7ad0f0490bcd9f5a33",
+  "windows": {
+    "python_tests": 30,
+    "node_tests": 13,
+    "exit_code": 0
+  },
+  "ubuntu": {
+    "python_tests": 30,
+    "exit_code": 0,
+    "node": "BLOCKED_PERMISSION_ERRNO13"
+  },
+  "exchange": {
+    "windows_ubuntu_tmp": "PASS",
+    "wd_github_connector_wd": "PASS",
+    "request_commit": "03a1d940791c2d55bc74399fc3b4bb18ffa2c812",
+    "reply_commit": "ddd89dfc94e2d79e376db56bf24f0bff22095f57"
+  },
+  "codex": {
+    "execution_session": "01a086bf-d190-7372-bca0-94ccaebe6a7a",
+    "native_read_session": "01a086da-fdfb-75d2-8bc3-3e9bebebb29a",
+    "native_provider_reads": 3,
+    "native_saved_version": 4,
+    "site_id": "appgprj_6aa1709139648191ab998de6fccc4890",
+    "live_url": "https://genomeatlas-site-helper-suite.hx31337.chatgpt.site",
+    "live_source_binding": "NOT_RETURNED"
+  },
+  "visitor_probe": {
+    "endpoint": "WD",
+    "http_status": 403,
+    "status": "FAILED_NOT_BYPASSED",
+    "browser": "NOT_TESTED"
+  },
+  "smarts_bio": {
+    "catalog": "AVAILABLE_IN_THIS_CHAT",
+    "execution": "404_TOOL_NOT_FOUND",
+    "tool": "bioinformatics.gcContent",
+    "expected_control": "ACGTACGT => 8nt,50pct GC; NOT_MEASURED"
+  },
+  "bionemo": {
+    "plugin": "DECLARED_INSTALLED",
+    "runtime": "GPU_NOT_RUN",
+    "dependency_lookup": "plugin_not_found; not proof of uninstall"
+  },
+  "biology": {
+    "host_tree": "NOT_RUN",
+    "rm_calls": "NOT_RUN"
+  },
+  "workflow_issue": "Current suite-verify.yml still serves docs/ and targets old UI selectors; current root-site browser CI not accepted",
+  "scope": "bounded software tests, transport probes and native provider readback; NOT full biological validation"
+}
