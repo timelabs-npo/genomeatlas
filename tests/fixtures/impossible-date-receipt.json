@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "toolId": "github-cli",
   "state": "EXECUTED",
-  "probeTimestamp": "2026-09-09T14:21:19.3399192Z",
-  "summary": "Authenticated Windows GitHub probe succeeded.",
+  "probeTimestamp": "2026-02-30T15:01:28Z",
+  "summary": "Invalid timestamps must be rejected.",
   "inputContract": "Authenticated GitHub read command.",
   "outputContract": "Command success/failure plus repository-readable output.",
   "evidence": {
-    "location": "tests/fixtures/synthetic-github-cli-payload.txt",
+    "location": "external-receipt://github-cli/windows-read",
     "hashStatus": "measured",
-    "sha256": "sha256:57363babbb41f30bc3aedbf25d6a279f3f8ee0d1ad31e1e452b6c2f5d51d991e"
+    "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
   },
   "result": {
     "classification": "DETECTED",

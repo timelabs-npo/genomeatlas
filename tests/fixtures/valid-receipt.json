@@ -8,9 +8,9 @@
   "inputContract": "Authenticated GitHub read command.",
   "outputContract": "Command success/failure plus repository-readable output.",
   "evidence": {
-    "location": "docs/evidence/parent-observations.json#obs-gh-auth",
+    "location": "tests/fixtures/synthetic-github-cli-payload.txt",
     "hashStatus": "measured",
-    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    "sha256": "57363babbb41f30bc3aedbf25d6a279f3f8ee0d1ad31e1e452b6c2f5d51d991e"
   },
   "result": {
     "classification": "DETECTED",

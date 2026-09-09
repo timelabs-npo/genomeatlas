@@ -13,7 +13,7 @@ This repository now ships a **zero-build static app** under `docs/` for:
 The app is not a native ChatGPT Site deployment. Parent observations now show native ChatGPT Sites discovery/probing via `list_sites`, but there is still **no deployment receipt**, so this repository should distinguish between:
 
 - **Portable/GitHub Pages source**: the HTML/CSS/JS and JSON files in `docs/`
-- **Native ChatGPT Site**: discovery/probe evidence only, with deployment still pending and no native deployment receipt to import or claim
+- **Native ChatGPT Site**: discovery evidence exists, but publication remains blocked here because no saved versions or deployment receipts were retained and local source writes were denied by session policy
 
 ## Local use
 
@@ -32,11 +32,25 @@ Key views:
 - no inline event handlers
 - no remote execution controls
 - imported or manually recorded receipts remain **unverified** until external review
+- stored receipts are revalidated on reload and forced back to unverified display status
 - historical observations remain separately tagged `observation-record` entries and never masquerade as execution receipts
 - parent assertions without exact timing use `probeTimestamp: null`; `recordedAt` is tracked separately when a source snapshot time is known
 - measured receipt hashes must be exactly 64 hexadecimal digits, with or without a literal `sha256:` prefix; otherwise use `null` with `not_measured`
+- receipt import is intentionally size-bounded for local review safety
 - all user-supplied text is rendered with `textContent`
 - CSV export escapes spreadsheet formula prefixes including leading spaces, tabs, carriage returns, and newlines
+
+## Public-only data policy
+
+- keep only public-safe, software-only, or reviewer-approved synthetic payloads in this repository
+- do not store private thread IDs, device identifiers, credentials, unpublished site inventories, or local account metadata
+- keep all original scientific results, accession panels, host trees, and per-genome analyses as `NOT_RUN` unless a real retained receipt is available outside this repository
+
+## Receipt and request templates
+
+- `docs/data/probe-receipt-template.json` — source-based template with a companion public-safe payload hash example
+- `docs/data/request-artifact-template.json` — local confirmation template showing `REQUESTED`-only semantics
+- `docs/data/probe-receipt-template.payload.txt` — companion public-safe payload used by the receipt template hash example
 
 ## Data files
 
@@ -44,6 +58,10 @@ Key views:
 - `docs/data/chains.json` — LAB flow stages and ring descriptions
 - `docs/evidence/parent-observations.json` — redacted observation records only
 - `schemas/probe.schema.json` — receipt schema documented for import/export validation
+
+## Third-party notices
+
+See `THIRD_PARTY_NOTICES.md` for upstream-license references related to BioNeMo and other non-bundled third-party materials.
 
 ## Tests
 

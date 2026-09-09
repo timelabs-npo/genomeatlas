@@ -13,7 +13,7 @@
         <div>
           <p class="eyebrow">Portable static app · evidence-bound tool registry</p>
           <h1>GenomeAtlas Site Helper Suite</h1>
-          <p class="lede">A zero-build, local-first helper for LAB phylogenomics planning, historical observation review, and unverified local receipt export.</p>
+          <p class="lede">A zero-build, local-first helper for LAB phylogenomics planning, historical observation review, and unverified public-safe receipt export.</p>
         </div>
         <dl class="summary-grid" aria-label="Current view summary">
           <div>
@@ -58,7 +58,7 @@
             <p class="eyebrow">View 2</p>
             <h2>Searchable tool registry</h2>
           </div>
-          <p class="muted">Registry state is limited to declared, discovered, probed, executed, and blocked. Timestamps represent exact known probe times only; otherwise the entry remains a historical assertion.</p>
+          <p class="muted">Registry state is limited to declared, discovered, probed, executed, and blocked. Timestamps represent exact known probe times only; otherwise the entry remains a historical assertion. Discovery does not imply publication, execution, or verification.</p>
         </div>
         <div class="controls three-up">
           <label>
@@ -96,7 +96,7 @@
             <p class="eyebrow">View 3A</p>
             <h2>Historical observation records</h2>
           </div>
-          <p class="muted">Observation records stay separate from probe receipts. They can carry `probeTimestamp: null`, a distinct `recordedAt`, and always remain `UNVERIFIED` until an external reviewer links a real retained receipt.</p>
+          <p class="muted">Observation records stay separate from probe receipts. They can carry `probeTimestamp: null`, a distinct `recordedAt`, and always remain `UNVERIFIED` until an external reviewer links a real retained receipt. Private thread IDs, device identifiers, and unrelated site inventory are intentionally excluded.</p>
         </div>
         <div class="button-row">
           <button type="button" data-export-observation-json>Export observations JSON</button>
@@ -130,7 +130,7 @@
             <p class="eyebrow">View 3B</p>
             <h2>Probe receipts</h2>
           </div>
-          <p class="muted">Imported and local receipts stay unverified until an external reviewer confirms them. Measured hashes must be 64 hexadecimal digits with an optional `sha256:` prefix, and the app never maps FAILED or UNKNOWN to not-detected.</p>
+          <p class="muted">Imported and local receipts stay unverified until an external reviewer confirms them. Measured hashes must be 64 hexadecimal digits with an optional `sha256:` prefix, imports are size-bounded, and the app never maps FAILED or UNKNOWN to not-detected.</p>
         </div>
 
         <div class="button-row">
@@ -213,7 +213,7 @@
             <p class="eyebrow">View 4</p>
             <h2>Delegation and confirmation planner</h2>
           </div>
-          <p class="muted">Creating a request writes only a local REQUESTED artifact. It never executes work, authenticates a tool, or promotes evidence to verified.</p>
+          <p class="muted">Creating a request writes only a local REQUESTED artifact. It never executes work, authenticates a tool, publishes a native Site, or promotes evidence to verified.</p>
         </div>
 
         <form id="request-form" class="form-card">

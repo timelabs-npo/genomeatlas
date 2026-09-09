@@ -1,5 +1,6 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const crypto = require('node:crypto');
 const fs = require('node:fs');
 const path = require('node:path');
 const app = require('../docs/app.js');
@@ -9,6 +10,10 @@ const fixturesDir = path.join(__dirname, 'fixtures');
 
 function readJson(fileName) {
   return JSON.parse(fs.readFileSync(path.join(fixturesDir, fileName), 'utf8'));
+}
+
+function sha256Fixture(fileName) {
+  return crypto.createHash('sha256').update(fs.readFileSync(path.join(fixturesDir, fileName))).digest('hex');
 }
 
 test('exact four ring labels are preserved', function () {
@@ -58,6 +63,17 @@ test('valid measured receipts accept bare and sha256-prefixed 64-hex digests and
   });
 });
 
+test('synthetic measured receipt fixtures use hashes computed from explicit synthetic payloads', function () {
+  const expectedGithubHash = sha256Fixture('synthetic-github-cli-payload.txt');
+  const bare = readJson('valid-receipt.json');
+  const prefixed = readJson('valid-prefixed-hash-receipt.json');
+
+  assert.equal(bare.evidence.sha256, expectedGithubHash);
+  assert.equal(prefixed.evidence.sha256, 'sha256:' + expectedGithubHash);
+  assert.equal(bare.evidence.location, 'tests/fixtures/synthetic-github-cli-payload.txt');
+  assert.equal(prefixed.evidence.location, 'tests/fixtures/synthetic-github-cli-payload.txt');
+});
+
 test('malicious HTML, unknown state, missing exit code, invalid hashes, and status/exit inconsistencies are rejected', function () {
   [
     'malicious-html-receipt.json',
@@ -71,6 +87,7 @@ test('malicious HTML, unknown state, missing exit code, invalid hashes, and stat
     'status-exit-inconsistency-receipt.json',
     'failed-zero-exit-receipt.json',
     'invalid-date-receipt.json',
+    'impossible-date-receipt.json',
     'not-detected-nonzero-exit-receipt.json'
   ].forEach(function (name) {
     const verdict = app.validateReceipt(readJson(name));
@@ -115,9 +132,9 @@ test('request confirmation creates REQUESTED artifacts without execution or veri
 test('registry filtering supports search, state, and stage', function () {
   const entries = app.FALLBACK_DATA.registry.entries;
   const stateMatch = app.filterRegistry(entries, { search: '', state: 'PROBED', stage: 'ALL' });
-  assert.ok(stateMatch.some(function (entry) { return entry.id === 'native-chatgpt-sites'; }));
+  assert.ok(stateMatch.some(function (entry) { return entry.id === 'bionemo-nim'; }));
 
-  const queryMatch = app.filterRegistry(entries, { search: '87 tools', state: 'ALL', stage: 'ALL' });
+  const queryMatch = app.filterRegistry(entries, { search: 'Tool not found', state: 'ALL', stage: 'ALL' });
   assert.equal(queryMatch.length, 1);
   assert.equal(queryMatch[0].id, 'smarts-bio');
 
@@ -191,14 +208,87 @@ test('historical assertions keep null probe timestamps unless exact timing is kn
   assert.ok(codex);
   assert.equal(codex.probeTimestamp, null);
   assert.match(codex.summary, /zero tests run by codex/i);
-  assert.equal(nativeSites.state, 'PROBED');
-  assert.equal(nativeSites.deploymentStatus, 'PENDING');
+  assert.equal(nativeSites.state, 'BLOCKED');
+  assert.equal(nativeSites.deploymentStatus, 'BLOCKED');
 });
 
 test('strict ISO timestamp validation rejects Date.parse-style loose values', function () {
   assert.equal(app.isIsoTimestamp('1'), false);
   assert.equal(app.isIsoTimestamp('2026-09-09T15:01:28Z'), true);
   assert.equal(app.isIsoTimestamp('2026-09-09 15:01:28Z'), false);
+  assert.equal(app.isIsoTimestamp('2026-02-30T15:01:28Z'), false);
+});
+
+test('receipt imports reject oversized JSON payloads', function () {
+  const receipt = readJson('valid-receipt.json');
+  const oversized = JSON.stringify([receipt]).padEnd(app.MAX_RECEIPT_IMPORT_TEXT_LENGTH + 1, 'x');
+  assert.throws(function () {
+    app.importReceiptText(oversized);
+  }, /maximum import size/i);
+});
+
+test('stored receipts are revalidated and forced back to unverified on reload', function () {
+  const sanitized = app.sanitizeStoredReceipts([
+    {
+      ...readJson('valid-receipt.json'),
+      review: { verified: true, reviewer: 'someone' },
+      importStatus: 'VERIFIED',
+      source: 'imported'
+    },
+    {
+      ...readJson('invalid-date-receipt.json'),
+      review: { verified: true, reviewer: 'bad' }
+    }
+  ]);
+
+  assert.equal(sanitized.length, 1);
+  assert.equal(sanitized[0].review.verified, false);
+  assert.equal(sanitized[0].review.reviewer, null);
+  assert.equal(sanitized[0].importStatus, 'UNVERIFIED_IMPORTED');
+});
+
+test('smarts.bio discovery remains separate from blocked execution and native publication stays blocked', function () {
+  const observations = app.FALLBACK_DATA.evidence.observations;
+  const smarts = app.FALLBACK_DATA.registry.entries.find(function (entry) {
+    return entry.id === 'smarts-bio';
+  });
+  const nativeSites = app.FALLBACK_DATA.registry.entries.find(function (entry) {
+    return entry.id === 'native-chatgpt-sites';
+  });
+  const smartsList = observations.find(function (observation) {
+    return observation.id === 'obs-smarts-bio-workspace-list';
+  });
+  const smartsBlocked = observations.find(function (observation) {
+    return observation.id === 'obs-smarts-query-blocked';
+  });
+  const nativeList = observations.find(function (observation) {
+    return observation.id === 'obs-native-sites-list';
+  });
+  const nativeBlocked = observations.find(function (observation) {
+    return observation.id === 'obs-native-sites-write-blocked';
+  });
+
+  assert.equal(smarts.state, 'BLOCKED');
+  assert.ok(/workspace listing succeeded/i.test(smartsList.summary));
+  assert.ok(/Tool not found/i.test(smarts.notes));
+  assert.equal(smartsBlocked.state, 'BLOCKED');
+  assert.equal(nativeSites.state, 'BLOCKED');
+  assert.equal(nativeList.state, 'PROBED');
+  assert.equal(nativeBlocked.state, 'BLOCKED');
+});
+
+test('BioNeMo catalog observations preserve third-party provenance and keep inference not run', function () {
+  const bionemo = app.FALLBACK_DATA.registry.entries.find(function (entry) {
+    return entry.id === 'bionemo-nim';
+  });
+  const observation = app.FALLBACK_DATA.evidence.observations.find(function (item) {
+    return item.id === 'obs-bionemo-source';
+  });
+
+  assert.match(bionemo.notes, /62 SKILL\.md/i);
+  assert.match(bionemo.notes, /preserve the CPU path/i);
+  assert.match(observation.summary, /0e67a612e4045f007e38fa77adc8f3ebfc5616b6/i);
+  assert.match(observation.notes, /NIM\/GPU inference did not run/i);
 });
 
 test('required static assets exist and HTML references resolve locally', function () {
@@ -211,8 +301,11 @@ test('required static assets exist and HTML references resolve locally', functio
     jsPath,
     path.join(root, 'docs', 'data', 'registry.json'),
     path.join(root, 'docs', 'data', 'chains.json'),
+    path.join(root, 'docs', 'data', 'probe-receipt-template.json'),
+    path.join(root, 'docs', 'data', 'request-artifact-template.json'),
     path.join(root, 'docs', 'evidence', 'parent-observations.json'),
-    path.join(root, 'schemas', 'probe.schema.json')
+    path.join(root, 'schemas', 'probe.schema.json'),
+    path.join(root, 'THIRD_PARTY_NOTICES.md')
   ];
 
   assets.forEach(function (assetPath) {

@@ -85,7 +85,7 @@
       "evidenceLocation": "docs/evidence/parent-observations.json#obs-codex-review-complete",
       "inputContract": "Local Codex CLI probe, login status read, and read-only thread bootstrap request.",
       "outputContract": "CLI version/login output plus read-only thread/session status.",
-      "notes": "Authorized WD observations showed CLI version 0.153.4 and ChatGPT login success; a separate Codex review completed with the wrong test path so zero tests run by Codex, and an earlier OAuth transport error remained a distinct historical observation."
+      "notes": "Authorized WD observations showed CLI version 0.153.4 and ChatGPT login success; a separate private WD thread performed native read calls, a separate Codex review completed with the wrong test path so zero tests run by Codex, and native publication/write attempts remained blocked. Private thread and device identifiers are intentionally omitted."
     },
     {
       "id": "wsl-ubuntu",
@@ -253,21 +253,21 @@
       "evidenceLocation": "docs/evidence/parent-observations.json#obs-bionemo-source",
       "inputContract": "Toolkit source retrieval, installed-skill lookup, or NIM skill resource request.",
       "outputContract": "Source snapshots, skill catalogue entries, or NIM route status.",
-      "notes": "Official toolkit source and MSA-Search SKILL.md were retrieved through GitHub, but the installed skill route remains unresolved and no NIM job ran. Use only as optional structural or homolog-search guidance, not as a replacement for the frozen LAB conserved-marker alignment."
+      "notes": "Official catalog inspection read NVIDIA-BioNeMo/bionemo-agent-toolkit at commit 0e67a612e4045f007e38fa77adc8f3ebfc5616b6 with 62 SKILL.md files. NIM/GPU inference did not run, no suitable Parabricks replacement for marker phylogeny was established, and the CPU path remains preserved."
     },
     {
       "id": "smarts-bio",
       "name": "smarts.bio",
       "category": "bioinformatics-service",
-      "state": "PROBED",
+      "state": "BLOCKED",
       "stageIds": [
         "review"
       ],
       "probeTimestamp": null,
-      "evidenceLocation": "docs/evidence/parent-observations.json#obs-smarts-bio-mismatch",
+      "evidenceLocation": "docs/evidence/parent-observations.json#obs-smarts-query-blocked",
       "inputContract": "Catalogue browse or named tool execution request.",
       "outputContract": "Catalogue entries, tool execution receipt, or explicit no-execution reply.",
-      "notes": "The catalogue/execution mismatch remains unresolved: 87 tools listed, 404 on bio_gc_content, and a manual 50% GC answer for synthetic ACGTACGT that was explicitly not a tool run."
+      "notes": "Workspace listing succeeded on 2026-09-09, but advertised bioinformatics.gcContent returned 404 Tool not found and smarts_query explicitly confirmed execution BLOCKED. Catalog access is discovery only, not executed analysis."
     },
     {
       "id": "genomic-intelligence",
@@ -301,7 +301,7 @@
       "id": "native-chatgpt-sites",
       "name": "native ChatGPT Sites",
       "category": "deployment",
-      "state": "PROBED",
+      "state": "BLOCKED",
       "stageIds": [
         "review"
       ],
@@ -309,8 +309,8 @@
       "evidenceLocation": "docs/evidence/parent-observations.json#obs-native-sites-list",
       "inputContract": "Native Site deployment or receipt lookup.",
       "outputContract": "Deployment receipt.",
-      "notes": "A WD Codex session successfully listed native ChatGPT Sites after correcting the limit parameter from 100 to the service maximum of 50. No deployment receipt exists yet, and unrelated site/account data remains undisclosed.",
-      "deploymentStatus": "PENDING"
+      "notes": "A WD Codex session successfully listed native ChatGPT Sites after correcting the limit parameter from 100 to the service maximum of 50, but no saved versions or deployment receipts exist and local source writes were denied by session policy. Keep native publication blocked and public-safe only.",
+      "deploymentStatus": "BLOCKED"
     }
   ]
 }

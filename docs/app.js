@@ -3,6 +3,8 @@
   const RESULT_CLASSES = ["DETECTED", "NOT_DETECTED", "FAILED", "UNKNOWN"];
   const HASH_STATUSES = ["measured", "not_measured"];
   const MEASURED_SHA_PATTERN = /^(?:sha256:)?[A-Fa-f0-9]{64}$/;
+  const ISO_TIMESTAMP_PATTERN = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.(\d{1,9}))?Z$/;
+  const MAX_RECEIPT_IMPORT_TEXT_LENGTH = 65536;
   const STORAGE_KEYS = {
     requests: "genomeatlas.requests.v1",
     probes: "genomeatlas.probeReceipts.v1"
@@ -730,15 +732,34 @@
     return typeof value === "string" && (/<[^>]*>/.test(value) || /&(?:lt|gt|#x3c|#x3e);/i.test(value));
   }
 
+  function daysInMonth(year, month) {
+    return [31, (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month - 1];
+  }
+
   function isIsoTimestamp(value) {
     if (typeof value !== "string") {
       return false;
     }
-    const isoPattern = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,9})?Z$/;
-    if (!isoPattern.test(value)) {
+    const match = ISO_TIMESTAMP_PATTERN.exec(value);
+    if (!match) {
       return false;
     }
-    return !Number.isNaN(Date.parse(value));
+    const year = Number(match[1]);
+    const month = Number(match[2]);
+    const day = Number(match[3]);
+    const hour = Number(match[4]);
+    const minute = Number(match[5]);
+    const second = Number(match[6]);
+    if (month < 1 || month > 12) {
+      return false;
+    }
+    if (day < 1 || day > daysInMonth(year, month)) {
+      return false;
+    }
+    if (hour > 23 || minute > 59 || second > 59) {
+      return false;
+    }
+    return true;
   }
 
   function hasClassificationExitConsistency(result) {
@@ -845,11 +866,39 @@
     const copy = clone(receipt);
     copy.review = { verified: false, reviewer: null };
     copy.importStatus = "UNVERIFIED_IMPORTED";
-    copy.importedAt = new Date().toISOString();
+    copy.importedAt = isIsoTimestamp(copy.importedAt) ? copy.importedAt : new Date().toISOString();
     return copy;
   }
 
+  function sanitizeStoredReceipts(receipts) {
+    if (!Array.isArray(receipts)) {
+      return [];
+    }
+    return receipts.reduce(function (items, receipt) {
+      const verdict = validateReceipt(receipt);
+      if (!verdict.valid) {
+        return items;
+      }
+      const copy = clone(receipt);
+      copy.review = { verified: false, reviewer: null };
+      if (copy.source === "local-entry") {
+        delete copy.importStatus;
+      } else {
+        copy.importStatus = "UNVERIFIED_IMPORTED";
+        copy.importedAt = isIsoTimestamp(copy.importedAt) ? copy.importedAt : new Date().toISOString();
+      }
+      items.push(copy);
+      return items;
+    }, []);
+  }
+
   function importReceiptText(text) {
+    if (typeof text !== "string") {
+      throw new Error("Receipt import must be a JSON string.");
+    }
+    if (text.length > MAX_RECEIPT_IMPORT_TEXT_LENGTH) {
+      throw new Error("Receipt import exceeds the maximum import size.");
+    }
     const parsed = JSON.parse(text);
     const items = Array.isArray(parsed) ? parsed : [parsed];
     const normalized = [];
@@ -1171,7 +1220,7 @@
         receipt.probeTimestamp,
         formatHashLabel(receipt.evidence.hashStatus, receipt.evidence.sha256),
         receipt.evidence.location,
-        receipt.review.verified ? "VERIFIED" : (receipt.importStatus || "UNVERIFIED"),
+        receipt.importStatus || "UNVERIFIED",
         receipt.summary
       ].forEach(function (value) {
         const cell = document.createElement("td");
@@ -1254,6 +1303,8 @@
     }, {});
     let localReceipts = safeStorageGet(STORAGE_KEYS.probes);
     let requests = safeStorageGet(STORAGE_KEYS.requests);
+    localReceipts = sanitizeStoredReceipts(localReceipts);
+    safeStorageSet(STORAGE_KEYS.probes, localReceipts);
 
     populateSelect(registryState, TOOL_STATES.map(function (state) {
       return { value: state, label: state };
@@ -1378,7 +1429,7 @@
       reader.onload = function () {
         try {
           const imported = importReceiptText(String(reader.result || ""));
-          localReceipts = localReceipts.concat(imported);
+          localReceipts = sanitizeStoredReceipts(localReceipts.concat(imported));
           safeStorageSet(STORAGE_KEYS.probes, localReceipts);
           refresh();
           setMessage(message, "Imported " + imported.length + " receipt(s) as unverified evidence.", "success");
@@ -1404,7 +1455,7 @@
           hashStatus: formData.get("hashStatus"),
           hashSha256: formData.get("hashSha256")
         }, registryMap);
-        localReceipts = localReceipts.concat(receipt);
+        localReceipts = sanitizeStoredReceipts(localReceipts.concat(receipt));
         safeStorageSet(STORAGE_KEYS.probes, localReceipts);
         refresh();
         probeForm.reset();
@@ -1443,6 +1494,7 @@
     TOOL_STATES: TOOL_STATES,
     RESULT_CLASSES: RESULT_CLASSES,
     HASH_STATUSES: HASH_STATUSES,
+    MAX_RECEIPT_IMPORT_TEXT_LENGTH: MAX_RECEIPT_IMPORT_TEXT_LENGTH,
     FALLBACK_DATA: FALLBACK_DATA,
     validateReceipt: validateReceipt,
     normalizeImportedReceipt: normalizeImportedReceipt,
@@ -1452,6 +1504,7 @@
     filterRegistry: filterRegistry,
     createRequestArtifact: createRequestArtifact,
     createProbeReceipt: createProbeReceipt,
+    sanitizeStoredReceipts: sanitizeStoredReceipts,
     normalizeObservationRecord: normalizeObservationRecord,
     collectObservationRecords: collectObservationRecords,
     buildStageLineage: buildStageLineage,

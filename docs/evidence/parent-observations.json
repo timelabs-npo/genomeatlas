@@ -191,7 +191,7 @@
       "probeTimestamp": null,
       "toolId": "bionemo-nim",
       "state": "PROBED",
-      "summary": "NVIDIA-BioNeMo/bionemo-agent-toolkit and its MSA-Search SKILL.md were retrieved through GitHub.",
+      "summary": "BioNeMo catalog inspection read NVIDIA-BioNeMo/bionemo-agent-toolkit commit 0e67a612e4045f007e38fa77adc8f3ebfc5616b6 and counted 62 SKILL.md files.",
       "classification": "DETECTED",
       "exitCode": 0,
       "hashStatus": "not_measured",
@@ -199,7 +199,7 @@
       "historicalStatus": "UNVERIFIED",
       "sourceProvenance": "parent observation ledger",
       "evidenceLocation": "public GitHub source snapshot",
-      "notes": "Toolkit source is Apache-2.0 and documentation includes CC-BY-4.0 materials. Installed skill routing remains unresolved and no NIM job ran."
+      "notes": "Apache-2.0 code and CC-BY-4.0 documentation remain third-party references only. NIM/GPU inference did not run, no suitable Parabricks replacement was established for marker phylogeny, and the CPU path remains preserved."
     },
     {
       "kind": "observation-record",
@@ -222,12 +222,30 @@
     {
       "kind": "observation-record",
       "recordType": "historical-assertion",
-      "id": "obs-smarts-bio-mismatch",
+      "id": "obs-smarts-bio-workspace-list",
+      "recordedAt": null,
+      "probeTimestamp": null,
+      "toolId": "smarts-bio",
+      "state": "DISCOVERED",
+      "summary": "smarts.bio workspace listing succeeded on 2026-09-09, exposing catalog access only.",
+      "classification": "DETECTED",
+      "exitCode": 0,
+      "hashStatus": "not_measured",
+      "hashSha256": null,
+      "historicalStatus": "UNVERIFIED",
+      "sourceProvenance": "parent observation ledger",
+      "evidenceLocation": "parent observation ledger",
+      "notes": "This is discovery only and must not be represented as executed analysis."
+    },
+    {
+      "kind": "observation-record",
+      "recordType": "historical-assertion",
+      "id": "obs-smarts-bio-tool-404",
       "recordedAt": null,
       "probeTimestamp": null,
       "toolId": "smarts-bio",
       "state": "PROBED",
-      "summary": "smarts.bio listed 87 tools, returned 404 on bio_gc_content, and manually answered 50% GC for synthetic ACGTACGT with no tool executed.",
+      "summary": "Advertised smarts.bio bioinformatics.gcContent returned 404 Tool not found.",
       "classification": "UNKNOWN",
       "exitCode": 404,
       "hashStatus": "not_measured",
@@ -235,7 +253,25 @@
       "historicalStatus": "UNVERIFIED",
       "sourceProvenance": "parent observation ledger",
       "evidenceLocation": "parent observation ledger",
-      "notes": "Catalogue/execution mismatch remains unresolved. The manual 50% GC answer must not be turned into a tool run."
+      "notes": "The advertised tool route did not execute a successful analysis."
+    },
+    {
+      "kind": "observation-record",
+      "recordType": "historical-assertion",
+      "id": "obs-smarts-query-blocked",
+      "recordedAt": null,
+      "probeTimestamp": null,
+      "toolId": "smarts-bio",
+      "state": "BLOCKED",
+      "summary": "smarts_query explicitly confirmed execution BLOCKED and no tool was executed.",
+      "classification": "FAILED",
+      "exitCode": 1,
+      "hashStatus": "not_measured",
+      "hashSha256": null,
+      "historicalStatus": "UNVERIFIED",
+      "sourceProvenance": "parent observation ledger",
+      "evidenceLocation": "parent observation ledger",
+      "notes": "The manual 50% GC answer for synthetic ACGTACGT remains a non-execution response."
     },
     {
       "kind": "observation-record",
@@ -253,7 +289,25 @@
       "historicalStatus": "UNVERIFIED",
       "sourceProvenance": "parent observation ledger",
       "evidenceLocation": "parent observation ledger",
-      "notes": "Only public-safe capability facts are retained here. No unrelated site or account inventory is exposed."
+      "notes": "Only public-safe capability facts are retained here. No unrelated site or account inventory is exposed, and no saved versions or deployment receipts were retained."
+    },
+    {
+      "kind": "observation-record",
+      "recordType": "historical-assertion",
+      "id": "obs-native-sites-write-blocked",
+      "recordedAt": null,
+      "probeTimestamp": null,
+      "toolId": "native-chatgpt-sites",
+      "state": "BLOCKED",
+      "summary": "Native ChatGPT Sites local source writes and publication attempts were denied by session policy.",
+      "classification": "FAILED",
+      "exitCode": 1,
+      "hashStatus": "not_measured",
+      "hashSha256": null,
+      "historicalStatus": "UNVERIFIED",
+      "sourceProvenance": "parent observation ledger",
+      "evidenceLocation": "parent observation ledger",
+      "notes": "Discovery succeeded separately, but no saved versions or deployments were created."
     },
     {
       "kind": "observation-record",

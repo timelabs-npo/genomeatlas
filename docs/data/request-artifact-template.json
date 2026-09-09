@@ -1,0 +1,20 @@
+{
+  "templateKind": "source-request-artifact-template",
+  "instructions": [
+    "Copy this object before writing a local request artifact.",
+    "Requests remain REQUESTED only and never execute work by themselves.",
+    "Keep all request summaries public-safe and software-only unless an external reviewer authorizes more."
+  ],
+  "payloadExample": {
+    "kind": "request-artifact",
+    "version": "1.0.0",
+    "toolId": "github-cli",
+    "stageId": "review",
+    "summary": "Template only: ask an external reviewer to inspect a retained public-safe receipt.",
+    "justification": "Template only: local confirmation creates REQUESTED records only.",
+    "status": "REQUESTED",
+    "verified": false,
+    "execution": null,
+    "requestedAt": "YYYY-MM-DDTHH:MM:SSZ"
+  }
+}
