@@ -1,0 +1,19 @@
+check	status	details
+exists:download_manifest.tsv	PASS	results/download_manifest.tsv
+exists:download_audit.json	PASS	results/download_audit.json
+exists:demo_concatenated_alignment_all.faa	PASS	results/demo_concatenated_alignment_all.faa
+exists:demo_host_tree_rooted_lab_only.nwk	PASS	results/demo_host_tree_rooted_lab_only.nwk
+exists:demo_geneious_lab_only.nex	PASS	results/demo_geneious_lab_only.nex
+exists:marker_protein_manifest.tsv	PASS	results/marker_sequences/marker_protein_manifest.tsv
+exists:all_exact_marker_proteins.faa	PASS	results/marker_sequences/all_exact_marker_proteins.faa
+exists:RM_type_matrix_preliminary.tsv	PASS	results/RM_annotation/RM_type_matrix_preliminary.tsv
+exists:RM_complete_systems.tsv	PASS	results/RM_annotation/RM_complete_systems.tsv
+exists:RM_component_proteins_exact.faa	PASS	results/RM_annotation/RM_component_proteins_exact.faa
+exists:demo_figure2.svg	PASS	results/Figure2_assets/demo_figure2.svg
+exists:demo_figure2.png	PASS	results/Figure2_assets/demo_figure2.png
+demo_lab_count_is_3	PASS	{"expected_lab":3,"expected_outgroups":2,"expected_total":5,"found_total":5,"missing_accessions":[],"missing_file_roles":{},"unexpected_accession_directories":[],"lab_proteomes":3,"all_proteomes":5,"audit_pass":true}
+marker_records_expected_15	PASS	got 15 marker protein rows for 5 taxa x 3 markers
+rm_matrix_rows_3	PASS	got 3 rows
+rm_matrix_has_four_type_columns	PASS	assembly_accession,Type_I,Type_II,Type_III,Type_IV
+no_enterococcus	PASS	selected demo panel excludes Enterococcus
+alignment_length_equal	PASS	lengths=[65]

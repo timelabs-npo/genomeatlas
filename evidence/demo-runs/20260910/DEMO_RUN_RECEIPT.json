@@ -1,0 +1,41 @@
+{
+  "schema": "genomeatlas.demo-run-receipt/v1",
+  "run_id": "LAB-RM-DEMO-3GENOME-20260910",
+  "status": "PASS",
+  "timestamp_utc": "2026-09-10T07:58:34.507370+00:00",
+  "scope": "Three real accession identities from the frozen 177-genome panel; synthetic sequence/R-M payloads; validates local pipeline plumbing, file contracts, figure generation and proof templates, not biological conclusions.",
+  "selected_lab_accessions": [
+    {
+      "group": "Lactococcus",
+      "accession": "GCF_023499275.1",
+      "display_label": "Lactococcus petauri B1726",
+      "assembly_level": "Complete Genome"
+    },
+    {
+      "group": "Leuconostoc",
+      "accession": "GCF_007954785.1",
+      "display_label": "Leuconostoc citreum CBA3621",
+      "assembly_level": "Complete Genome"
+    },
+    {
+      "group": "Weissella",
+      "accession": "GCF_036327715.1",
+      "display_label": "Weissella paramesenteroides MbWp-142",
+      "assembly_level": "Complete Genome"
+    }
+  ],
+  "outgroups": [
+    "GCF_000009045.1",
+    "GCF_000196035.1"
+  ],
+  "tests_total": 18,
+  "tests_passed": 18,
+  "tests_failed": 0,
+  "internet_ncbi_download": "NOT_RUN_IN_THIS_CONTAINER",
+  "gtotree_iqtree_defensefinder_live": "NOT_RUN_EXTERNAL_BINARIES_SIMULATED_COMPATIBLE_OUTPUTS",
+  "github_fix": "Demo evidence branch created; main merge not performed.",
+  "zip_sha256": "7aef1fb5a6eeb875470e133d4e93f74666bdab688b9a9ca4229557a1251ead7b",
+  "zip_file": "LAB_RM_DEMO_RUN_20260910.zip",
+  "file_count": 113,
+  "manifest": "DEMO_FILE_MANIFEST.tsv"
+}
