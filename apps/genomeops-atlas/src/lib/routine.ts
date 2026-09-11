@@ -170,8 +170,12 @@ export const loadRoutineAims = (): StoredAim[] => {
   }
 }
 
-export const saveRoutineAims = (aims: StoredAim[]) => {
-  if (typeof window !== 'undefined') {
+export const saveRoutineAims = (aims: StoredAim[]): boolean => {
+  if (typeof window === 'undefined') return false
+  try {
     window.localStorage.setItem(ROUTINE_AIMS_KEY, JSON.stringify(aims.slice(0, 8)))
+    return true
+  } catch {
+    return false
   }
 }

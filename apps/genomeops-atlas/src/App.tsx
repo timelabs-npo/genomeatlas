@@ -1,55 +1,46 @@
 import { useEffect, useState } from 'react'
 import { AdvancedAtlas } from './advanced/AdvancedAtlas'
 import { LanguageSwitch } from './components/LanguageSwitch'
-import { routineCopy } from './data/routineCopy'
 import { ROUTINE_LOCALE_KEY, type RoutineLocale } from './lib/routine'
 import { RoutineGuide } from './views/RoutineGuide'
+import { Workbench } from './views/Workbench'
+import './workbench.css'
 
 const initialLocale = (): RoutineLocale => {
-  const saved = window.localStorage.getItem(ROUTINE_LOCALE_KEY)
-  if (saved === 'en' || saved === 'ru') return saved
+  try {
+    const saved = window.localStorage.getItem(ROUTINE_LOCALE_KEY)
+    if (saved === 'en' || saved === 'ru') return saved
+  } catch { /* Browsing without storage still supports both languages. */ }
   return window.navigator.language.toLowerCase().startsWith('ru') ? 'ru' : 'en'
 }
-
-const advancedFromHash = () => {
-  const params = new URLSearchParams(window.location.hash.replace(/^#/, ''))
-  return params.get('mode') === 'advanced'
-}
+const modeFromHash = () => new URLSearchParams(window.location.hash.slice(1)).get('mode')
 
 export default function App() {
   const [locale, setLocale] = useState<RoutineLocale>(initialLocale)
-  const [advanced, setAdvanced] = useState(advancedFromHash)
-  const copy = routineCopy[locale]
+  const [mode, setMode] = useState(modeFromHash)
 
   useEffect(() => {
-    window.localStorage.setItem(ROUTINE_LOCALE_KEY, locale)
-    document.documentElement.lang = locale
-  }, [locale])
+    const readMode = () => setMode(modeFromHash())
+    window.addEventListener('hashchange', readMode)
+    return () => window.removeEventListener('hashchange', readMode)
+  }, [])
 
-  const openAdvanced = () => {
-    setAdvanced(true)
-    window.history.replaceState(null, '', '#mode=advanced&view=evidence')
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+  useEffect(() => {
+    try { window.localStorage.setItem(ROUTINE_LOCALE_KEY, locale) } catch { /* Storage is optional. */ }
+    document.documentElement.lang = mode === 'guide' ? locale : 'en'
+  }, [locale, mode])
+
+  const navigate = (next: 'advanced' | 'guide' | null) => {
+    window.location.hash = next ? `mode=${next}${next === 'advanced' ? '&view=evidence' : ''}` : 'section=home'
+    setMode(next)
+    window.scrollTo({ top: 0 })
   }
 
-  const closeAdvanced = () => {
-    setAdvanced(false)
-    window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`)
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+  if (mode === 'guide') {
+    return <div className="wb-preserved-guide"><div className="wb-return"><button onClick={() => navigate(null)}>Back to GenomeAtlas Workbench</button></div><RoutineGuide locale={locale} onLocaleChange={setLocale} onAdvanced={() => navigate('advanced')} /></div>
   }
-
-  if (!advanced) {
-    return <RoutineGuide locale={locale} onLocaleChange={setLocale} onAdvanced={openAdvanced} />
+  if (mode === 'advanced') {
+    return <div className="advanced-boundary"><div className="advanced-return-bar"><button onClick={() => navigate(null)}>Back to GenomeAtlas Workbench</button><span>GenomeOps research atlas</span><LanguageSwitch locale={locale} onChange={setLocale} label="Language" /></div><AdvancedAtlas /></div>
   }
-
-  return (
-    <div className="advanced-boundary">
-      <div className="advanced-return-bar">
-        <button type="button" onClick={closeAdvanced}>{copy.back}</button>
-        <span>{copy.advancedNote}</span>
-        <LanguageSwitch locale={locale} onChange={setLocale} label={copy.language} />
-      </div>
-      <AdvancedAtlas />
-    </div>
-  )
+  return <Workbench onOpenAtlas={() => navigate('advanced')} onOpenGuide={() => navigate('guide')} />
 }

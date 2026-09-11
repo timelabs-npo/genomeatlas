@@ -1,0 +1,36 @@
+{
+  "kind": "LIVE_GTOTREE_PILOT_INDEPENDENT_VERIFICATION",
+  "verified_at_utc": "2026-09-11T21:46:00.420576+00:00",
+  "run_id": "34650562319",
+  "run_url": "https://github.com/serg-alexv/genomeops-atlas/actions/runs/34650562319",
+  "head_sha": "50dc45fe790cb28f323d66382a4595ecd3a5234c",
+  "conclusion": "success",
+  "pilot_accessions": [
+    "GCF_000468955.1",
+    "GCF_903886475.1",
+    "GCF_002970915.1"
+  ],
+  "verified_sha256_entries": 1240,
+  "input_protein_counts": {
+    "GCF_000468955.1": 2261,
+    "GCF_002970915.1": 2385,
+    "GCF_903886475.1": 1529
+  },
+  "hmm_target_columns": 119,
+  "individual_alignment_count": 118,
+  "concatenated_alignment_columns": 23180,
+  "marker_alignment_columns": 22595,
+  "unknown_separator_columns": 585,
+  "marker_sequence_count": 350,
+  "source_protein_mapping_rows": 350,
+  "ambiguous_marker_mappings": 0,
+  "tree_taxa_count": 3,
+  "result_manifest_sha256": "fa0fb4ca6642a215dcc3158418d6d219f6c7ad2eaf9c92106b95de4fe302652a",
+  "publication_ready": false,
+  "defensefinder_run": false,
+  "raw_hmm_score_tables_available": false,
+  "artifact_id": 10283776691,
+  "artifact_zip_sha256": "c9e4a292c00aa644b3516c7705f02d2bbfb0e8f14f3071361044ffe4dfc0128d",
+  "github_artifact_digest_verified": true,
+  "archive_files_equal_downloaded_files": 1241
+}

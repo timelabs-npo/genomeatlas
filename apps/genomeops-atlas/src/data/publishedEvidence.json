@@ -1,0 +1,86 @@
+{
+  "schema": "genomeatlas.published-evidence/1",
+  "sourceCommit": "50dc45fe790cb28f323d66382a4595ecd3a5234c",
+  "runUrl": "https://github.com/serg-alexv/genomeops-atlas/actions/runs/34650562319",
+  "verifiedAt": "2026-09-11T21:46:00.420576+00:00",
+  "files": [
+    {
+      "name": "Aligned_SCGs.faa",
+      "url": "/evidence/Aligned_SCGs.faa",
+      "bytes": 69594,
+      "sha256": "ddb7283789a934d8575cd9c1bb92cfa97b6e122e5bed0b86864b6932826ec355"
+    },
+    {
+      "name": "PILOT_SUMMARY.md",
+      "url": "/evidence/PILOT_SUMMARY.md",
+      "bytes": 638,
+      "sha256": "74c98fbafcff11f3aef08cf0325168f137fbbae65615cf241ed20b623b51aecf"
+    },
+    {
+      "name": "Partitions.txt",
+      "url": "/evidence/Partitions.txt",
+      "bytes": 3246,
+      "sha256": "5306a343d722b8779618191b3578d5e95ea75e046a72d05b247ee54d63da630d"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "url": "/evidence/SHA256SUMS.txt",
+      "bytes": 154460,
+      "sha256": "fa0fb4ca6642a215dcc3158418d6d219f6c7ad2eaf9c92106b95de4fe302652a"
+    },
+    {
+      "name": "STAGE3_LIVE_PROOF.md",
+      "url": "/evidence/STAGE3_LIVE_PROOF.md",
+      "bytes": 3086,
+      "sha256": "05e70116b687d733b49ba8bf5573fb70e284bb9eb766e018e5dd1bbe12196fab"
+    },
+    {
+      "name": "execution_status.json",
+      "url": "/evidence/execution_status.json",
+      "bytes": 78,
+      "sha256": "cd6bf5c339cefe7469e599acc9bbbff92d01cb9e88621e6ba574a7951a0d2a5f"
+    },
+    {
+      "name": "gtotree.tre",
+      "url": "/evidence/gtotree.tre",
+      "bytes": 87,
+      "sha256": "ee123895da95be1b64d84af0c63911d5121b6c66c665eeabe5f0bc57915f99ed"
+    },
+    {
+      "name": "independent-live-artifact-review.md",
+      "url": "/evidence/independent-live-artifact-review.md",
+      "bytes": 3430,
+      "sha256": "c35fcc3cbeb96ae5d622ea1a9abe5ee64da688cef1c0dac5b932fac9ae17af96"
+    },
+    {
+      "name": "marker_protein_accessions.tsv",
+      "url": "/evidence/marker_protein_accessions.tsv",
+      "bytes": 73157,
+      "sha256": "3fba63d86c3cdef8fb41377ba5b498f56d222dc533b669632c09fb88e74f3609"
+    },
+    {
+      "name": "marker_sequences.faa",
+      "url": "/evidence/marker_sequences.faa",
+      "bytes": 79491,
+      "sha256": "e3ce13fe0f1d9d312e9c747a5f59bc9e867946f924bda1357ceb19606e759654"
+    },
+    {
+      "name": "pilot_accessions.txt",
+      "url": "/evidence/pilot_accessions.txt",
+      "bytes": 48,
+      "sha256": "d8375c92d89a9321bc1f546c6f6063f2855a81a86af189dd79727fb6e446f5e3"
+    },
+    {
+      "name": "stage3-live-artifact.zip",
+      "url": "/evidence/stage3-live-artifact.zip",
+      "bytes": 1950704,
+      "sha256": "c9e4a292c00aa644b3516c7705f02d2bbfb0e8f14f3071361044ffe4dfc0128d"
+    },
+    {
+      "name": "stage3-live-proof.json",
+      "url": "/evidence/stage3-live-proof.json",
+      "bytes": 1290,
+      "sha256": "52c2d2bfddffd3a1957b900aa5fd21671aa16117469356dc4b3b562236635427"
+    }
+  ]
+}

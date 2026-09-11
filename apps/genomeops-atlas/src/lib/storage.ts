@@ -48,7 +48,9 @@ export const loadDecisions = (): DecisionEntry[] => {
 }
 
 export const saveDecisions = (entries: DecisionEntry[]) => {
-  if (typeof window !== 'undefined') {
+  if (typeof window === 'undefined') return false
+  try {
     window.localStorage.setItem(MEMORY_KEY, JSON.stringify(entries))
-  }
+    return true
+  } catch { return false }
 }

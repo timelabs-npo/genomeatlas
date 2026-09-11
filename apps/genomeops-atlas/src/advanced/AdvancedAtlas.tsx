@@ -24,14 +24,16 @@ const readHashView = (): ViewId => {
 
 export function AdvancedAtlas() {
   const [view, setViewState] = useState<ViewId>(readHashView)
-  const [selectedProjectId, setSelectedProjectId] = useState(() =>
-    window.localStorage.getItem('genomeops-atlas:selected-project') ?? projects[0].id,
-  )
+  const [selectedProjectId, setSelectedProjectId] = useState(() => {
+    try { return window.localStorage.getItem('genomeops-atlas:selected-project') ?? projects[0].id }
+    catch { return projects[0].id }
+  })
   const project = getProject(selectedProjectId)
   const [selectedNodeId, setSelectedNodeId] = useState(project.nodes[0].id)
   const [statusFilter, setStatusFilter] = useState<EvidenceStatus | 'all'>('all')
   const [entries, setEntries] = useState<DecisionEntry[]>(loadDecisions)
   const [toast, setToast] = useState('')
+  const [storageUnavailable, setStorageUnavailable] = useState(false)
 
   const selectedNode = useMemo(
     () => project.nodes.find((node) => node.id === selectedNodeId) ?? project.nodes[0],
@@ -45,13 +47,14 @@ export function AdvancedAtlas() {
   }, [])
 
   useEffect(() => {
-    window.localStorage.setItem('genomeops-atlas:selected-project', project.id)
+    try { window.localStorage.setItem('genomeops-atlas:selected-project', project.id) }
+    catch { setStorageUnavailable(true) }
     if (!project.nodes.some((node) => node.id === selectedNodeId)) {
       setSelectedNodeId(project.nodes[0].id)
     }
   }, [project, selectedNodeId])
 
-  useEffect(() => saveDecisions(entries), [entries])
+  useEffect(() => { setStorageUnavailable(!saveDecisions(entries)) }, [entries])
 
   const setView = (next: ViewId) => {
     setViewState(next)
@@ -88,6 +91,7 @@ export function AdvancedAtlas() {
       <div className="app-grid">
         <ProjectRail projects={projects} selectedId={project.id} onSelect={selectProject} />
         <main className="main-canvas">
+          {storageUnavailable && <p role="status" className="callout warning">Browser storage is unavailable. Decisions remain in this session only; export them before leaving.</p>}
           {view === 'projects' ? <ProjectsView projects={projects} onOpen={selectProject} /> : null}
           {view === 'prompt' ? <PromptStudio key={project.id} project={project} /> : null}
           {view === 'evidence' ? (

@@ -1,0 +1,15 @@
+# Real three-genome GToTree pilot: independent proof
+
+The [GitHub Actions run 34650562319](https://github.com/serg-alexv/genomeops-atlas/actions/runs/34650562319) completed successfully on the exact implementation commit `50dc45fe790cb28f323d66382a4595ecd3a5234c`. This is new execution evidence, separate from the earlier local 12-marker demonstration and its historical state.
+
+The downloaded artifact contains exactly the three requested versioned assemblies: GCF_000468955.1, GCF_903886475.1, GCF_002970915.1. Every one of its **1240 SHA-256 entries** verified locally, including the final report and execution status. All input protein FASTAs are present.
+
+GToTree targeted **119 markers**, retained **118 individual marker alignments**, and produced a concatenated alignment of **23,180 amino-acid columns** and a three-tip Newick tree. The individual marker alignments contribute **22,595 columns**, and GToTree adds **585 unknown-character separator columns** (five X residues between adjacent markers). Every marker partition was checked against the corresponding slice of the concatenated alignment; all separator positions contain exactly the expected X residues in each taxon. The tree and each alignment contain exactly the three expected assembly labels.
+
+The exported **350 marker sequences** were independently matched to the preserved original NCBI proteins. All **350 accession mapping rows** reproduce their original protein sequences and SHA-256 values. **0 marker mappings** are ambiguous because multiple original protein IDs encode an identical sequence; ambiguity is explicitly retained rather than silently choosing one.
+
+This establishes that the repaired Linux GToTree wrapper, sequence export and integrity receipt work on real data at this exact commit. It does not establish publication readiness. With three taxa, no nontrivial unrooted split can be supported; a publication analysis still needs an adequately sampled taxon panel, model/partition and alignment/orthology assessment, branch support and sensitivity checks. GToTree 1.8.17 deletes original HMM score tables; the exported mapping recovers protein identity by exact sequence comparison, not by retaining HMM scores. No DefenseFinder run, R-M function, recognition motif, transformation safety, independent model agreement, or authenticated signature is claimed here.
+
+Full machine-readable verification results: `stage3-live-proof.json`. Exact retrieval/verification command receipts: shared `commands.jsonl`, labels `sci-live-*`. Upstream run log and downloaded artifact are retained in shared outputs. Verify the artifact manifest from the artifact root; hashes detect changed files but do not establish biological truth or authorship.
+
+The original GitHub artifact ZIP is also preserved as `stage3-live-artifact.zip`. Its SHA-256 `c9e4a292c00aa644b3516c7705f02d2bbfb0e8f14f3071361044ffe4dfc0128d` matches GitHub's recorded artifact digest for artifact ID `10283776691` at the verified run/commit. ZIP integrity passed and all 1241 archived files match the extracted download byte-for-byte.

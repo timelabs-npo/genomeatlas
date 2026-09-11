@@ -29,6 +29,7 @@ export function RoutineGuide({ locale, onLocaleChange, onAdvanced }: RoutineGuid
   const [sourceIntent, setSourceIntent] = useState<RoutineIntent>('plan')
   const [isDemo, setIsDemo] = useState(true)
   const [aims, setAims] = useState<StoredAim[]>(loadRoutineAims)
+  const [storageAvailable, setStorageAvailable] = useState(true)
   const [aimsOpen, setAimsOpen] = useState(false)
   const [error, setError] = useState('')
   const [choice, setChoice] = useState<RoutineChoice>('b')
@@ -45,7 +46,7 @@ export function RoutineGuide({ locale, onLocaleChange, onAdvanced }: RoutineGuid
     [locale, source, sourceIntent],
   )
 
-  useEffect(() => saveRoutineAims(aims), [aims])
+  useEffect(() => { setStorageAvailable(saveRoutineAims(aims)) }, [aims])
 
   useEffect(() => {
     if (isDemo) setSource(copy.sample)
@@ -152,6 +153,9 @@ export function RoutineGuide({ locale, onLocaleChange, onAdvanced }: RoutineGuid
         <section className="routine-intro" aria-labelledby="routine-heading">
           <h1 id="routine-heading">{copy.heading}</h1>
           <p>{copy.intro}</p>
+          {!storageAvailable && <p className="routine-error" role="status">{locale === 'ru'
+            ? 'Хранилище браузера недоступно. Ваши цели доступны на этой странице, но будут потеряны при выходе или перезагрузке.'
+            : 'Browser storage is unavailable. Your aims remain available on this page, but will be lost when you leave or reload.'}</p>}
 
           <div className="routine-composer">
             <label className="sr-only" htmlFor="routine-input">{copy.heading}</label>

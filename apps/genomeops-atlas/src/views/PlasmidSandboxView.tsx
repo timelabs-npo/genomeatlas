@@ -19,14 +19,14 @@ export function PlasmidSandboxView() {
     <section className="content-view view-stack">
       <div className="view-intro">
         <span className="section-label">Plasmid Sandbox · mock demonstration</span>
-        <h1>Transformation Risk Analyzer</h1>
+        <h1>Explore restriction motifs</h1>
         <p>Paste raw DNA to explore a restriction motif scan. Your sequence stays in this browser.</p>
       </div>
 
       <div className="panel view-stack">
         <p className="callout warning" id="sandbox-boundary">
           Mock simulation only. Motifs are illustrative and are not verified for these strains.
-          “Blocked” and “Safe” below describe this demo, not an experimental outcome.
+          Motif matches alone do not predict an experimental outcome.
           This scans a linear sequence only; methylation, circular junctions and other defense systems are not assessed.
         </p>
         <div className="toolbar">
@@ -67,12 +67,12 @@ export function PlasmidSandboxView() {
           ) : scan.siteCount > 0 ? (
             <div className="callout warning">
               <span className="section-label">Mock result</span>
-              ⚠️ Transformation Blocked: Found {scan.siteCount} restriction sites for Type II systems. Your plasmid will be degraded.
+              Found {scan.siteCount} illustrative motif matches. Restriction activity and transformation outcome are not assessed.
             </div>
           ) : (
             <div className="callout" style={{ borderColor: 'var(--lime)' }}>
               <span className="section-label">Mock result</span>
-              ✅ Transformation Safe: No known R-M barriers detected in sequence.
+              No illustrative motif matches. This does not establish absence of R-M barriers or transformation safety.
             </div>
           )}
         </div>

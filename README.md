@@ -1,61 +1,42 @@
-# GenomeAtlas — Site Helper Suite
+# GenomeAtlas Workbench
 
-A timelabs-npo product for evidence-aware LAB phylogenomics: tool discovery, explicit input/output contracts, cross-device probes, review requests and independently auditable receipts. Original project code is MIT; see [LICENSE](LICENSE) and [third-party notices](THIRD_PARTY_NOTICES.md).
+A unified research workspace for genetic engineers: choose a research task, inspect its tools and inputs, prepare a configured chat brief, and follow scientific claims back to real artifacts.
 
-## Open
+This is the canonical home of the fused GenomeAtlas and GenomeOps applications. The Vite/React application in `apps/genomeops-atlas` is the production entry point. Vercel is the chosen hosting platform; the deployment receipt binds the published build to its exact Git commit. `/build-receipt.json` reports that build identity.
 
-- **Native ChatGPT Site:** https://genomeatlas-site-helper-suite.hx31337.chatgpt.site
-- **Source and downloadable software release:** https://github.com/timelabs-npo/genomeatlas/releases/tag/v0.1.0
-- **Separate GitHub Pages surface:** https://timelabs-npo.github.io/genomeatlas/
-- **Dated execution/publication reconciliation:** [actual service and test status](evidence/publication-status-20260909T1535.json)
+## Research workspace
 
-## Publication boundary
+- Eight starter tasks connect to the existing frozen chains: panel, download, markers, tree, R-M, evidence, figure and release.
+- Search all 134 inherited catalog entries. Historical observations remain historical; a catalog listing does not establish current authentication or runtime availability.
+- Configure a brief with a working role, tone, character and destination: general ChatGPT, ChatGPT Work or Codex cloud. Copy the brief, open the destination and review it before starting. Mode, repository, files and model selection happen in the destination; browser links do not silently apply account settings.
+- Export schema-compatible task requests, inspect the original workflow dispatcher, and explore illustrative restriction motifs locally.
+- Download the real three-genome GToTree pilot, inspect its provenance and calculate the published file hashes in the browser. No fabricated biological result or model consensus is used as evidence.
 
-The native service reported public Site version 1 and deployment `succeeded`, source `683401cf1f2255414a4df3e0f2e9d606686a8fdf`. A WD Codex browser session opened that production URL and exercised navigation, filtering and request validation. Production download completion, receipt-upload handling and a separate anonymous/mobile browser matrix are not all verified.
+The interface follows the supplied dark research-workbench reference. It is an independent web application, not a native ChatGPT feature.
 
-The GitHub release uses a separate source history (`e44827702a8153f682de64d92e92ef1a88bba4c8`). Reviewed Copilot receipt-validation code was subsequently incorporated through PR17. **The native saved version and current GitHub main are not asserted to be byte-identical or automatically synchronized.** A later native update was blocked because its required hosting skill/packaging helper was missing in that session. Older NOT_DEPLOYED observations remain historical records, not the current native service state.
+## Run and verify
 
-## What the suite does
+Use Node 22 or 24 and Python 3. Node 24 was used for local verification.
 
-- Catalogues task-relevant tools with distinct advertised/discovered/probed/executed states.
-- Explains the genome-to-marker-to-host-tree chain separately from R-M detection and locus/literature review.
-- Preserves the supplied 177 versioned assembly identifiers; no taxonomy is inferred from accession strings.
-- Produces bounded review-request JSON and inspects untrusted receipts without promoting them to verified results.
-- Provides schemas, portable probe receipts, coordinate-convention checks, negative tests and exportable source.
-
-A confirmation in the browser is an intent record, **not execution**. No arbitrary shell, paid/GPU job or scientific conclusion is triggered by a form submission.
-
-## Local checks
-
-Use Python and Node 20 or newer. Build before testing: tests inspect the generated `dist/` manifest and its byte identity.
-
-```bash
-python scripts/build.py
-python -m unittest discover -s tests -v
-node --test tests/core.test.mjs tests/acceptance.test.js
-python -m unittest discover -s probes/tests -v
+```sh
+npm run install:app
+npm run dev
+npm run check
+npm run build
 ```
 
-Run commands that correspond to files in the selected commit. The recorded release check run contains 22 Python and 13 core Node tests. A later fresh-clone parent attempt ran tests before building and was not accepted; its replacement compound execution was safety-blocked. The repository does not claim every later commit or endpoint is covered by those earlier results.
+`npm run check` runs the preserved GenomeAtlas data/receipt contracts, the six pilot script regressions, and the React lint/test/build checks. The root Vercel configuration installs the nested locked dependencies and serves `apps/genomeops-atlas/dist`.
 
-## Connected biology capabilities
+The original static suite remains available as source and through `npm run build:legacy`. Its historic publication records are preserved; they are not receipts for this Vercel application. There is no automatic second Pages deployment from the old suite workflow.
 
-NVIDIA BioNeMo Agent Toolkit is installed and its genomics-workflow-acceleration guidance was inspected. GPU/Parabricks runtime was not ready; acceleration stays off, with no model inference or model download. Do not substitute Parabricks or AlphaGenome predictions for the conserved-marker LAB host tree.
+## Evidence and scope
 
-smarts.bio discovery responded, but the sequence catalog was empty and its agent confirmed no callable deterministic sequence-statistics function. The synthetic control was **BLOCKED**, not a successful GC-content result.
+The preserved GToTree 1.8.17 pilot ran on commit `50dc45fe790cb28f323d66382a4595ecd3a5234c`: three versioned NCBI assemblies, 118 retained marker alignments, 350 exact source-protein mappings, and 1,240 matching SHA-256 manifest entries. The full original 1,241-file archive is in `apps/genomeops-atlas/public/evidence`. Its SHA-256 equals the original GitHub artifact digest.
 
-## Scientific boundary
+That is evidence of a bounded execution and traceable inputs/outputs, not a completed 177-genome study. A three-tip unrooted tree has no nontrivial split to support. R-M detection, experimentally verified motifs, restriction activity and transformation outcomes are not established by this pilot. Hashes establish byte consistency relative to a manifest; they do not authenticate a signer or establish biological truth.
 
-The intended study excludes Enterococcus and uses conserved marker proteins for the host tree, followed by independent R-M Type I, II/IIG, III and IV annotation. Missing/failed evidence is not biological absence. Complete computational system architecture is not proof of restriction activity. This release is the helper suite, **not a completed 177-genome phylogenomic analysis**.
+## Repository history
 
-## Latest scoped WD registry integration
+The original GenomeAtlas base is `5cc89fb6379e9b1cdaf3cbd96c571e14d9075a8b`. Integration commit `36a36b36bfab792a33f3f68e1510162ee8c01d4b` retains both parent histories and imports the exact GenomeOps source tree at `apps/genomeops-atlas`. The unified workbench builds on that integration.
 
-The additive integration on this branch retains the existing app and publication journals. Registry:134 records (63 existing catalog entries +71 observed plugin-cache manifests,344 skill-file records). Cached definitions do not imply enabled/authenticated MCPs or model execution. Current parent ChatGPT smarts.bio invocation remains authentication-blocked; historical discovery/404/empty-catalog observations belong to their recorded sessions and are retained. BioNeMo package0.1.0 and two skills were inspected without GPU/NIM execution.
-
-Parent local session01a0869a-6af8-75e3-b8d1-0879e92c6723 actually executed development and native Site readback. Independent tests for this integration:30 Python and14 Node tests passed (one Node wrapper repeats Python; counts are not additive unique tests). Windows/Ubuntu/GitHub SHA-256 roundtrips and10 independent Copilot inventory tests passed separately. No new browser tests were performed after permission was declined.
-
-See data/current-probes.json, data/plugin-cache.json, data/native-site-readback.json, data/copilot-reexecution.json and evidence/parent-reconciliation/. This new source is not asserted live until a new native save/deploy receipt binds it.
-
-## Integrated GenomeOps application
-
-The React/Vite researcher workspace is preserved under [apps/genomeops-atlas](apps/genomeops-atlas/README.md). See [integration and verification](docs/genomeops-integration.md) for source history, build commands, CI paths, and the unresolved remote repository transition.
+GenomeOps retention belongs in the private `timelabs-npo/ai-traces` repository on `dedends`. Final migration receipts record the retained refs, archive digest and source retirement state after production verification. See [integration details](docs/genomeops-integration.md), [historical suite README](docs/history/site-helper-readme-before-fusion.md), [LICENSE](LICENSE) and [third-party notices](THIRD_PARTY_NOTICES.md).

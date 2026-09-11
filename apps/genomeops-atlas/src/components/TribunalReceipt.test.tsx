@@ -8,7 +8,9 @@ describe('execution receipt', () => {
   it('renders supplied provenance and distinguishes consensus from validation', () => {
     const hash = '0f139f96494e09ff0387d2b4979318288c6cf54e'
     render(<TribunalReceipt runId="test-receipt" timestamp="2026-09-12T00:00:00Z" commitHash={hash} modelsConsensus={[{ model: 'Reviewer A', claim: '<script>untrusted claim</script>' }]} />)
-    expect(screen.getByRole('heading', { name: 'Cryptographic Execution Receipt' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Execution Receipt' })).toBeInTheDocument()
+    expect(screen.getByText('needs validation')).toBeInTheDocument()
+    expect(screen.queryByText('confirmed')).not.toBeInTheDocument()
     expect(screen.getByText(hash)).toBeInTheDocument()
     expect(screen.getByText('2026-09-12T00:00:00Z')).toHaveAttribute('datetime', '2026-09-12T00:00:00Z')
     expect(screen.getByText('<script>untrusted claim</script>')).toBeInTheDocument()

@@ -1,6 +1,6 @@
 # GenomeOps integration
 
-The React/Vite application is located at `apps/genomeops-atlas/`. GenomeAtlas remains at the repository root. Their existing build systems, source records, and licenses/notices are retained. No new application dependencies are introduced by the integration.
+The React/Vite application is located at `apps/genomeops-atlas/`. The unified production entry point builds that application from the repository root. Their existing build systems, source records, and licenses/notices are retained. No new application dependencies are introduced by the integration.
 
 ## Source history
 
@@ -35,8 +35,10 @@ Node 26 enables native Web Storage that conflicts with the current jsdom test se
 
 The parent Pages workflow scopes Node discovery to parent tests. `genomeops-verify.yml` uses the app's locked installation and full check gate. Nested `.github/workflows` files remain historical source; GitHub only executes workflows at the repository root. The root includes correctly relocated, manually dispatched Stage 3 and Stage 4 pilot workflows; their scripts enforce the imported three-genome bound. No scientific workflow is triggered by this local integration. Stage 1 and Stage 2 full-panel workflows remain preserved as source and are not activated here.
 
-## Publication and repository transition
+## Unified publication and repository transition
 
-This is a local integration candidate. It does not assert a remote merge, GitHub Actions success, Vercel deployment, native Site deployment, or biological validation. If the existing Vercel project is later connected to the parent repository, its Root Directory must be `apps/genomeops-atlas` so it uses the existing `vercel.json`, package lock, and Vite build.
+The root Vercel configuration now builds the unified workbench and serves `apps/genomeops-atlas/dist`. Use the repository root as the project Root Directory. Do not use the historical nested-only deployment instructions: the root orchestrates checks and the final public app.
 
-The coordinator identified `timelabs-npo/ai-traces` (default branch `master`) as the existing destination; the requested `dedends` branch did not exist when inspected. A separate local `dedends` branch can retain the child history for that destination. The final remote retirement action remains unresolved: “move” does not specify whether the duplicate `serg-alexv/genomeops-atlas` repository should be archived, deleted, or retained as a redirect after import. No repository is deleted, transferred, archived, or renamed, and no branch is pushed by this integration. Resolve the source retirement operation before removing the duplicate remote.
+The original static suite and its historical native Site receipts remain preserved as source. The former Pages workflow now creates an optional legacy artifact without automatically publishing a competing surface.
+
+The coordinator retains the original GenomeOps repository history on the private `timelabs-npo/ai-traces` `dedends` branch. The exact final archive digest, retained refs and source retirement state are recorded in the migration receipt after the unified deployment is verified. No Git history is rewritten by this integration. Retirement uses a source redirect and repository archival, preserving recoverability rather than deleting history.

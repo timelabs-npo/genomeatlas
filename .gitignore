@@ -2,5 +2,8 @@ __pycache__/
 *.pyc
 dist/
 node_modules/
+qa-output/
+.vercel/
+qa-output/
 evidence/browser-profile/
 evidence/downloads/

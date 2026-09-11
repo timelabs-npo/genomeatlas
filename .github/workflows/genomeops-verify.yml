@@ -1,8 +1,8 @@
-name: Verify integrated GenomeOps app
+name: Verify unified GenomeAtlas
 
 on:
   push:
-    branches: [main]
+    branches: [main, 'codex/**']
   pull_request:
   workflow_dispatch:
 
@@ -10,29 +10,52 @@ permissions:
   contents: read
 
 concurrency:
-  group: genomeops-verify-${{ github.ref }}
+  group: genomeatlas-verify-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   lint-test-build:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    defaults:
-      run:
-        working-directory: apps/genomeops-atlas
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
     steps:
       - name: Check out source
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
-
-      - name: Set up Node
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          node-version: 22
+          persist-credentials: false
+      - name: Set up Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24
           cache: npm
           cache-dependency-path: apps/genomeops-atlas/package-lock.json
-
-      - name: Install locked dependencies
-        run: npm ci
-
-      - name: Verify
-        run: npm run check
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install locked app dependencies
+        run: npm run install:app
+      - name: Verify retained contracts, pilot scripts, and unified application
+        shell: bash
+        run: |
+          mkdir -p qa-output
+          git rev-parse HEAD > qa-output/source-commit.txt
+          node --version > qa-output/node-version.txt
+          python3 --version > qa-output/python-version.txt
+          set +e
+          npm run check > qa-output/check.stdout.log 2> qa-output/check.stderr.log
+          status=$?
+          set -e
+          echo "$status" > qa-output/check.exit.txt
+          cat qa-output/check.stdout.log
+          cat qa-output/check.stderr.log
+          exit "$status"
+      - name: Preserve exact verification receipts and build
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: genomeatlas-verification-${{ github.sha }}
+          path: |
+            qa-output/
+            apps/genomeops-atlas/dist/
+          if-no-files-found: error
+          retention-days: 30

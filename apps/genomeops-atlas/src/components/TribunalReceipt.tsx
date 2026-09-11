@@ -12,8 +12,8 @@ export function TribunalReceipt({ runId, timestamp, commitHash, modelsConsensus 
   return (
     <div className="panel tribunal-receipt">
       <div className="panel-heading">
-        <h2>Cryptographic Execution Receipt</h2>
-        <StatusBadge status="confirmed" />
+        <h2>Execution Receipt</h2>
+        <StatusBadge status="needs_validation" />
       </div>
       <p>Receipt metadata supplied by the caller. This display does not verify signatures, execution or biological claims. Model agreement is not experimental validation.</p>
       <dl className="fact-grid">

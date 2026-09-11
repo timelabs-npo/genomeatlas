@@ -1,1 +1,22 @@
-{"name":"@timelabs-npo/genomeatlas","version":"0.1.0","private":true,"type":"module","license":"MIT","scripts":{"test":"node --test tests/*.test.js","build":"python scripts/build.py"},"engines":{"node":">=20"}}
+{
+  "name": "@timelabs-npo/genomeatlas",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "npm --prefix apps/genomeops-atlas run dev",
+    "install:app": "npm ci --prefix apps/genomeops-atlas",
+    "test": "node --test tests/*.test.js tests/*.test.mjs",
+    "test:python": "python3 -B -m unittest discover -s tests -v && python3 -B -m unittest discover -s probes/tests -v",
+    "test:pilot-scripts": "python3 -B -m unittest discover -s apps/genomeops-atlas/analyses/lab-rm-phylogenomics/tests -v",
+    "check:legacy": "npm run build:legacy && npm test && npm run test:python",
+    "check": "npm run check:legacy && npm run test:pilot-scripts && npm --prefix apps/genomeops-atlas run check",
+    "build": "npm --prefix apps/genomeops-atlas run build",
+    "build:legacy": "python3 scripts/build.py",
+    "preview": "npm --prefix apps/genomeops-atlas run preview"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
