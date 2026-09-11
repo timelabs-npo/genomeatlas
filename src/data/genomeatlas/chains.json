@@ -1,0 +1,66 @@
+[
+  {
+    "id": "panel",
+    "title": "Frozen accessions",
+    "input": "177 versioned RefSeq IDs",
+    "output": "Reviewed selection",
+    "gate": "No Enterococcus; unique versions",
+    "status": "PROPOSED_NOT_EXECUTED"
+  },
+  {
+    "id": "download",
+    "title": "Annotated genome acquisition",
+    "input": "NCBI IDs",
+    "output": "Genome/protein/CDS/GFF/GBFF",
+    "gate": "Exact accession sets; parse files; CDS before genome suffix",
+    "status": "PROPOSED_NOT_EXECUTED"
+  },
+  {
+    "id": "markers",
+    "title": "Conserved proteins",
+    "input": "Annotated proteomes and marker HMMs",
+    "output": "Exact marker sequences and accessions",
+    "gate": "Orthology and missingness; no guessed IDs",
+    "status": "PROPOSED_NOT_EXECUTED"
+  },
+  {
+    "id": "tree",
+    "title": "Host phylogeny",
+    "input": "Individual alignments then concatenated proteins",
+    "output": "IQ-TREE support + Geneious files",
+    "gate": "Independent of RM; no invented topology",
+    "status": "PROPOSED_NOT_EXECUTED"
+  },
+  {
+    "id": "rm",
+    "title": "RM detection",
+    "input": "Ordered proteins and replicon context",
+    "output": "Complete calls and unreviewed components",
+    "gate": "Failed != absent; raw hits != curated partial",
+    "status": "PROPOSED_NOT_EXECUTED"
+  },
+  {
+    "id": "evidence",
+    "title": "Publication evidence",
+    "input": "Exact strain/system and REBASE/PubMed",
+    "output": "Separate methylation/restriction validation",
+    "gate": "No borrowed exact-strain evidence",
+    "status": "PROPOSED_NOT_EXECUTED"
+  },
+  {
+    "id": "figure",
+    "title": "Circular Figure2",
+    "input": "Validated tree + taxonomy + TypeI-IV matrix",
+    "output": "SVG/PDF/iTOL rings",
+    "gate": "Unreviewed and missing remain distinct",
+    "status": "PROPOSED_NOT_EXECUTED"
+  },
+  {
+    "id": "release",
+    "title": "Review and publication",
+    "input": "Logs and input/output hashes",
+    "output": "Accepted version and deployment receipt",
+    "gate": "Click != execution; native URL needs real receipt",
+    "status": "PROPOSED_NOT_EXECUTED"
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "schema": "genomeatlas.task-request/1",
+  "request_id": "template-request",
+  "created_at_utc": "2000-01-01T00:00:00Z",
+  "state": "TASK_REQUEST_ONLY",
+  "chain_id": "panel",
+  "role": "VERIFY",
+  "endpoint_alias": "review-queue",
+  "compute": "cpu",
+  "genome_accessions": [
+    "GCF_023499275.1"
+  ],
+  "acceptance_criteria": [
+    "exact-input-set",
+    "versions-and-hashes",
+    "independent-review"
+  ],
+  "config": {
+    "use_gpu": false,
+    "host_tree": "conserved-single-copy-markers",
+    "rm_independent": true
+  }
+}

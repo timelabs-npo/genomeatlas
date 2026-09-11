@@ -83,3 +83,40 @@ The final package is intended to contain:
 ## Current status
 
 Stage 1 is implemented by the branch-specific job in `.github/workflows/verify.yml` and `scripts/discover_genomes.sh`. The live NCBI discovery run is being executed through the draft pull request; selection output remains provisional until real candidate coverage is reviewed.
+
+## Bounded demonstration
+
+The Stage 3 and Stage 4 pilot lists are limited to three versioned assemblies.
+Both runners validate the limit before downloading data and require the configured
+Linux x86_64 environment. GToTree 1.8.17 is invoked with `-d -k` to retain
+debug marker FASTAs and individual alignments. Marker protein IDs are recovered
+by exact sequence matching against archived input proteomes, with ambiguity
+explicitly labeled. GToTree deletes raw HMM score tables even with `-d`, so those
+scores are not claimed as exported evidence. Its optional renamed alignment is
+not required when no label mapping was requested. The complete output directory
+is preserved even if later checks fail; the final relative-path SHA-256 manifest
+includes the summary, inventory and execution status. A completed command and a
+file hash are not scientific approval.
+
+`scripts/run_local_marker_demo.py` provides a dependency-free local demonstration
+when the Linux bioinformatics tools are unavailable. It takes an extracted NCBI
+protein package and its assembly metadata, requires exactly the three pilot
+accessions, and selects 12 uniquely annotation-named ribosomal proteins. It
+exports source protein identifiers, marker alignments, partitions, amino-acid
+distances and the unique three-tip unrooted distance tree. The report describes
+its simple reference-based alignment and all limitations. It does not perform
+HMM-based orthology detection, maximum-likelihood inference or R-M calling.
+
+```bash
+python3 analyses/lab-rm-phylogenomics/scripts/run_local_marker_demo.py \
+  --accessions analyses/lab-rm-phylogenomics/config/stage3_pilot_accessions.txt \
+  --data /path/to/ncbi_dataset/data \
+  --metadata /path/to/ncbi_metadata.json \
+  --out /path/to/new-empty-demo-output
+```
+
+The small local demo must not be used to approve a publication or infer plasmid
+safety. Full marker validation, assembly quality review, model/partition and
+tree sensitivity checks, strain-specific R-M locus/motif curation, and suitable
+experimental evidence remain separate requirements. Three taxa provide no
+nontrivial unrooted split whose topology support could be tested.

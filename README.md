@@ -25,6 +25,14 @@ The original expert tools remain available through **Open advanced Atlas tools**
 - AI Workforce Registry and Task → Agent Router;
 - local research memory and JSON export.
 
+The advanced navigation also includes **Workflow Dispatcher** and **Plasmid Sandbox**:
+
+- The dispatcher offers three workflows using a byte-preserved GenomeAtlas registry, chain catalog and task-request schema pinned at `5cc89fb6379e9b1cdaf3cbd96c571e14d9075a8b`. Its prompt and JSON share the same three-accession request. The request records intent only and does not dispatch GitHub Actions. Source hashes are recorded in `src/data/genomeatlas/provenance.json`.
+- The sandbox scans local raw DNA against the three illustrative motif fixtures from the specification. Empty or invalid input receives no result. “Safe” and “Blocked” are explicitly mock labels, not verified strain behavior or transformation predictions.
+- `TribunalReceipt` renders supplied run metadata, claims and a source commit. A displayed hash and model agreement are not signature verification or experimental validation; the component states this boundary and does not invent a run.
+
+Direct view links are `#mode=advanced&view=dispatcher` and `#mode=advanced&view=plasmid`. `src/App.tsx` already selects the advanced workspace; its actual view switch lives in `src/advanced/AdvancedAtlas.tsx`.
+
 The advanced source records remain in English and are labeled as such at the mode boundary. Demo nodes stay visibly separated into confirmed, predicted, unknown, or needs-validation states.
 
 ## Codex-Spark position
@@ -47,6 +55,8 @@ npm run check
 ```
 
 That command runs lint, the unit/interface tests, TypeScript compilation, and a production build.
+
+The current changes pass with Node 24.19.0. On Node 26.8.2, native Web Storage conflicts with this Vitest/jsdom environment; use `NODE_OPTIONS=--no-experimental-webstorage npm run check`. The repository CI remains on Node 22. No application dependencies were added.
 
 ## Knowledge corpus
 

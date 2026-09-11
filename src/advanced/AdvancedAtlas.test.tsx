@@ -31,4 +31,15 @@ describe('advanced GenomeOps Atlas workspace', () => {
     expect(within(routeOutput as HTMLElement).getByRole('heading', { name: 'Analyze genome evidence' })).toBeInTheDocument()
     expect(within(routeOutput as HTMLElement).queryByText('GPT-5.3-Codex-Spark')).not.toBeInTheDocument()
   })
+
+  it('opens new views through navigation and deep links', () => {
+    window.history.replaceState(null, '', '#mode=advanced&view=plasmid')
+    render(<AdvancedAtlas />)
+    expect(screen.getByRole('heading', { name: 'Transformation Risk Analyzer' })).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: 'Workflow Dispatcher' }))
+    expect(window.location.hash).toContain('view=dispatcher')
+    expect(screen.getByRole('button', { name: 'Generate Perfect Prompt' })).toBeInTheDocument()
+    fireEvent.change(screen.getByRole('combobox', { name: 'Current section' }), { target: { value: 'plasmid' } })
+    expect(screen.getByRole('heading', { name: 'Transformation Risk Analyzer' })).toBeInTheDocument()
+  })
 })

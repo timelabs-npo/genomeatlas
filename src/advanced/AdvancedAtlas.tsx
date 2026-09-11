@@ -10,9 +10,11 @@ import { ProjectsView } from '../views/ProjectsView'
 import { PromptStudio } from '../views/PromptStudio'
 import { ToolAdvisor } from '../views/ToolAdvisor'
 import { WorkforceView } from '../views/WorkforceView'
+import { WorkflowDispatcher } from '../views/WorkflowDispatcher'
+import { PlasmidSandboxView } from '../views/PlasmidSandboxView'
 import type { DecisionEntry, EvidenceNode, EvidenceStatus, ViewId } from '../types'
 
-const validViews: ViewId[] = ['projects', 'prompt', 'evidence', 'tools', 'workforce', 'memory']
+const validViews: ViewId[] = ['projects', 'prompt', 'evidence', 'tools', 'workforce', 'memory', 'dispatcher', 'plasmid']
 
 const readHashView = (): ViewId => {
   const params = new URLSearchParams(window.location.hash.replace(/^#/, ''))
@@ -99,6 +101,8 @@ export function AdvancedAtlas() {
             />
           ) : null}
           {view === 'tools' ? <ToolAdvisor /> : null}
+          {view === 'dispatcher' ? <WorkflowDispatcher /> : null}
+          {view === 'plasmid' ? <PlasmidSandboxView /> : null}
           {view === 'workforce' ? <WorkforceView /> : null}
           {view === 'memory' ? (
             <MemoryView

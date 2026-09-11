@@ -1,0 +1,26 @@
+{
+  "repository": "https://github.com/timelabs-npo/genomeatlas",
+  "commit": "5cc89fb6379e9b1cdaf3cbd96c571e14d9075a8b",
+  "files": {
+    "registry.json": {
+      "source_path": "data/registry.json",
+      "sha256": "d7b971f4590f7feedbe876530bde2007ff4b5551f91eea57b1ddb4d927affde3"
+    },
+    "chains.json": {
+      "source_path": "data/chains.json",
+      "sha256": "7fb8085cabb4419e782536452ee7716822dfb067f17c6e9e0020ac39c9afee10"
+    },
+    "selected_accessions.txt": {
+      "source_path": "data/selected_accessions.txt",
+      "sha256": "56209c6042213da0ea96160d2a2d4e785d7574246b4b8d0371a290333c9e264a"
+    },
+    "task-request.schema.json": {
+      "source_path": "schemas/task-request.schema.json",
+      "sha256": "a47954f9eb69701d0722fb249f097da41a1a294ab53918b556e97cd5e0ed1c6a"
+    },
+    "task-request.template.json": {
+      "source_path": "templates/task-request.json",
+      "sha256": "3a355ae84446670b70dbd5b0a238584e5b765b860b87cccc481bf601bfdd40d5"
+    }
+  }
+}

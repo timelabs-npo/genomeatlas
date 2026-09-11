@@ -1,8 +1,10 @@
 import {
   BookOpenText,
   BrainCircuit,
+  ClipboardList,
   Compass,
   Download,
+  FlaskConical,
   FolderKanban,
   MessageSquareText,
   Network,
@@ -19,6 +21,8 @@ const navItems: Array<{
   { id: 'prompt', label: 'Prompt Studio', icon: MessageSquareText },
   { id: 'evidence', label: 'Evidence Map', icon: Network },
   { id: 'tools', label: 'Tool Advisor', icon: Compass },
+  { id: 'dispatcher', label: 'Workflow Dispatcher', icon: ClipboardList },
+  { id: 'plasmid', label: 'Plasmid Sandbox', icon: FlaskConical },
   { id: 'workforce', label: 'AI Workforce', icon: BrainCircuit },
   { id: 'memory', label: 'Research Memory', icon: BookOpenText },
 ]

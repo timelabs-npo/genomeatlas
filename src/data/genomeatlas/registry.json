@@ -1,0 +1,1014 @@
+{
+  "schema": "genomeatlas.registry/1",
+  "entries": [
+    {
+      "id": "AI_Wisebase",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Academic_Writing_Toolkit",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Ace_Knowledge_Graph",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Adobe",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Adobe_Acrobat",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "AhaMotion",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Airtable",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Apple_Music",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "BioRender",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Canva",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Chessy",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Consensus",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Coursera",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Elicit",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Figma",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Finances",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Firecrawl",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Genomic_Intelligence",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "GitHub",
+      "layer": "connector",
+      "status": "PROBED",
+      "scope": "WD gh authenticated; org admin membership and repository read succeeded",
+      "probed": true
+    },
+    {
+      "id": "Gmail",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Google_Calendar",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Google_Contacts",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Google_Drive",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Higgsfield",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Hugging_Face",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Inductive_Bio",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Network_Solutions",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "OpenAI_Platform",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Plugin_Management",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Private_MD_Labs",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Proto",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Remote_Desktop_Commander",
+      "layer": "connector",
+      "status": "PROBED",
+      "scope": "WD shell commands and filesystem nonce test succeeded",
+      "probed": true
+    },
+    {
+      "id": "Rowan",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Shazam",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Spotify",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Tamarind_Bio",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Target",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Undermind",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Vercel",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "Wolfram",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "eSIM_Copilot",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "files",
+      "layer": "connector",
+      "status": "CATALOG_ONLY",
+      "scope": "Advertised in the parent session; no claim of successful runtime probe",
+      "probed": false
+    },
+    {
+      "id": "smarts.bio:_AI_for_biology",
+      "layer": "connector",
+      "status": "AUTH_REQUIRED",
+      "scope": "Parent ChatGPT direct smarts_list_tools probe returned user has not logged into the tool. Earlier catalog/404 observations were from another scoped session; retained in history. No scientific execution.",
+      "probed": true
+    },
+    {
+      "id": "bionemo-agent-toolkit",
+      "layer": "skill-package",
+      "status": "SKILL_READ",
+      "scope": "Package0.1.0 locally installed; genomics-workflow-acceleration and msa-search-nim skills actually read. No GPU/NIM run. Skill-file revision may differ from package version.",
+      "probed": true
+    },
+    {
+      "id": "openai-developers",
+      "layer": "skill-package",
+      "status": "INSTALLED_NOT_EXECUTED",
+      "scope": "Skill instructions, not proof of runtime or API credentials",
+      "probed": false
+    },
+    {
+      "id": "life-sciences-databases",
+      "layer": "skill-package",
+      "status": "INSTALLED_NOT_EXECUTED",
+      "scope": "Skill instructions, not proof of runtime or API credentials",
+      "probed": false
+    },
+    {
+      "id": "life-sciences-literature",
+      "layer": "skill-package",
+      "status": "INSTALLED_NOT_EXECUTED",
+      "scope": "Skill instructions, not proof of runtime or API credentials",
+      "probed": false
+    },
+    {
+      "id": "build-web-apps",
+      "layer": "skill-package",
+      "status": "INSTALLED_NOT_EXECUTED",
+      "scope": "Skill instructions, not proof of runtime or API credentials",
+      "probed": false
+    },
+    {
+      "id": "build-web-data-visualization",
+      "layer": "skill-package",
+      "status": "INSTALLED_NOT_EXECUTED",
+      "scope": "Skill instructions, not proof of runtime or API credentials",
+      "probed": false
+    },
+    {
+      "id": "NCBI_Datasets",
+      "layer": "CLI-or-data-service",
+      "status": "METADATA_PROBED",
+      "scope": "One public versioned assembly metadata request returned HTTP 200; no genome package downloaded.",
+      "probed": true
+    },
+    {
+      "id": "GToTree",
+      "layer": "CLI-or-data-service",
+      "status": "NOT_TESTED",
+      "scope": "Proposed for the LAB RM chain",
+      "probed": false
+    },
+    {
+      "id": "HMMER",
+      "layer": "CLI-or-data-service",
+      "status": "NOT_TESTED",
+      "scope": "Proposed for the LAB RM chain",
+      "probed": false
+    },
+    {
+      "id": "MAFFT",
+      "layer": "CLI-or-data-service",
+      "status": "NOT_TESTED",
+      "scope": "Proposed for the LAB RM chain",
+      "probed": false
+    },
+    {
+      "id": "trimAl",
+      "layer": "CLI-or-data-service",
+      "status": "NOT_TESTED",
+      "scope": "Proposed for the LAB RM chain",
+      "probed": false
+    },
+    {
+      "id": "IQ-TREE",
+      "layer": "CLI-or-data-service",
+      "status": "NOT_TESTED",
+      "scope": "Proposed for the LAB RM chain",
+      "probed": false
+    },
+    {
+      "id": "DefenseFinder",
+      "layer": "CLI-or-data-service",
+      "status": "NOT_TESTED",
+      "scope": "Proposed for the LAB RM chain",
+      "probed": false
+    },
+    {
+      "id": "REBASE",
+      "layer": "CLI-or-data-service",
+      "status": "NOT_TESTED",
+      "scope": "Proposed for the LAB RM chain",
+      "probed": false
+    },
+    {
+      "id": "Geneious",
+      "layer": "CLI-or-data-service",
+      "status": "NOT_TESTED",
+      "scope": "Proposed for the LAB RM chain",
+      "probed": false
+    },
+    {
+      "id": "iTOL",
+      "layer": "CLI-or-data-service",
+      "status": "NOT_TESTED",
+      "scope": "Proposed for the LAB RM chain",
+      "probed": false
+    },
+    {
+      "id": "AlphaGenome",
+      "layer": "CLI-or-data-service",
+      "status": "NOT_TESTED",
+      "scope": "Proposed for the LAB RM chain",
+      "probed": false
+    },
+    {
+      "id": "Codex_WD",
+      "layer": "CLI-or-data-service",
+      "status": "IMPLEMENTATION_RETURNED",
+      "scope": "Actual persisted session01a0869a-6af8-75e3-b8d1-0879e92c6723 executed source work and returned exit0; parent reran61 code tests on its source. Not scientific execution.",
+      "probed": true
+    },
+    {
+      "id": "WSL_Ubuntu",
+      "layer": "CLI-or-data-service",
+      "status": "PROBED",
+      "scope": "Parent remote-shell test: Ubuntu WSL1, Python3.14.4; Windows/Ubuntu nonce exchange matched. Not a full scientific pipeline.",
+      "probed": true
+    },
+    {
+      "id": "ChatGPT_Sites",
+      "layer": "CLI-or-data-service",
+      "status": "PROVIDER_ACTIVE_HTTP_200",
+      "scope": "Provider get_site confirmed matching public active Site and HTTP200. Saved version1 source683401cf1f2255414a4df3e0f2e9d606686a8fdf; read API did not expose explicit live-version binding/deployment ID. Current source integration is separate.",
+      "probed": true
+    },
+    {
+      "id": "cache:browser:0",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Browser; package 26.903.61454; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "3a0b6b6e74435e45138b498816bb5ab2943c45510f369fc2ec981d9391f53945"
+    },
+    {
+      "id": "cache:chrome:1",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Chrome; package 26.903.61454; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "d27dd2a995ad1403c36017921a591eeb6c4c6947f53c2f7eb62d2b06e827a9c0"
+    },
+    {
+      "id": "cache:chrome:2",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Chrome; package 26.903.61454; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "d27dd2a995ad1403c36017921a591eeb6c4c6947f53c2f7eb62d2b06e827a9c0"
+    },
+    {
+      "id": "cache:codex-app-tools:3",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "codex-app-tools; package 0.1.3; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "115a1735446a313055d30810fdd2172f41b0a71c74e8eeb23caaf7cd07f8f4a1"
+    },
+    {
+      "id": "cache:computer-use:4",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Computer Use; package 26.903.61454; 1 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "61c306606ee1a9e859c181e59f4ed15ba47dc4f571de733be82de04b5ccbcf9c"
+    },
+    {
+      "id": "cache:unified-computer-use:5",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "unified-computer-use; package 26.903.61454; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "4b3d2e749e05da2809981ef4003ce423912448361c44caabd1de3c66df2b909f"
+    },
+    {
+      "id": "cache:visualize:6",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Visualize; package 1.0.32; 1 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "06d78e1902fdd5a32dd720485e92c19b11c73047eaafc832ab51e9e39b900c3f"
+    },
+    {
+      "id": "cache:adaptyv-bio:7",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Adaptyv Bio; package 0.0.4; 4 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "42642e267ebea482209917e8b86af50cb7087b61fd55d9953d2be08e8a8ec1dd"
+    },
+    {
+      "id": "cache:airtable:8",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Airtable; package 6.0.1; 3 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "4ea1730571fe733f338f4a73323055da7d31d98760d79eb74aaf3c3a9b7016c7"
+    },
+    {
+      "id": "cache:app-68de829bf7648191acd70a907364c67c:9",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Spotify; package 4.1.0; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "1805b54085184f489ae6a1fa64fc18488c074da66db68b322b088dc3b68c6239"
+    },
+    {
+      "id": "cache:app-68e01e8c1c2081918b4567a0b959d3ff:10",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Coursera; package 2.0.0; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "5633d30925e2150d0e8a3553f1a5567d6bb99838a2ebc10a911453985b85ac4b"
+    },
+    {
+      "id": "cache:app-69312da8e4dc81919370cb86fd172b6c:11",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Adobe; package 8.0.0; 6 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "df5a9399ddb306b0f6e7e4e51336ad96f06c677075325494ae806e3be32c982a"
+    },
+    {
+      "id": "cache:app-6938a7d323f48191aeabaf579802bf45:12",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Adobe Acrobat; package 1.0.0; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "ef8f8cd9f6bf1912be322229e851b3f480751719f11332bb96f83fbde0bfaf6c"
+    },
+    {
+      "id": "cache:app-6938a94a61d881918ef32cb999ff937c:13",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Apple Music; package 1.0.0; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "6c41351adba05cd2cbc930c5473b7d244dfb7b406e01fa12f2265de65ff152e8"
+    },
+    {
+      "id": "cache:app-6943e6f4a928819195962de16fb9ffe4:14",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Consensus; package 4.0.0; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "1ceda3c605493a1445d22123e8861852cf80cfde880950b17238a4aa672418a3"
+    },
+    {
+      "id": "cache:app-6944570636288191b7944d8c4a3fb857:15",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Shazam; package 2.0.0; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "d9494da361427c1d8ef342c1fd2b7b3bdbb3b17ee7afccf9db99f87210a23671"
+    },
+    {
+      "id": "cache:app-6944ee6b0e388191874b78d9b0548944:16",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "AhaMotion; package 1.0.0; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "41f0b8d7e0dff023efe8681b7c3874b3afc5d124fcb6529fec715d4db24c6f54"
+    },
+    {
+      "id": "cache:app-6944f7c806d0819195abf0177e5ff78a:17",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Ace Knowledge Graph; package 2.0.0; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "53a1c1eeadea2995387e1fadc2507ffc58834235a1f5681367f63a31207a4b6d"
+    },
+    {
+      "id": "cache:app-6948b1ccbef881919744614875f97c3f:18",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "AI Wisebase; package 1.0.0; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "77af1825f83bd3f2f20fe2827dbfe837f86c07f93dfe519b1e425836712e5d7d"
+    },
+    {
+      "id": "cache:app-695c70d5bb648191a156ddd85c967bf6:19",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Private MD Labs; package 2.0.0; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "46c211c718a8d6e02f931b49efd5a46cd62a206b56ca536927b38870a9f23706"
+    },
+    {
+      "id": "cache:app-69a0e374670c819190761772d2092135:20",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Chessy; package 1.0.0; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "4228eccc1f752c2dd20f35760e73ba3d6210fc3d4b6fc3f675ff24cc4e1aed04"
+    },
+    {
+      "id": "cache:app-69fcf53d4d8481919b65501a96bbed02:21",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Elicit; package 1.0.0; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "4214e0c8a62919d31c2746b2c3bd536b33d563d36ac0af301af7fe635a8f29a5"
+    },
+    {
+      "id": "cache:app-69fd7f74d13481919360da072b871129:22",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "eSIM Copilot; package 2.0.0; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "6866f3146a15c39be206196d35bd6ffca50a31867fc9da7f067b1e7841798594"
+    },
+    {
+      "id": "cache:app-69fe0bf66c8481919c513d799406436e:23",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Wolfram; package 3.0.0; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "42ea3c71ee15cdca9c2bbc1598aa2144513b50e722556f59fb3af1364af28a70"
+    },
+    {
+      "id": "cache:app-6a04f88a5fbc8191b8679c1ae31f2779:24",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Academic Writing Toolkit; package 1.0.0; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "2b6e855d3eab8f9c2ad3d8a0f20f5d88ff85832631114eb3d2afd4da540da681"
+    },
+    {
+      "id": "cache:app-6a057d268ebc81919918d37eec718425:25",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Remote Desktop Commander; package 1.0.0; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "42f3347ed38f469a4721db2236b20cc73c74f93fbd68e9a6350289c6b94bdf0d"
+    },
+    {
+      "id": "cache:app-6a2e3ae94af4819190469f3503a97d9c:26",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "smarts.bio: AI for biology; package 2.0.0; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "0c1887a4e5d9830328c8083be57c7cfd24fc8e1dccccf0d648dbb10d6b53979a"
+    },
+    {
+      "id": "cache:app-6a314a73f8ac819195b0d55e36b9c609:27",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Firecrawl; package 2.0.1; 12 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "7ba1905f7514855089083b837bca7218dd1b798fbce6101e074a301cddf437dc"
+    },
+    {
+      "id": "cache:app-6a3293e129088191abf0875820e839da:28",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Higgsfield; package 1.5.0; 13 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "0d38f001d9d02a207104b05ee654738b0b51fe51f8387919757ee52753fe1966"
+    },
+    {
+      "id": "cache:app-6a5f875215108191ae5d449352363219:29",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Inductive Bio; package 1.0.0; 3 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "bb64747257f10d469ad0d8028386b1827f3a0ce49eb880aa533cfdfae2c78642"
+    },
+    {
+      "id": "cache:app-6a5fc156fad88191a3977b60131d7391:30",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Tamarind Bio; package 1.0.0; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "41787db968b60623216d5d1a139c1dc1473e84195279dbedb51d55cea10ec971"
+    },
+    {
+      "id": "cache:app-6a60df60877081919ad4a8109d27535d:31",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Undermind; package 1.0.1; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "f72400b14c215cf263c23a2239ff38854ebd55a1e7d804ff04c45cd3d664d2b5"
+    },
+    {
+      "id": "cache:app-6a73c480231c819181d7440a0e1499c9:32",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Genomic Intelligence; package 1.0.0; 1 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "3c457f9c1d855a55a13736ddd3d127d3b48f04a3230b0379812621fcae131c16"
+    },
+    {
+      "id": "cache:app-6a88631af75081918917d89fb00269ad:33",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Rowan; package 1.0.0; 1 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "c04ed6483af782b910b1deea6f5428427357934aff75b74ef11aa3b13af88bb8"
+    },
+    {
+      "id": "cache:app-6a8a0cf734e48191aec4c958de2d145c:34",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Proto; package 0.0.1; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "1642a917d87ba325fdf72918c7fae78e0b8cdb255163a9a954c510af7e2401f7"
+    },
+    {
+      "id": "cache:biohub-esm:35",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Biohub ESM; package 0.2.4; 6 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "7e5a8f560f43e2af1542076a9059b74f6a6b1bfa141e86539729bbbb21695839"
+    },
+    {
+      "id": "cache:bionemo-agent-toolkit:36",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "NVIDIA BioNeMo Agent Toolkit; package 0.1.0; 31 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "36b5be2ad91d95d9081a9740ada3222d4b9a4971ae7ba32883b51ced932af036"
+    },
+    {
+      "id": "cache:biorender:37",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "BioRender; package 2.0.1; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "08e230f91a7137272a0238ff2cda94ffbf93da578b17ec64d3d5b80e6101e0d9"
+    },
+    {
+      "id": "cache:boltz-api-cli:38",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Boltz; package 0.1.1; 8 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "9ac6e86a7abf8927e7b92e413600eca8dd6de5afa088442ed25c0aa2f501db73"
+    },
+    {
+      "id": "cache:build-ios-apps:39",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Build iOS Apps; package 0.1.2; 9 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "86d4a225cb929ab68f00f6258a75daffb02122dd34875dabd349c3474dc35908"
+    },
+    {
+      "id": "cache:build-macos-apps:40",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Build macOS Apps; package 0.1.4; 11 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "d8d9c85281df68af2a2012ab6365b2789a573bd399692dacc4b2d5bfd06c0450"
+    },
+    {
+      "id": "cache:build-web-apps:41",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Build Web Apps; package 0.1.2; 6 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "676d1aab332c7bbacfbf59da0d61b1ced0ac3297c5e7788f72110cbd49915968"
+    },
+    {
+      "id": "cache:build-web-data-visualization:42",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Build Web Data Visualization; package 0.1.21; 18 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "fa1f5586afcfdfa8fa58d249fe852efd8103057d30f6c5d4009ce90e83b225a9"
+    },
+    {
+      "id": "cache:canva:43",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Canva; package 14.0.0; 8 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "bb9ff2fb6e008f481012608e42f2537addc9b6509ab0afb74956fb265a723fb8"
+    },
+    {
+      "id": "cache:cloudflare:44",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Cloudflare; package 0.1.2; 9 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "790ac166fa1f509f440e66d35c010e1cfb34d773726eb3a30a6a7553dacaf59a"
+    },
+    {
+      "id": "cache:data-analytics:45",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Data Analytics; package 0.2.10-13ceeea1f599; 15 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "5e31ff8c5a927dd262488ab4fa34a1136ff5ecd778fc2b91709f2426588f13ba"
+    },
+    {
+      "id": "cache:deep-research-work:46",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Deep Research; package 0.1.15; 1 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "7c1d94e0c3892469bde09ed42d1cb32c63801f61f93ef1e01d5dde1a2bc01255"
+    },
+    {
+      "id": "cache:figma:47",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Figma; package 2.0.21; 12 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "5333104f8a49ba3c7d50475eb233ec2beb6a127543f1a2004eda3bd52cb3d944"
+    },
+    {
+      "id": "cache:github:48",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "GitHub; package 0.1.12-5f7cd798dc99; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "c7a102ea4c7c06e49976dfc2f150a4fe2ce46b0e66f9b03883dda5d5cc9cb0ad"
+    },
+    {
+      "id": "cache:gmail:49",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Gmail; package 0.1.10; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "79332756fee94eb5251c57984c8412d43e31c6716f47f28305f3b556a14ff5c6"
+    },
+    {
+      "id": "cache:google-calendar:50",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Google Calendar; package 1.2.7; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "bdc047151faa4c2c539fe15e6b55bd1cb6e81148606f4efe1b7727ff161cc73f"
+    },
+    {
+      "id": "cache:google-contacts:51",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Google Contacts; package 1.0.0; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "a8c9a0d3b2a4f9b71af673b4b03ec00de4e6a7f41e7190c9716b4b3e3f513849"
+    },
+    {
+      "id": "cache:google-drive:52",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Google Drive; package 0.1.16; 5 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "fb76d7ea1eeaf768fd8bd539e6fbd8bd5fb0a911d4bb0b3af3a875c40df9ecb4"
+    },
+    {
+      "id": "cache:hugging-face:53",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Hugging Face; package 1.0.0; 11 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "a910e2669c8bdd4bcb261402b9e3c94cafc1a852256bf0a54aa0432316cb0547"
+    },
+    {
+      "id": "cache:life-sciences-databases:54",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Life Sciences Databases; package 0.1.5; 44 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "57927c62350ad6850564b21cf7527e3906f9ef003f33b53f09a6923e88c7983b"
+    },
+    {
+      "id": "cache:life-sciences-literature:55",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Life Sciences Literature; package 0.1.5; 3 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "d326ee61d6070b15117a1a260516371c9ef1745c3ce3cf8a949b5efcec886600"
+    },
+    {
+      "id": "cache:network-solutions:56",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Network Solutions; package 1.0.0; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "b6e5ee3b5ea8e85919eba6324389f0ad8130c3a237506f223661744e85249708"
+    },
+    {
+      "id": "cache:ngs-analysis-workbench:57",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "NGS Analysis Workbench; package 0.2.16; 5 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "a32ecaede3ce6d04098191997359900169259682e2b4909200a624fafe2e0ea1"
+    },
+    {
+      "id": "cache:openai-developers:58",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "OpenAI Developers; package 1.2.3; 5 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "547f6c8e73514cb921d6570ccc7d1114d397a88506bdc8ad1338709d6d435b8a"
+    },
+    {
+      "id": "cache:openai-templates:59",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Default templates; package 0.1.1; 20 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "d2cbbd434a5c8123a9e1612663f0598cdd13ba71bfb55e172e8132ed9e5d4474"
+    },
+    {
+      "id": "cache:plugin-management:60",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Plugin Management; package 0.1.0; 1 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "5deb3b2f943fff03a928e1faed2b040bad7dabcf71c11f183fc67dcc0793e3c3"
+    },
+    {
+      "id": "cache:product-design:61",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Product Design; package 0.1.54; 10 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "3820b68ed8ea0190f599a7cf050a3bfc167fe3e0fc20e4d0bf98ef8ace1ef5bf"
+    },
+    {
+      "id": "cache:rosalind:62",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Rosalind Workbench; package 0.2.5-research-preview; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "638bc4bfb9c0646bee841748702bed6520124b5d8c514a2bc647635a33061413"
+    },
+    {
+      "id": "cache:sequence-viewer:63",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Biological Sequence & Alignment Viewer; package 0.1.43; 1 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "e2a3160d5cfb1556546f9d3709825580f09da2faf0c036df37ec660a7ffe6ff4"
+    },
+    {
+      "id": "cache:slack:64",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Slack; package 0.1.8; 0 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "28188364c74d514acc63248db5c47fb8a948ea4810b99c17ff9e2d98affd3dc3"
+    },
+    {
+      "id": "cache:vercel:65",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Vercel; package 0.21.4; 54 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "868bc1954080f6bfba006c824d41c800a1c9294088a34c395afe5656508641e2"
+    },
+    {
+      "id": "cache:documents:66",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Documents; package 26.905.11957; 1 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "196b6667f9181760fe59dcc7394fac1467c7ab6023711d6f3f933ccecd8ca6f3"
+    },
+    {
+      "id": "cache:pdf:67",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "PDF; package 26.905.11957; 1 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "8cf6f5d8067c166fa4000e9b3a0ad3f600f453d7d2f8601ac48c8f6be7c4f97b"
+    },
+    {
+      "id": "cache:presentations:68",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Presentations; package 26.905.11957; 1 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "4d32b11f48c5457d7626cfb66f777c4e91bcfc388bb29f4e317638bc7337567a"
+    },
+    {
+      "id": "cache:spreadsheets:69",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Spreadsheets; package 26.905.11957; 2 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "ef4ccdb445c4b4bd7190e0a28d76246f930fe8784ad188122a3036c77b0bd8ed"
+    },
+    {
+      "id": "cache:template-creator:70",
+      "layer": "plugin-cache",
+      "status": "CACHE_FILES_OBSERVED",
+      "scope": "Template Creator; package 26.905.11957; 1 skill files. Cached files only. Enabled, authentication and execution are NOT_VERIFIED.",
+      "probed": false,
+      "manifest_sha256": "bf52837bc9f9cb201767e7f5a34c7cd1c4282a60601e3bfc3b8dcbeb37a242b6"
+    }
+  ]
+}

@@ -7,8 +7,25 @@ WORK="$ROOT/work/stage4_pilot"
 RESULTS="$ROOT/results/stage4_pilot"
 BIN="$ROOT/.tools"
 
+python3 "$ROOT/scripts/validate_pilot_accessions.py" "$ACCESSIONS"
+if [[ "$(uname -s)-$(uname -m)" != "Linux-x86_64" ]]; then
+  echo 'This DefenseFinder runner requires Linux x86_64 (the configured GitHub runner).' >&2
+  exit 2
+fi
+
 rm -rf "$WORK" "$RESULTS"
-mkdir -p "$WORK" "$RESULTS/raw_outputs" "$BIN"
+mkdir -p "$WORK" "$RESULTS/raw_outputs" "$RESULTS/input_proteomes" "$BIN"
+python3 "$ROOT/scripts/validate_pilot_accessions.py" "$ACCESSIONS" --normalized "$WORK/pilot_accessions.txt"
+ACCESSIONS="$WORK/pilot_accessions.txt"
+
+finish() {
+  status=$?
+  trap - EXIT
+  cp "$ACCESSIONS" "$RESULTS/pilot_accessions.txt"
+  python3 "$ROOT/scripts/write_pilot_manifest.py" "$RESULTS" "$status" || status=1
+  exit "$status"
+}
+trap finish EXIT
 
 DATASETS="$BIN/datasets"
 if [[ ! -x "$DATASETS" ]]; then
@@ -29,8 +46,10 @@ unzip -q "$ZIP" -d "$WORK/extracted"
 printf 'assembly_accession\tprotein_fasta\tsystems_file\tgenes_file\thmmer_file\n' > "$RESULTS/output_manifest.tsv"
 while read -r accession; do
   [[ -z "$accession" ]] && continue
-  faa="$WORK/extracted/ncbi_dataset/data/$accession/protein.faa"
-  test -s "$faa"
+  source_faa="$WORK/extracted/ncbi_dataset/data/$accession/protein.faa"
+  test -s "$source_faa"
+  faa="$RESULTS/input_proteomes/$accession.faa"
+  cp "$source_faa" "$faa"
   out="$RESULTS/raw_outputs/$accession"
   mkdir -p "$out"
   echo "Running DefenseFinder on $accession" >&2
@@ -52,7 +71,3 @@ python3 "$ROOT/scripts/summarize_defensefinder_pilot.py" \
   --rm-systems "$RESULTS/rm_systems_only.tsv" \
   --rm-hits "$RESULTS/rm_hmm_hits_only.tsv" \
   --summary "$RESULTS/STAGE4_PILOT_SUMMARY.md"
-
-cp "$ACCESSIONS" "$RESULTS/pilot_accessions.txt"
-find "$RESULTS" -type f -printf '%P\t%s\n' | sort > "$RESULTS/file_inventory.tsv"
-find "$RESULTS" -type f ! -name SHA256SUMS.txt -print0 | sort -z | xargs -0 sha256sum > "$RESULTS/SHA256SUMS.txt"

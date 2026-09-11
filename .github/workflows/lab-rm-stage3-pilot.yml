@@ -28,7 +28,7 @@ jobs:
             gtotree=1.8.17
           "$RUNNER_TEMP/bin/micromamba" run -p "$RUNNER_TEMP/labphylo" GToTree --version
 
-      - name: Run five-proteome marker pilot
+      - name: Run at most three proteomes in the marker pilot
         shell: bash
         run: |
           set -euo pipefail

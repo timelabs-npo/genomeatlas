@@ -1,5 +1,19 @@
 # GenomeOps Atlas v0.2 verification
 
+## Dispatcher and sandbox update — 2026-09-12
+
+- `npm run check`: lint, 32 tests in 9 files, TypeScript and Vite production build pass under Node 24.19.0. Node 26.8.2 also passes with `NODE_OPTIONS=--no-experimental-webstorage`; its default native storage conflicts with Vitest/jsdom.
+- Existing application dependencies and lockfile are unchanged.
+- Rendered checks used installed Chrome with the bundled Playwright against the local development server and the production build at `http://127.0.0.1:4176`, at 1600 × 1000 and 390 × 844. The Browser plugin was not available.
+- Catalog selection, three-accession schema-shaped JSON, copying the exact current request, desktop/mobile navigation, deep-link reload, empty input, invalid bases, motif counts and strain changes pass.
+- No Vite error overlay, blank page or relevant console errors. The pre-existing missing `/favicon.ico` request is a separate 404, not an application runtime error.
+- Corrected an existing mobile specificity conflict: the advanced project rail retained its desktop top offset after switching to relative positioning, overlapping the page title. Mobile checks include rail/title geometry at scroll zero, input focus and no horizontal document overflow. Screenshots and exact command receipts are saved with the external implementation deliverables.
+- Contract tests verify all five frozen parent source hashes, real chain/tool IDs, panel membership, and agreement between the dispatcher and scientific pilot accessions.
+- The receipt is tested as a reusable component; it is not connected to a fabricated execution record. No cryptographic signature or biological claim is validated by its presentation.
+- Full scientific execution and publication acceptance are separate gates; see `analyses/lab-rm-phylogenomics/README.md`.
+
+## Earlier pilot verification
+
 Checked on 2026-08-18.
 
 ## Automated gate

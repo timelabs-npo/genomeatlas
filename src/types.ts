@@ -5,6 +5,8 @@ export type ViewId =
   | 'tools'
   | 'workforce'
   | 'memory'
+  | 'dispatcher'
+  | 'plasmid'
 
 export type EvidenceStatus =
   | 'confirmed'
