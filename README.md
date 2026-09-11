@@ -55,3 +55,7 @@ The additive integration on this branch retains the existing app and publication
 Parent local session01a0869a-6af8-75e3-b8d1-0879e92c6723 actually executed development and native Site readback. Independent tests for this integration:30 Python and14 Node tests passed (one Node wrapper repeats Python; counts are not additive unique tests). Windows/Ubuntu/GitHub SHA-256 roundtrips and10 independent Copilot inventory tests passed separately. No new browser tests were performed after permission was declined.
 
 See data/current-probes.json, data/plugin-cache.json, data/native-site-readback.json, data/copilot-reexecution.json and evidence/parent-reconciliation/. This new source is not asserted live until a new native save/deploy receipt binds it.
+
+## Integrated GenomeOps application
+
+The React/Vite researcher workspace is preserved under [apps/genomeops-atlas](apps/genomeops-atlas/README.md). See [integration and verification](docs/genomeops-integration.md) for source history, build commands, CI paths, and the unresolved remote repository transition.
