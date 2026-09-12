@@ -17,7 +17,7 @@ This is a retention merge, not a commit-identity rewrite. “Rebase” in the pr
 - Canonical integration commit: `36a36b36bfab792a33f3f68e1510162ee8c01d4b`.
 - Final verified canonical workbench commit before this documentation release: `f1c8a7276618a3fd2edfa57571788dea2be3e05c`.
 - Retained source branch before final receipt: `ai-traces/dedends` at `f20f19218dc1bb9749728c2f4add2b1ee897f719`.
-- Retained bundle: 35 refs, 342,140 bytes, SHA-256 `57aaf9dac2694674c468b2aa8d32cc465f45a8444a353a65606904e6aee8385a`.
+- Retained source manifest: 35 recorded refs. `git bundle verify` reports 36 bundle heads because it also exposes the bundle `HEAD`; the 35 source refs are listed verbatim in `refs.txt`. The bundle is 342,140 bytes with SHA-256 `57aaf9dac2694674c468b2aa8d32cc465f45a8444a353a65606904e6aee8385a`.
 
 The imported application tree is byte-identical to the tree of the imported commit at the integration point. The retention bundle was verified with `git bundle verify`; a mirror clone and `git fsck --full` passed before source retirement. The retention receipt and repository metadata are stored beside the bundle in `ai-traces`.
 
