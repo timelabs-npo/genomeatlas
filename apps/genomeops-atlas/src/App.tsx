@@ -4,6 +4,7 @@ import { LanguageSwitch } from './components/LanguageSwitch'
 import { ROUTINE_LOCALE_KEY, type RoutineLocale } from './lib/routine'
 import { RoutineGuide } from './views/RoutineGuide'
 import { Workbench } from './views/Workbench'
+import { UserInputsProvider } from './lib/userInputs'
 import './workbench.css'
 
 const initialLocale = (): RoutineLocale => {
@@ -15,7 +16,7 @@ const initialLocale = (): RoutineLocale => {
 }
 const modeFromHash = () => new URLSearchParams(window.location.hash.slice(1)).get('mode')
 
-export default function App() {
+function AppContent() {
   const [locale, setLocale] = useState<RoutineLocale>(initialLocale)
   const [mode, setMode] = useState(modeFromHash)
 
@@ -43,4 +44,8 @@ export default function App() {
     return <div className="advanced-boundary"><div className="advanced-return-bar"><button onClick={() => navigate(null)}>Back to GenomeAtlas Workbench</button><span>GenomeOps research atlas</span><LanguageSwitch locale={locale} onChange={setLocale} label="Language" /></div><AdvancedAtlas /></div>
   }
   return <Workbench onOpenAtlas={() => navigate('advanced')} onOpenGuide={() => navigate('guide')} />
+}
+
+export default function App() {
+  return <UserInputsProvider><AppContent /></UserInputsProvider>
 }

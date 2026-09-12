@@ -35,12 +35,12 @@ describe('advanced GenomeOps Atlas workspace', () => {
   it('opens new views through navigation and deep links', () => {
     window.history.replaceState(null, '', '#mode=advanced&view=plasmid')
     render(<AdvancedAtlas />)
-    expect(screen.getByRole('heading', { name: 'Explore restriction motifs' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Plasmid sandbox.' })).toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: 'Workflow Dispatcher' }))
     expect(window.location.hash).toContain('view=dispatcher')
-    expect(screen.getByRole('button', { name: 'Generate Perfect Prompt' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Inspect inputs' })).toBeInTheDocument()
     fireEvent.change(screen.getByRole('combobox', { name: 'Current section' }), { target: { value: 'plasmid' } })
-    expect(screen.getByRole('heading', { name: 'Explore restriction motifs' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Plasmid sandbox.' })).toBeInTheDocument()
   })
 
   it('keeps the atlas usable when browser storage is blocked', () => {
@@ -50,6 +50,6 @@ describe('advanced GenomeOps Atlas workspace', () => {
     expect(screen.getByRole('heading', { name: 'L. lactis oxygen metabolism' })).toBeInTheDocument()
     expect(screen.getByText(/Decisions remain in this session only/)).toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: 'Plasmid Sandbox' }))
-    expect(screen.getByRole('heading', { name: 'Explore restriction motifs' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Plasmid sandbox.' })).toBeInTheDocument()
   })
 })

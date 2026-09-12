@@ -1,0 +1,57 @@
+.ui-input-panel { position: fixed; inset: 0 0 0 auto; width: 340px; z-index: 85; color: #edf0ed; background: #1b1e1e; border-left: 1px solid #303637; overflow-y: auto; overscroll-behavior: contain; font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; outline: none; }
+.ui-input-panel * { box-sizing: border-box; }
+.ui-input-header { position: sticky; top: 0; z-index: 2; display: flex; align-items: start; justify-content: space-between; gap: 12px; padding: 24px 24px 18px; background: #1b1e1ef5; border-bottom: 1px solid #303637; }
+.ui-input-header h2 { margin: 0 0 3px; font-size: 22px; font-weight: 600; letter-spacing: -.45px; }
+.ui-input-header p { margin: 0; color: #a0a9ac; font-size: 12px; }
+.ui-input-panel button { cursor: pointer; font: inherit; }
+.ui-input-panel button:disabled { cursor: not-allowed; opacity: .5; }
+.ui-input-panel button:focus-visible, .ui-input-panel textarea:focus-visible, .ui-input-panel input:focus-visible { outline: 2px solid #98e7c9; outline-offset: 3px; }
+.ui-input-close { flex-shrink: 0; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 6px; color: #a0a9ac; background: transparent; }
+.ui-input-close:hover { background: #303637; color: #edf0ed; }
+.ui-input-content { padding: 24px; }
+.ui-input-section { margin-bottom: 26px; }
+.ui-input-section h3 { display: flex; align-items: center; gap: 9px; margin: 0 0 13px; font-size: 14px; font-weight: 600; }
+.ui-input-section h3 > svg { color: #98e7c9; flex-shrink: 0; }
+.ui-input-section:first-child h3 > svg { color: #81b6ff; }
+.ui-input-count { margin-left: auto; color: #a0a9ac; font-size: 11px; font-weight: 400; }
+.ui-input-label, .ui-genome-browser > label { display: block; color: #bbc4c4; font-size: 12px; margin-bottom: 6px; }
+.ui-input-panel textarea, .ui-input-search input { width: 100%; min-width: 0; border: 1px solid #3d4848; background: #171919; border-radius: 8px; color: #edf0ed; font: inherit; font-size: 12px; line-height: 1.65; padding: 10px 11px; }
+.ui-input-panel textarea { resize: vertical; min-height: 66px; max-height: 360px; }
+.ui-input-panel textarea::placeholder, .ui-input-search input::placeholder { color: #8e9a9c; }
+.ui-input-panel textarea[aria-invalid="true"] { border-color: #d2948f; }
+.ui-input-panel .ui-input-monospace { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.ui-input-hint, .ui-input-error { font-size: 11px; margin: 6px 0 10px; line-height: 1.5; color: #a0a9ac; overflow-wrap: anywhere; }
+.ui-input-error { color: #f3aaa2; }
+.ui-input-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.ui-input-button { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid #4d5a59; color: #e0e7e5; background: transparent; border-radius: 7px; padding: 8px 10px; font-size: 11px !important; min-height: 34px; }
+.ui-input-button:hover { background: #29302f; border-color: #98e7c9; }
+.ui-input-text-button { display: inline-flex; align-items: center; gap: 6px; color: #98e7c9; background: transparent; padding: 4px 0; font-size: 11px !important; text-align: left; }
+.ui-input-text-button:hover { color: #c3f4e2; }
+.ui-input-chips { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0 0 12px; padding: 0; }
+.ui-input-chips li { display: flex; align-items: center; gap: 7px; max-width: 100%; padding: 4px 6px 4px 8px; border: 1px solid #4b626b; border-radius: 6px; color: #b9d7eb; background: #1d272a; font-size: 11px; }
+.ui-input-chips li > code, .ui-input-chips li > span { overflow-wrap: anywhere; }
+.ui-input-chips button { display: grid; place-items: center; flex-shrink: 0; width: 22px; height: 22px; color: inherit; background: transparent; border-radius: 4px; padding: 0; }
+.ui-genome-browser { margin-top: 14px; padding: 12px; border: 1px solid #3d4848; border-radius: 8px; background: #171919; }
+.ui-input-search { position: relative; }
+.ui-input-search > svg { position: absolute; top: 12px; left: 10px; color: #8e9a9c; }
+.ui-input-search input { padding-left: 32px; }
+.ui-genome-browser > ul { list-style: none; max-height: 180px; overflow-y: auto; margin: 0; padding: 0; }
+.ui-genome-browser li button { display: flex; justify-content: space-between; width: 100%; padding: 7px 3px; border-bottom: 1px solid #303637; background: transparent; color: #b9d7eb; text-align: left; font-size: 11px; }
+.ui-input-topology { display: flex; gap: 17px; padding: 0; border: 0; margin: 12px 0 0; }
+.ui-input-topology legend { font-size: 12px; margin-bottom: 6px; color: #bbc4c4; }
+.ui-input-topology label { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #c8d2cf; }
+.ui-input-topology input { accent-color: #98e7c9; margin: 0; }
+.ui-input-privacy { display: flex; align-items: start; gap: 8px; padding-top: 19px; border-top: 1px solid #303637; color: #a0a9ac; }
+.ui-input-privacy svg { flex-shrink: 0; margin-top: 2px; }
+.ui-input-privacy p, .ui-input-reset p { margin: 0; font-size: 11px; line-height: 1.6; }
+.ui-input-reset-trigger { margin-top: 16px; color: #adb7b5; }
+.ui-input-reset { margin-top: 16px; }
+.ui-input-reset .ui-input-actions { margin-top: 8px; }
+.ui-input-scrim { position: fixed; inset: 0; z-index: 150; background: #080c0cbf; }
+@media (max-width: 1179px) {
+  .ui-input-panel { width: min(100vw, 380px); z-index: 160; box-shadow: -12px 0 40px #0008; }
+  .ui-input-header { padding: 22px 20px 17px; }
+  .ui-input-content { padding: 20px; }
+  .ui-input-close { width: 36px; height: 36px; }
+  .ui-input-actions > button { min-height: 40px; }
+}

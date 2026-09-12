@@ -2,7 +2,13 @@ import { act, cleanup, fireEvent, render, screen, waitFor, within } from '@testi
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import App from './App'
 
-describe('GenomeAtlas unified workbench', () => {
+const openGenomeWorkspace = () => {
+  fireEvent.click(screen.getByRole('button', { name: /Genome selection/ }))
+  expect(screen.getByRole('heading', { name: 'Choose the right genomes' })).toBeInTheDocument()
+  fireEvent.change(screen.getByRole('textbox', { name: 'Exact genome selection' }), { target: { value: 'GCF_000468955.1' } })
+}
+
+describe('GenomeAtlas interactive research workspace', () => {
   afterEach(() => cleanup())
   beforeEach(() => {
     window.localStorage.clear()
@@ -11,70 +17,84 @@ describe('GenomeAtlas unified workbench', () => {
     vi.mocked(navigator.clipboard.writeText).mockReset().mockResolvedValue(undefined)
   })
 
-  it('opens the research workbench and can search every task', () => {
+  it('uses a staged task library and opens a distinct full-page workspace', () => {
     render(<App />)
-    expect(screen.getByRole('heading', { name: 'GenomeAtlas Workbench' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: 'Start a research task' })).toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: 'View all tasks' }))
-    fireEvent.change(screen.getByRole('textbox', { name: 'Search task library' }), { target: { value: 'no matching task token' } })
-    expect(screen.getByRole('heading', { name: 'No matching task' })).toBeInTheDocument()
-    fireEvent.click(screen.getByRole('button', { name: 'Clear search' }))
-    expect(screen.getByText('8 tasks')).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Prepare' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Analyze' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Review & communicate' })).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: 'Open Inspect R-M candidates workspace' }))
+    expect(window.location.hash).toContain('task=screen-rm-candidates')
+    expect(screen.getByRole('heading', { name: 'Inspect R-M candidates' })).toBeInTheDocument()
+    expect(screen.getByRole('tab', { name: 'Prepare inputs' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Inspect R-M evidence inputs' })).toBeInTheDocument()
+    expect(screen.queryByRole('dialog', { name: 'Inspect R-M candidates' })).not.toBeInTheDocument()
   })
 
-  it('prepares a role-aware prompt and links to the chosen destination without pretending to launch a configured session', async () => {
+  it('starts with empty shared inputs and prepares an explicitly scoped configured prompt', async () => {
     render(<App />)
-    fireEvent.click(screen.getByRole('button', { name: /Genome selection/ }))
-    const dialog = screen.getByRole('dialog')
-    fireEvent.change(within(dialog).getByRole('textbox', { name: 'Your research context' }), { target: { value: 'Review my frozen three-genome panel.' } })
-    fireEvent.click(within(dialog).getByRole('button', { name: 'Copy prompt' }))
-    await waitFor(() => expect(within(dialog).getByRole('button', { name: 'Prompt copied' })).toBeInTheDocument())
-    expect(vi.mocked(navigator.clipboard.writeText).mock.calls.at(-1)?.[0]).toContain('Review my frozen three-genome panel.')
-    expect(within(dialog).getByText(/They do not change account or model settings/)).toBeInTheDocument()
-    fireEvent.keyDown(document, { key: 'Escape' })
-    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+    openGenomeWorkspace()
+    fireEvent.change(screen.getByRole('textbox', { name: 'Question, files and notes' }), { target: { value: 'Review my exact genome and report missing evidence.' } })
+    fireEvent.click(screen.getByRole('tab', { name: 'Run in chat' }))
+    fireEvent.change(screen.getByRole('combobox', { name: 'Destination' }), { target: { value: 'codex' } })
+    fireEvent.click(screen.getByRole('button', { name: 'Copy prompt' }))
+    await waitFor(() => expect(screen.getByRole('button', { name: 'Prompt copied' })).toBeInTheDocument())
+    const text = vi.mocked(navigator.clipboard.writeText).mock.calls.at(-1)?.[0]
+    expect(text).toContain('Review my exact genome and report missing evidence.')
+    expect(text).toContain('Codex cloud')
+    expect(text).toContain('GCF_000468955.1')
+    expect(text).not.toContain('GCF_903886475.1')
+    expect(screen.getByText(/They do not change account or model settings/)).toBeInTheDocument()
   })
 
-  it('blocks prompt copy for an invalid or out-of-panel accession list', () => {
-    render(<App />)
-    fireEvent.click(screen.getByRole('button', { name: /Genome selection/ }))
-    const dialog = screen.getByRole('dialog')
-    fireEvent.change(within(dialog).getByRole('textbox', { name: 'Exact genome accessions' }), { target: { value: 'GCF_999999999.1' } })
-    expect(within(dialog).getByRole('alert')).toHaveTextContent('outside the frozen genome panel')
-    expect(within(dialog).getByRole('button', { name: 'Copy prompt' })).toBeDisabled()
-    expect(within(dialog).getByRole('button', { name: 'Download prompt' })).toBeDisabled()
-  })
-
-  it('does not mark a changed brief as copied after an older clipboard operation finishes', async () => {
+  it('blocks invalid scope and does not report a changed brief as copied', async () => {
     let resolveCopy: () => void = () => {}
     vi.mocked(navigator.clipboard.writeText).mockImplementationOnce(() => new Promise<void>(resolve => { resolveCopy = resolve }))
     render(<App />)
-    fireEvent.click(screen.getByRole('button', { name: /Genome selection/ }))
-    const dialog = screen.getByRole('dialog')
-    fireEvent.click(within(dialog).getByRole('button', { name: 'Copy prompt' }))
-    fireEvent.change(within(dialog).getByRole('textbox', { name: 'Your research context' }), { target: { value: 'This context changed after copy started.' } })
+    openGenomeWorkspace()
+    fireEvent.click(screen.getByRole('tab', { name: 'Run in chat' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Copy prompt' }))
+    fireEvent.change(screen.getByRole('textbox', { name: 'Question, files and notes' }), { target: { value: 'A new context after copy started.' } })
     await act(async () => { resolveCopy() })
-    expect(within(dialog).queryByRole('button', { name: 'Prompt copied' })).not.toBeInTheDocument()
-    expect(within(dialog).getByRole('button', { name: 'Copy prompt' })).toBeEnabled()
+    expect(screen.queryByRole('button', { name: 'Prompt copied' })).not.toBeInTheDocument()
+    fireEvent.change(screen.getByRole('textbox', { name: 'Exact genome selection' }), { target: { value: 'GCF_999999999.1' } })
+    expect(screen.getByRole('button', { name: 'Copy prompt' })).toBeDisabled()
+    expect(screen.getByRole('button', { name: 'Download prompt' })).toBeDisabled()
   })
 
-  it('makes frozen tool status inspectable and the full inherited registry opt-in', () => {
+  it('invalidates the preparation report when any shared sequence input changes', () => {
+    render(<App />)
+    openGenomeWorkspace()
+    fireEvent.click(screen.getByRole('button', { name: 'Review accession selection' }))
+    expect(screen.getByText('Local preparation check recorded')).toBeInTheDocument()
+    fireEvent.change(screen.getByRole('textbox', { name: 'Sequence text or single-record FASTA' }), { target: { value: 'ACGTGAATTC' } })
+    expect(screen.queryByText('Local preparation check recorded')).not.toBeInTheDocument()
+  })
+
+  it('carries selected tools from the library into a task brief', async () => {
+    render(<App />)
+    fireEvent.click(screen.getByRole('button', { name: 'Add NCBI Datasets to toolset' }))
+    openGenomeWorkspace()
+    fireEvent.click(screen.getByRole('tab', { name: 'Run in chat' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Copy prompt' }))
+    await waitFor(() => expect(screen.getByRole('button', { name: 'Prompt copied' })).toBeInTheDocument())
+    expect(vi.mocked(navigator.clipboard.writeText).mock.calls.at(-1)?.[0]).toContain('NCBI_Datasets [')
+    const toolset = screen.getByRole('list', { name: 'Selected tools' })
+    expect(within(toolset).getByText('NCBI Datasets')).toBeInTheDocument()
+  })
+
+  it('keeps unrelated inherited catalog entries opt-in and preserves the bilingual guide', () => {
     render(<App />)
     fireEvent.click(screen.getByRole('button', { name: 'Browse library' }))
-    expect(screen.getByRole('checkbox', { name: 'Include the full inherited registry' })).not.toBeChecked()
     fireEvent.change(screen.getByRole('textbox', { name: 'Search scientific tools' }), { target: { value: 'Apple_Music' } })
     expect(screen.getByRole('heading', { name: 'No matching tool' })).toBeInTheDocument()
     fireEvent.click(screen.getByRole('checkbox', { name: 'Include the full inherited registry' }))
     expect(screen.queryByRole('heading', { name: 'No matching tool' })).not.toBeInTheDocument()
-  })
-
-  it('keeps the original bilingual everyday guide accessible', () => {
-    render(<App />)
     fireEvent.click(screen.getByRole('button', { name: /Everyday task guide/ }))
-    expect(screen.getByRole('heading', { name: 'What are you trying to move forward?' })).toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: 'RU' }))
     expect(screen.getByRole('heading', { name: 'Что вы хотите сдвинуть с места?' })).toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: 'Back to GenomeAtlas Workbench' }))
     expect(screen.getByRole('heading', { name: 'GenomeAtlas Workbench' })).toBeInTheDocument()
+    expect(screen.getByText('(c) timelabs-npo 2026, MIT')).toBeInTheDocument()
   })
 })

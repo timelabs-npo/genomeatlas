@@ -142,12 +142,24 @@ const toolDocumentation: Record<string, string> = {
   GToTree: 'https://github.com/AstrobioMike/GToTree',
   'IQ-TREE': 'https://iqtree.github.io/doc/',
   DefenseFinder: 'https://github.com/mdmparis/defense-finder',
+  HMMER: 'https://github.com/EddyRivasLab/hmmer',
+  MAFFT: 'https://mafft.cbrc.jp/alignment/software/',
+  trimAl: 'https://trimal.readthedocs.io/en/latest/',
+  REBASE: 'https://www.neb.com/en-us/faqs/what-information-is-available-in-the-restriction-enzyme-database-rebase',
+  Geneious: 'https://manual.geneious.com/en/latest/',
+  iTOL: 'https://itol.embl.de/help.cgi',
 }
 const toolCapabilities: Record<string, string> = {
   NCBI_Datasets: 'Accession-scoped genome packages',
   GToTree: 'Conserved single-copy markers',
   'IQ-TREE': 'Model-based phylogenetic inference',
   DefenseFinder: 'Defense system candidates',
+  HMMER: 'Find sequence homologs with profile models',
+  MAFFT: 'Align protein or nucleotide sequences',
+  trimAl: 'Trim multiple sequence alignments',
+  REBASE: 'Restriction and methylation reference data',
+  Geneious: 'Sequence analysis and annotation workspace',
+  iTOL: 'Annotate and export phylogenetic trees',
 }
 export const toolCatalog: CatalogTool[] = registry.entries.map((entry) => {
   const name = entry.layer === 'plugin-cache' ? entry.scope.split(';')[0] : entry.id.replaceAll('_', ' ')

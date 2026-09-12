@@ -6,10 +6,12 @@ This is the canonical home of the fused GenomeAtlas and GenomeOps applications. 
 
 ## Research workspace
 
-- Eight starter tasks connect to the existing frozen chains: panel, download, markers, tree, R-M, evidence, figure and release.
+- Eight task workspaces connect to the existing frozen chains: panel, download, markers, tree, R-M, evidence, figure and release. Each has its own preparation path, source-file checklist, working TSV template and evidence requirements.
+- A shared **Your inputs** panel holds an explicit selection of up to three of the 177 frozen accessions, a DNA sequence, research context and selected tools. Inputs stay in page memory, survive section changes, and are cleared on reload. Sequence text can be loaded from a local file; it is not uploaded automatically.
 - Search all 134 inherited catalog entries. Historical observations remain historical; a catalog listing does not establish current authentication or runtime availability.
 - Configure a brief with a working role, tone, character and destination: general ChatGPT, ChatGPT Work or Codex cloud. Copy the brief, open the destination and review it before starting. Mode, repository, files and model selection happen in the destination; browser links do not silently apply account settings.
-- Export schema-compatible task requests, inspect the original workflow dispatcher, and explore illustrative restriction motifs locally.
+- The dispatcher inspects real UTF-8 artifacts, identifies common FASTA/TSV/JSON structure problems, compares assembly mentions and calculates SHA-256 hashes. Export its inspection and schema-compatible task request; changing shared inputs invalidates an older inspection. File structure and mention checks do not establish ownership, complete inputs or scientific acceptance.
+- The plasmid sandbox maps custom IUPAC patterns on both DNA strands, retaining overlapping sites and circular-origin matches. Switch between a circular/linear map, site table and highlighted sequence; export actual matches as JSON or CSV. The constructed example is labeled synthetic. Browser work limits are explicit, and an aborted scan does not return partial counts as a completed result.
 - Download the real three-genome GToTree pilot, inspect its provenance and calculate the published file hashes in the browser. No fabricated biological result or model consensus is used as evidence.
 
 The interface follows the supplied dark research-workbench reference. It is an independent web application, not a native ChatGPT feature.
